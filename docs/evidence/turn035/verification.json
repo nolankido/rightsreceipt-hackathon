@@ -1,0 +1,57 @@
+{
+  "schema": "rightsreceipt-turn-verification-v1",
+  "turn": "035",
+  "date": "2026-10-27",
+  "timezone": "Pacific/Honolulu",
+  "base_commit": "1ad5c8c8750ee0d34a87c7d4bc1c07b7cc294bd0",
+  "native": {
+    "runtime": "22.18.0",
+    "files": 38,
+    "tests": 1434,
+    "passed": 1434,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "integrated_checks": 61,
+    "integrated_scenarios": 8,
+    "offline_creator_checks": 43,
+    "engine": "140.0.7339.16",
+    "limitations": [
+      "No listening server or deployed Worker",
+      "Generated fixture Access assertion and injected public signing keys",
+      "Injected Sandbox provider HTTP only",
+      "SQLite D1-shaped adapter, not deployed Cloudflare D1",
+      "Expiry tests advance browser time; hidden/history lifecycle events are injected",
+      "Chromium interception does not expose Fetch Metadata headers in this runtime; actual Origin is checked, and metadata denial is covered by native HTTP tests."
+    ]
+  },
+  "typecheck": {
+    "compiler": "5.8.3",
+    "strict_configs": [
+      "tsconfig.transaction-ui.json",
+      "tsconfig.invoice-sending.json"
+    ],
+    "uses_dependency_stubs": false,
+    "full_pinned_toolchain_verified": false
+  },
+  "syntax": {
+    "compiler": "5.8.3",
+    "files": 149,
+    "errors": []
+  },
+  "other_checks": [
+    "workspace graph",
+    "format",
+    "synthetic dataset verify and exact regeneration",
+    "git diff --check"
+  ],
+  "migration_count": 8,
+  "domain_table_count": 31,
+  "new_dependencies": [],
+  "new_migrations": [],
+  "live_provider_calls": false,
+  "deployment_performed": false,
+  "all_runtime_flags_remain_off": true,
+  "release_ready": false
+}

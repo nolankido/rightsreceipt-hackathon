@@ -1,0 +1,34 @@
+{
+  "baseCommit": "5e4f890433eb53ce87846f2805a9de51983b767c",
+  "scenario": "native_stale_acceptance_retains_buyer_code",
+  "actualTerminalStatus": 409,
+  "afterTerminal": {
+    "offerCleared": true,
+    "accessFormHidden": true,
+    "reloadDisabled": false,
+    "focused": "reload"
+  },
+  "clockAdvancedMs": 300001,
+  "beyondExpiry": {
+    "accessFormHidden": true,
+    "reloadDisabled": false
+  },
+  "automaticBrowserRequests": 0,
+  "programmaticReloadRequests": [
+    {
+      "method": "GET",
+      "path": "/api/consent/buyer/review",
+      "buyerAuthorizationPresent": true,
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/invoices/buyer/status",
+      "buyerAuthorizationPresent": true,
+      "status": 200
+    }
+  ],
+  "buyerAcceptances": 0,
+  "providerCalls": 0,
+  "limitation": "Clean prior-commit page and actual handlers. Canonical fixture terms change represents a competing review; browser clock is advanced deterministically. No live service or payment."
+}

@@ -1,0 +1,240 @@
+{
+  "turn": "044",
+  "date": "2026-10-28",
+  "status": "completed_locally_verified",
+  "base_commit": "4c6b61797478678f0313eeac75250b2a3b0fea7a",
+  "runtime": "v22.18.0",
+  "browser": "Chromium 140.0.7339.16",
+  "scope": {
+    "production_file": "packages/receipts/src/client.ts",
+    "latest_valid_submission_replaces_pending_read": true,
+    "same_and_different_code_recovery": true,
+    "operation_and_session_owned_cleanup": true,
+    "pending_close_available": true,
+    "disabled_output_has_internal_guards": true,
+    "request_timeout_ms": 15000,
+    "request_deadline_includes_complete_text_or_blob": true,
+    "wall_and_monotonic_fences": true,
+    "view_max_age_from_request_start_ms": 60000,
+    "licensing_boundary_and_utc_midnight_fences": true,
+    "print_requires_own_fresh_view": true,
+    "export_requires_original_view_current_at_download": true,
+    "canonical_bytes_preserved": true,
+    "server_capability_revoked": false,
+    "automatic_retries_after_failure": false,
+    "existing_idle_status_refresh_preserved": true,
+    "backend_or_shared_client_changed": false,
+    "response_content_type_or_digest_validation_added": false
+  },
+  "native": {
+    "files": 52,
+    "passed": 2211,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "new_client_collection_passed": 40,
+    "record": "native-regression.json",
+    "targeted_record": "receipt-client-native.json",
+    "targeted_script": "scripts/receipt-client-local.test.mjs",
+    "targeted_script_sha256": "20e57761a7b7914f79e426a7fc391e1e3cf2e43a576dc2c0e66b16d86ba9b086",
+    "method": "All 52 native files executed on unchanged final source. The one launcher-isolation file blocked by sandbox subprocess EPERM was rerun unchanged with local child-process permission; its final 15 passing tests replace its initial result, rather than being added twice.",
+    "initial_attempt_record": "native-initial-attempt.json",
+    "subprocess_retry_record": "native-subprocess-retry.json",
+    "initial_environment_failure": "The local launcher isolation collection was blocked by sandbox subprocess EPERM. Its 15 unchanged tests passed with child-process permission. No source or test modification was needed.",
+    "vm_limits": [
+      "Actual exported receipt client evaluated in Node VM; synthetic DOM, HTML metadata, clocks, transport and output hooks.",
+      "No browser rendering, real handler authorization, database, canonical integrity, network or provider behavior established."
+    ]
+  },
+  "targeted_browser": {
+    "passed": 126,
+    "scenarios": 15,
+    "completed": true,
+    "record": "receipt-recovery-browser.json",
+    "script": "scripts/receipt-recovery-browser-check.mjs",
+    "script_sha256": "d7f3085ebac6af0c85ea5f7656e913b8c4fd33e43d102d75658150fca0a0477c",
+    "before_change_record": "receipt-pending-baseline.json",
+    "before_change_revision": "4c6b61797478678f0313eeac75250b2a3b0fea7a",
+    "before_change_witness_method": "Actual isolated prior-revision client in a Node VM; minimal synthetic DOM, distinct codes, deferred response and inert timers.",
+    "seed_only_start": false,
+    "initial_fixture": "Synthetic requests, reviewed terms and quotes. Actual consent/invoice/reconciliation/issuance services prepare canonical SQLite receipts using injected gateway/provider responses.",
+    "actual_handlers": true,
+    "additional_provider_calls_from_receipt_actions": 0,
+    "additional_database_writes_from_receipt_actions": 0,
+    "different_code_fixture_scope": "Two isolated canonical SQLite fixtures, each with actual capability authorization.",
+    "late_response_faults": "Injected header/body wrapper replays actual handler bytes and deliberately ignores abort.",
+    "other_injections": "Browser clocks, hidden/history events and window.print hook. Actual canonical JSON downloads are compared by bytes and SHA-256.",
+    "recorded_source_hashes_verified": true
+  },
+  "existing_browser": {
+    "files": 2,
+    "passed": 249,
+    "named_scenarios": 27,
+    "all_source_hashes_unchanged_during_run": true,
+    "source_file_count": 291,
+    "source_fingerprint": "dd0236273b5c10d741478868bf93772298236f4be1f994d462a47ef8c5c25821",
+    "record": "existing-browser.json",
+    "results": [
+      {
+        "suite": "transaction",
+        "script": "scripts/transaction-browser-check.mjs",
+        "status": "passed",
+        "exit_code": 0,
+        "scope_reason": "Actual protected receipt navigation, canonical JSON download, revocation/refund status and integrated transaction controls.",
+        "duration_s": 106.208,
+        "passed": 130,
+        "scenarios": 19,
+        "runtime": "v22.18.0",
+        "browser": "140.0.7339.16",
+        "report_sha256": "c11123ccc1270deda359ab12305e6dc26d5deccf0313bb3662c06ae8f3722fe9",
+        "report": "transaction-browser.json"
+      },
+      {
+        "suite": "intake",
+        "script": "scripts/intake-browser-check.mjs",
+        "status": "passed",
+        "exit_code": 0,
+        "scope_reason": "Asset-only original-link continuation through actual protected receipt rendering and exact canonical JSON export.",
+        "duration_s": 96.671,
+        "passed": 119,
+        "scenarios": 8,
+        "runtime": "v22.18.0",
+        "browser": "140.0.7339.16",
+        "report_sha256": "af85064ad8469c54a60acd8a66b56c0384e66b1f9a110fc737715b276435a196",
+        "report": "intake-browser.json"
+      }
+    ],
+    "not_rerun": [
+      "Creator/buyer/clarification/deadline browser collections outside the unchanged source scope.",
+      "Older receipt-browser-smoke.py and receipt-layout-check.py scripts; targeted actual-handler receipt suite and current transaction/intake journeys were used."
+    ]
+  },
+  "combined_browser_passed": 375,
+  "typecheck": {
+    "compiler": "5.8.3",
+    "configs": [
+      "tsconfig.transaction-ui.json"
+    ],
+    "passed": true,
+    "actual_dependency_sources": true,
+    "stubs_used": false,
+    "pinned_toolchain_verified": false
+  },
+  "syntax": {
+    "files": 176,
+    "errors": []
+  },
+  "format": {
+    "checked_files": 328,
+    "errors": []
+  },
+  "workspace": {
+    "packages": 13,
+    "internal_edges": 24,
+    "cycles": 0
+  },
+  "diff_whitespace_passed": true,
+  "review": {
+    "receipt_client_independently_reviewed": true,
+    "session_cleanup_cancellation_and_output_authority_reviewed": true,
+    "documentation_scope_reviewed": true,
+    "prior_revision_defect_reproduced_this_turn": true,
+    "current_source_fingerprint_rechecked_before_publication": true
+  },
+  "visual_review": {
+    "screenshots_inspected": 2,
+    "review_note": "Desktop pending Close remains enabled while Refresh/Print/Export are disabled; mobile timeout guidance and empty code entry remain readable with no horizontal overflow.",
+    "screenshot_sha256": {
+      "receipt-pending-close.png": "d6f9f71669cd677af86f3d4f27c82a301afbfef251bf39a7bab09b42c03c7153",
+      "receipt-timeout-code-recovery-mobile.png": "b48b69de4dc67b92c1c240d15fc7c6db57aaf8957c07c2fc22707999a54e481a"
+    }
+  },
+  "schema": {
+    "migrations": 9,
+    "domain_tables": 33,
+    "seed_metadata_version": 9,
+    "new_migrations": 0,
+    "database_changes": false
+  },
+  "new_dependencies": [],
+  "live_provider_calls": false,
+  "deployment_performed": false,
+  "account_owner_task_required": false,
+  "all_runtime_flags_remain_off": true,
+  "merchant_identity_blank": true,
+  "release_ready": false,
+  "remaining_gates": [
+    "Pinned clean dependency install and installed-library typecheck/lint/Vitest/Vite/Wrangler verification",
+    "Genuine managed-session verification",
+    "Genuine Sandbox payment/refund/webhook verification",
+    "Deployed Worker/D1 verification",
+    "Public judge access and submission assets"
+  ],
+  "next_unit": "045 P0 validate protected receipt response formats before display and download",
+  "known_next_boundary": {
+    "record": "receipt-export-format-baseline.json",
+    "source": {
+      "path": "packages/receipts/src/client.ts",
+      "sha256": "dbd669c3acc0d847748fb4fd82261df49ced20f358594d3d68a6db43ff4cdf7c"
+    },
+    "witness_script_sha256": "46d1d72769cbdf86bf77349e972e1f43e0c701e871c70db35212b3b797d03b98",
+    "status": "gap_reproduced",
+    "finding": "An injected successful HTML response from the JSON endpoint is downloaded with a JSON filename and canonical-export success copy.",
+    "scope": "Actual client in a Node VM with synthetic current view and transport. Native handler emits correct canonical JSON; this is an unexpected successful-response fault, not an authorization bypass. No browser/handler/database/provider execution."
+  },
+  "files_changed": [
+    "DEVELOPMENT_PLAN.md",
+    "PROJECT_STATUS.md",
+    "README.md",
+    "docs/engineering/README.md",
+    "docs/engineering/RECEIPT_SESSION_RECOVERY.md",
+    "docs/evidence/turn044/existing-browser.json",
+    "docs/evidence/turn044/intake-browser.json",
+    "docs/evidence/turn044/native-initial-attempt.json",
+    "docs/evidence/turn044/native-regression.json",
+    "docs/evidence/turn044/native-subprocess-retry.json",
+    "docs/evidence/turn044/receipt-client-native.json",
+    "docs/evidence/turn044/receipt-export-format-baseline.json",
+    "docs/evidence/turn044/receipt-pending-baseline.json",
+    "docs/evidence/turn044/receipt-recovery-browser.json",
+    "docs/evidence/turn044/transaction-browser.json",
+    "docs/evidence/turn044/verification.json",
+    "docs/turns/044-p0-receipt-session-recovery.md",
+    "package.json",
+    "packages/receipts/src/client.ts",
+    "scripts/receipt-client-local.test.mjs",
+    "scripts/receipt-recovery-browser-check.mjs"
+  ],
+  "source_sha256": {
+    ".dev.vars.example": "72b565848fd5ac8ab419e965561657fe3ebdd9132cba3f64f83ac8206ea6fb9e",
+    "package.json": "e33e91e02b681fad29833af59ac364f573ccb4d5b6bf744203a64670048a3187",
+    "packages/persistence/src/manifest.ts": "6056ea6f965bae52226c7a75a63c88583f2a407ba51c7bc70802a5acc30f4a84",
+    "packages/receipts/src/client.ts": "dbd669c3acc0d847748fb4fd82261df49ced20f358594d3d68a6db43ff4cdf7c",
+    "packages/receipts/src/experience.ts": "7880ea94aae4a7c900fed3e2fd0818e116ab8b8871e7d70f24056a59b122c5b3",
+    "packages/receipts/src/http.ts": "d797dbc47c71e0bfaf39b0a855066e61b178aa56a72987c2b5d352b268150bda",
+    "packages/receipts/src/presentation.ts": "6b0e1f48560f5e6d1d127d1983b1c5383eed5ae34063c2b37b2cf70e8f8e9f03",
+    "packages/receipts/src/temporal.ts": "31b2df97345a33f4265b7141a7bb0728d78c4cc1c97e266b75bc8164db9e6f2f",
+    "scripts/consent-ts-test-loader.mjs": "59825a9c24bd88341054db90ba9edc1a0be1d9e51594038e477ea1d9cd2735df",
+    "scripts/intake-browser-check.mjs": "bb81bc8463a720eb909db8eb6af9e1166434fa72c5a551266cc8e9eca16408a5",
+    "scripts/judge-rehearsal-isolation-local.test.mjs": "8f48598629577ce3725d3796196ee77ebeefa80ca491ed760a0435a143e36288",
+    "scripts/receipt-client-local.test.mjs": "20e57761a7b7914f79e426a7fc391e1e3cf2e43a576dc2c0e66b16d86ba9b086",
+    "scripts/receipt-experience-local.test.mjs": "70fb83614ad4413ede99607f1ff3b1bafe63a907f87f5fda7f7c8086d3ab3419",
+    "scripts/receipt-recovery-browser-check.mjs": "d7f3085ebac6af0c85ea5f7656e913b8c4fd33e43d102d75658150fca0a0477c",
+    "scripts/support/human-consent-fixture.mjs": "4fd14df5286ba17b324b55eba63e465b7be67bfe4200702c245447ca30aeb51a",
+    "scripts/support/transaction-browser-fixture.mjs": "c84ebc88bc02e1b10d2e960ad87d0dc64258f77859fed9367db9920c3b4abed4",
+    "scripts/transaction-browser-check.mjs": "37dad48fde8eaeabe445ee2162888a7de9b4eda0ddf1cb7ee11fc0548e2cdda2",
+    "wrangler.jsonc": "67cd10f080df4225347978fdc7cbddfc8f8a7313fe70161824d274309f28879d"
+  },
+  "artifact_sha256": {
+    "existing-browser.json": "5ea06fab149aec22551d7bc022f8e2db791a3584e1ed00e1d5b641f8ad2dc1ee",
+    "intake-browser.json": "af85064ad8469c54a60acd8a66b56c0384e66b1f9a110fc737715b276435a196",
+    "native-initial-attempt.json": "bfa1f9f1285b4e21e40152dd776b1a991926e6520adf92da9f5eb283ea1d98e1",
+    "native-regression.json": "290abcf0ba02cae39a42c005cdfc798964936a8ebc051a2ba5b64564b588b5f2",
+    "native-subprocess-retry.json": "c104995868974b50d9e88b164068b0e548b02b53cfee6d47fc7d53df6d3363c6",
+    "receipt-client-native.json": "f3fe85d8eb18072197f8fd93fdb05c02930e71d65b59539402e07d85880beb35",
+    "receipt-export-format-baseline.json": "a4e3a0266e5751e260644303cb93a57fff0059db69a8ab207ba35d811934efe8",
+    "receipt-pending-baseline.json": "5883e20d24c22dd070d100d020709f1395c0e86dca4e44d5f7af58724e8040e5",
+    "receipt-recovery-browser.json": "9041c25c2ca2ed78cc68487ff4393f8f5bc6dd9fb8fe41f5903b0d9a911c2434",
+    "transaction-browser.json": "c11123ccc1270deda359ab12305e6dc26d5deccf0313bb3662c06ae8f3722fe9"
+  }
+}

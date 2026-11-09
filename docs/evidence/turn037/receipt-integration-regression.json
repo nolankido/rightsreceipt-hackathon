@@ -1,0 +1,30 @@
+{
+  "schema": "rightsreceipt-clarification-receipt-regression-v1",
+  "turn": "037",
+  "test_file": "scripts/clarification-transaction-local.test.mjs",
+  "before_fix": {
+    "tests": 3,
+    "pass": 0,
+    "fail": 3,
+    "skipped": 0,
+    "cancelled": 0,
+    "duration_s": 2.574
+  },
+  "after_fix": {
+    "tests": 3,
+    "pass": 3,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "duration_s": 5.33
+  },
+  "observed_failure": "All three paths reconciled payment but receipt issuance returned source_invalid, because manual-review-v1 stored a combined request/answer input hash.",
+  "correction": "Preserve SHA-256 of the original request in manual-review-v1 input_hash. The exact answers remain bound by immutable clarification submission, review and audit records. Receipt validation is unchanged.",
+  "cases": [
+    "First complete human review",
+    "Incomplete review followed by complete terms",
+    "Unchanged rights after creator follow-up"
+  ],
+  "provider": "Injected Sandbox HTTP, production reconciliation and receipt services, no genuine payment",
+  "source_sha256": "f0359d73c683980f2c7c3029a985221c0696d13d7ff5741eb35134258562c4d7"
+}

@@ -1,0 +1,20 @@
+{
+  "runtime": "v22.18.0",
+  "command": [
+    "--no-warnings",
+    "--experimental-strip-types",
+    "scripts/receipt-client-local.test.mjs"
+  ],
+  "exit_code": 0,
+  "tests": 40,
+  "pass": 40,
+  "fail": 0,
+  "skipped": 0,
+  "cancelled": 0,
+  "script_sha256": "20e57761a7b7914f79e426a7fc391e1e3cf2e43a576dc2c0e66b16d86ba9b086",
+  "client_sha256": "dbd669c3acc0d847748fb4fd82261df49ced20f358594d3d68a6db43ff4cdf7c",
+  "limitations": [
+    "Actual exported receipt client evaluated in Node VM; synthetic DOM, HTML metadata, clocks, transport and output hooks.",
+    "No browser rendering, real handler authorization, database, canonical integrity, network or provider behavior established."
+  ]
+}

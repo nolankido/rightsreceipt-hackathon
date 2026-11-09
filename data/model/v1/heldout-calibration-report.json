@@ -1,0 +1,238 @@
+{
+  "schemaVersion": "rightsreceipt-heldout-calibration-v1",
+  "scope": "one_time_heldout_after_frozen_validation_policy",
+  "frozenPolicyVersion": "validation-margin-gates-v1",
+  "artifactSha256": "6ea099b72fe00ce4643426a2729a84b207ae8eb3460c75488fab3502037e73e2",
+  "testDataSha256": "8407ae5b7414098495e6294a0db428819b4ee53d15eaa1fc766e3ec182aa2f87",
+  "records": 240,
+  "fields": 2880,
+  "rawExact": 2855,
+  "rawWrongResolved": 17,
+  "acceptedReviewCandidates": 2303,
+  "incorrectAcceptedReviewCandidates": 3,
+  "correctAcceptedReviewCandidates": 2300,
+  "goldResolved": 2304,
+  "diagnosticPrecision": 0.998697351280938,
+  "diagnosticRecall": 0.9982638888888888,
+  "validationThresholdsRetunedOnTest": false,
+  "confidenceIsCalibratedProbability": false,
+  "automaticResolutionApproved": false,
+  "deploymentVerdict": "blocked_false_resolutions_on_heldout",
+  "fieldMetrics": {
+    "use_purpose": {
+      "rawExact": 239,
+      "rawWrongResolved": 0,
+      "goldResolved": 198,
+      "acceptedReviewCandidates": 198,
+      "wrongReviewCandidates": 0,
+      "correctReviewCandidates": 198
+    },
+    "channels": {
+      "rawExact": 239,
+      "rawWrongResolved": 1,
+      "goldResolved": 176,
+      "acceptedReviewCandidates": 176,
+      "wrongReviewCandidates": 0,
+      "correctReviewCandidates": 176
+    },
+    "paid_advertising": {
+      "rawExact": 236,
+      "rawWrongResolved": 1,
+      "goldResolved": 191,
+      "acceptedReviewCandidates": 191,
+      "wrongReviewCandidates": 0,
+      "correctReviewCandidates": 191
+    },
+    "territories": {
+      "rawExact": 239,
+      "rawWrongResolved": 1,
+      "goldResolved": 195,
+      "acceptedReviewCandidates": 195,
+      "wrongReviewCandidates": 0,
+      "correctReviewCandidates": 195
+    },
+    "start_date": {
+      "rawExact": 238,
+      "rawWrongResolved": 2,
+      "goldResolved": 189,
+      "acceptedReviewCandidates": 189,
+      "wrongReviewCandidates": 0,
+      "correctReviewCandidates": 189
+    },
+    "duration_days": {
+      "rawExact": 239,
+      "rawWrongResolved": 1,
+      "goldResolved": 189,
+      "acceptedReviewCandidates": 188,
+      "wrongReviewCandidates": 0,
+      "correctReviewCandidates": 188
+    },
+    "max_impressions": {
+      "rawExact": 236,
+      "rawWrongResolved": 3,
+      "goldResolved": 189,
+      "acceptedReviewCandidates": 187,
+      "wrongReviewCandidates": 1,
+      "correctReviewCandidates": 186
+    },
+    "exclusivity": {
+      "rawExact": 238,
+      "rawWrongResolved": 1,
+      "goldResolved": 189,
+      "acceptedReviewCandidates": 189,
+      "wrongReviewCandidates": 0,
+      "correctReviewCandidates": 189
+    },
+    "modification_scope": {
+      "rawExact": 238,
+      "rawWrongResolved": 2,
+      "goldResolved": 194,
+      "acceptedReviewCandidates": 194,
+      "wrongReviewCandidates": 0,
+      "correctReviewCandidates": 194
+    },
+    "attribution": {
+      "rawExact": 236,
+      "rawWrongResolved": 2,
+      "goldResolved": 193,
+      "acceptedReviewCandidates": 193,
+      "wrongReviewCandidates": 0,
+      "correctReviewCandidates": 193
+    },
+    "sublicensing": {
+      "rawExact": 237,
+      "rawWrongResolved": 3,
+      "goldResolved": 200,
+      "acceptedReviewCandidates": 202,
+      "wrongReviewCandidates": 2,
+      "correctReviewCandidates": 200
+    },
+    "ai_use": {
+      "rawExact": 240,
+      "rawWrongResolved": 0,
+      "goldResolved": 201,
+      "acceptedReviewCandidates": 201,
+      "wrongReviewCandidates": 0,
+      "correctReviewCandidates": 201
+    }
+  },
+  "categories": {
+    "complete_supported": {
+      "records": 24,
+      "rawExact": 288,
+      "rawWrongResolved": 0,
+      "acceptedReviewCandidates": 288,
+      "wrongReviewCandidates": 0
+    },
+    "omission": {
+      "records": 24,
+      "rawExact": 288,
+      "rawWrongResolved": 0,
+      "acceptedReviewCandidates": 120,
+      "wrongReviewCandidates": 0
+    },
+    "contradiction": {
+      "records": 24,
+      "rawExact": 277,
+      "rawWrongResolved": 9,
+      "acceptedReviewCandidates": 195,
+      "wrongReviewCandidates": 3
+    },
+    "unsupported": {
+      "records": 24,
+      "rawExact": 276,
+      "rawWrongResolved": 6,
+      "acceptedReviewCandidates": 192,
+      "wrongReviewCandidates": 0
+    },
+    "ambiguous": {
+      "records": 24,
+      "rawExact": 288,
+      "rawWrongResolved": 0,
+      "acceptedReviewCandidates": 192,
+      "wrongReviewCandidates": 0
+    },
+    "negation": {
+      "records": 24,
+      "rawExact": 288,
+      "rawWrongResolved": 0,
+      "acceptedReviewCandidates": 288,
+      "wrongReviewCandidates": 0
+    },
+    "injection": {
+      "records": 24,
+      "rawExact": 288,
+      "rawWrongResolved": 0,
+      "acceptedReviewCandidates": 288,
+      "wrongReviewCandidates": 0
+    },
+    "unicode": {
+      "records": 24,
+      "rawExact": 288,
+      "rawWrongResolved": 0,
+      "acceptedReviewCandidates": 287,
+      "wrongReviewCandidates": 0
+    },
+    "numeric_boundary": {
+      "records": 24,
+      "rawExact": 286,
+      "rawWrongResolved": 2,
+      "acceptedReviewCandidates": 285,
+      "wrongReviewCandidates": 0
+    },
+    "mixed_channel": {
+      "records": 24,
+      "rawExact": 288,
+      "rawWrongResolved": 0,
+      "acceptedReviewCandidates": 168,
+      "wrongReviewCandidates": 0
+    }
+  },
+  "injectionPairsTotal": 12,
+  "injectionPairsUnchanged": 12,
+  "incorrectCandidates": [
+    {
+      "exampleId": "rrs-10-02-06",
+      "category": "contradiction",
+      "fieldName": "max_impressions",
+      "modelMargin": 3.6812999675780382,
+      "predicted": {
+        "normalizedValue": 500000,
+        "resolutionState": "resolved"
+      },
+      "gold": {
+        "normalizedValue": null,
+        "resolutionState": "contradictory"
+      }
+    },
+    {
+      "exampleId": "rrs-10-02-10",
+      "category": "contradiction",
+      "fieldName": "sublicensing",
+      "modelMargin": 8.285758421637965,
+      "predicted": {
+        "normalizedValue": "prohibited",
+        "resolutionState": "resolved"
+      },
+      "gold": {
+        "normalizedValue": null,
+        "resolutionState": "contradictory"
+      }
+    },
+    {
+      "exampleId": "rrs-11-02-10",
+      "category": "contradiction",
+      "fieldName": "sublicensing",
+      "modelMargin": 7.509205985664274,
+      "predicted": {
+        "normalizedValue": "prohibited",
+        "resolutionState": "resolved"
+      },
+      "gold": {
+        "normalizedValue": null,
+        "resolutionState": "contradictory"
+      }
+    }
+  ],
+  "safetyConclusion": "Margin gates alone failed. No model field is approved as a resolved right until exact source evidence and explicit contradiction handling are independently verified."
+}

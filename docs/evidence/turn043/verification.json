@@ -1,0 +1,252 @@
+{
+  "turn": "043",
+  "date": "2026-10-28",
+  "status": "completed_locally_verified",
+  "base_commit": "5e4f890433eb53ce87846f2805a9de51983b767c",
+  "runtime": "v22.18.0",
+  "browser": "Chromium 140.0.7339.16",
+  "scope": {
+    "production_file": "apps/web/src/buyer-review-client.ts",
+    "terminal_acceptance_statuses": [
+      400,
+      409
+    ],
+    "complete_lock_after_unexpected_outer_completion_failure": true,
+    "deliberate_code_reentry_required": true,
+    "acknowledged_acceptance_preserved": true,
+    "internal_exception_text_reflected": false,
+    "nonterminal_exact_retries_preserved": true,
+    "bounded_current_receipt_fallback_preserved": true,
+    "focus_ownership_preserved": true,
+    "backend_or_shared_client_changed": false,
+    "server_capability_revoked": false,
+    "automatic_retries": false
+  },
+  "native": {
+    "files": 51,
+    "passed": 2171,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "record": "native-regression.json",
+    "method": "Complete 51-file native rerun on frozen final application and test source."
+  },
+  "targeted_browser": {
+    "passed": 42,
+    "scenarios": 6,
+    "completed": true,
+    "record": "buyer-boundary-browser.json",
+    "script": "scripts/buyer-private-boundary-browser-check.mjs",
+    "script_sha256": "5642eaf74a1586345c0d19428c156228d127ec7360527a917c62d4509bb3f0de",
+    "before_change_record": "terminal-baseline.json",
+    "before_change_revision": "5e4f890433eb53ce87846f2805a9de51983b767c",
+    "seed_only_start": false,
+    "initial_fixture": "Synthetic request, human-reviewed terms and quote; initial intake is outside this targeted collection.",
+    "actual_handlers": true,
+    "gateway_and_provider_http": "Injected local fixtures. No live provider calls.",
+    "http_400_fault": "Outgoing confirmation is deliberately malformed before actual handler validation.",
+    "generic_completion_fault": "A one-shot status textContent setter exception after successful native reads reaches the outer load catch. Ordinary optional-read API 500 responses are not claimed to reach that catch.",
+    "provider_invoice_payment_permission_receipt_work_zero": true,
+    "acceptance_scope": "Durable acceptances arise only after explicit separately confirmed success, acknowledged-save or exact-retry actions.",
+    "client_source_hashes_verified": true
+  },
+  "existing_browser": {
+    "files": 6,
+    "passed": 623,
+    "named_scenarios": 76,
+    "buyer_validation_scenario_count_reported": false,
+    "all_source_hashes_unchanged_during_run": true,
+    "source_file_count": 289,
+    "application_source_file_count": 187,
+    "source_fingerprint": "06cb67efdb1f8ee9fb44cd173d9df3f4cd4571c8159f2118ade234a4c3b0379a",
+    "record": "existing-browser.json",
+    "results": [
+      {
+        "suite": "transaction",
+        "status": "passed",
+        "passed_checks": 130,
+        "completed_scenarios": 19,
+        "exit_code": 0,
+        "report": "transaction-browser.json",
+        "report_sha256": "c11123ccc1270deda359ab12305e6dc26d5deccf0313bb3662c06ae8f3722fe9"
+      },
+      {
+        "suite": "intake",
+        "status": "passed",
+        "passed_checks": 119,
+        "completed_scenarios": 8,
+        "exit_code": 0,
+        "report": "intake-browser.json",
+        "report_sha256": "abca59e5de6e850a81a2dc34ca0651dbc832bf6cc38e8d1e9a0680e860b7ff3f"
+      },
+      {
+        "suite": "clarification",
+        "status": "passed",
+        "passed_checks": 57,
+        "completed_scenarios": 8,
+        "exit_code": 0,
+        "report": "clarification-browser.json",
+        "report_sha256": "beccbecdbaf3e2c4ce31468c8901ae72e745800909000bce8a4c258b0e89d190"
+      },
+      {
+        "suite": "buyer-validation",
+        "status": "passed",
+        "passed_checks": 51,
+        "completed_scenarios": null,
+        "exit_code": 0,
+        "report": "buyer-validation-browser.json",
+        "report_sha256": "d539d7e72303e6294f67943dbd46ba953c940e72eaa8952bdb57f1e5eab8a3d7"
+      },
+      {
+        "suite": "accessibility",
+        "status": "passed",
+        "passed_checks": 134,
+        "completed_scenarios": 17,
+        "exit_code": 0,
+        "report": "accessibility-browser.json",
+        "report_sha256": "7acfd099000a3813131e06203e2addda7190b993e88927270eca9d88ca95aef3"
+      },
+      {
+        "suite": "deadline",
+        "status": "passed",
+        "passed_checks": 132,
+        "completed_scenarios": 24,
+        "exit_code": 0,
+        "report": "deadline-browser.json",
+        "report_sha256": "7e7cb8c81f8adfa3574c66c2e65aac2d5fbcde1ee340229d8af72bffec7165dd"
+      }
+    ],
+    "not_rerun": {
+      "suite": "invoice-recovery",
+      "reason": "This suite is creator-only. No creator or shared implementation changed in Turn 043; its prior 88-check result is not counted as current verification."
+    }
+  },
+  "combined_browser_passed": 665,
+  "typecheck": {
+    "compiler": "5.8.3",
+    "configs": [
+      "tsconfig.transaction-ui.json"
+    ],
+    "passed": true,
+    "actual_dependency_sources": true,
+    "stubs_used": false,
+    "pinned_toolchain_verified": false
+  },
+  "syntax": {
+    "files": 176,
+    "errors": []
+  },
+  "format": {
+    "checked_files": 326,
+    "errors": []
+  },
+  "workspace": {
+    "packages": 13,
+    "internal_edges": 24,
+    "cycles": 0
+  },
+  "diff_whitespace_passed": true,
+  "review": {
+    "buyer_client_and_recovery_boundaries_independently_reviewed": true,
+    "documentation_scope_reviewed": true,
+    "prior_revision_defect_reproduced": true,
+    "current_source_fingerprint_rechecked_before_publication": true
+  },
+  "visual_review": {
+    "screenshots_inspected": 1,
+    "review_note": "Stale-offer recovery with readable fixed guidance, empty focused private-code entry, disabled stale controls and cleared private content.",
+    "screenshot_sha256": {
+      "buyer-stale-offer-code-recovery.png": "306ba949e8b60ca4329b7a3845ccf203c6b830d3de975e492ec1a3162a21928f"
+    }
+  },
+  "schema": {
+    "migrations": 9,
+    "domain_tables": 33,
+    "seed_metadata_version": 9,
+    "new_migrations": 0,
+    "database_changes": false
+  },
+  "new_dependencies": [],
+  "live_provider_calls": false,
+  "deployment_performed": false,
+  "account_owner_task_required": false,
+  "all_runtime_flags_remain_off": true,
+  "merchant_identity_blank": true,
+  "release_ready": false,
+  "remaining_gates": [
+    "Pinned clean dependency install and installed-library typecheck/lint/Vitest/Vite/Wrangler verification",
+    "Genuine managed-session verification",
+    "Genuine Sandbox payment/refund/webhook verification",
+    "Deployed Worker/D1 verification",
+    "Public judge access and submission assets"
+  ],
+  "next_unit": "044 P0 make protected receipt access recoverable under repeated submissions",
+  "known_next_boundary": {
+    "record": "receipt-pending-baseline.json",
+    "source": {
+      "path": "packages/receipts/src/client.ts",
+      "sha256": "9a8b9e5ac5a0cecaf12adf9f244c17cbe2381ffd131b9fd685d49f09a1031d65"
+    },
+    "witness_script_sha256": "88ec9bebe053d8e25f041eaea861857530ce95462fa0ba93458078e36ea6b0be",
+    "status": "gap_reproduced",
+    "finding": "A second valid receipt submission advances the session while busy, then returns; the old completion cannot clear busy. A third submission still starts no request.",
+    "scope": "Actual receipt client in a Node VM with a minimal DOM, distinct synthetic codes, a deferred response and inert timers. Receipt rendering, actual handlers and live transport are outside this witness."
+  },
+  "files_changed": [
+    "DEVELOPMENT_PLAN.md",
+    "PROJECT_STATUS.md",
+    "README.md",
+    "apps/web/src/buyer-review-client.ts",
+    "docs/engineering/BUYER_PRIVATE_RECOVERY.md",
+    "docs/engineering/README.md",
+    "docs/evidence/turn043/accessibility-browser.json",
+    "docs/evidence/turn043/buyer-boundary-browser.json",
+    "docs/evidence/turn043/buyer-validation-browser.json",
+    "docs/evidence/turn043/clarification-browser.json",
+    "docs/evidence/turn043/deadline-browser.json",
+    "docs/evidence/turn043/existing-browser.json",
+    "docs/evidence/turn043/intake-browser.json",
+    "docs/evidence/turn043/native-regression.json",
+    "docs/evidence/turn043/receipt-pending-baseline.json",
+    "docs/evidence/turn043/terminal-baseline.json",
+    "docs/evidence/turn043/transaction-browser.json",
+    "docs/evidence/turn043/verification.json",
+    "docs/turns/043-p0-buyer-private-recovery.md",
+    "package.json",
+    "scripts/buyer-private-boundary-browser-check.mjs",
+    "scripts/transaction-browser-check.mjs"
+  ],
+  "source_sha256": {
+    ".dev.vars.example": "72b565848fd5ac8ab419e965561657fe3ebdd9132cba3f64f83ac8206ea6fb9e",
+    "apps/web/src/buyer-review-client.ts": "9cccd5f1f1aec2e6a36c617c9f67ae13635f39f4c78bfd1271cc8616c342c45d",
+    "apps/web/src/form-accessibility-client.ts": "0d912659b8dddecaebbaccb2eb363c5166b30fed4dfa5dffdd472c85ceed8978",
+    "apps/web/src/request-deadline-client.ts": "83422f667d7fc8ac694b773e23d4c8822c5a599af613205c59a03bd61ea68ced",
+    "package.json": "93ddaa495efd9917daa23055a90a4b2de0acdad8e5db7e217b2c1a1eeb07cdb7",
+    "packages/persistence/src/manifest.ts": "6056ea6f965bae52226c7a75a63c88583f2a407ba51c7bc70802a5acc30f4a84",
+    "packages/receipts/src/client.ts": "9a8b9e5ac5a0cecaf12adf9f244c17cbe2381ffd131b9fd685d49f09a1031d65",
+    "scripts/buyer-private-boundary-browser-check.mjs": "5642eaf74a1586345c0d19428c156228d127ec7360527a917c62d4509bb3f0de",
+    "scripts/buyer-review-validation-browser-check.mjs": "0ea0eb9468932d3a351b4435103e041172ac06910f4fc419fbd60ca3424ba8e0",
+    "scripts/clarification-browser-check.mjs": "c82b31f390a652a8dcdd0dec5767b2d1132414d936a139fa00de8a330b900bcb",
+    "scripts/consent-ts-test-loader.mjs": "59825a9c24bd88341054db90ba9edc1a0be1d9e51594038e477ea1d9cd2735df",
+    "scripts/form-accessibility-browser-check.mjs": "b509934fd72001a56f500a22d9b656e823b8b2ec378484b149ab01865c1f46da",
+    "scripts/intake-browser-check.mjs": "bb81bc8463a720eb909db8eb6af9e1166434fa72c5a551266cc8e9eca16408a5",
+    "scripts/request-deadline-browser-check.mjs": "04d5062a061502e24bdfd7785dc03343109d12d757c7fca36ce3adb521f18047",
+    "scripts/support/human-consent-fixture.mjs": "4fd14df5286ba17b324b55eba63e465b7be67bfe4200702c245447ca30aeb51a",
+    "scripts/support/transaction-browser-fixture.mjs": "c84ebc88bc02e1b10d2e960ad87d0dc64258f77859fed9367db9920c3b4abed4",
+    "scripts/transaction-browser-check.mjs": "37dad48fde8eaeabe445ee2162888a7de9b4eda0ddf1cb7ee11fc0548e2cdda2",
+    "wrangler.jsonc": "67cd10f080df4225347978fdc7cbddfc8f8a7313fe70161824d274309f28879d"
+  },
+  "artifact_sha256": {
+    "accessibility-browser.json": "7acfd099000a3813131e06203e2addda7190b993e88927270eca9d88ca95aef3",
+    "buyer-boundary-browser.json": "f3c9f21a256ceee9fa401ff426a8494e37abe7431ad82392c814666b2c1e032e",
+    "buyer-validation-browser.json": "d539d7e72303e6294f67943dbd46ba953c940e72eaa8952bdb57f1e5eab8a3d7",
+    "clarification-browser.json": "beccbecdbaf3e2c4ce31468c8901ae72e745800909000bce8a4c258b0e89d190",
+    "deadline-browser.json": "7e7cb8c81f8adfa3574c66c2e65aac2d5fbcde1ee340229d8af72bffec7165dd",
+    "existing-browser.json": "e64588786e11421693c129b38351a9df1b8c2bfe7babf21429c64802bd76ab3a",
+    "intake-browser.json": "abca59e5de6e850a81a2dc34ca0651dbc832bf6cc38e8d1e9a0680e860b7ff3f",
+    "native-regression.json": "a60663123809c9c77d7ba3a10c825dd2c756c31f8e517a81b03d1021ae9c0fc4",
+    "receipt-pending-baseline.json": "6addd9ef3bba1e92e278221f6998dfb46808ac6f3495d0f171f2ae49fea670c0",
+    "terminal-baseline.json": "cac909976b03e485043a13fcf7efcbd9ff9df380f2ad695cca3294e6a5c2ef1a",
+    "transaction-browser.json": "c11123ccc1270deda359ab12305e6dc26d5deccf0313bb3662c06ae8f3722fe9"
+  }
+}

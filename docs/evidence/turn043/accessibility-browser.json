@@ -1,0 +1,1015 @@
+{
+  "mode": "keyboard and form recovery browser audit using actual native handlers",
+  "runtime": "v22.18.0",
+  "limitations": [
+    "No listening server, deployed Worker or Cloudflare D1",
+    "Generated Access signing keys and injected gateway assertions",
+    "Only workspace, asset and pricing policy are seeded; every transactional record comes from production handlers",
+    "PayPal HTTP responses are local deterministic fixtures; no provider network or payment occurs",
+    "Browser expiry advances test time; hidden/history lifecycle events are injected",
+    "Chromium interception does not expose Fetch Metadata in this runtime; native route tests cover that check",
+    "Targeted keyboard, semantics, focus, error and responsive checks; no screen-reader or full WCAG conformance claim"
+  ],
+  "completed": true,
+  "passed": 134,
+  "checks": [
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "/buyer/request does not steal focus on passive load"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "skip navigation is keyboard available and preserves the private-link URL"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "/buyer/request associates an actionable code error"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "/buyer/request invalid code performs no private API request"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "/buyer/request gives every visible form control a name and resolving descriptions"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "/buyer/request fits a mobile viewport"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "/buyer/clarification does not steal focus on passive load"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "skip navigation is keyboard available and preserves the private-link URL"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "/buyer/clarification associates an actionable code error"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "/buyer/clarification invalid code performs no private API request"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "/buyer/clarification gives every visible form control a name and resolving descriptions"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "/buyer/clarification fits a mobile viewport"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "/buyer/review does not steal focus on passive load"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "skip navigation is keyboard available and preserves the private-link URL"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "/buyer/review associates an actionable code error"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "/buyer/review invalid code performs no private API request"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "/buyer/review gives every visible form control a name and resolving descriptions"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "/buyer/review fits a mobile viewport"
+    },
+    {
+      "scenario": "private_code_errors_and_skip_navigation",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_link_keyboard_retry_and_expiry",
+      "check": "creator asset auto-load leaves keyboard focus undisturbed"
+    },
+    {
+      "scenario": "creator_link_keyboard_retry_and_expiry",
+      "check": "creator request link gives every visible form control a name and resolving descriptions"
+    },
+    {
+      "scenario": "creator_link_keyboard_retry_and_expiry",
+      "check": "creator request link fits a mobile viewport"
+    },
+    {
+      "scenario": "creator_link_keyboard_retry_and_expiry",
+      "check": "uncertain issuance restores focus to the exact retry and freezes its confirmation"
+    },
+    {
+      "scenario": "creator_link_keyboard_retry_and_expiry",
+      "check": "keyboard retry preserves the exact issued command and a single case"
+    },
+    {
+      "scenario": "creator_link_keyboard_retry_and_expiry",
+      "check": "explicit manual link reveal has a named selected copy field"
+    },
+    {
+      "scenario": "creator_link_keyboard_retry_and_expiry",
+      "check": "hiding the private link clears it and preserves a usable focus target"
+    },
+    {
+      "scenario": "creator_link_keyboard_retry_and_expiry",
+      "check": "expiry clears private material and restores keyboard recovery without a new request"
+    },
+    {
+      "scenario": "creator_link_keyboard_retry_and_expiry",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "buyer_intake_linked_validation_exact_retry_and_success",
+      "check": "private intake auto-load does not focus a field or confirm consent"
+    },
+    {
+      "scenario": "buyer_intake_linked_validation_exact_retry_and_success",
+      "check": "validation focuses a keyboard-readable summary with actionable links"
+    },
+    {
+      "scenario": "buyer_intake_linked_validation_exact_retry_and_success",
+      "check": "each invalid control is linked to its own inline error without losing help text"
+    },
+    {
+      "scenario": "buyer_intake_linked_validation_exact_retry_and_success",
+      "check": "keyboard activation of the error link focuses its field without changing private-link history"
+    },
+    {
+      "scenario": "buyer_intake_linked_validation_exact_retry_and_success",
+      "check": "invalid intake remains local and records no original request"
+    },
+    {
+      "scenario": "buyer_intake_linked_validation_exact_retry_and_success",
+      "check": "invalid buyer intake gives every visible form control a name and resolving descriptions"
+    },
+    {
+      "scenario": "buyer_intake_linked_validation_exact_retry_and_success",
+      "check": "invalid buyer intake fits a mobile viewport"
+    },
+    {
+      "scenario": "buyer_intake_linked_validation_exact_retry_and_success",
+      "check": "buyer-request-validation mobile content fits the viewport"
+    },
+    {
+      "scenario": "buyer_intake_linked_validation_exact_retry_and_success",
+      "check": "editing requires renewed explicit request confirmation"
+    },
+    {
+      "scenario": "buyer_intake_linked_validation_exact_retry_and_success",
+      "check": "uncertain intake restores a reachable retry while original fields stay frozen"
+    },
+    {
+      "scenario": "buyer_intake_linked_validation_exact_retry_and_success",
+      "check": "successful exact retry focuses recorded evidence without duplicate submission"
+    },
+    {
+      "scenario": "buyer_intake_linked_validation_exact_retry_and_success",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "buyer_intake_linked_validation_exact_retry_and_success",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "buyer_intake_linked_validation_exact_retry_and_success",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "buyer_intake_late_success_respects_keyboard_navigation",
+      "check": "skip navigation is keyboard available and preserves the private-link URL"
+    },
+    {
+      "scenario": "buyer_intake_late_success_respects_keyboard_navigation",
+      "check": "late intake success does not steal focus after deliberate skip navigation"
+    },
+    {
+      "scenario": "buyer_intake_late_success_respects_keyboard_navigation",
+      "check": "keyboard navigation adds no submission or consent action"
+    },
+    {
+      "scenario": "buyer_intake_late_success_respects_keyboard_navigation",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "buyer_clarification_linked_errors_and_saved_focus",
+      "check": "clarification auto-load preserves focus and unchecked answer confirmation"
+    },
+    {
+      "scenario": "buyer_clarification_linked_errors_and_saved_focus",
+      "check": "validation focuses a keyboard-readable summary with actionable links"
+    },
+    {
+      "scenario": "buyer_clarification_linked_errors_and_saved_focus",
+      "check": "each invalid control is linked to its own inline error without losing help text"
+    },
+    {
+      "scenario": "buyer_clarification_linked_errors_and_saved_focus",
+      "check": "keyboard activation of the error link focuses its field without changing private-link history"
+    },
+    {
+      "scenario": "buyer_clarification_linked_errors_and_saved_focus",
+      "check": "missing answers provide local guidance without an HTTP command"
+    },
+    {
+      "scenario": "buyer_clarification_linked_errors_and_saved_focus",
+      "check": "buyer clarification errors gives every visible form control a name and resolving descriptions"
+    },
+    {
+      "scenario": "buyer_clarification_linked_errors_and_saved_focus",
+      "check": "buyer clarification errors fits a mobile viewport"
+    },
+    {
+      "scenario": "buyer_clarification_linked_errors_and_saved_focus",
+      "check": "buyer-clarification-validation mobile content fits the viewport"
+    },
+    {
+      "scenario": "buyer_clarification_linked_errors_and_saved_focus",
+      "check": "answer editing resets explicit confirmation"
+    },
+    {
+      "scenario": "buyer_clarification_linked_errors_and_saved_focus",
+      "check": "successful answer save focuses durable evidence and grants no terms or acceptance"
+    },
+    {
+      "scenario": "buyer_clarification_linked_errors_and_saved_focus",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "buyer_clarification_linked_errors_and_saved_focus",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "buyer_clarification_linked_errors_and_saved_focus",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_rights_errors_and_confirmed_save",
+      "check": "creator rights auto-load remains read-only without focus movement"
+    },
+    {
+      "scenario": "creator_rights_errors_and_confirmed_save",
+      "check": "validation focuses a keyboard-readable summary with actionable links"
+    },
+    {
+      "scenario": "creator_rights_errors_and_confirmed_save",
+      "check": "each invalid control is linked to its own inline error without losing help text"
+    },
+    {
+      "scenario": "creator_rights_errors_and_confirmed_save",
+      "check": "keyboard activation of the error link focuses its field without changing private-link history"
+    },
+    {
+      "scenario": "creator_rights_errors_and_confirmed_save",
+      "check": "rights-group error text remains inside its matching fieldset"
+    },
+    {
+      "scenario": "creator_rights_errors_and_confirmed_save",
+      "check": "invalid rights groups and notes cannot submit or create a quote"
+    },
+    {
+      "scenario": "creator_rights_errors_and_confirmed_save",
+      "check": "creator rights validation gives every visible form control a name and resolving descriptions"
+    },
+    {
+      "scenario": "creator_rights_errors_and_confirmed_save",
+      "check": "creator rights validation fits a mobile viewport"
+    },
+    {
+      "scenario": "creator_rights_errors_and_confirmed_save",
+      "check": "creator-rights-validation mobile content fits the viewport"
+    },
+    {
+      "scenario": "creator_rights_errors_and_confirmed_save",
+      "check": "rights edits require fresh explicit review confirmation"
+    },
+    {
+      "scenario": "creator_rights_errors_and_confirmed_save",
+      "check": "valid rights save returns focus to updated evidence without approving the offer"
+    },
+    {
+      "scenario": "creator_rights_errors_and_confirmed_save",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_rights_late_success_preserves_navigation",
+      "check": "skip navigation is keyboard available and preserves the private-link URL"
+    },
+    {
+      "scenario": "creator_rights_late_success_preserves_navigation",
+      "check": "late rights save does not replace a user's new keyboard focus"
+    },
+    {
+      "scenario": "creator_rights_late_success_preserves_navigation",
+      "check": "focus navigation creates no duplicate rights or decision"
+    },
+    {
+      "scenario": "creator_rights_late_success_preserves_navigation",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_decision_reason_error_and_approval_focus",
+      "check": "creator offer auto-load does not move focus or record decisions"
+    },
+    {
+      "scenario": "creator_decision_reason_error_and_approval_focus",
+      "check": "validation focuses a keyboard-readable summary with actionable links"
+    },
+    {
+      "scenario": "creator_decision_reason_error_and_approval_focus",
+      "check": "each invalid control is linked to its own inline error without losing help text"
+    },
+    {
+      "scenario": "creator_decision_reason_error_and_approval_focus",
+      "check": "keyboard activation of the error link focuses its field without changing private-link history"
+    },
+    {
+      "scenario": "creator_decision_reason_error_and_approval_focus",
+      "check": "missing revision reason yields actionable local feedback with no decision write"
+    },
+    {
+      "scenario": "creator_decision_reason_error_and_approval_focus",
+      "check": "creator explicit decision gives every visible form control a name and resolving descriptions"
+    },
+    {
+      "scenario": "creator_decision_reason_error_and_approval_focus",
+      "check": "creator explicit decision fits a mobile viewport"
+    },
+    {
+      "scenario": "creator_decision_reason_error_and_approval_focus",
+      "check": "explicit approval focuses the updated offer without accepting for the buyer"
+    },
+    {
+      "scenario": "creator_decision_reason_error_and_approval_focus",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "unsaved_creator_reason_clears_on_reload_expiry_hide_and_access_loss",
+      "check": "Explicit reload erases the unsaved reason, confirmation and owned validation state"
+    },
+    {
+      "scenario": "unsaved_creator_reason_clears_on_reload_expiry_hide_and_access_loss",
+      "check": "Explicit reload performs no creator decision, provider work or domain mutation"
+    },
+    {
+      "scenario": "unsaved_creator_reason_clears_on_reload_expiry_hide_and_access_loss",
+      "check": "malformed unsaved reason has local error state before expiry without a command"
+    },
+    {
+      "scenario": "unsaved_creator_reason_clears_on_reload_expiry_hide_and_access_loss",
+      "check": "Private deadline expiry erases the unsaved reason, confirmation and owned validation state"
+    },
+    {
+      "scenario": "unsaved_creator_reason_clears_on_reload_expiry_hide_and_access_loss",
+      "check": "Private deadline expiry performs no creator decision, provider work or domain mutation"
+    },
+    {
+      "scenario": "unsaved_creator_reason_clears_on_reload_expiry_hide_and_access_loss",
+      "check": "Hidden-page clearing erases the unsaved reason, confirmation and owned validation state"
+    },
+    {
+      "scenario": "unsaved_creator_reason_clears_on_reload_expiry_hide_and_access_loss",
+      "check": "Hidden-page clearing performs no creator decision, provider work or domain mutation"
+    },
+    {
+      "scenario": "unsaved_creator_reason_clears_on_reload_expiry_hide_and_access_loss",
+      "check": "hidden creator page also clears the private offer and invoice controls"
+    },
+    {
+      "scenario": "unsaved_creator_reason_clears_on_reload_expiry_hide_and_access_loss",
+      "check": "Lost-access reload erases the unsaved reason, confirmation and owned validation state"
+    },
+    {
+      "scenario": "unsaved_creator_reason_clears_on_reload_expiry_hide_and_access_loss",
+      "check": "Lost-access reload performs no creator decision, provider work or domain mutation"
+    },
+    {
+      "scenario": "unsaved_creator_reason_clears_on_reload_expiry_hide_and_access_loss",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "buyer_acceptance_keyboard_exact_retry",
+      "check": "buyer offer load preserves focus and leaves acceptance unchecked"
+    },
+    {
+      "scenario": "buyer_acceptance_keyboard_exact_retry",
+      "check": "buyer exact acceptance gives every visible form control a name and resolving descriptions"
+    },
+    {
+      "scenario": "buyer_acceptance_keyboard_exact_retry",
+      "check": "buyer exact acceptance fits a mobile viewport"
+    },
+    {
+      "scenario": "buyer_acceptance_keyboard_exact_retry",
+      "check": "uncertain acceptance freezes confirmation and restores exact retry focus"
+    },
+    {
+      "scenario": "buyer_acceptance_keyboard_exact_retry",
+      "check": "acceptance retry preserves exact bytes and a single durable acceptance"
+    },
+    {
+      "scenario": "buyer_acceptance_keyboard_exact_retry",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "buyer_acceptance_keyboard_exact_retry",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "buyer_acceptance_keyboard_exact_retry",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "buyer_acceptance_late_success_respects_navigation",
+      "check": "skip navigation is keyboard available and preserves the private-link URL"
+    },
+    {
+      "scenario": "buyer_acceptance_late_success_respects_navigation",
+      "check": "late acceptance retains deliberate navigation focus"
+    },
+    {
+      "scenario": "buyer_acceptance_late_success_respects_navigation",
+      "check": "navigation never adds another acceptance or invoice"
+    },
+    {
+      "scenario": "buyer_acceptance_late_success_respects_navigation",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_invoice_keyboard_recovery_and_stale_retry",
+      "check": "draft creation returns focus to its recorded invoice and leaves send unconfirmed"
+    },
+    {
+      "scenario": "creator_invoice_keyboard_recovery_and_stale_retry",
+      "check": "uncertain delivery offers a separate unconfirmed recovery action without another send"
+    },
+    {
+      "scenario": "creator_invoice_keyboard_recovery_and_stale_retry",
+      "check": "creator invoice recovery gives every visible form control a name and resolving descriptions"
+    },
+    {
+      "scenario": "creator_invoice_keyboard_recovery_and_stale_retry",
+      "check": "creator invoice recovery fits a mobile viewport"
+    },
+    {
+      "scenario": "creator_invoice_keyboard_recovery_and_stale_retry",
+      "check": "creator-invoice-recovery-keyboard mobile content fits the viewport"
+    },
+    {
+      "scenario": "creator_invoice_keyboard_recovery_and_stale_retry",
+      "check": "lost recovery reply keeps the reviewed action frozen and keyboard-reachable"
+    },
+    {
+      "scenario": "creator_invoice_keyboard_recovery_and_stale_retry",
+      "check": "stale exact recovery replay clears private view and focuses reload without provider work"
+    },
+    {
+      "scenario": "creator_invoice_keyboard_recovery_and_stale_retry",
+      "check": "keyboard reload shows completed delivery with one create/send and no financial authority"
+    },
+    {
+      "scenario": "creator_invoice_keyboard_recovery_and_stale_retry",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_recovery_late_success_respects_navigation",
+      "check": "skip navigation is keyboard available and preserves the private-link URL"
+    },
+    {
+      "scenario": "creator_recovery_late_success_respects_navigation",
+      "check": "late recovery success respects a user's new keyboard focus"
+    },
+    {
+      "scenario": "creator_recovery_late_success_respects_navigation",
+      "check": "focus changes cannot duplicate a recovery, creation or send"
+    },
+    {
+      "scenario": "creator_recovery_late_success_respects_navigation",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_pending_issuance_expiry_restores_reload",
+      "check": "pending issuance has disabled its focused action"
+    },
+    {
+      "scenario": "creator_pending_issuance_expiry_restores_reload",
+      "check": "expiry restores creator recovery and late issuance cannot reveal a private link"
+    },
+    {
+      "scenario": "creator_pending_issuance_expiry_restores_reload",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "buyer_pending_intake_expiry_restores_code",
+      "check": "expired pending intake restores code entry and clears all private form data"
+    },
+    {
+      "scenario": "buyer_pending_intake_expiry_restores_code",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "buyer_pending_intake_expiry_restores_code",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "buyer_pending_intake_expiry_restores_code",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "buyer_pending_expiry_preserves_deliberate_navigation",
+      "check": "skip navigation is keyboard available and preserves the private-link URL"
+    },
+    {
+      "scenario": "buyer_pending_expiry_preserves_deliberate_navigation",
+      "check": "expiry and a late reply preserve the user's deliberate main-content focus"
+    },
+    {
+      "scenario": "buyer_pending_expiry_preserves_deliberate_navigation",
+      "check": "expiry navigation does not issue another request"
+    },
+    {
+      "scenario": "buyer_pending_expiry_preserves_deliberate_navigation",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "late_acceptance_cannot_restore_expired_private_state",
+      "check": "expired private view remains clear after a late committed acceptance"
+    },
+    {
+      "scenario": "late_acceptance_cannot_restore_expired_private_state",
+      "check": "expired view retains a named keyboard recovery path without automatic resubmission"
+    },
+    {
+      "scenario": "late_acceptance_cannot_restore_expired_private_state",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "private_code_errors_and_skip_navigation",
+      "browserRequests": 6,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 0,
+        "buyer_capabilities": 0,
+        "request_submissions": 0,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_link_keyboard_retry_and_expiry",
+      "browserRequests": 6,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 0,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "buyer_intake_linked_validation_exact_retry_and_success",
+      "browserRequests": 6,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "buyer_intake_late_success_respects_keyboard_navigation",
+      "browserRequests": 5,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "buyer_clarification_linked_errors_and_saved_focus",
+      "browserRequests": 5,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 1,
+        "clarification_answers": 12,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_rights_errors_and_confirmed_save",
+      "browserRequests": 7,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_rights_late_success_preserves_navigation",
+      "browserRequests": 7,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_decision_reason_error_and_approval_focus",
+      "browserRequests": 11,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 1,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "unsaved_creator_reason_clears_on_reload_expiry_hide_and_access_loss",
+      "browserRequests": 19,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "buyer_acceptance_keyboard_exact_retry",
+      "browserRequests": 8,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "buyer_acceptance_late_success_respects_navigation",
+      "browserRequests": 7,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_invoice_keyboard_recovery_and_stale_retry",
+      "browserRequests": 22,
+      "providerCalls": {
+        "oauth": 3,
+        "create": 1,
+        "send": 1,
+        "get": 2
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 1,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 2,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_recovery_late_success_respects_navigation",
+      "browserRequests": 11,
+      "providerCalls": {
+        "oauth": 3,
+        "create": 1,
+        "send": 1,
+        "get": 2
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 1,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 2,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_pending_issuance_expiry_restores_reload",
+      "browserRequests": 5,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 0,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "buyer_pending_intake_expiry_restores_code",
+      "browserRequests": 4,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "buyer_pending_expiry_preserves_deliberate_navigation",
+      "browserRequests": 4,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "late_acceptance_cannot_restore_expired_private_state",
+      "browserRequests": 5,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    }
+  ],
+  "browser": "140.0.7339.16"
+}

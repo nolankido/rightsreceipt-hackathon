@@ -1,0 +1,24 @@
+.rr-mock-page { display: grid; gap: 1.5rem; max-width: 62rem; margin: 0 auto; }
+.rr-mock-page > h1 { font-size: clamp(1.6rem, 4vw, 2.5rem); margin: 0; }
+.rr-mock-warning { display: grid; gap: .3rem; padding: 1rem 1.2rem; background: #fff6e9; color: #5c3200; border: 2px solid #9c6200; border-radius: .6rem; }
+.rr-mock-warning strong { font-size: .92rem; letter-spacing: .06em; }
+.rr-mock-stage { padding: .85rem 1rem; background: #f0f3f0; border-left: 4px solid #155f52; margin: 0; font-weight: 650; }
+.rr-mock-summary { display: grid; grid-template-columns: minmax(10rem, 16rem) minmax(0, 1fr); gap: 1.4rem; }
+.rr-mock-summary img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: .5rem; background: #ddd; }
+.rr-mock-summary dl, .rr-mock-verification { display: grid; gap: .7rem; margin: 0; }
+.rr-mock-summary dl > div, .rr-mock-verification > div { display: grid; gap: .1rem; }
+.rr-mock-summary dt, .rr-mock-verification dt { color: #5d6763; font-size: .82rem; }
+.rr-mock-summary dd, .rr-mock-verification dd { margin: 0; overflow-wrap: anywhere; }
+.rr-mock-summary table { width: 100%; grid-column: 1/-1; border-collapse: collapse; }
+.rr-mock-summary th, .rr-mock-summary td { text-align: left; border-bottom: 1px solid #cfd5d1; padding: .65rem; }
+.rr-mock-summary td:last-child, .rr-mock-summary th:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.rr-mock-summary caption { text-align: left; margin-bottom: .5rem; font-weight: 650; }
+.rr-mock-actions { display: flex; align-items: flex-start; flex-wrap: wrap; gap: .8rem; padding: 1.25rem; border: 1px solid #cfd5d1; border-radius: .6rem; }
+.rr-mock-actions h2, .rr-mock-actions p { width: 100%; margin: 0; }
+.rr-mock-actions label:not(.rr-mock-checkbox) { width: 100%; display: grid; gap: .4rem; }
+.rr-mock-actions textarea { width: 100%; font: inherit; padding: .75rem; border: 1px solid #cfd5d1; border-radius: .4rem; }
+.rr-mock-checkbox { display: flex; gap: .7rem; align-items: center; min-height: 2.75rem; width: 100%; }
+.rr-mock-checkbox input { width: 1.3rem; height: 1.3rem; }
+.rr-mock-error { padding: 1rem; background: #fff1ed; color: #812e1a; }
+.rr-mock-hash { overflow-wrap: anywhere; }
+@media(max-width: 38rem) { .rr-mock-summary { grid-template-columns: 1fr; } .rr-mock-summary table { grid-column: auto; } }

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "rightsreceipt-turn097-validation-v1",
+  "date": "2026-11-04",
+  "target": "Sandbox callback derivation, authenticated-registration preflight with injected provider, and acceptance linkage",
+  "runtime": "Node v22.16.0",
+  "executionEnvironment": "isolated container checkout of exact GitHub blob source modules, not a full private repository checkout",
+  "suites": [
+    "scripts/support/sandbox-webhook-target.test.mjs",
+    "scripts/support/sandbox-webhook-callback.test.mjs",
+    "scripts/support/sandbox-acceptance-linkage.test.mjs",
+    "isolated readiness-integration-smoke.test.mjs (container-only integration assertions; same source modules as GitHub)"
+  ],
+  "tests": {
+    "total": 30,
+    "passed": 30,
+    "failed": 0,
+    "skipped": 0,
+    "reportedDurationMs": 139.316438
+  },
+  "sourceGitBlobShas": {
+    "scripts/support/sandbox-webhook-target.mjs": "ee6b67f4c9b15d9505f5ba3a384f023d49fa43cf",
+    "scripts/support/sandbox-webhook-target.test.mjs": "7e0be4284c9b011ae9befac07284ffb150582a8e",
+    "scripts/support/sandbox-webhook-readiness.mjs": "72edd52ca182b4274503dd90293d86c38fa55a25",
+    "scripts/support/sandbox-webhook-callback.mjs": "3275d69395a46b3778533b6b30e095409826360f",
+    "scripts/support/sandbox-webhook-callback.test.mjs": "f257f6ddad8ce06df926e499c72bb78740fc7a02",
+    "scripts/support/sandbox-acceptance-linkage.mjs": "4891f124c0a418e6a1485c4040af11494dd781a4",
+    "scripts/support/sandbox-acceptance-linkage.test.mjs": "c1f2ab9c2ff189b8bab08de7dbd18e55f5580db9"
+  },
+  "confirmedBehaviors": [
+    "direct exact callback URL configuration remains supported",
+    "one-shot public-origin and private-route-file pair derives the exact current callback",
+    "invalid, missing or symlinked private route is rejected",
+    "both configuration modes simultaneously are rejected",
+    "preflight compares actual authenticated inventory with intended callback from private file",
+    "stale callback fails after OAuth and webhook inventory reads",
+    "missing or malformed route fails before any injected provider request",
+    "callback URL and private route are not included in sanitized preflight evidence"
+  ],
+  "limitations": [
+    "The readiness-integration-smoke file is local test-only; source modules match committed blob hashes.",
+    "Provider HTTP responses were injected; actual PayPal Sandbox OAuth, registration reachability, payment and signed webhook were not tested.",
+    "The complete private source checkout and pnpm 12.8.2 dependency set were unavailable in this execution environment.",
+    "Full pnpm verify and release:verify remain pending; no release artifact or Devpost submission was produced."
+  ]
+}

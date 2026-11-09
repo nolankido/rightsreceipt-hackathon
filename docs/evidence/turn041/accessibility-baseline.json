@@ -1,0 +1,26 @@
+{
+  "mode": "Pre-change browser observations against actual handlers",
+  "browser": "140.0.7339.16",
+  "observations": [
+    {
+      "scenario": "creator_link_success",
+      "focus": {
+        "tag": "BODY",
+        "id": ""
+      },
+      "expected": "Visible issued heading",
+      "caseRows": 1
+    },
+    {
+      "scenario": "buyer_invalid_private_code",
+      "focus": {
+        "tag": "BUTTON",
+        "id": ""
+      },
+      "invalid": null,
+      "expected": "Code field with associated error"
+    }
+  ],
+  "source_revision": "2a50b54d5a72c1c427d18248dffebeb0d25c4618",
+  "source_mode": "git archive of the unchanged Turn 040 source"
+}

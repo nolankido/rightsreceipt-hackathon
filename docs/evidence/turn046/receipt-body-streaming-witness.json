@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "rightsreceipt-body-streaming-witness-v1",
+  "status": "bounded_streaming_verified",
+  "runtime": "v22.18.0",
+  "source": {
+    "path": "packages/receipts/src/client.ts",
+    "sha256": "65aa5a602ff6bc50bbfea0fb8b2c17073e68b87a6e9a318d300c0ff69ed39aca"
+  },
+  "scriptSha256": "060c9233f5e4c182414f7af80e86b8437c586c3f978e8d436263543b0a48f19f",
+  "scenario": "same_oversized_json_stream_canceled_at_first_chunk_that_exceeds_limit",
+  "syntheticInputs": {
+    "code": "One synthetic valid 43-character token made from repeated a; no real capability.",
+    "initialView": "Minimal synthetic current HTML with correct media/timing/digest metadata for the injected export bytes.",
+    "exportResponse": {
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bodyDescription": "Synthetic receipt-shaped JSON with an intentionally oversized padding string.",
+      "suppliedBodyBytes": 394831,
+      "advertisedDigestMatchesBytesAndView": true
+    },
+    "stream": "Actual Node Web-standard Response and ReadableStream, producing at most 65536 bytes per chunk with normal ReadableStream prefetch, without a socket or server.",
+    "clock": "Fixed wall and monotonic clocks during completed reads; scheduled callbacks are not advanced. This is a byte-budget witness, not a latency test."
+  },
+  "observed": {
+    "requestCount": 2,
+    "bodyLimitBytes": 262144,
+    "suppliedBodyBytes": 394831,
+    "producedChunks": 6,
+    "producedBytes": 393216,
+    "streamReachedEnd": false,
+    "streamCancellationCalls": 1,
+    "clientReadCalls": 5,
+    "clientDeliveredBytes": 327680,
+    "blobConsumptionCalls": 0,
+    "bytesBufferedThroughBlob": 0,
+    "clientArrayBufferConversionCalls": 0,
+    "clientDigestCalls": 0,
+    "downloadCount": 0,
+    "privateDocumentCleared": true,
+    "requestSignalAbortedAfterRejection": true,
+    "statusMessage": "Receipt format could not be verified. Enter your access token to try again."
+  },
+  "limitations": [
+    "Actual receipt client runs in a Node VM with a minimal synthetic DOM, initial HTML and injected transport.",
+    "The client stops after the first delivered chunk that would exceed the 262144-byte accumulator, cancels the stream before EOF and rejects without parsing, hashing or download.",
+    "The production handler emits bounded canonical JSON. This witness injects an unexpected oversized response, not an ordinary handler output or authorization bypass.",
+    "An actual ReadableStream may prefetch beyond the last client-delivered chunk. Produced bytes and delivered bytes are reported separately, not claimed as heap or browser memory bounds.",
+    "No browser, HTTP server, live network, database, credentials, payment or provider is used.",
+    "The baseline in turn045 consumed 394831 bytes to EOF with Response.blob and no stream cancellation. This after-change witness uses the same payload and 65536-byte chunks."
+  ]
+}

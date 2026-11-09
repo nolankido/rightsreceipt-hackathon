@@ -1,0 +1,7 @@
+.rr-clarification-shell {max-width: 62rem; margin-inline: auto; display: grid; gap: 1.5rem;}
+.rr-clarification-list {display: grid; gap: 1rem; padding-left: 1.5rem;}
+.rr-clarification-list > li {line-height: 1.65;}
+.rr-clarification-reason {display: inline-block; padding-inline: .5rem; margin-left: .5rem; font-size: .8rem; border: 1px solid currentColor; border-radius: 1rem;}
+.rr-clarification-evidence {padding-left: 1.25rem; font-size: .875rem; overflow-wrap: anywhere;}
+.rr-clarification-summary {font-weight: 600;}
+@media (max-width: 40rem) {.rr-clarification-shell {padding-inline: .25rem;} .rr-clarification-list {padding-left: 1.15rem;}}

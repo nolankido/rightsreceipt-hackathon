@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "rightsreceipt-turn102-expanded-token-audit-v1",
+  "date": "2026-11-04",
+  "change": "Public-source audit now detects GitHub OAuth/App/refresh token formats, JWT-style installation tokens, OpenAI-style API key shapes, and AWS temporary access-key IDs while retaining existing provider patterns.",
+  "executed": {
+    "runtime": "Node.js v22.16.0",
+    "workspace": "isolated directory /mnt/data/rr102 with exact GitHub file contents; not full private repository checkout",
+    "command": "node --test --test-reporter=tap scripts/support/public-audit-token-patterns.test.mjs",
+    "total": 7,
+    "passed": 7,
+    "failed": 0,
+    "skipped": 0,
+    "tapSha256": "686cc7c19ff2be78d4ae7c21968be3d005591004775759347bc1eeb1151f2a59"
+  },
+  "exactSourceGitBlobShas": {
+    "scripts/support/public-audit-token-patterns.mjs": "bed8521dbb74564a145f232ade51b8ff6c70967f",
+    "scripts/support/public-audit-token-patterns.test.mjs": "f64c60245d71b39150422febdc80be71ecb80679",
+    "scripts/public-release-audit.mjs": "a4653f263f5a71c7fbb04d3219c99feb32493e69",
+    "scripts/public-release-audit-local.test.mjs": "56b967033a507890e52b8dd89944aeb2cc445482",
+    "scripts/export-public-release-local.test.mjs": "c33f7c662cd85f814003f7282046cf1d0e143b38",
+    "package.json": "74f2d3a2bb461b578b3f92adcf795380b936d46a"
+  },
+  "integrationChecks": {
+    "approach": "Executed the exact committed scanText function from the release scanner with the imported strict fixture classifier and expanded token helper in an isolated JavaScript evaluator. Test values were generated in memory, never emitted into saved evidence.",
+    "total": 8,
+    "passed": 8,
+    "positiveCases": [
+      "GitHub OAuth",
+      "GitHub App user token",
+      "GitHub App installation JWT-style token",
+      "GitHub refresh token",
+      "OpenAI-style project key",
+      "AWS temporary access key"
+    ],
+    "negativeCases": [
+      "Short token prefix without secret body",
+      "Explicitly labeled ordinary synthetic value"
+    ],
+    "sourceFilesRechecked": 7,
+    "sourceFileFindings": 0,
+    "newHelpersCopiedIntoTemporaryGitFixtureTests": true
+  },
+  "limitations": [
+    "The full current-tree public source audit, complete synthetic Git history fixture suite and public export tests have not been executed against the complete private checkout.",
+    "The format heuristics do not establish token authenticity and cannot detect every possible secret.",
+    "No PayPal Sandbox API call, authenticated payment, verified signed webhook, public repository creation, YouTube video publication or Devpost submission was performed."
+  ]
+}

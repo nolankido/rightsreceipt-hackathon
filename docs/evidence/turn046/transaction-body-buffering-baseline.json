@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "rightsreceipt-transaction-body-buffering-baseline-v1",
+  "status": "gap_reproduced",
+  "runtime": "v22.18.0",
+  "source": {
+    "path": "apps/web/src/request-deadline-client.ts",
+    "sha256": "83422f667d7fc8ac694b773e23d4c8822c5a599af613205c59a03bd61ea68ced"
+  },
+  "scriptSha256": "b2ab5fbb5872ac005581e0f84d8fbca9d67948bfccbaa430752f1184c635ee58",
+  "scenario": "shared_transaction_JSON_deadline_helper_fully_buffers_an_unexpected_multi_megabyte_body",
+  "observed": {
+    "suppliedBodyBytes": 2097181,
+    "producedBytes": 2097181,
+    "chunksProduced": 33,
+    "streamReachedEnd": true,
+    "streamCancellationCalls": 0,
+    "jsonConsumptionCalls": 1,
+    "checkedResponses": 1,
+    "returnedPaddingCharacters": 2097152,
+    "requestCount": 1,
+    "requestSignalAborted": false,
+    "outstandingTimers": 0
+  },
+  "nextWork": "Derive supported transaction-view/command response byte budgets, consume decoded streams within those budgets, and preserve parent cancellation, one request deadline, safe errors and same-command uncertain-outcome recovery.",
+  "limitations": [
+    "The actual shared deadline helper runs in a deterministic Node VM using actual Node Response and ReadableStream with synthetic JSON and fetch.",
+    "The reader has a time deadline but no explicit body-byte ceiling. This witness records complete response.json consumption and a returned parsed object, not a violation of an existing declared size contract.",
+    "Synthetic status/MIME validation models the helper callback interface; this is not a transaction DTO, handler authorization or application-rendering test.",
+    "The returned padding is not claimed to be displayed or accepted by a caller. Each flow still applies its own validation and ownership rules.",
+    "Fixed wall/monotonic clocks isolate byte consumption. This does not measure latency, heap allocation or browser memory exhaustion.",
+    "No browser, listening server, database, provider, credentials, command execution, live network or deployment is used."
+  ]
+}

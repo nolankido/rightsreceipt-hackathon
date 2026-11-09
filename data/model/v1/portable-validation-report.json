@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "rightsreceipt-portable-validation-v1",
+  "scope": "validation_only_heldout_not_opened",
+  "artifactSha256": "6ea099b72fe00ce4643426a2729a84b207ae8eb3460c75488fab3502037e73e2",
+  "validationSha256": "cf8a710db4210f3e9c11dd92a9c875ea487488f521d08c46477b4ed8a4bddb95",
+  "recordCount": 240,
+  "totalFields": 2880,
+  "exactLabelMatches": 2851,
+  "stateMatches": 2853,
+  "falseResolved": 26,
+  "injectionPairs": 12,
+  "identicalInjectionPairs": 12,
+  "fieldResults": {
+    "use_purpose": {
+      "correct": 237,
+      "falseResolved": 3,
+      "total": 240,
+      "stateCorrect": 237
+    },
+    "channels": {
+      "correct": 238,
+      "falseResolved": 2,
+      "total": 240,
+      "stateCorrect": 238
+    },
+    "paid_advertising": {
+      "correct": 239,
+      "falseResolved": 1,
+      "total": 240,
+      "stateCorrect": 239
+    },
+    "territories": {
+      "correct": 236,
+      "falseResolved": 4,
+      "total": 240,
+      "stateCorrect": 236
+    },
+    "start_date": {
+      "correct": 238,
+      "falseResolved": 2,
+      "total": 240,
+      "stateCorrect": 238
+    },
+    "duration_days": {
+      "correct": 237,
+      "falseResolved": 3,
+      "total": 240,
+      "stateCorrect": 237
+    },
+    "max_impressions": {
+      "correct": 234,
+      "falseResolved": 5,
+      "total": 240,
+      "stateCorrect": 236
+    },
+    "exclusivity": {
+      "correct": 237,
+      "falseResolved": 1,
+      "total": 240,
+      "stateCorrect": 237
+    },
+    "modification_scope": {
+      "correct": 238,
+      "falseResolved": 2,
+      "total": 240,
+      "stateCorrect": 238
+    },
+    "attribution": {
+      "correct": 240,
+      "falseResolved": 0,
+      "total": 240,
+      "stateCorrect": 240
+    },
+    "sublicensing": {
+      "correct": 238,
+      "falseResolved": 2,
+      "total": 240,
+      "stateCorrect": 238
+    },
+    "ai_use": {
+      "correct": 239,
+      "falseResolved": 1,
+      "total": 240,
+      "stateCorrect": 239
+    }
+  },
+  "categoryResults": {
+    "complete_supported": {
+      "records": 24,
+      "exactFields": 288,
+      "falseResolved": 0
+    },
+    "omission": {
+      "records": 24,
+      "exactFields": 288,
+      "falseResolved": 0
+    },
+    "contradiction": {
+      "records": 24,
+      "exactFields": 273,
+      "falseResolved": 14
+    },
+    "unsupported": {
+      "records": 24,
+      "exactFields": 276,
+      "falseResolved": 10
+    },
+    "ambiguous": {
+      "records": 24,
+      "exactFields": 288,
+      "falseResolved": 0
+    },
+    "negation": {
+      "records": 24,
+      "exactFields": 288,
+      "falseResolved": 0
+    },
+    "injection": {
+      "records": 24,
+      "exactFields": 288,
+      "falseResolved": 0
+    },
+    "unicode": {
+      "records": 24,
+      "exactFields": 288,
+      "falseResolved": 0
+    },
+    "numeric_boundary": {
+      "records": 24,
+      "exactFields": 286,
+      "falseResolved": 2
+    },
+    "mixed_channel": {
+      "records": 24,
+      "exactFields": 288,
+      "falseResolved": 0
+    }
+  },
+  "calibrationCompleted": false,
+  "authorizedToQuote": false
+}

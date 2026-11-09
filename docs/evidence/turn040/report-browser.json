@@ -1,0 +1,24 @@
+{
+  "mode": "offline generated judge report in Chromium",
+  "runtime": "v22.18.0",
+  "browser": "140.0.7339.16",
+  "checks": [
+    "real generated report opens with a single clear heading",
+    "all three scenarios and resets are visible",
+    "source stylesheet satisfies the offline integrity policy",
+    "simulation and scheduled authority are visible",
+    "desktop has no horizontal overflow",
+    "trace disclosure works through keyboard without application JavaScript",
+    "recovery trace shows the real interrupted and stale replay states",
+    "reset evidence exposes every domain table",
+    "mobile has no horizontal overflow",
+    "expanded mobile trace wraps route templates without overflow",
+    "printing exposes all otherwise collapsed traces",
+    "printing exposes all reset table rows",
+    "report contains no script, form or remote resource elements",
+    "report causes no external request or browser error"
+  ],
+  "status": "passed",
+  "passed": 14,
+  "htmlSha256": "433d83c534c92131ba91cb886368ea6cedbe958be69f35949b4f12aebfebc30e"
+}

@@ -1,0 +1,17 @@
+import {test} from "node:test";
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {fileURLToPath} from "node:url";
+import {buildCorpus,auditCorpus,sha256} from "./generate-synthetic.mjs";
+const sourceHash=sha256(readFileSync(fileURLToPath(new URL("./generate-synthetic.mjs",import.meta.url)),"utf8"));
+const corpus=buildCorpus(sourceHash);
+test("valid SHA-256 and complete corpus",()=>{assert.equal(sha256("abc"),"ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad");assert.equal(auditCorpus(corpus).records,1440);});
+test("fixed train validation and held-out sizes",()=>assert.deepEqual(corpus.manifest.validation.splitCounts,{train:960,validation:240,test:240}));
+test("byte-for-byte deterministic generation",()=>assert.deepEqual(buildCorpus(sourceHash).files,corpus.files));
+test("all twelve fields have exact original UTF-16 spans",()=>{for(const row of corpus.records)for(const f of row.fieldLabels)for(const s of f.evidenceSpans)assert.equal(row.inputText.slice(s.startUtf16,s.endUtf16),s.text);});
+test("missing rights abstain, not default",()=>{for(const row of corpus.records)for(const f of row.fieldLabels)if(f.resolutionState!=="resolved")assert.equal(f.normalizedValue,null);});
+test("each partition contains all ten categories",()=>{for(const split of ["train","validation","test"])assert.equal(Object.keys(corpus.manifest.validation.categoryCounts[split]).length,10);});
+test("held-out families are disjoint",()=>{const families=corpus.manifest.validation.templateFamilies;for(const [a,b] of [["train","validation"],["train","test"],["validation","test"]])assert.equal(families[a].filter(x=>families[b].includes(x)).length,0);});
+test("paired attacks preserve licensing labels",()=>{const pairs=new Map();for(const r of corpus.records)if(r.category==="injection"){const arr=pairs.get(r.scenarioGroupId)||[];arr.push(r);pairs.set(r.scenarioGroupId,arr);}assert.equal(pairs.size,72);for(const v of pairs.values())assert.deepEqual(v[0].fieldLabels,v[1].fieldLabels);});
+test("unsafe input excluded from learning partitions",()=>{assert.equal(corpus.quarantined.length,24);assert.ok(corpus.quarantined.every(x=>!x.intakeEligible));});
+test("manifest matches committed generated data",()=>{for(const [name,meta] of Object.entries(corpus.manifest.files))assert.equal(sha256(corpus.files[name]),meta.sha256);});

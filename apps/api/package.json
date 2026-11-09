@@ -1,0 +1,15 @@
+{
+  "name": "@rightsreceipt/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@rightsreceipt/ai-runtime": "workspace:*",
+    "@rightsreceipt/application": "workspace:*",
+    "@rightsreceipt/contracts": "workspace:*",
+    "@rightsreceipt/domain": "workspace:*",
+    "@rightsreceipt/observability": "workspace:*",
+    "@rightsreceipt/persistence": "workspace:*",
+    "hono": "4.11.1"
+  }
+}

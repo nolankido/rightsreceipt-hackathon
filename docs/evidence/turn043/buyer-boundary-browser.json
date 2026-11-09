@@ -1,0 +1,268 @@
+{
+  "mode": "buyer private-boundary browser verification through actual native handlers",
+  "runtime": "v22.18.0",
+  "scriptSha256": "5642eaf74a1586345c0d19428c156228d127ec7360527a917c62d4509bb3f0de",
+  "clientSourceSha256": {
+    "buyer-review-client": "9cccd5f1f1aec2e6a36c617c9f67ae13635f39f4c78bfd1271cc8616c342c45d",
+    "request-deadline-client": "83422f667d7fc8ac694b773e23d4c8822c5a599af613205c59a03bd61ea68ced",
+    "form-accessibility-client": "0d912659b8dddecaebbaccb2eb363c5166b30fed4dfa5dffdd472c85ceed8978"
+  },
+  "limitations": [
+    "Synthetic initial request, human-reviewed terms and quote; initial intake is outside this suite",
+    "Actual signed-assertion verifier, native handlers, SQLite migrations and command services; gateway/provider transport is injected",
+    "One outgoing acceptance is intentionally corrupted before the actual handler to produce HTTP 400",
+    "The generic load-failure scenarios inject a one-shot status-render exception after real reads complete",
+    "Browser time and delayed transport are controlled locally; no live gateway, provider, Worker or D1",
+    "Targeted private-state, command and focus verification; no screen-reader or full accessibility claim"
+  ],
+  "completed": true,
+  "passed": 42,
+  "checks": [
+    {
+      "scenario": "native_conflict_clears_access_beyond_lifetime",
+      "check": "terminal cleanup exposes empty code entry and disables retained-access Reload"
+    },
+    {
+      "scenario": "native_conflict_clears_access_beyond_lifetime",
+      "check": "terminal cleanup erases rights, confirmation and financial navigation"
+    },
+    {
+      "scenario": "native_conflict_clears_access_beyond_lifetime",
+      "check": "the actual handler rejects the stale command without recording acceptance"
+    },
+    {
+      "scenario": "native_conflict_clears_access_beyond_lifetime",
+      "check": "the cleared page stays locked beyond the former private lifetime"
+    },
+    {
+      "scenario": "native_conflict_clears_access_beyond_lifetime",
+      "check": "programmatic stale controls cannot reuse the bearer or dispatch authority"
+    },
+    {
+      "scenario": "native_conflict_clears_access_beyond_lifetime",
+      "check": "deliberate code reentry loads changed rights with fresh unchecked confirmation"
+    },
+    {
+      "scenario": "native_conflict_clears_access_beyond_lifetime",
+      "check": "code reentry is read-only and does not reuse the rejected command"
+    },
+    {
+      "scenario": "native_conflict_clears_access_beyond_lifetime",
+      "check": "private access remains absent from URLs, DOM, storage and cookies"
+    },
+    {
+      "scenario": "native_conflict_clears_access_beyond_lifetime",
+      "check": "native routing finishes without browser errors, provider calls or manufactured payment authority"
+    },
+    {
+      "scenario": "native_bad_command_clears_pending_identity",
+      "check": "terminal cleanup exposes empty code entry and disables retained-access Reload"
+    },
+    {
+      "scenario": "native_bad_command_clears_pending_identity",
+      "check": "terminal cleanup erases rights, confirmation and financial navigation"
+    },
+    {
+      "scenario": "native_bad_command_clears_pending_identity",
+      "check": "the actual handler rejects the injected malformed command as HTTP 400"
+    },
+    {
+      "scenario": "native_bad_command_clears_pending_identity",
+      "check": "programmatic stale controls cannot reuse the bearer or dispatch authority"
+    },
+    {
+      "scenario": "native_bad_command_clears_pending_identity",
+      "check": "reentry alone does not accept and leaves confirmation unchecked"
+    },
+    {
+      "scenario": "native_bad_command_clears_pending_identity",
+      "check": "a separately confirmed action uses a fresh command identity"
+    },
+    {
+      "scenario": "native_bad_command_clears_pending_identity",
+      "check": "private access remains absent from URLs, DOM, storage and cookies"
+    },
+    {
+      "scenario": "native_bad_command_clears_pending_identity",
+      "check": "native routing finishes without browser errors, provider calls or manufactured payment authority"
+    },
+    {
+      "scenario": "held_conflict_respects_moved_keyboard_focus",
+      "check": "terminal cleanup exposes empty code entry and disables retained-access Reload"
+    },
+    {
+      "scenario": "held_conflict_respects_moved_keyboard_focus",
+      "check": "terminal cleanup erases rights, confirmation and financial navigation"
+    },
+    {
+      "scenario": "held_conflict_respects_moved_keyboard_focus",
+      "check": "a delayed conflict does not take focus back after keyboard navigation"
+    },
+    {
+      "scenario": "held_conflict_respects_moved_keyboard_focus",
+      "check": "the delayed rejection does not retry acceptance"
+    },
+    {
+      "scenario": "held_conflict_respects_moved_keyboard_focus",
+      "check": "private access remains absent from URLs, DOM, storage and cookies"
+    },
+    {
+      "scenario": "held_conflict_respects_moved_keyboard_focus",
+      "check": "native routing finishes without browser errors, provider calls or manufactured payment authority"
+    },
+    {
+      "scenario": "unexpected_load_completion_failure_locks_private_access",
+      "check": "terminal cleanup exposes empty code entry and disables retained-access Reload"
+    },
+    {
+      "scenario": "unexpected_load_completion_failure_locks_private_access",
+      "check": "terminal cleanup erases rights, confirmation and financial navigation"
+    },
+    {
+      "scenario": "unexpected_load_completion_failure_locks_private_access",
+      "check": "generic recovery does not reflect the injected internal failure text"
+    },
+    {
+      "scenario": "unexpected_load_completion_failure_locks_private_access",
+      "check": "the cleared page stays locked beyond the former private lifetime"
+    },
+    {
+      "scenario": "unexpected_load_completion_failure_locks_private_access",
+      "check": "programmatic stale controls cannot reuse the bearer or dispatch authority"
+    },
+    {
+      "scenario": "unexpected_load_completion_failure_locks_private_access",
+      "check": "deliberate recovery after a generic load failure performs no acceptance"
+    },
+    {
+      "scenario": "unexpected_load_completion_failure_locks_private_access",
+      "check": "private access remains absent from URLs, DOM, storage and cookies"
+    },
+    {
+      "scenario": "unexpected_load_completion_failure_locks_private_access",
+      "check": "native routing finishes without browser errors, provider calls or manufactured payment authority"
+    },
+    {
+      "scenario": "acknowledged_acceptance_survives_load_completion_failure",
+      "check": "terminal cleanup exposes empty code entry and disables retained-access Reload"
+    },
+    {
+      "scenario": "acknowledged_acceptance_survives_load_completion_failure",
+      "check": "terminal cleanup erases rights, confirmation and financial navigation"
+    },
+    {
+      "scenario": "acknowledged_acceptance_survives_load_completion_failure",
+      "check": "generic refresh failure retains the real save acknowledgement without internal details"
+    },
+    {
+      "scenario": "acknowledged_acceptance_survives_load_completion_failure",
+      "check": "programmatic stale controls cannot reuse the bearer or dispatch authority"
+    },
+    {
+      "scenario": "acknowledged_acceptance_survives_load_completion_failure",
+      "check": "code reentry reads the accepted state without resubmitting"
+    },
+    {
+      "scenario": "acknowledged_acceptance_survives_load_completion_failure",
+      "check": "private access remains absent from URLs, DOM, storage and cookies"
+    },
+    {
+      "scenario": "acknowledged_acceptance_survives_load_completion_failure",
+      "check": "native routing finishes without browser errors, provider calls or manufactured payment authority"
+    },
+    {
+      "scenario": "native_unavailable_write_keeps_exact_deliberate_retry",
+      "check": "a native service-unavailable response keeps a bounded uncertain command"
+    },
+    {
+      "scenario": "native_unavailable_write_keeps_exact_deliberate_retry",
+      "check": "the explicit nonterminal retry keeps identical bytes and records one acceptance"
+    },
+    {
+      "scenario": "native_unavailable_write_keeps_exact_deliberate_retry",
+      "check": "private access remains absent from URLs, DOM, storage and cookies"
+    },
+    {
+      "scenario": "native_unavailable_write_keeps_exact_deliberate_retry",
+      "check": "native routing finishes without browser errors, provider calls or manufactured payment authority"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "native_conflict_clears_access_beyond_lifetime",
+      "browserRequests": 7,
+      "acceptanceAttempts": [
+        {
+          "status": 409,
+          "injectedMalformedCommand": false
+        }
+      ],
+      "durableAcceptances": 0,
+      "providerCalls": 0
+    },
+    {
+      "name": "native_bad_command_clears_pending_identity",
+      "browserRequests": 10,
+      "acceptanceAttempts": [
+        {
+          "status": 400,
+          "injectedMalformedCommand": true
+        },
+        {
+          "status": 200,
+          "injectedMalformedCommand": false
+        }
+      ],
+      "durableAcceptances": 1,
+      "providerCalls": 0
+    },
+    {
+      "name": "held_conflict_respects_moved_keyboard_focus",
+      "browserRequests": 5,
+      "acceptanceAttempts": [
+        {
+          "status": 409,
+          "injectedMalformedCommand": false
+        }
+      ],
+      "durableAcceptances": 0,
+      "providerCalls": 0
+    },
+    {
+      "name": "unexpected_load_completion_failure_locks_private_access",
+      "browserRequests": 8,
+      "acceptanceAttempts": [],
+      "durableAcceptances": 0,
+      "providerCalls": 0
+    },
+    {
+      "name": "acknowledged_acceptance_survives_load_completion_failure",
+      "browserRequests": 9,
+      "acceptanceAttempts": [
+        {
+          "status": 200,
+          "injectedMalformedCommand": false
+        }
+      ],
+      "durableAcceptances": 1,
+      "providerCalls": 0
+    },
+    {
+      "name": "native_unavailable_write_keeps_exact_deliberate_retry",
+      "browserRequests": 8,
+      "acceptanceAttempts": [
+        {
+          "status": 503,
+          "injectedMalformedCommand": false
+        },
+        {
+          "status": 200,
+          "injectedMalformedCommand": false
+        }
+      ],
+      "durableAcceptances": 1,
+      "providerCalls": 0
+    }
+  ],
+  "browser": "140.0.7339.16"
+}

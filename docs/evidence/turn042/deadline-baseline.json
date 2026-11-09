@@ -1,0 +1,13 @@
+{
+  "baseCommit": "e4fc9afba9f30ee3f64cd4c6f6b2e140226a23de",
+  "scenario": "initial_creator_session_never_dispatched",
+  "clockAdvancedMs": 16000,
+  "observed": {
+    "status": "Checking your session and the current asset.",
+    "state": "loading",
+    "reloadDisabled": true
+  },
+  "caseRows": 0,
+  "providerCalls": 0,
+  "limitation": "Actual clean-commit page and handlers; session transport intentionally held before dispatch. Clock advanced deterministically, not a live service."
+}

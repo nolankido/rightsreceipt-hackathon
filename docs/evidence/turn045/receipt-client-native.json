@@ -1,0 +1,22 @@
+{
+  "runtime": "v22.18.0",
+  "command": [
+    "--no-warnings",
+    "--experimental-strip-types",
+    "scripts/receipt-client-local.test.mjs"
+  ],
+  "exit_code": 0,
+  "duration_s": 0.762,
+  "tests": 102,
+  "pass": 102,
+  "fail": 0,
+  "skipped": 0,
+  "cancelled": 0,
+  "script_sha256": "e90817b11eb96811aeb0b0b0cf7b5528c013c3b76ab70745dda35d2196144cbc",
+  "client_sha256": "212118c57bcb66f3f0671e54cadf72ff0b3bf581fea003b1d286497527fc4674",
+  "limitations": [
+    "Actual exported receipt client in a Node VM with synthetic DOM, response metadata, clocks, transport and output hooks.",
+    "Real WebCrypto SHA-256 verifies exact synthetic response bytes; delayed hashing uses an injected promise wrapper.",
+    "No browser rendering, handler authorization, database, receipt-chain or business-source integrity, provider or live transport is established."
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "rightsreceipt",
+  "main": "./apps/api/src/worker.ts",
+  "compatibility_date": "2026-10-25",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "upload_source_maps": true,
+  "vars": {
+    "APP_MODE": "local",
+    "PAYPAL_WEBHOOK_INTAKE_ENABLED": "false",
+    "PAYPAL_WEBHOOK_PROCESSING_ENABLED": "false",
+    "PAYPAL_RECONCILIATION_ENABLED": "false",
+    "PAYPAL_PERMISSION_LIFECYCLE_ENABLED": "false",
+    "RIGHTS_RECEIPT_ISSUANCE_ENABLED": "false",
+    "RIGHTS_PERMISSION_CLOCK_ENABLED": "false",
+    "RIGHTS_RECEIPT_READ_ENABLED": "false",
+    "RIGHTS_RECEIPT_PUBLIC_ORIGIN": "",
+    "HUMAN_CONSENT_ENABLED": "false",
+    "HUMAN_CONSENT_ORIGIN": "",
+    "RIGHTS_INVOICE_CREATION_ENABLED": "false",
+    "RIGHTS_INVOICE_SENDING_ENABLED": "false",
+    "CREATOR_ACCESS_ENABLED": "false",
+    "CREATOR_ACCESS_ORIGIN": "",
+    "CREATOR_ACCESS_ISSUER": "",
+    "CREATOR_ACCESS_AUDIENCE": "",
+    "CREATOR_ACCESS_PRINCIPALS": "[]",
+    "CREATOR_REVIEW_ENABLED": "false",
+    "BUYER_REVIEW_ENABLED": "false",
+    "BUYER_PAYMENT_ENABLED": "false",
+    "CLARIFICATION_ENABLED": "false",
+    "REQUEST_INTAKE_ENABLED": "false",
+    "RIGHTS_INVOICE_CONTROLS_ENABLED": "false",
+    "INVOICE_RECOVERY_ENABLED": "false",
+    "PAYPAL_SANDBOX_MERCHANT_NAME": "",
+    "PAYPAL_SANDBOX_MERCHANT_EMAIL": ""
+  },
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": [
+      "/api/*",
+      "/request/*",
+      "/health",
+      "/judge",
+      "/webhooks/*",
+      "/verify/receipt/*",
+      "/receipts/buyer",
+      "/assets/receipt-access.js",
+      "/creator/review/*",
+      "/assets/creator-review.js",
+      "/buyer/review",
+      "/assets/buyer-review.js",
+      "/buyer/clarification",
+      "/creator/clarification/*",
+      "/assets/buyer-clarification.js",
+      "/assets/creator-clarification.js",
+      "/buyer/request",
+      "/creator/requests/*",
+      "/assets/buyer-request-intake.js",
+      "/assets/creator-request-intake.js"
+    ]
+  },
+  "observability": {
+    "enabled": false
+  }
+}

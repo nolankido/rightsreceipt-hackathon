@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "rightsreceipt-turn100-public-audit-fixture-hardening-v1",
+  "date": "2026-11-04",
+  "issue": "A broad substring check treated an opaque secret as a synthetic fixture whenever its value contained fake/example/mock/fixture anywhere.",
+  "fix": "Fixture exemptions now require explicit placeholder syntax or a recognized leading fixture label. Production scan uses the new shared helper.",
+  "executed": {
+    "environment": "Node.js 22.16.0, isolated container test workspace",
+    "command": "node --test --test-reporter=tap scripts/support/public-audit-fixture-value.test.mjs",
+    "tests": 5,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "tapSha256": "d1598f662be49f858b8eb60006b6e9c5761bc4e35412a145f1bb60e1b98ac5a7"
+  },
+  "exactSourceGitBlobShas": {
+    "scripts/support/public-audit-fixture-value.mjs": "263635a9ad1e3276680e8ab243829dcf2cdf09f6",
+    "scripts/support/public-audit-fixture-value.test.mjs": "5d7d3b11a27771966ea68c5438e8d8dfceead36a",
+    "scripts/public-release-audit.mjs": "8bf90d57fea9a099d0d236583b76a02ff4992077"
+  },
+  "productionScannerReplay": {
+    "harness": "Production scanText, allowed-email data and finding helpers extracted from exact GitHub script and executed with the current imported fixture classifier in an isolated JavaScript evaluator. This is not a full Git history audit.",
+    "opaqueValueExample": "real-credential-with-fake-in-the-middle-987654321",
+    "previousClassifierWouldExempt": true,
+    "newClassifierExempts": false,
+    "newScannerFindingCode": "sensitive_environment_assignment",
+    "syntheticLabeledExample": "fixture-secret-123",
+    "syntheticExampleFindings": 0,
+    "providerIssuedPrefixStillFlagged": true,
+    "reportContainsNoMatchedSecret": true
+  },
+  "releaseWiring": {
+    "packageScript": "public:audit:verify",
+    "addedTest": "scripts/support/public-audit-fixture-value.test.mjs",
+    "updatedTemporaryRepoFixtures": [
+      "scripts/public-release-audit-local.test.mjs",
+      "scripts/export-public-release-local.test.mjs"
+    ]
+  },
+  "remainingLimits": [
+    "The full scripts/public-release-audit-local.test.mjs and scripts/export-public-release-local.test.mjs Node suites have not been run in this isolated workspace.",
+    "The complete private repository and pinned pnpm 12.8.2 are not mounted locally, so pnpm verify, public:audit:verify and release:verify remain unverified.",
+    "The classifier is a heuristic. It cannot prove the absence of arbitrary credentials or private data in the public source.",
+    "No actual PayPal Sandbox settlement, public-source publication, video upload, or Devpost submission occurred."
+  ]
+}

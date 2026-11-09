@@ -1,0 +1,180 @@
+{
+  "mode": "bounded receipt stream browser verification through actual native handlers",
+  "runtime": "v22.18.0",
+  "scriptSha256": "4aa0fb2ebe9e3e7359d099c93798a7a337c2e8db96a2bbaa29ee369083ef191d",
+  "sourceSha256": {
+    "packages/receipts/src/client.ts": "65aa5a602ff6bc50bbfea0fb8b2c17073e68b87a6e9a318d300c0ff69ed39aca",
+    "packages/receipts/src/presentation.ts": "6b0e1f48560f5e6d1d127d1983b1c5383eed5ae34063c2b37b2cf70e8f8e9f03",
+    "packages/receipts/src/http.ts": "d797dbc47c71e0bfaf39b0a855066e61b178aa56a72987c2b5d352b268150bda",
+    "scripts/support/transaction-browser-fixture.mjs": "c84ebc88bc02e1b10d2e960ad87d0dc64258f77859fed9367db9920c3b4abed4",
+    "scripts/support/human-consent-fixture.mjs": "4fd14df5286ba17b324b55eba63e465b7be67bfe4200702c245447ca30aeb51a"
+  },
+  "limits": {
+    "json": 262144,
+    "html": 131072
+  },
+  "limitations": [
+    "Synthetic initial request, human-reviewed terms and quote; initial intake is outside this collection",
+    "Real consent, invoice, reconciliation and receipt services prepare canonical SQLite receipts using injected provider HTTP",
+    "Receipt browser actions must cause zero additional provider calls or database writes after fixture setup",
+    "Different-code scenarios use isolated canonical fixtures with actual capability authorization",
+    "An injected fetch wrapper reads actual handler bytes before constructing a browser ReadableStream with controlled chunk boundaries and delivery",
+    "Counters measure bytes delivered to the receipt reader, not network transfer, heap usage or memory exhaustion",
+    "Near-limit JSON is a synthetic receipt envelope with fixture padding and paired injected digest headers, not an actual canonical service issuance",
+    "Near-limit HTML appends a comment to an otherwise unchanged actual handler document",
+    "Compressed-response cases inject decoded body bytes with encoded-length metadata; they do not exercise HTTP decompression",
+    "Browser clocks, hidden/history events and print are controlled locally; there is no listening server, live gateway/provider, deployed Worker or D1"
+  ],
+  "completed": false,
+  "passed": 10,
+  "checks": [
+    {
+      "scenario": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "check": "native receipt text survives byte boundaries inside Unicode characters"
+    },
+    {
+      "scenario": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "check": "native canonical export remains byte-exact and keeps its digest and filename"
+    },
+    {
+      "scenario": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "check": "both native streams complete through multiple bounded reads"
+    },
+    {
+      "scenario": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "check": "bounded export leaves a fresh independently checked print usable"
+    },
+    {
+      "scenario": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "check": "browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "check": "instrumented receipt reads never use a complete-body convenience method"
+    },
+    {
+      "scenario": "synthetic_valid_envelope_near_and_at_json_ceiling",
+      "check": "262143 byte well-formed envelope survives streaming without reserialization"
+    },
+    {
+      "scenario": "synthetic_valid_envelope_near_and_at_json_ceiling",
+      "check": "262143 byte stream completes within the permitted decoded budget"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "streams": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "format": "html",
+              "label": "native HTML split across UTF-8 sequences",
+              "nativeBytes": 21886,
+              "suppliedBytes": 21886,
+              "declaredLength": null,
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 337,
+              "deliveredBytes": 21886,
+              "deliveredChunks": 336,
+              "producedBytes": 21886,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            },
+            {
+              "id": 2,
+              "format": "json",
+              "label": "native JSON split across UTF-8 sequences",
+              "nativeBytes": 4632,
+              "suppliedBytes": 4632,
+              "declaredLength": null,
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 73,
+              "deliveredBytes": 4632,
+              "deliveredChunks": 72,
+              "producedBytes": 4632,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 1,
+          "objectUrlCount": 1,
+          "digests": [
+            {
+              "bytes": 4632,
+              "sha256": "f2e0789bea54a30c4f9db4dac1c2d050eb5bf55a834e574225e56f603093ecbe"
+            }
+          ]
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    }
+  ],
+  "browser": "140.0.7339.16",
+  "failure": {
+    "scenario": "synthetic_valid_envelope_near_and_at_json_ceiling",
+    "message": "locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#rr-token')\u001b[22m\n\u001b[2m    - locator resolved to <input required=\"\" id=\"rr-token\" minlength=\"43\" maxlength=\"43\" type=\"password\" autocomplete=\"off\" spellcheck=\"false\" autocapitalize=\"off\"/>\u001b[22m\n\u001b[2m    - fill(\"REDACTED_SYNTHETIC_FIXTURE_CAPABILITY\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    20 \u00d7 waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying fill action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+  },
+  "provenance": {
+    "original_report_sha256": "29b6b799ff2e502709814092858e0a7be4cd89f63a09dd9bc14625b5a23ec2f6",
+    "synthetic_capability_occurrences_redacted": 1,
+    "note": "Initial fixture-only failure: deliberate reentry tried filling hidden code entry after a successful near-limit case. Fixture now closes the current view before new entry. Ten partial checks are excluded from final results. No production change was required."
+  }
+}

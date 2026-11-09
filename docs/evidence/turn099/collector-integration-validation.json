@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "rightsreceipt-turn099-validation-v1",
+  "date": "2026-11-04",
+  "sourceCommitVerifiedBeforeEvidence": "0fc0e62c05e39fd4cbd3dc2ca6b705114b10ad94",
+  "environment": {
+    "node": "v22.16.0",
+    "workspace": "isolated /mnt/data/rr099-test",
+    "privateCheckout": false,
+    "pnpmInstalled": false,
+    "networkAccess": "disabled except connected GitHub read/write"
+  },
+  "command": "node --test --test-reporter=tap scripts/sandbox-webhook-capture.test.mjs scripts/sandbox-webhook-collector-preflight.test.mjs scripts/support/sandbox-webhook-target.test.mjs scripts/support/sandbox-webhook-callback.test.mjs scripts/support/sandbox-acceptance-linkage.test.mjs",
+  "result": {
+    "total": 51,
+    "passed": 51,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "tapSha256": "b3ef06348f9118875959c92d5465259027964d4684f9139a0f5925ae4d2fd08a",
+    "durationMs": 971.930208
+  },
+  "perFileTestCounts": {
+    "scripts/sandbox-webhook-capture.test.mjs": 19,
+    "scripts/sandbox-webhook-collector-preflight.test.mjs": 5,
+    "scripts/support/sandbox-webhook-target.test.mjs": 10,
+    "scripts/support/sandbox-webhook-callback.test.mjs": 7,
+    "scripts/support/sandbox-acceptance-linkage.test.mjs": 10
+  },
+  "sourceGitBlobShas": {
+    "scripts/sandbox-webhook-capture.mjs": "8a2dcaa37c484db9ba8a6841d2dbeeced7d12934",
+    "scripts/sandbox-webhook-capture.test.mjs": "8e2f353d8fe3149891e2c307c93c03dcee3d776b",
+    "scripts/sandbox-webhook-collector-preflight.test.mjs": "554cae9bc33be814d9d4f1caf6b6f6c9f57044d3",
+    "scripts/support/one-shot-capture-lifecycle.mjs": "d4f872ced1053f7fb794ea1ccb951ff4844443d8",
+    "scripts/support/sandbox-webhook-binding.mjs": "bb20df409106a954899b44676082bc9c1a706ec3",
+    "scripts/support/sandbox-webhook-callback.mjs": "3275d69395a46b3778533b6b30e095409826360f",
+    "scripts/support/sandbox-webhook-callback.test.mjs": "f257f6ddad8ce06df926e499c72bb78740fc7a02",
+    "scripts/support/sandbox-webhook-local-health.mjs": "1c7ae91f48c2b9bbd95cf1a6e94bae47eba12467",
+    "scripts/support/sandbox-webhook-readiness.mjs": "e7e9a09742e3b7cb2d29381ddb4006461fb0f517",
+    "scripts/support/sandbox-webhook-target.mjs": "ee6b67f4c9b15d9505f5ba3a384f023d49fa43cf",
+    "scripts/support/sandbox-webhook-target.test.mjs": "7e0be4284c9b011ae9befac07284ffb150582a8e",
+    "scripts/support/sandbox-webhook-transmission-window.mjs": "f9013ffb3a039db3ec5eb2c87f191fc4a734f508",
+    "scripts/support/sandbox-acceptance-linkage.mjs": "4891f124c0a418e6a1485c4040af11494dd781a4",
+    "scripts/support/sandbox-acceptance-linkage.test.mjs": "c1f2ab9c2ff189b8bab08de7dbd18e55f5580db9"
+  },
+  "verifiedBehaviors": [
+    "Exact real collector HEAD readiness returns HTTP 204 and does not claim or consume capture",
+    "Read-only same-app PayPal preflight checks exact public callback using injected OAuth and inventory responses",
+    "Different registered callback is rejected",
+    "Stopped collector rejects before PayPal OAuth",
+    "After HEAD, a syntactically valid fake paid event for the exactly bound invoice can still be captured as unverified",
+    "Following capture, the one-shot collector rejects further readiness and PayPal preflight makes no requests",
+    "Official capture regressions reject invalid signatures and production certificate URLs, wrong invoice, partial payments, malformed requests, excessive body size, stale/future timestamps and expired receiver",
+    "Existing callback, private route validation, and cross-stage acceptance linkage tests pass"
+  ],
+  "corrections": [
+    "Imported writeFileSync in scripts/sandbox-webhook-capture.test.mjs, where it was referenced without import",
+    "Added real collector integration regression scripts/sandbox-webhook-collector-preflight.test.mjs and wired it into PayPal and preflight verification commands"
+  ],
+  "limitations": [
+    "All PayPal OAuth and registered-webhook inventory responses were synthetic and injected; no real PayPal API calls were made",
+    "One captured local event was deliberately fake and labeled captured_unverified, not verified settlement",
+    "The isolated workspace contains SHA-verified copies of relevant files but not the full private checkout or pinned pnpm dependency installation",
+    "Full pnpm verify, release:verify, real buyer-paid Sandbox acceptance, HTTPS forwarding, sanitized public source publication, video and Devpost submission remain unexecuted"
+  ]
+}

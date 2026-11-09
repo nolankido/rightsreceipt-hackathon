@@ -1,0 +1,64 @@
+{
+  "schema_version": "rightsreceipt-browser-regression-turn045-v1",
+  "status": "passed",
+  "base_commit": "09ff88fca9c43db1fbdaf6d0e673d419e1cf06e7",
+  "scope": "Existing receipt-recovery, transaction and asset-only intake browser journeys that execute the changed protected receipt client, using actual local handlers and injected provider transport.",
+  "not_rerun": [
+    "Creator/buyer/clarification/deadline browser collections outside unchanged source scope.",
+    "Older receipt-browser-smoke.py and receipt-layout-check.py scripts; targeted actual-handler response suite and current receipt/transaction/intake journeys were used."
+  ],
+  "runtime": "v22.18.0",
+  "concurrency": 2,
+  "suites": 3,
+  "passed": 375,
+  "named_scenarios": 42,
+  "source_unchanged_during_run": true,
+  "source_file_count": 292,
+  "source_fingerprint_before": "7a5bccfb8e0cc63ddc11752f28389d3d89ad638f9b0f8a2d03e499b3d2f636fd",
+  "source_fingerprint_after": "7a5bccfb8e0cc63ddc11752f28389d3d89ad638f9b0f8a2d03e499b3d2f636fd",
+  "results": [
+    {
+      "suite": "receipt-recovery",
+      "script": "scripts/receipt-recovery-browser-check.mjs",
+      "status": "passed",
+      "exit_code": 0,
+      "scope_reason": "Existing receipt operation ownership, cancellation, complete-body deadlines, exact canonical export and current output regression.",
+      "duration_s": 36.558,
+      "passed": 126,
+      "scenarios": 15,
+      "runtime": "v22.18.0",
+      "browser": "140.0.7339.16",
+      "report_sha256": "116b3f0d9640811616a4cdb9c6ee8ad78ee15ae74eb6cad837340f1258015441",
+      "report": "receipt-recovery-browser.json"
+    },
+    {
+      "suite": "transaction",
+      "script": "scripts/transaction-browser-check.mjs",
+      "status": "passed",
+      "exit_code": 0,
+      "scope_reason": "Actual protected receipt navigation, canonical JSON download, revocation/refund status and integrated transaction controls.",
+      "duration_s": 52.639,
+      "passed": 130,
+      "scenarios": 19,
+      "runtime": "v22.18.0",
+      "browser": "140.0.7339.16",
+      "report_sha256": "c11123ccc1270deda359ab12305e6dc26d5deccf0313bb3662c06ae8f3722fe9",
+      "report": "transaction-browser.json"
+    },
+    {
+      "suite": "intake",
+      "script": "scripts/intake-browser-check.mjs",
+      "status": "passed",
+      "exit_code": 0,
+      "scope_reason": "Asset-only original-link continuation through actual protected receipt rendering and exact canonical JSON export.",
+      "duration_s": 34.959,
+      "passed": 119,
+      "scenarios": 8,
+      "runtime": "v22.18.0",
+      "browser": "140.0.7339.16",
+      "report_sha256": "f60e1dcbbafcfa93521bb51dd4e781b26d8ecc248530499996e036c33b85766e",
+      "report": "intake-browser.json"
+    }
+  ],
+  "record_note": "Counts exclude the separate 193-check response-browser collection and any partial initial attempt. Only final executed checks count."
+}

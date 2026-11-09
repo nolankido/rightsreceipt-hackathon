@@ -1,0 +1,1020 @@
+{
+  "mode": "receipt recovery browser verification through actual native handlers",
+  "runtime": "v22.18.0",
+  "scriptSha256": "73314fae075ba345eeeaac552829c719253a50c35faa74f2e5a3703ddfa23329",
+  "sourceSha256": {
+    "packages/receipts/src/client.ts": "65aa5a602ff6bc50bbfea0fb8b2c17073e68b87a6e9a318d300c0ff69ed39aca",
+    "packages/receipts/src/presentation.ts": "6b0e1f48560f5e6d1d127d1983b1c5383eed5ae34063c2b37b2cf70e8f8e9f03",
+    "packages/receipts/src/http.ts": "d797dbc47c71e0bfaf39b0a855066e61b178aa56a72987c2b5d352b268150bda",
+    "scripts/support/transaction-browser-fixture.mjs": "c84ebc88bc02e1b10d2e960ad87d0dc64258f77859fed9367db9920c3b4abed4",
+    "scripts/support/human-consent-fixture.mjs": "4fd14df5286ba17b324b55eba63e465b7be67bfe4200702c245447ca30aeb51a"
+  },
+  "limitations": [
+    "Synthetic initial request, human-reviewed terms and quote; initial intake is outside this collection",
+    "Real consent, invoice, reconciliation and receipt services prepare canonical SQLite receipts using injected provider HTTP",
+    "Receipt browser actions must cause zero additional provider calls or database writes after fixture setup",
+    "Different-code scenarios route to two isolated canonical fixtures; each fixture independently enforces its actual capability authorization",
+    "Header and body holds replay actual native handler responses through an injected fetch wrapper that deliberately ignores abort",
+    "Browser clocks, hidden/history events and window.print are controlled locally; downloads use actual canonical handler bytes",
+    "No listening server, real gateway, provider network, deployed Worker, Cloudflare D1 or screen-reader audit"
+  ],
+  "completed": true,
+  "passed": 126,
+  "checks": [
+    {
+      "scenario": "same_code_replacement_owns_pending_request",
+      "check": "pending access exposes code replacement and an enabled Close action"
+    },
+    {
+      "scenario": "same_code_replacement_owns_pending_request",
+      "check": "pending access disables refresh, print and export and clears prior presentation"
+    },
+    {
+      "scenario": "same_code_replacement_owns_pending_request",
+      "check": "a repeated valid code starts its own authorized read"
+    },
+    {
+      "scenario": "same_code_replacement_owns_pending_request",
+      "check": "pending access exposes code replacement and an enabled Close action"
+    },
+    {
+      "scenario": "same_code_replacement_owns_pending_request",
+      "check": "pending access disables refresh, print and export and clears prior presentation"
+    },
+    {
+      "scenario": "same_code_replacement_owns_pending_request",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "same_code_replacement_owns_pending_request",
+      "check": "the old completion cannot release the newer request's busy state"
+    },
+    {
+      "scenario": "same_code_replacement_owns_pending_request",
+      "check": "the winning completion remains usable for a deliberate fresh read"
+    },
+    {
+      "scenario": "same_code_replacement_owns_pending_request",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "same_code_replacement_owns_pending_request",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "same_code_replacement_owns_pending_request",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "different_code_replacement_rejects_late_old_receipt",
+      "check": "different-code submission loads the separately authorized current receipt"
+    },
+    {
+      "scenario": "different_code_replacement_rejects_late_old_receipt",
+      "check": "late first-code content cannot replace the winning document"
+    },
+    {
+      "scenario": "different_code_replacement_rejects_late_old_receipt",
+      "check": "later refresh retains the winning capability"
+    },
+    {
+      "scenario": "different_code_replacement_rejects_late_old_receipt",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "different_code_replacement_rejects_late_old_receipt",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "different_code_replacement_rejects_late_old_receipt",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "pending_close_clears_access_and_allows_deliberate_reentry",
+      "check": "pending access exposes code replacement and an enabled Close action"
+    },
+    {
+      "scenario": "pending_close_clears_access_and_allows_deliberate_reentry",
+      "check": "pending access disables refresh, print and export and clears prior presentation"
+    },
+    {
+      "scenario": "pending_close_clears_access_and_allows_deliberate_reentry",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "pending_close_clears_access_and_allows_deliberate_reentry",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "pending_close_clears_access_and_allows_deliberate_reentry",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "pending_close_clears_access_and_allows_deliberate_reentry",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "pending_close_clears_access_and_allows_deliberate_reentry",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "pending_close_clears_access_and_allows_deliberate_reentry",
+      "check": "deliberate code reentry after Close starts a usable new request"
+    },
+    {
+      "scenario": "pending_close_clears_access_and_allows_deliberate_reentry",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "pending_close_clears_access_and_allows_deliberate_reentry",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "pending_close_clears_access_and_allows_deliberate_reentry",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "pending_hidden_cancels_old_authority",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "pending_hidden_cancels_old_authority",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "pending_hidden_cancels_old_authority",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "pending_hidden_cancels_old_authority",
+      "check": "late lifecycle-canceled receipt never returns to the DOM"
+    },
+    {
+      "scenario": "pending_hidden_cancels_old_authority",
+      "check": "returning to the page requires deliberate code reentry"
+    },
+    {
+      "scenario": "pending_hidden_cancels_old_authority",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "pending_hidden_cancels_old_authority",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "pending_hidden_cancels_old_authority",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "pending_pagehide_cancels_old_authority",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "pending_pagehide_cancels_old_authority",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "pending_pagehide_cancels_old_authority",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "pending_pagehide_cancels_old_authority",
+      "check": "late lifecycle-canceled receipt never returns to the DOM"
+    },
+    {
+      "scenario": "pending_pagehide_cancels_old_authority",
+      "check": "returning to the page requires deliberate code reentry"
+    },
+    {
+      "scenario": "pending_pagehide_cancels_old_authority",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "pending_pagehide_cancels_old_authority",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "pending_pagehide_cancels_old_authority",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "pending_pageshow_cancels_old_authority",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "pending_pageshow_cancels_old_authority",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "pending_pageshow_cancels_old_authority",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "pending_pageshow_cancels_old_authority",
+      "check": "late lifecycle-canceled receipt never returns to the DOM"
+    },
+    {
+      "scenario": "pending_pageshow_cancels_old_authority",
+      "check": "returning to the page requires deliberate code reentry"
+    },
+    {
+      "scenario": "pending_pageshow_cancels_old_authority",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "pending_pageshow_cancels_old_authority",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "pending_pageshow_cancels_old_authority",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "receipt_headers_deadline_clears_pending_access",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "receipt_headers_deadline_clears_pending_access",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "receipt_headers_deadline_clears_pending_access",
+      "check": "the complete receipt read has a bounded recovery message"
+    },
+    {
+      "scenario": "receipt_headers_deadline_clears_pending_access",
+      "check": "timeout does not schedule an automatic retry"
+    },
+    {
+      "scenario": "receipt_headers_deadline_clears_pending_access",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "receipt_headers_deadline_clears_pending_access",
+      "check": "reentry recovers after the late timed-out response"
+    },
+    {
+      "scenario": "receipt_headers_deadline_clears_pending_access",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "receipt_headers_deadline_clears_pending_access",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "receipt_headers_deadline_clears_pending_access",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "receipt_body_deadline_clears_pending_access",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "receipt_body_deadline_clears_pending_access",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "receipt_body_deadline_clears_pending_access",
+      "check": "the complete receipt read has a bounded recovery message"
+    },
+    {
+      "scenario": "receipt_body_deadline_clears_pending_access",
+      "check": "mobile timeout recovery does not overflow horizontally"
+    },
+    {
+      "scenario": "receipt_body_deadline_clears_pending_access",
+      "check": "timeout does not schedule an automatic retry"
+    },
+    {
+      "scenario": "receipt_body_deadline_clears_pending_access",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "receipt_body_deadline_clears_pending_access",
+      "check": "reentry recovers after the late timed-out response"
+    },
+    {
+      "scenario": "receipt_body_deadline_clears_pending_access",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "receipt_body_deadline_clears_pending_access",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "receipt_body_deadline_clears_pending_access",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "print_waits_for_its_own_current_html_check",
+      "check": "pending access exposes code replacement and an enabled Close action"
+    },
+    {
+      "scenario": "print_waits_for_its_own_current_html_check",
+      "check": "pending access disables refresh, print and export and clears prior presentation"
+    },
+    {
+      "scenario": "print_waits_for_its_own_current_html_check",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "print_waits_for_its_own_current_html_check",
+      "check": "Print first requests an independent current HTML receipt"
+    },
+    {
+      "scenario": "print_waits_for_its_own_current_html_check",
+      "check": "only the successful current print request invokes print with the canonical receipt"
+    },
+    {
+      "scenario": "print_waits_for_its_own_current_html_check",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "print_waits_for_its_own_current_html_check",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "print_waits_for_its_own_current_html_check",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "superseded_print_cannot_print_another_codes_receipt",
+      "check": "a superseded print never prints the newer code's document"
+    },
+    {
+      "scenario": "superseded_print_cannot_print_another_codes_receipt",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "superseded_print_cannot_print_another_codes_receipt",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "superseded_print_cannot_print_another_codes_receipt",
+      "check": "Close cancels pending print even when its body completes later"
+    },
+    {
+      "scenario": "superseded_print_cannot_print_another_codes_receipt",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "superseded_print_cannot_print_another_codes_receipt",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "superseded_print_cannot_print_another_codes_receipt",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "pending_export_blocks_print_and_preserves_canonical_bytes",
+      "check": "pending export leaves only deliberate Close available"
+    },
+    {
+      "scenario": "pending_export_blocks_print_and_preserves_canonical_bytes",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "pending_export_blocks_print_and_preserves_canonical_bytes",
+      "check": "successful export preserves the exact current canonical bytes and hash"
+    },
+    {
+      "scenario": "pending_export_blocks_print_and_preserves_canonical_bytes",
+      "check": "export completion never prints an earlier receipt"
+    },
+    {
+      "scenario": "pending_export_blocks_print_and_preserves_canonical_bytes",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "pending_export_blocks_print_and_preserves_canonical_bytes",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "pending_export_blocks_print_and_preserves_canonical_bytes",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "pending_export_close_discards_late_download",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "pending_export_close_discards_late_download",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "pending_export_close_discards_late_download",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "pending_export_close_discards_late_download",
+      "check": "a canceled JSON body creates no object URL or download"
+    },
+    {
+      "scenario": "pending_export_close_discards_late_download",
+      "check": "a canceled export does not strand subsequent receipt access"
+    },
+    {
+      "scenario": "pending_export_close_discards_late_download",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "pending_export_close_discards_late_download",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "pending_export_close_discards_late_download",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "pending_export_deadline_discards_late_download",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "pending_export_deadline_discards_late_download",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "pending_export_deadline_discards_late_download",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "pending_export_deadline_discards_late_download",
+      "check": "a JSON body arriving after the request deadline cannot download"
+    },
+    {
+      "scenario": "pending_export_deadline_discards_late_download",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "pending_export_deadline_discards_late_download",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "pending_export_deadline_discards_late_download",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "pending_export_keeps_original_licensing_boundary",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "pending_export_keeps_original_licensing_boundary",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "pending_export_keeps_original_licensing_boundary",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "pending_export_keeps_original_licensing_boundary",
+      "check": "crossing the licensing boundary invalidates the pending export before its request timeout"
+    },
+    {
+      "scenario": "pending_export_keeps_original_licensing_boundary",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "pending_export_keeps_original_licensing_boundary",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "pending_export_keeps_original_licensing_boundary",
+      "check": "deliberate reentry uses the actual handler's current boundary rejection"
+    },
+    {
+      "scenario": "pending_export_keeps_original_licensing_boundary",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "pending_export_keeps_original_licensing_boundary",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "pending_export_keeps_original_licensing_boundary",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "native_unavailable_read_locks_and_allows_deliberate_reentry",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "native_unavailable_read_locks_and_allows_deliberate_reentry",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "native_unavailable_read_locks_and_allows_deliberate_reentry",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "native_unavailable_read_locks_and_allows_deliberate_reentry",
+      "check": "actual service unavailability clears retained receipt authority"
+    },
+    {
+      "scenario": "native_unavailable_read_locks_and_allows_deliberate_reentry",
+      "check": "restored service is read only after deliberate code reentry"
+    },
+    {
+      "scenario": "native_unavailable_read_locks_and_allows_deliberate_reentry",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "native_unavailable_read_locks_and_allows_deliberate_reentry",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "native_unavailable_read_locks_and_allows_deliberate_reentry",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "same_code_replacement_owns_pending_request",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "different_code_replacement_rejects_late_old_receipt",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 1,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 1,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        },
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "pending_close_clears_access_and_allows_deliberate_reentry",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 4,
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "pending_hidden_cancels_old_authority",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 4,
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "pending_pagehide_cancels_old_authority",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 4,
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "pending_pageshow_cancels_old_authority",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 4,
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "receipt_headers_deadline_clears_pending_access",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 4,
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "receipt_body_deadline_clears_pending_access",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 4,
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "print_waits_for_its_own_current_html_check",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 4,
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "superseded_print_cannot_print_another_codes_receipt",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 1,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 1,
+          "status": 200
+        }
+      ],
+      "browserRequests": 6,
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        },
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "pending_export_blocks_print_and_preserves_canonical_bytes",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 4,
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "pending_export_close_discards_late_download",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "pending_export_deadline_discards_late_download",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "pending_export_keeps_original_licensing_boundary",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 409
+        }
+      ],
+      "browserRequests": 5,
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "native_unavailable_read_locks_and_allows_deliberate_reentry",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 503
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    }
+  ],
+  "browser": "140.0.7339.16"
+}

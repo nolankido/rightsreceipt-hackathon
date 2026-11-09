@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "rightsreceipt-receipt-pending-baseline-v1",
+  "status": "gap_reproduced",
+  "runtime": "v22.18.0",
+  "source": {
+    "path": "packages/receipts/src/client.ts",
+    "sha256": "9a8b9e5ac5a0cecaf12adf9f244c17cbe2381ffd131b9fd685d49f09a1031d65"
+  },
+  "scriptSha256": "88ec9bebe053d8e25f041eaea861857530ce95462fa0ba93458078e36ea6b0be",
+  "scenario": "second_submission_changes_session_while_first_load_is_busy",
+  "syntheticInputs": {
+    "codeShape": "Three distinct valid 43-character strings made only from repeated a, b and c, in that order; no real capability.",
+    "response": "One deferred HTTP 200 text response, released after the second submission and before the third.",
+    "clock": "Fixed performance.now() value of zero; refresh timers are inert."
+  },
+  "observed": {
+    "firstSubmissionRequests": 1,
+    "secondSubmissionRequests": 1,
+    "requestsAfterOldReplyAndThirdSubmission": 1,
+    "status": "Checking current receipt and integrity...",
+    "actionsHidden": true,
+    "accessVisible": true,
+    "parsedResponses": 0
+  },
+  "limitations": [
+    "Actual receipt client evaluated in a Node VM with a minimal synthetic DOM.",
+    "Deferred transport is injected; no browser, handler, network, database, credentials or provider is used.",
+    "The stale response is discarded before DOM parsing; receipt rendering and integrity checks are outside this witness.",
+    "This is a before-change defect witness, not a passing acceptance test for repaired behavior."
+  ]
+}

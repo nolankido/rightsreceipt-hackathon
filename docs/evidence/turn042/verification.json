@@ -1,0 +1,244 @@
+{
+  "turn": "042",
+  "date": "2026-10-28",
+  "status": "completed_locally_verified",
+  "base_commit": "e4fc9afba9f30ee3f64cd4c6f6b2e140226a23de",
+  "runtime": "v22.18.0",
+  "browser": "Chromium 140.0.7339.16",
+  "scope": {
+    "page_roles": 6,
+    "per_request_timeout_ms": 15000,
+    "deadline_includes_json_consumption": true,
+    "whole_workflow_deadline": false,
+    "parent_cancellation_and_late_results": true,
+    "ordinary_failure_child_cancellation": true,
+    "automatic_retries": false,
+    "backend_or_provider_contract_changed": false,
+    "synchronous_execution_preempted": false,
+    "response_size_limit_added": false
+  },
+  "native": {
+    "files": 51,
+    "passed": 2171,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "deadline_collection_passed": 22,
+    "record": "native-regression.json",
+    "method": "Complete 51-file rerun after the ordinary-failure cleanup fix and final source freeze."
+  },
+  "targeted_browser": {
+    "passed": 132,
+    "scenarios": 24,
+    "completed": true,
+    "record": "deadline-browser.json",
+    "script": "scripts/request-deadline-browser-check.mjs",
+    "script_sha256": "04d5062a061502e24bdfd7785dc03343109d12d757c7fca36ce3adb521f18047",
+    "before_change_record": "deadline-baseline.json",
+    "before_change_revision": "e4fc9afba9f30ee3f64cd4c6f6b2e140226a23de",
+    "seed_only_start": true,
+    "actual_handlers": true,
+    "gateway_and_provider_http": "injected local fixtures",
+    "json_body_fault": "Unchanged actual-handler bytes replayed through an injected browser ReadableStream that ignores abort.",
+    "attempted_and_dispatched_requests_counted_separately": true,
+    "payment_permission_receipt_rows_zero": true,
+    "client_source_hashes_verified": true
+  },
+  "existing_browser": {
+    "files": 6,
+    "passed": 576,
+    "named_scenarios": 64,
+    "buyer_validation_scenario_count_reported": false,
+    "all_source_hashes_unchanged_during_run": true,
+    "source_file_count": 288,
+    "source_fingerprint": "cbc653557c34c8e81ccdb30ee3e25d39ecd728e47d2f7821dad686897c271428",
+    "record": "existing-browser.json",
+    "results": [
+      {
+        "suite": "transaction",
+        "status": "passed",
+        "passed_checks": 127,
+        "completed_scenarios": 19,
+        "exit_code": 0,
+        "report": "transaction-browser.json",
+        "report_sha256": "55dcae53f53bc908d372697a28738894c74cc03f35814c0bc415c15e955a1799"
+      },
+      {
+        "suite": "intake",
+        "status": "passed",
+        "passed_checks": 119,
+        "completed_scenarios": 8,
+        "exit_code": 0,
+        "report": "intake-browser.json",
+        "report_sha256": "f60e1dcbbafcfa93521bb51dd4e781b26d8ecc248530499996e036c33b85766e"
+      },
+      {
+        "suite": "clarification",
+        "status": "passed",
+        "passed_checks": 57,
+        "completed_scenarios": 8,
+        "exit_code": 0,
+        "report": "clarification-browser.json",
+        "report_sha256": "beccbecdbaf3e2c4ce31468c8901ae72e745800909000bce8a4c258b0e89d190"
+      },
+      {
+        "suite": "invoice-recovery",
+        "status": "passed",
+        "passed_checks": 88,
+        "completed_scenarios": 12,
+        "exit_code": 0,
+        "report": "recovery-browser.json",
+        "report_sha256": "837816ae2fa991a3559b11533c6e22a0143f4dbcdc09469953db331bb5fada75"
+      },
+      {
+        "suite": "buyer-validation",
+        "status": "passed",
+        "passed_checks": 51,
+        "completed_scenarios": null,
+        "exit_code": 0,
+        "report": "buyer-validation-browser.json",
+        "report_sha256": "d539d7e72303e6294f67943dbd46ba953c940e72eaa8952bdb57f1e5eab8a3d7"
+      },
+      {
+        "suite": "accessibility",
+        "status": "passed",
+        "passed_checks": 134,
+        "completed_scenarios": 17,
+        "exit_code": 0,
+        "report": "accessibility-browser.json",
+        "report_sha256": "7acfd099000a3813131e06203e2addda7190b993e88927270eca9d88ca95aef3"
+      }
+    ]
+  },
+  "combined_browser_passed": 708,
+  "typecheck": {
+    "compiler": "5.8.3",
+    "configs": [
+      "tsconfig.transaction-ui.json"
+    ],
+    "passed": true,
+    "actual_dependency_sources": true,
+    "stubs_used": false,
+    "pinned_toolchain_verified": false
+  },
+  "syntax": {
+    "files": 176,
+    "errors": []
+  },
+  "format": {
+    "checked_files": 325,
+    "errors": []
+  },
+  "workspace": {
+    "packages": 13,
+    "internal_edges": 24,
+    "cycles": 0
+  },
+  "diff_whitespace_passed": true,
+  "review": {
+    "shared_helper_and_six_clients_independently_reviewed": true,
+    "ordinary_failure_cleanup_found_and_fixed": true,
+    "unchanged_clarification_and_recovery_error_body_assertions": true,
+    "late_handoff_assertion_aligned_to_earlier_request_deadline": true,
+    "independent_current_link_expiry_coverage_preserved": true,
+    "documentation_scope_reviewed": true
+  },
+  "visual_review": {
+    "screenshots_inspected": 2,
+    "review_note": "Creator issuance timeout and buyer committed-request timeout, including frozen controls and focus ownership. Final images are byte-identical to inspected captures.",
+    "screenshot_sha256": {
+      "buyer-saved-command-timeout.png": "063acaa8f82efc34e9e7bf93832fe2fa765d85cb7e584d9d340118174fc54c80",
+      "creator-issued-command-timeout.png": "6963e4374033756e6acf1e3549d7324f30c64381efa0e81c630665d2654ed63f"
+    }
+  },
+  "schema": {
+    "migrations": 9,
+    "domain_tables": 33,
+    "seed_metadata_version": 9,
+    "new_migrations": 0,
+    "database_changes": false
+  },
+  "new_dependencies": [],
+  "live_provider_calls": false,
+  "deployment_performed": false,
+  "account_owner_task_required": false,
+  "all_runtime_flags_remain_off": true,
+  "merchant_identity_blank": true,
+  "release_ready": false,
+  "remaining_gates": [
+    "Pinned clean dependency install and installed-library typecheck/lint/Vitest/Vite/Wrangler verification",
+    "Genuine managed-session verification",
+    "Genuine Sandbox payment/refund/webhook verification",
+    "Deployed Worker/D1 verification",
+    "Public judge access and submission assets"
+  ],
+  "next_unit": "043 P0 clear retained buyer access after terminal acceptance conflicts",
+  "known_next_boundary": "Buyer acceptance 400/409 and generic non-timeout load cleanup can retain a code after canceling the private timer; server capability checks still apply and hidden-page clearing remains active.",
+  "files_changed": [
+    "DEVELOPMENT_PLAN.md",
+    "PROJECT_STATUS.md",
+    "README.md",
+    "apps/web/src/buyer-clarification-client.ts",
+    "apps/web/src/buyer-request-intake-client.ts",
+    "apps/web/src/buyer-review-client.ts",
+    "apps/web/src/creator-clarification-client.ts",
+    "apps/web/src/creator-request-intake-client.ts",
+    "apps/web/src/creator-review-client.ts",
+    "apps/web/src/request-deadline-client.ts",
+    "docs/engineering/BROWSER_REQUEST_DEADLINES.md",
+    "docs/engineering/README.md",
+    "docs/evidence/turn042/accessibility-browser.json",
+    "docs/evidence/turn042/buyer-validation-browser.json",
+    "docs/evidence/turn042/clarification-browser.json",
+    "docs/evidence/turn042/deadline-baseline.json",
+    "docs/evidence/turn042/deadline-browser.json",
+    "docs/evidence/turn042/existing-browser.json",
+    "docs/evidence/turn042/intake-browser.json",
+    "docs/evidence/turn042/native-regression.json",
+    "docs/evidence/turn042/recovery-browser.json",
+    "docs/evidence/turn042/transaction-browser.json",
+    "docs/evidence/turn042/verification.json",
+    "docs/turns/042-p0-browser-request-deadlines.md",
+    "package.json",
+    "scripts/request-deadline-browser-check.mjs",
+    "scripts/request-deadline-local.test.mjs",
+    "scripts/transaction-browser-check.mjs"
+  ],
+  "source_sha256": {
+    ".dev.vars.example": "72b565848fd5ac8ab419e965561657fe3ebdd9132cba3f64f83ac8206ea6fb9e",
+    "apps/web/src/buyer-clarification-client.ts": "73418f0975ce8c619bb96cedf4016112f4e77c802aa9546db5712bc55bcb7f68",
+    "apps/web/src/buyer-request-intake-client.ts": "6eb59f56066d79bb05fd2a3793cc45a35a16c149af052869556c69427ae866f0",
+    "apps/web/src/buyer-review-client.ts": "3d60a2892691b56de5ca31260bab041eef342659aa9d89c7210311a9ebc3dfda",
+    "apps/web/src/creator-clarification-client.ts": "595fa6c76b21117eca1a885345ba3fe71b4313c982a2981e7828b40972df648c",
+    "apps/web/src/creator-request-intake-client.ts": "e0a585f6d5a27a952ef830b928004e1249219b846401798df32c5d00d0fdadd3",
+    "apps/web/src/creator-review-client.ts": "129e227ea17fd1a44dee5c428ee7f69f93cf8c556d9154dda9e925519c8bbdb5",
+    "apps/web/src/form-accessibility-client.ts": "0d912659b8dddecaebbaccb2eb363c5166b30fed4dfa5dffdd472c85ceed8978",
+    "apps/web/src/request-deadline-client.ts": "83422f667d7fc8ac694b773e23d4c8822c5a599af613205c59a03bd61ea68ced",
+    "package.json": "4af92689c9d5118823096f1c680701d687499db3c81385c2e9dc9d32d54940ea",
+    "packages/persistence/src/manifest.ts": "6056ea6f965bae52226c7a75a63c88583f2a407ba51c7bc70802a5acc30f4a84",
+    "scripts/buyer-review-validation-browser-check.mjs": "0ea0eb9468932d3a351b4435103e041172ac06910f4fc419fbd60ca3424ba8e0",
+    "scripts/clarification-browser-check.mjs": "c82b31f390a652a8dcdd0dec5767b2d1132414d936a139fa00de8a330b900bcb",
+    "scripts/consent-ts-test-loader.mjs": "59825a9c24bd88341054db90ba9edc1a0be1d9e51594038e477ea1d9cd2735df",
+    "scripts/form-accessibility-browser-check.mjs": "b509934fd72001a56f500a22d9b656e823b8b2ec378484b149ab01865c1f46da",
+    "scripts/intake-browser-check.mjs": "bb81bc8463a720eb909db8eb6af9e1166434fa72c5a551266cc8e9eca16408a5",
+    "scripts/invoice-recovery-browser-check.mjs": "7e8a2afdae0af9ecacd4979a3115860498ad2a23b4ce5d0b8aad0d8bca7eef00",
+    "scripts/request-deadline-browser-check.mjs": "04d5062a061502e24bdfd7785dc03343109d12d757c7fca36ce3adb521f18047",
+    "scripts/request-deadline-local.test.mjs": "3abe819526d1d8b0ff0b71aec671cc0d62b2ff7da145701b501552a1876ff594",
+    "scripts/support/human-consent-fixture.mjs": "4fd14df5286ba17b324b55eba63e465b7be67bfe4200702c245447ca30aeb51a",
+    "scripts/support/transaction-browser-fixture.mjs": "c84ebc88bc02e1b10d2e960ad87d0dc64258f77859fed9367db9920c3b4abed4",
+    "scripts/transaction-browser-check.mjs": "dcd133dcc5e88668dcf5993814450de3be2570979b85ad9232018bed7e3e8df4",
+    "wrangler.jsonc": "67cd10f080df4225347978fdc7cbddfc8f8a7313fe70161824d274309f28879d"
+  },
+  "artifact_sha256": {
+    "accessibility-browser.json": "7acfd099000a3813131e06203e2addda7190b993e88927270eca9d88ca95aef3",
+    "buyer-validation-browser.json": "d539d7e72303e6294f67943dbd46ba953c940e72eaa8952bdb57f1e5eab8a3d7",
+    "clarification-browser.json": "beccbecdbaf3e2c4ce31468c8901ae72e745800909000bce8a4c258b0e89d190",
+    "deadline-baseline.json": "b60a397b6e0e97b208737a040299e86bb9ef871ee045b416073dd43dd52abe34",
+    "deadline-browser.json": "c9cc2353c45a5c6cf211fe80dc035fb830a38795af1d796546c2f854e251cca7",
+    "existing-browser.json": "c1b6dd264be7749f6da8feddf37a025b3b3ae275a6d35c2d576d8ff19b9a4910",
+    "intake-browser.json": "f60e1dcbbafcfa93521bb51dd4e781b26d8ecc248530499996e036c33b85766e",
+    "native-regression.json": "1d7fc7f861f7df41c9683fb955d2215c5840d8085c90ba2a531d9cc1befb436c",
+    "recovery-browser.json": "837816ae2fa991a3559b11533c6e22a0143f4dbcdc09469953db331bb5fada75",
+    "transaction-browser.json": "55dcae53f53bc908d372697a28738894c74cc03f35814c0bc415c15e955a1799"
+  }
+}

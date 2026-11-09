@@ -1,0 +1,2526 @@
+{
+  "mode": "bounded receipt stream browser verification through actual native handlers",
+  "runtime": "v22.18.0",
+  "scriptSha256": "d289673f9b84b4e244e2a21a7e1169ca24807a52bbca8df87b552d5e0e1bbdc2",
+  "sourceSha256": {
+    "packages/receipts/src/client.ts": "65aa5a602ff6bc50bbfea0fb8b2c17073e68b87a6e9a318d300c0ff69ed39aca",
+    "packages/receipts/src/presentation.ts": "6b0e1f48560f5e6d1d127d1983b1c5383eed5ae34063c2b37b2cf70e8f8e9f03",
+    "packages/receipts/src/http.ts": "d797dbc47c71e0bfaf39b0a855066e61b178aa56a72987c2b5d352b268150bda",
+    "scripts/support/transaction-browser-fixture.mjs": "c84ebc88bc02e1b10d2e960ad87d0dc64258f77859fed9367db9920c3b4abed4",
+    "scripts/support/human-consent-fixture.mjs": "4fd14df5286ba17b324b55eba63e465b7be67bfe4200702c245447ca30aeb51a"
+  },
+  "limits": {
+    "json": 262144,
+    "html": 131072
+  },
+  "limitations": [
+    "Synthetic initial request, human-reviewed terms and quote; initial intake is outside this collection",
+    "Real consent, invoice, reconciliation and receipt services prepare canonical SQLite receipts using injected provider HTTP",
+    "Receipt browser actions must cause zero additional provider calls or database writes after fixture setup",
+    "Different-code scenarios use isolated canonical fixtures with actual capability authorization",
+    "An injected fetch wrapper reads actual handler bytes before constructing a browser ReadableStream with controlled chunk boundaries and delivery",
+    "Counters measure bytes delivered to the receipt reader, not network transfer, heap usage or memory exhaustion",
+    "Near-limit JSON is a synthetic receipt envelope with fixture padding and paired injected digest headers, not an actual canonical service issuance",
+    "Near-limit HTML appends a comment to an otherwise unchanged actual handler document",
+    "Compressed-response cases inject decoded body bytes with encoded-length metadata; they do not exercise HTTP decompression",
+    "Browser clocks, hidden/history events and print are controlled locally; there is no listening server, live gateway/provider, deployed Worker or D1"
+  ],
+  "completed": true,
+  "passed": 165,
+  "checks": [
+    {
+      "scenario": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "check": "native receipt text survives byte boundaries inside Unicode characters"
+    },
+    {
+      "scenario": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "check": "native canonical export remains byte-exact and keeps its digest and filename"
+    },
+    {
+      "scenario": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "check": "both native streams complete through multiple bounded reads"
+    },
+    {
+      "scenario": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "check": "bounded export leaves a fresh independently checked print usable"
+    },
+    {
+      "scenario": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "check": "browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "check": "instrumented receipt reads never use a complete-body convenience method"
+    },
+    {
+      "scenario": "synthetic_valid_envelope_near_and_at_json_ceiling",
+      "check": "262143 byte well-formed envelope survives streaming without reserialization"
+    },
+    {
+      "scenario": "synthetic_valid_envelope_near_and_at_json_ceiling",
+      "check": "262143 byte stream completes within the permitted decoded budget"
+    },
+    {
+      "scenario": "synthetic_valid_envelope_near_and_at_json_ceiling",
+      "check": "262144 byte well-formed envelope survives streaming without reserialization"
+    },
+    {
+      "scenario": "synthetic_valid_envelope_near_and_at_json_ceiling",
+      "check": "262144 byte stream completes within the permitted decoded budget"
+    },
+    {
+      "scenario": "synthetic_valid_envelope_near_and_at_json_ceiling",
+      "check": "only the two deliberately requested envelope exports occur"
+    },
+    {
+      "scenario": "synthetic_valid_envelope_near_and_at_json_ceiling",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "synthetic_valid_envelope_near_and_at_json_ceiling",
+      "check": "browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "synthetic_valid_envelope_near_and_at_json_ceiling",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "synthetic_valid_envelope_near_and_at_json_ceiling",
+      "check": "instrumented receipt reads never use a complete-body convenience method"
+    },
+    {
+      "scenario": "actual_html_with_comment_padding_near_and_at_ceiling",
+      "check": "131071 byte HTML completes without changing the protected receipt"
+    },
+    {
+      "scenario": "actual_html_with_comment_padding_near_and_at_ceiling",
+      "check": "131071 byte HTML keeps print and export available"
+    },
+    {
+      "scenario": "actual_html_with_comment_padding_near_and_at_ceiling",
+      "check": "131072 byte HTML completes without changing the protected receipt"
+    },
+    {
+      "scenario": "actual_html_with_comment_padding_near_and_at_ceiling",
+      "check": "131072 byte HTML keeps print and export available"
+    },
+    {
+      "scenario": "actual_html_with_comment_padding_near_and_at_ceiling",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "actual_html_with_comment_padding_near_and_at_ceiling",
+      "check": "browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "actual_html_with_comment_padding_near_and_at_ceiling",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "actual_html_with_comment_padding_near_and_at_ceiling",
+      "check": "instrumented receipt reads never use a complete-body convenience method"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "html length 0 rejects without consuming supplied body bytes"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "html length 0 clears document and private code"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "html length 131073 rejects without consuming supplied body bytes"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "html length 131073 clears document and private code"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "html length -1 rejects without consuming supplied body bytes"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "html length -1 clears document and private code"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "html length 1.5 rejects without consuming supplied body bytes"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "html length 1.5 clears document and private code"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "html length 1e3 rejects without consuming supplied body bytes"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "html length 1e3 clears document and private code"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "html length 9007199254740992 rejects without consuming supplied body bytes"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "html length 9007199254740992 clears document and private code"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "html length 2, 2 rejects without consuming supplied body bytes"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "html length 2, 2 clears document and private code"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "json length 0 rejects without consuming supplied body bytes"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "json length 0 clears document and private code"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "json length 262145 rejects without consuming supplied body bytes"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "json length 262145 clears document and private code"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "json length -1 rejects without consuming supplied body bytes"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "json length -1 clears document and private code"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "json length 1.5 rejects without consuming supplied body bytes"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "json length 1.5 clears document and private code"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "json length 1e3 rejects without consuming supplied body bytes"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "json length 1e3 clears document and private code"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "json length 9007199254740992 rejects without consuming supplied body bytes"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "json length 9007199254740992 clears document and private code"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "json length 2, 2 rejects without consuming supplied body bytes"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "json length 2, 2 clears document and private code"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "failure clears protected content, retained code and output authority"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "failure releases no print or object URL or download"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "recovery uses fixed copy without stream or cancellation details"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "declared-length rejection remains recoverable by deliberate valid access"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "impossible_declared_lengths_cancel_before_body_reads",
+      "check": "instrumented receipt reads never use a complete-body convenience method"
+    },
+    {
+      "scenario": "identity_length_must_match_actual_delivered_bytes",
+      "check": "declared 4617 rejects before hashing or output"
+    },
+    {
+      "scenario": "identity_length_must_match_actual_delivered_bytes",
+      "check": "declared 4617 distinguishes extra bytes from truncated EOF"
+    },
+    {
+      "scenario": "identity_length_must_match_actual_delivered_bytes",
+      "check": "declared 4619 rejects before hashing or output"
+    },
+    {
+      "scenario": "identity_length_must_match_actual_delivered_bytes",
+      "check": "declared 4619 distinguishes extra bytes from truncated EOF"
+    },
+    {
+      "scenario": "identity_length_must_match_actual_delivered_bytes",
+      "check": "failure clears protected content, retained code and output authority"
+    },
+    {
+      "scenario": "identity_length_must_match_actual_delivered_bytes",
+      "check": "failure releases no print or object URL or download"
+    },
+    {
+      "scenario": "identity_length_must_match_actual_delivered_bytes",
+      "check": "recovery uses fixed copy without stream or cancellation details"
+    },
+    {
+      "scenario": "identity_length_must_match_actual_delivered_bytes",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "identity_length_must_match_actual_delivered_bytes",
+      "check": "browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "identity_length_must_match_actual_delivered_bytes",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "identity_length_must_match_actual_delivered_bytes",
+      "check": "instrumented receipt reads never use a complete-body convenience method"
+    },
+    {
+      "scenario": "encoded_length_metadata_does_not_replace_decoded_byte_budget",
+      "check": "encoded length 0 permits exact bounded decoded canonical bytes"
+    },
+    {
+      "scenario": "encoded_length_metadata_does_not_replace_decoded_byte_budget",
+      "check": "encoded length 17 permits exact bounded decoded canonical bytes"
+    },
+    {
+      "scenario": "encoded_length_metadata_does_not_replace_decoded_byte_budget",
+      "check": "encoded length 900000 permits exact bounded decoded canonical bytes"
+    },
+    {
+      "scenario": "encoded_length_metadata_does_not_replace_decoded_byte_budget",
+      "check": "encoded-length fixtures produce exactly their three requested downloads"
+    },
+    {
+      "scenario": "encoded_length_metadata_does_not_replace_decoded_byte_budget",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "encoded_length_metadata_does_not_replace_decoded_byte_budget",
+      "check": "browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "encoded_length_metadata_does_not_replace_decoded_byte_budget",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "encoded_length_metadata_does_not_replace_decoded_byte_budget",
+      "check": "instrumented receipt reads never use a complete-body convenience method"
+    },
+    {
+      "scenario": "chunked_html_overflow_cancels_before_complete_body",
+      "check": "failure clears protected content, retained code and output authority"
+    },
+    {
+      "scenario": "chunked_html_overflow_cancels_before_complete_body",
+      "check": "failure releases no print or object URL or download"
+    },
+    {
+      "scenario": "chunked_html_overflow_cancels_before_complete_body",
+      "check": "recovery uses fixed copy without stream or cancellation details"
+    },
+    {
+      "scenario": "chunked_html_overflow_cancels_before_complete_body",
+      "check": "overflow stops at the first chunk exceeding the decoded ceiling"
+    },
+    {
+      "scenario": "chunked_html_overflow_cancels_before_complete_body",
+      "check": "overflow cancels its reader and request without later hash work"
+    },
+    {
+      "scenario": "chunked_html_overflow_cancels_before_complete_body",
+      "check": "mobile overflow recovery stays within its viewport"
+    },
+    {
+      "scenario": "chunked_html_overflow_cancels_before_complete_body",
+      "check": "overflow recovery leaves deliberate valid reentry usable"
+    },
+    {
+      "scenario": "chunked_html_overflow_cancels_before_complete_body",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "chunked_html_overflow_cancels_before_complete_body",
+      "check": "browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "chunked_html_overflow_cancels_before_complete_body",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "chunked_html_overflow_cancels_before_complete_body",
+      "check": "instrumented receipt reads never use a complete-body convenience method"
+    },
+    {
+      "scenario": "chunked_json_overflow_cancels_before_complete_body",
+      "check": "failure clears protected content, retained code and output authority"
+    },
+    {
+      "scenario": "chunked_json_overflow_cancels_before_complete_body",
+      "check": "failure releases no print or object URL or download"
+    },
+    {
+      "scenario": "chunked_json_overflow_cancels_before_complete_body",
+      "check": "recovery uses fixed copy without stream or cancellation details"
+    },
+    {
+      "scenario": "chunked_json_overflow_cancels_before_complete_body",
+      "check": "overflow stops at the first chunk exceeding the decoded ceiling"
+    },
+    {
+      "scenario": "chunked_json_overflow_cancels_before_complete_body",
+      "check": "overflow cancels its reader and request without later hash work"
+    },
+    {
+      "scenario": "chunked_json_overflow_cancels_before_complete_body",
+      "check": "overflow recovery leaves deliberate valid reentry usable"
+    },
+    {
+      "scenario": "chunked_json_overflow_cancels_before_complete_body",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "chunked_json_overflow_cancels_before_complete_body",
+      "check": "browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "chunked_json_overflow_cancels_before_complete_body",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "chunked_json_overflow_cancels_before_complete_body",
+      "check": "instrumented receipt reads never use a complete-body convenience method"
+    },
+    {
+      "scenario": "oversized_single_chunk_is_rejected_without_more_reads",
+      "check": "failure clears protected content, retained code and output authority"
+    },
+    {
+      "scenario": "oversized_single_chunk_is_rejected_without_more_reads",
+      "check": "failure releases no print or object URL or download"
+    },
+    {
+      "scenario": "oversized_single_chunk_is_rejected_without_more_reads",
+      "check": "recovery uses fixed copy without stream or cancellation details"
+    },
+    {
+      "scenario": "oversized_single_chunk_is_rejected_without_more_reads",
+      "check": "an oversized incoming chunk is refused without requesting its remainder"
+    },
+    {
+      "scenario": "oversized_single_chunk_is_rejected_without_more_reads",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "oversized_single_chunk_is_rejected_without_more_reads",
+      "check": "browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "oversized_single_chunk_is_rejected_without_more_reads",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "oversized_single_chunk_is_rejected_without_more_reads",
+      "check": "instrumented receipt reads never use a complete-body convenience method"
+    },
+    {
+      "scenario": "stalled_partial_html_shares_request_deadline",
+      "check": "partial receipt content stays unavailable during a stalled body"
+    },
+    {
+      "scenario": "stalled_partial_html_shares_request_deadline",
+      "check": "failure clears protected content, retained code and output authority"
+    },
+    {
+      "scenario": "stalled_partial_html_shares_request_deadline",
+      "check": "failure releases no print or object URL or download"
+    },
+    {
+      "scenario": "stalled_partial_html_shares_request_deadline",
+      "check": "recovery uses fixed copy without stream or cancellation details"
+    },
+    {
+      "scenario": "stalled_partial_html_shares_request_deadline",
+      "check": "request deadline cancels an incomplete reader and retains fixed timeout copy"
+    },
+    {
+      "scenario": "stalled_partial_html_shares_request_deadline",
+      "check": "late stalled delivery causes no automatic retry or protected output"
+    },
+    {
+      "scenario": "stalled_partial_html_shares_request_deadline",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "stalled_partial_html_shares_request_deadline",
+      "check": "browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "stalled_partial_html_shares_request_deadline",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "stalled_partial_html_shares_request_deadline",
+      "check": "instrumented receipt reads never use a complete-body convenience method"
+    },
+    {
+      "scenario": "stalled_export_keeps_earlier_licensing_boundary",
+      "check": "failure clears protected content, retained code and output authority"
+    },
+    {
+      "scenario": "stalled_export_keeps_earlier_licensing_boundary",
+      "check": "failure releases no print or object URL or download"
+    },
+    {
+      "scenario": "stalled_export_keeps_earlier_licensing_boundary",
+      "check": "recovery uses fixed copy without stream or cancellation details"
+    },
+    {
+      "scenario": "stalled_export_keeps_earlier_licensing_boundary",
+      "check": "the earlier licensing boundary requests reader cancellation before fifteen seconds"
+    },
+    {
+      "scenario": "stalled_export_keeps_earlier_licensing_boundary",
+      "check": "a cancellation-ignoring source cannot hash or export its late chunk"
+    },
+    {
+      "scenario": "stalled_export_keeps_earlier_licensing_boundary",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "stalled_export_keeps_earlier_licensing_boundary",
+      "check": "browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "stalled_export_keeps_earlier_licensing_boundary",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "stalled_export_keeps_earlier_licensing_boundary",
+      "check": "instrumented receipt reads never use a complete-body convenience method"
+    },
+    {
+      "scenario": "closed_partial_export_cannot_overwrite_new_capability",
+      "check": "failure clears protected content, retained code and output authority"
+    },
+    {
+      "scenario": "closed_partial_export_cannot_overwrite_new_capability",
+      "check": "failure releases no print or object URL or download"
+    },
+    {
+      "scenario": "closed_partial_export_cannot_overwrite_new_capability",
+      "check": "recovery uses fixed copy without stream or cancellation details"
+    },
+    {
+      "scenario": "closed_partial_export_cannot_overwrite_new_capability",
+      "check": "Close requests reader cancellation even when transport ignores it"
+    },
+    {
+      "scenario": "closed_partial_export_cannot_overwrite_new_capability",
+      "check": "late read cannot replace the new document or release old output"
+    },
+    {
+      "scenario": "closed_partial_export_cannot_overwrite_new_capability",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "closed_partial_export_cannot_overwrite_new_capability",
+      "check": "browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "closed_partial_export_cannot_overwrite_new_capability",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "closed_partial_export_cannot_overwrite_new_capability",
+      "check": "instrumented receipt reads never use a complete-body convenience method"
+    },
+    {
+      "scenario": "replaced_partial_html_cannot_clear_winning_receipt",
+      "check": "code replacement cancels the old reader and retains the winning capability"
+    },
+    {
+      "scenario": "replaced_partial_html_cannot_clear_winning_receipt",
+      "check": "late superseded body cannot strand later refresh"
+    },
+    {
+      "scenario": "replaced_partial_html_cannot_clear_winning_receipt",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "replaced_partial_html_cannot_clear_winning_receipt",
+      "check": "browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "replaced_partial_html_cannot_clear_winning_receipt",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "replaced_partial_html_cannot_clear_winning_receipt",
+      "check": "instrumented receipt reads never use a complete-body convenience method"
+    },
+    {
+      "scenario": "reader_cancellation_failures_do_not_block_private_recovery",
+      "check": "failure clears protected content, retained code and output authority"
+    },
+    {
+      "scenario": "reader_cancellation_failures_do_not_block_private_recovery",
+      "check": "failure releases no print or object URL or download"
+    },
+    {
+      "scenario": "reader_cancellation_failures_do_not_block_private_recovery",
+      "check": "recovery uses fixed copy without stream or cancellation details"
+    },
+    {
+      "scenario": "reader_cancellation_failures_do_not_block_private_recovery",
+      "check": "reject cancellation completion does not retain body access"
+    },
+    {
+      "scenario": "reader_cancellation_failures_do_not_block_private_recovery",
+      "check": "reject cancellation completion does not prevent new access"
+    },
+    {
+      "scenario": "reader_cancellation_failures_do_not_block_private_recovery",
+      "check": "failure clears protected content, retained code and output authority"
+    },
+    {
+      "scenario": "reader_cancellation_failures_do_not_block_private_recovery",
+      "check": "failure releases no print or object URL or download"
+    },
+    {
+      "scenario": "reader_cancellation_failures_do_not_block_private_recovery",
+      "check": "recovery uses fixed copy without stream or cancellation details"
+    },
+    {
+      "scenario": "reader_cancellation_failures_do_not_block_private_recovery",
+      "check": "stall cancellation completion does not retain body access"
+    },
+    {
+      "scenario": "reader_cancellation_failures_do_not_block_private_recovery",
+      "check": "stall cancellation completion does not prevent new access"
+    },
+    {
+      "scenario": "reader_cancellation_failures_do_not_block_private_recovery",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "reader_cancellation_failures_do_not_block_private_recovery",
+      "check": "browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "reader_cancellation_failures_do_not_block_private_recovery",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "reader_cancellation_failures_do_not_block_private_recovery",
+      "check": "instrumented receipt reads never use a complete-body convenience method"
+    },
+    {
+      "scenario": "stream_error_after_partial_bytes_uses_fixed_recovery",
+      "check": "failure clears protected content, retained code and output authority"
+    },
+    {
+      "scenario": "stream_error_after_partial_bytes_uses_fixed_recovery",
+      "check": "failure releases no print or object URL or download"
+    },
+    {
+      "scenario": "stream_error_after_partial_bytes_uses_fixed_recovery",
+      "check": "recovery uses fixed copy without stream or cancellation details"
+    },
+    {
+      "scenario": "stream_error_after_partial_bytes_uses_fixed_recovery",
+      "check": "partial read failure cancels access before JSON parsing or digest"
+    },
+    {
+      "scenario": "stream_error_after_partial_bytes_uses_fixed_recovery",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "stream_error_after_partial_bytes_uses_fixed_recovery",
+      "check": "browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "stream_error_after_partial_bytes_uses_fixed_recovery",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "stream_error_after_partial_bytes_uses_fixed_recovery",
+      "check": "instrumented receipt reads never use a complete-body convenience method"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "native_utf8_bytes_survive_irregular_stream_chunks",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "streams": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "format": "html",
+              "label": "native HTML split across UTF-8 sequences",
+              "nativeBytes": 21479,
+              "suppliedBytes": 21479,
+              "declaredLength": null,
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 329,
+              "deliveredBytes": 21479,
+              "deliveredChunks": 328,
+              "producedBytes": 21479,
+              "readerDone": true,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            },
+            {
+              "id": 2,
+              "format": "json",
+              "label": "native JSON split across UTF-8 sequences",
+              "nativeBytes": 4632,
+              "suppliedBytes": 4632,
+              "declaredLength": null,
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 73,
+              "deliveredBytes": 4632,
+              "deliveredChunks": 72,
+              "producedBytes": 4632,
+              "readerDone": true,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 1,
+          "objectUrlCount": 1,
+          "digests": [
+            {
+              "bytes": 4632,
+              "sha256": "1bcfbe8404a3e4af4eb9ec9c8e0513396f90132580fd93b7d64136a320aa34f5"
+            }
+          ]
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "synthetic_valid_envelope_near_and_at_json_ceiling",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 6,
+      "streams": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "format": "html",
+              "label": "paired synthetic size fixture digest",
+              "nativeBytes": 21419,
+              "suppliedBytes": 21419,
+              "declaredLength": "21419",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 2,
+              "deliveredBytes": 21419,
+              "deliveredChunks": 1,
+              "producedBytes": 21419,
+              "readerDone": true,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            },
+            {
+              "id": 2,
+              "format": "json",
+              "label": "synthetic envelope of 262143 bytes",
+              "nativeBytes": 4618,
+              "suppliedBytes": 262143,
+              "declaredLength": null,
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 22,
+              "deliveredBytes": 262143,
+              "deliveredChunks": 21,
+              "producedBytes": 262143,
+              "readerDone": true,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            },
+            {
+              "id": 3,
+              "format": "html",
+              "label": "paired synthetic size fixture digest",
+              "nativeBytes": 21419,
+              "suppliedBytes": 21419,
+              "declaredLength": "21419",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 2,
+              "deliveredBytes": 21419,
+              "deliveredChunks": 1,
+              "producedBytes": 21419,
+              "readerDone": true,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            },
+            {
+              "id": 4,
+              "format": "json",
+              "label": "synthetic envelope of 262144 bytes",
+              "nativeBytes": 4618,
+              "suppliedBytes": 262144,
+              "declaredLength": "000262144",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 22,
+              "deliveredBytes": 262144,
+              "deliveredChunks": 21,
+              "producedBytes": 262144,
+              "readerDone": true,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 2,
+          "digests": [
+            {
+              "bytes": 262143,
+              "sha256": "735a0be579db1a13b21e3d6f3f9799572f79a3318938d4e111340685786acb4e"
+            },
+            {
+              "bytes": 262144,
+              "sha256": "2fbb664d43baf5c9550cff31dbf7f1664ec944f9cd2dc75faaa7197ff39f75cc"
+            }
+          ]
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "actual_html_with_comment_padding_near_and_at_ceiling",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 4,
+      "streams": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "format": "html",
+              "label": "actual HTML plus comment to 131071 bytes",
+              "nativeBytes": 21663,
+              "suppliedBytes": 131071,
+              "declaredLength": null,
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 13,
+              "deliveredBytes": 131071,
+              "deliveredChunks": 12,
+              "producedBytes": 131071,
+              "readerDone": true,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            },
+            {
+              "id": 2,
+              "format": "html",
+              "label": "actual HTML plus comment to 131072 bytes",
+              "nativeBytes": 21663,
+              "suppliedBytes": 131072,
+              "declaredLength": "131072",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 13,
+              "deliveredBytes": 131072,
+              "deliveredChunks": 12,
+              "producedBytes": 131072,
+              "readerDone": true,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": []
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "impossible_declared_lengths_cancel_before_body_reads",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 24,
+      "streams": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "format": "html",
+              "label": "impossible html declared length 0",
+              "nativeBytes": 21573,
+              "suppliedBytes": 21573,
+              "declaredLength": "0",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 0,
+              "reads": 0,
+              "deliveredBytes": 0,
+              "deliveredChunks": 0,
+              "producedBytes": 0,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            },
+            {
+              "id": 2,
+              "format": "html",
+              "label": "impossible html declared length 131073",
+              "nativeBytes": 21573,
+              "suppliedBytes": 21573,
+              "declaredLength": "131073",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 0,
+              "reads": 0,
+              "deliveredBytes": 0,
+              "deliveredChunks": 0,
+              "producedBytes": 0,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            },
+            {
+              "id": 3,
+              "format": "html",
+              "label": "impossible html declared length -1",
+              "nativeBytes": 21573,
+              "suppliedBytes": 21573,
+              "declaredLength": "-1",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 0,
+              "reads": 0,
+              "deliveredBytes": 0,
+              "deliveredChunks": 0,
+              "producedBytes": 0,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            },
+            {
+              "id": 4,
+              "format": "html",
+              "label": "impossible html declared length 1.5",
+              "nativeBytes": 21573,
+              "suppliedBytes": 21573,
+              "declaredLength": "1.5",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 0,
+              "reads": 0,
+              "deliveredBytes": 0,
+              "deliveredChunks": 0,
+              "producedBytes": 0,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            },
+            {
+              "id": 5,
+              "format": "html",
+              "label": "impossible html declared length 1e3",
+              "nativeBytes": 21573,
+              "suppliedBytes": 21573,
+              "declaredLength": "1e3",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 0,
+              "reads": 0,
+              "deliveredBytes": 0,
+              "deliveredChunks": 0,
+              "producedBytes": 0,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            },
+            {
+              "id": 6,
+              "format": "html",
+              "label": "impossible html declared length 9007199254740992",
+              "nativeBytes": 21573,
+              "suppliedBytes": 21573,
+              "declaredLength": "9007199254740992",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 0,
+              "reads": 0,
+              "deliveredBytes": 0,
+              "deliveredChunks": 0,
+              "producedBytes": 0,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            },
+            {
+              "id": 7,
+              "format": "html",
+              "label": "impossible html declared length 2, 2",
+              "nativeBytes": 21573,
+              "suppliedBytes": 21573,
+              "declaredLength": "2, 2",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 0,
+              "reads": 0,
+              "deliveredBytes": 0,
+              "deliveredChunks": 0,
+              "producedBytes": 0,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            },
+            {
+              "id": 8,
+              "format": "json",
+              "label": "impossible json declared length 0",
+              "nativeBytes": 4618,
+              "suppliedBytes": 4618,
+              "declaredLength": "0",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 0,
+              "reads": 0,
+              "deliveredBytes": 0,
+              "deliveredChunks": 0,
+              "producedBytes": 0,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            },
+            {
+              "id": 9,
+              "format": "json",
+              "label": "impossible json declared length 262145",
+              "nativeBytes": 4618,
+              "suppliedBytes": 4618,
+              "declaredLength": "262145",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 0,
+              "reads": 0,
+              "deliveredBytes": 0,
+              "deliveredChunks": 0,
+              "producedBytes": 0,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            },
+            {
+              "id": 10,
+              "format": "json",
+              "label": "impossible json declared length -1",
+              "nativeBytes": 4618,
+              "suppliedBytes": 4618,
+              "declaredLength": "-1",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 0,
+              "reads": 0,
+              "deliveredBytes": 0,
+              "deliveredChunks": 0,
+              "producedBytes": 0,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            },
+            {
+              "id": 11,
+              "format": "json",
+              "label": "impossible json declared length 1.5",
+              "nativeBytes": 4618,
+              "suppliedBytes": 4618,
+              "declaredLength": "1.5",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 0,
+              "reads": 0,
+              "deliveredBytes": 0,
+              "deliveredChunks": 0,
+              "producedBytes": 0,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            },
+            {
+              "id": 12,
+              "format": "json",
+              "label": "impossible json declared length 1e3",
+              "nativeBytes": 4618,
+              "suppliedBytes": 4618,
+              "declaredLength": "1e3",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 0,
+              "reads": 0,
+              "deliveredBytes": 0,
+              "deliveredChunks": 0,
+              "producedBytes": 0,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            },
+            {
+              "id": 13,
+              "format": "json",
+              "label": "impossible json declared length 9007199254740992",
+              "nativeBytes": 4618,
+              "suppliedBytes": 4618,
+              "declaredLength": "9007199254740992",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 0,
+              "reads": 0,
+              "deliveredBytes": 0,
+              "deliveredChunks": 0,
+              "producedBytes": 0,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            },
+            {
+              "id": 14,
+              "format": "json",
+              "label": "impossible json declared length 2, 2",
+              "nativeBytes": 4618,
+              "suppliedBytes": 4618,
+              "declaredLength": "2, 2",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 0,
+              "reads": 0,
+              "deliveredBytes": 0,
+              "deliveredChunks": 0,
+              "producedBytes": 0,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": []
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "identity_length_must_match_actual_delivered_bytes",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 6,
+      "streams": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "format": "json",
+              "label": "identity length disagrees with actual bytes",
+              "nativeBytes": 4618,
+              "suppliedBytes": 4618,
+              "declaredLength": "4617",
+              "encoding": "identity",
+              "arrived": true,
+              "acquired": 1,
+              "reads": 18,
+              "deliveredBytes": 4618,
+              "deliveredChunks": 18,
+              "producedBytes": 4618,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            },
+            {
+              "id": 2,
+              "format": "json",
+              "label": "identity length disagrees with actual bytes",
+              "nativeBytes": 4618,
+              "suppliedBytes": 4618,
+              "declaredLength": "4619",
+              "encoding": "identity",
+              "arrived": true,
+              "acquired": 1,
+              "reads": 19,
+              "deliveredBytes": 4618,
+              "deliveredChunks": 18,
+              "producedBytes": 4618,
+              "readerDone": true,
+              "completed": true,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": []
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "encoded_length_metadata_does_not_replace_decoded_byte_budget",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 8,
+      "streams": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "format": "html",
+              "label": "decoded HTML with encoded-length metadata",
+              "nativeBytes": 21466,
+              "suppliedBytes": 21466,
+              "declaredLength": "0",
+              "encoding": "gzip",
+              "arrived": true,
+              "acquired": 1,
+              "reads": 23,
+              "deliveredBytes": 21466,
+              "deliveredChunks": 22,
+              "producedBytes": 21466,
+              "readerDone": true,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            },
+            {
+              "id": 2,
+              "format": "json",
+              "label": "decoded JSON with encoded-length metadata",
+              "nativeBytes": 4618,
+              "suppliedBytes": 4618,
+              "declaredLength": "0",
+              "encoding": "br",
+              "arrived": true,
+              "acquired": 1,
+              "reads": 6,
+              "deliveredBytes": 4618,
+              "deliveredChunks": 5,
+              "producedBytes": 4618,
+              "readerDone": true,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            },
+            {
+              "id": 3,
+              "format": "html",
+              "label": "decoded HTML with encoded-length metadata",
+              "nativeBytes": 21466,
+              "suppliedBytes": 21466,
+              "declaredLength": "17",
+              "encoding": "gzip",
+              "arrived": true,
+              "acquired": 1,
+              "reads": 23,
+              "deliveredBytes": 21466,
+              "deliveredChunks": 22,
+              "producedBytes": 21466,
+              "readerDone": true,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            },
+            {
+              "id": 4,
+              "format": "json",
+              "label": "decoded JSON with encoded-length metadata",
+              "nativeBytes": 4618,
+              "suppliedBytes": 4618,
+              "declaredLength": "17",
+              "encoding": "br",
+              "arrived": true,
+              "acquired": 1,
+              "reads": 6,
+              "deliveredBytes": 4618,
+              "deliveredChunks": 5,
+              "producedBytes": 4618,
+              "readerDone": true,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            },
+            {
+              "id": 5,
+              "format": "html",
+              "label": "decoded HTML with encoded-length metadata",
+              "nativeBytes": 21466,
+              "suppliedBytes": 21466,
+              "declaredLength": "900000",
+              "encoding": "gzip",
+              "arrived": true,
+              "acquired": 1,
+              "reads": 23,
+              "deliveredBytes": 21466,
+              "deliveredChunks": 22,
+              "producedBytes": 21466,
+              "readerDone": true,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            },
+            {
+              "id": 6,
+              "format": "json",
+              "label": "decoded JSON with encoded-length metadata",
+              "nativeBytes": 4618,
+              "suppliedBytes": 4618,
+              "declaredLength": "900000",
+              "encoding": "br",
+              "arrived": true,
+              "acquired": 1,
+              "reads": 6,
+              "deliveredBytes": 4618,
+              "deliveredChunks": 5,
+              "producedBytes": 4618,
+              "readerDone": true,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 3,
+          "digests": [
+            {
+              "bytes": 4618,
+              "sha256": "23b9efcd7006a508dd7200feddd435894b25a8accfa7e84b64dc939cdbf8714f"
+            },
+            {
+              "bytes": 4618,
+              "sha256": "23b9efcd7006a508dd7200feddd435894b25a8accfa7e84b64dc939cdbf8714f"
+            },
+            {
+              "bytes": 4618,
+              "sha256": "23b9efcd7006a508dd7200feddd435894b25a8accfa7e84b64dc939cdbf8714f"
+            }
+          ]
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "chunked_html_overflow_cancels_before_complete_body",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 4,
+      "streams": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "format": "html",
+              "label": "oversized decoded chunk stream",
+              "nativeBytes": 21332,
+              "suppliedBytes": 262145,
+              "declaredLength": null,
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 3,
+              "deliveredBytes": 196608,
+              "deliveredChunks": 3,
+              "producedBytes": 196608,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": []
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "chunked_json_overflow_cancels_before_complete_body",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "streams": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "format": "html",
+              "label": "paired oversized JSON fixture digest",
+              "nativeBytes": 21548,
+              "suppliedBytes": 21548,
+              "declaredLength": "21548",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 2,
+              "deliveredBytes": 21548,
+              "deliveredChunks": 1,
+              "producedBytes": 21548,
+              "readerDone": true,
+              "completed": true,
+              "cancelCalls": 0,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": false,
+              "pending": false
+            },
+            {
+              "id": 2,
+              "format": "json",
+              "label": "oversized decoded chunk stream",
+              "nativeBytes": 4618,
+              "suppliedBytes": 393217,
+              "declaredLength": "17",
+              "encoding": "gzip",
+              "arrived": true,
+              "acquired": 1,
+              "reads": 5,
+              "deliveredBytes": 327680,
+              "deliveredChunks": 5,
+              "producedBytes": 327680,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": []
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "oversized_single_chunk_is_rejected_without_more_reads",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 3,
+      "streams": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "format": "html",
+              "label": "one incoming chunk above HTML cap",
+              "nativeBytes": 21576,
+              "suppliedBytes": 393216,
+              "declaredLength": null,
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 1,
+              "deliveredBytes": 262144,
+              "deliveredChunks": 1,
+              "producedBytes": 262144,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": []
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "stalled_partial_html_shares_request_deadline",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 4,
+      "streams": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "format": "html",
+              "label": "partial HTML then stalled reader",
+              "nativeBytes": 21405,
+              "suppliedBytes": 21405,
+              "declaredLength": "21405",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 2,
+              "deliveredBytes": 257,
+              "deliveredChunks": 1,
+              "producedBytes": 257,
+              "readerDone": true,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 1,
+              "released": true,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": []
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "stalled_export_keeps_earlier_licensing_boundary",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 4,
+      "streams": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "format": "json",
+              "label": "partial JSON stalled across licensing boundary",
+              "nativeBytes": 4618,
+              "suppliedBytes": 4618,
+              "declaredLength": "4618",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 2,
+              "deliveredBytes": 257,
+              "deliveredChunks": 1,
+              "producedBytes": 514,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 1,
+              "released": true,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": []
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "closed_partial_export_cannot_overwrite_new_capability",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 1,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "streams": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "format": "json",
+              "label": "late JSON read ignores cancel",
+              "nativeBytes": 4618,
+              "suppliedBytes": 4618,
+              "declaredLength": "4618",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 2,
+              "deliveredBytes": 257,
+              "deliveredChunks": 1,
+              "producedBytes": 514,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 1,
+              "released": true,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": []
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        },
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "replaced_partial_html_cannot_clear_winning_receipt",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 1,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 1,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "streams": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "format": "html",
+              "label": "superseded HTML read ignores cancel",
+              "nativeBytes": 21660,
+              "suppliedBytes": 21660,
+              "declaredLength": "21660",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 2,
+              "deliveredBytes": 257,
+              "deliveredChunks": 1,
+              "producedBytes": 514,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 1,
+              "released": true,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": []
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        },
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "reader_cancellation_failures_do_not_block_private_recovery",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 6,
+      "streams": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "format": "html",
+              "label": "reject reader cancellation completion",
+              "nativeBytes": 21357,
+              "suppliedBytes": 21357,
+              "declaredLength": "21357",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 2,
+              "deliveredBytes": 257,
+              "deliveredChunks": 1,
+              "producedBytes": 257,
+              "readerDone": true,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 1,
+              "released": true,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            },
+            {
+              "id": 2,
+              "format": "html",
+              "label": "stall reader cancellation completion",
+              "nativeBytes": 21357,
+              "suppliedBytes": 21357,
+              "declaredLength": "21357",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 2,
+              "deliveredBytes": 257,
+              "deliveredChunks": 1,
+              "producedBytes": 257,
+              "readerDone": true,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 1,
+              "releaseCalls": 1,
+              "released": true,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": []
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "stream_error_after_partial_bytes_uses_fixed_recovery",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "streams": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "format": "json",
+              "label": "reader fails after partial native JSON",
+              "nativeBytes": 4618,
+              "suppliedBytes": 4618,
+              "declaredLength": "4618",
+              "encoding": null,
+              "arrived": true,
+              "acquired": 1,
+              "reads": 2,
+              "deliveredBytes": 257,
+              "deliveredChunks": 1,
+              "producedBytes": 257,
+              "readerDone": false,
+              "completed": false,
+              "cancelCalls": 1,
+              "sourceCancelCalls": 0,
+              "releaseCalls": 0,
+              "released": false,
+              "convenienceCalls": 0,
+              "aborted": true,
+              "pending": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": []
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    }
+  ],
+  "browser": "140.0.7339.16"
+}

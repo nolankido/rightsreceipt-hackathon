@@ -1,0 +1,14 @@
+.rr-quote-page { display: grid; gap: 1.5rem; max-width: 55rem; }
+.rr-quote-page h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 3rem); letter-spacing: -0.035em; }
+.rr-quote-page .rr-lede { margin: 0; }
+.rr-quote-meta dl { margin: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); }
+.rr-quote-meta dt, .rr-quote-dates dt { font-size: .8rem; color: var(--rr-color-text-muted); }
+.rr-quote-meta dd, .rr-quote-dates dd { margin: .25rem 0 0; font-weight: 650; overflow-wrap: anywhere; }
+.rr-quote-table { border-collapse: collapse; width: 100%; margin-block: 1rem; font-variant-numeric: tabular-nums; }
+.rr-quote-table caption { text-align: left; padding-bottom: .5rem; color: var(--rr-color-text-muted); }
+.rr-quote-table td, .rr-quote-table th { padding: .8rem .35rem; border-bottom: 1px solid var(--rr-color-border); text-align: left; }
+.rr-quote-table td:last-child, .rr-quote-table th:last-child { text-align: right; }
+.rr-quote-table tfoot th, .rr-quote-table tfoot td { font-size: 1.2rem; font-weight: 800; border-bottom: 0; }
+.rr-quote-dates { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); }
+.rr-quote-hash { font-size: .85rem; overflow-wrap: anywhere; }
+.rr-quote-error { border-left: .25rem solid #9a3424; padding: .75rem 1rem; background: #fff0ee; }

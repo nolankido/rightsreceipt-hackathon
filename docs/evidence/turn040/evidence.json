@@ -1,0 +1,1273 @@
+{
+  "schemaVersion": "judge-rehearsal-v1",
+  "mode": "local_injected",
+  "status": "passed",
+  "runtime": "v22.18.0",
+  "generatedAt": "2026-10-28T06:05:02.440Z",
+  "sourceRevision": "99ce8297e1ce8cb83d517362e20133ce59547fe0",
+  "sourceFingerprint": "ee7937fc49a70d27fe05d6c09028743edd3143550e0d14fac1bce8504034eee4",
+  "sourceClean": false,
+  "scenarioClock": "2026-10-27T19:00:00.000Z",
+  "baseline": {
+    "hash": "98476b4347c2c388d46fc106874eba39f3fe3464905cfa2e1f2df5345a45e05d",
+    "migrationCount": 9,
+    "domainTableCount": 33,
+    "rows": {
+      "assets": 1,
+      "audit_events": 0,
+      "buyer_acceptances": 0,
+      "buyer_capabilities": 0,
+      "clarification_answers": 0,
+      "clarification_questions": 0,
+      "clarification_rounds": 0,
+      "clarification_submissions": 0,
+      "clarification_reviews": 0,
+      "creator_decisions": 0,
+      "creator_workspaces": 1,
+      "demo_reset_epochs": 1,
+      "extraction_attempts": 0,
+      "field_observations": 0,
+      "invoice_bindings": 0,
+      "licensing_cases": 0,
+      "payment_evidence": 0,
+      "payment_operations": 0,
+      "paypal_delivery_journal": 0,
+      "paypal_webhook_projections": 0,
+      "paypal_webhook_processing_receipts": 0,
+      "paypal_reconciliation_outbox": 0,
+      "paypal_reconciliation_receipts": 0,
+      "paypal_lifecycle_observations": 0,
+      "permissions": 0,
+      "pricing_policy_versions": 1,
+      "quote_lines": 0,
+      "quotes": 0,
+      "receipt_revisions": 0,
+      "request_submissions": 0,
+      "terms_versions": 0,
+      "verification_records": 0,
+      "webhook_inbox_events": 0
+    }
+  },
+  "scenarios": [
+    {
+      "id": "ordinary",
+      "label": "Ordinary licensing journey",
+      "status": "passed",
+      "steps": [
+        {
+          "id": "baseline",
+          "title": "Start from the seeded asset and policy",
+          "actor": "Local harness",
+          "operation": "SQLite seed verification",
+          "httpStatus": null,
+          "outcome": "seed_only",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "creator_asset_review",
+          "title": "Review the asset as the creator",
+          "actor": "Scripted creator",
+          "operation": "GET /api/intake/creator/assets/:assetId/review",
+          "httpStatus": 200,
+          "outcome": "reviewed",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "private_link",
+          "title": "Issue a private request link",
+          "actor": "Scripted creator",
+          "operation": "POST /api/intake/creator/assets/:assetId/links",
+          "httpStatus": 200,
+          "outcome": "issued",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "buyer_request",
+          "title": "Submit the original intended use",
+          "actor": "Scripted buyer",
+          "operation": "POST /api/intake/buyer/request",
+          "httpStatus": 200,
+          "outcome": "submitted",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "buyer_answers",
+          "title": "Answer the missing rights questions",
+          "actor": "Scripted buyer",
+          "operation": "POST /api/clarification/buyer/answers",
+          "httpStatus": 200,
+          "outcome": "recorded",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "creator_terms",
+          "title": "Review all twelve rights and calculate the quote",
+          "actor": "Scripted creator",
+          "operation": "POST /api/clarification/creator/cases/:caseId/terms",
+          "httpStatus": 200,
+          "outcome": "complete",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "creator_approval",
+          "title": "Approve the exact rights and price",
+          "actor": "Scripted creator",
+          "operation": "POST /api/consent/creator/cases/:caseId/decision",
+          "httpStatus": 200,
+          "outcome": "recorded",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "buyer_acceptance",
+          "title": "Accept the exact approved offer",
+          "actor": "Scripted buyer",
+          "operation": "POST /api/consent/buyer/accept",
+          "httpStatus": 200,
+          "outcome": "recorded",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "draft_created",
+          "title": "Create one accepted invoice draft",
+          "actor": "Scripted creator",
+          "operation": "POST /api/invoices/creator/cases/:caseId/create",
+          "httpStatus": 200,
+          "outcome": "draft_bound",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "invoice_sent",
+          "title": "Send the accepted invoice",
+          "actor": "Scripted creator",
+          "operation": "POST /api/invoices/creator/cases/:caseId/send",
+          "httpStatus": 200,
+          "outcome": "delivery_observed",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 2,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "provider_paid",
+          "title": "Simulate payment without granting authority",
+          "actor": "Provider fixture",
+          "operation": "Injected provider state",
+          "httpStatus": null,
+          "outcome": "paid_label_only",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 2,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "financial_reconciliation",
+          "title": "Verify financial evidence through reconciliation",
+          "actor": "Application service",
+          "operation": "Canonical reconciliation consumer",
+          "httpStatus": null,
+          "outcome": "applied",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "receipt_issued",
+          "title": "Issue the canonical rights receipt",
+          "actor": "Application service",
+          "operation": "Canonical receipt issuer",
+          "httpStatus": null,
+          "outcome": "issued",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 1
+          }
+        },
+        {
+          "id": "receipt_export",
+          "title": "Verify the protected canonical receipt export",
+          "actor": "Scripted buyer",
+          "operation": "GET /api/receipts/buyer?format=json",
+          "httpStatus": 200,
+          "outcome": "verified",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 1
+          }
+        },
+        {
+          "id": "public_verification",
+          "title": "Verify the minimized public receipt",
+          "actor": "Public reader",
+          "operation": "GET /api/receipt-verification/:publicId",
+          "httpStatus": 200,
+          "outcome": "verified",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 1
+          }
+        },
+        {
+          "id": "original_link_continuation",
+          "title": "Resume the receipt from the original private link",
+          "actor": "Scripted buyer",
+          "operation": "GET /api/intake/buyer/review",
+          "httpStatus": 200,
+          "outcome": "receipt_available",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 1
+          }
+        },
+        {
+          "id": "completed_recovery",
+          "title": "Confirm no unfinished recovery remains",
+          "actor": "Scripted creator",
+          "operation": "GET /api/invoices/creator/cases/:caseId/recovery",
+          "httpStatus": 200,
+          "outcome": "complete",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 1
+          }
+        }
+      ],
+      "summary": {
+        "quoteCents": 42500,
+        "currency": "USD",
+        "providerCalls": {
+          "oauth": 3,
+          "create": 1,
+          "send": 1,
+          "get": 3
+        },
+        "durableRows": {
+          "licensing_cases": 1,
+          "request_submissions": 1,
+          "clarification_submissions": 1,
+          "clarification_reviews": 1,
+          "terms_versions": 1,
+          "quotes": 1,
+          "creator_decisions": 1,
+          "buyer_acceptances": 1,
+          "invoice_bindings": 1,
+          "payment_operations": 2,
+          "payment_evidence": 1,
+          "permissions": 1,
+          "receipt_revisions": 1
+        },
+        "permissionState": "scheduled",
+        "receiptIntegrity": "verified",
+        "receiptRevision": 1,
+        "foreignKeys": "ok",
+        "integrity": "ok"
+      }
+    },
+    {
+      "id": "recovery",
+      "label": "Invoice delivery recovery",
+      "status": "passed",
+      "steps": [
+        {
+          "id": "baseline",
+          "title": "Start from the seeded asset and policy",
+          "actor": "Local harness",
+          "operation": "SQLite seed verification",
+          "httpStatus": null,
+          "outcome": "seed_only",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "creator_asset_review",
+          "title": "Review the asset as the creator",
+          "actor": "Scripted creator",
+          "operation": "GET /api/intake/creator/assets/:assetId/review",
+          "httpStatus": 200,
+          "outcome": "reviewed",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "private_link",
+          "title": "Issue a private request link",
+          "actor": "Scripted creator",
+          "operation": "POST /api/intake/creator/assets/:assetId/links",
+          "httpStatus": 200,
+          "outcome": "issued",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "buyer_request",
+          "title": "Submit the original intended use",
+          "actor": "Scripted buyer",
+          "operation": "POST /api/intake/buyer/request",
+          "httpStatus": 200,
+          "outcome": "submitted",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "buyer_answers",
+          "title": "Answer the missing rights questions",
+          "actor": "Scripted buyer",
+          "operation": "POST /api/clarification/buyer/answers",
+          "httpStatus": 200,
+          "outcome": "recorded",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "creator_terms",
+          "title": "Review all twelve rights and calculate the quote",
+          "actor": "Scripted creator",
+          "operation": "POST /api/clarification/creator/cases/:caseId/terms",
+          "httpStatus": 200,
+          "outcome": "complete",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "creator_approval",
+          "title": "Approve the exact rights and price",
+          "actor": "Scripted creator",
+          "operation": "POST /api/consent/creator/cases/:caseId/decision",
+          "httpStatus": 200,
+          "outcome": "recorded",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "buyer_acceptance",
+          "title": "Accept the exact approved offer",
+          "actor": "Scripted buyer",
+          "operation": "POST /api/consent/buyer/accept",
+          "httpStatus": 200,
+          "outcome": "recorded",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "draft_created",
+          "title": "Create one accepted invoice draft",
+          "actor": "Scripted creator",
+          "operation": "POST /api/invoices/creator/cases/:caseId/create",
+          "httpStatus": 200,
+          "outcome": "draft_bound",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "invoice_sent",
+          "title": "Send the accepted invoice",
+          "actor": "Scripted creator",
+          "operation": "POST /api/invoices/creator/cases/:caseId/send",
+          "httpStatus": 200,
+          "outcome": "awaiting_reconciliation",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 1,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "recovery_review",
+          "title": "Review the unfinished send attempt",
+          "actor": "Scripted creator",
+          "operation": "GET /api/invoices/creator/cases/:caseId/recovery",
+          "httpStatus": 200,
+          "outcome": "delivery_unresolved",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 1,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "delivery_recovered",
+          "title": "Check and record the existing invoice delivery",
+          "actor": "Scripted creator",
+          "operation": "POST /api/invoices/creator/cases/:caseId/recover",
+          "httpStatus": 200,
+          "outcome": "delivery_observed",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 2,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "recovery_replay",
+          "title": "Reject the stale completed recovery command",
+          "actor": "Scripted creator",
+          "operation": "POST /api/invoices/creator/cases/:caseId/recover",
+          "httpStatus": 409,
+          "outcome": "stale_revision",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 2,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "provider_paid",
+          "title": "Simulate payment without granting authority",
+          "actor": "Provider fixture",
+          "operation": "Injected provider state",
+          "httpStatus": null,
+          "outcome": "paid_label_only",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 2,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "financial_reconciliation",
+          "title": "Verify financial evidence through reconciliation",
+          "actor": "Application service",
+          "operation": "Canonical reconciliation consumer",
+          "httpStatus": null,
+          "outcome": "applied",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "receipt_issued",
+          "title": "Issue the canonical rights receipt",
+          "actor": "Application service",
+          "operation": "Canonical receipt issuer",
+          "httpStatus": null,
+          "outcome": "issued",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 1
+          }
+        },
+        {
+          "id": "receipt_export",
+          "title": "Verify the protected canonical receipt export",
+          "actor": "Scripted buyer",
+          "operation": "GET /api/receipts/buyer?format=json",
+          "httpStatus": 200,
+          "outcome": "verified",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 1
+          }
+        },
+        {
+          "id": "public_verification",
+          "title": "Verify the minimized public receipt",
+          "actor": "Public reader",
+          "operation": "GET /api/receipt-verification/:publicId",
+          "httpStatus": 200,
+          "outcome": "verified",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 1
+          }
+        },
+        {
+          "id": "original_link_continuation",
+          "title": "Resume the receipt from the original private link",
+          "actor": "Scripted buyer",
+          "operation": "GET /api/intake/buyer/review",
+          "httpStatus": 200,
+          "outcome": "receipt_available",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 1
+          }
+        },
+        {
+          "id": "completed_recovery",
+          "title": "Confirm no unfinished recovery remains",
+          "actor": "Scripted creator",
+          "operation": "GET /api/invoices/creator/cases/:caseId/recovery",
+          "httpStatus": 200,
+          "outcome": "complete",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 1
+          }
+        }
+      ],
+      "summary": {
+        "quoteCents": 42500,
+        "currency": "USD",
+        "providerCalls": {
+          "oauth": 4,
+          "create": 1,
+          "send": 1,
+          "get": 3
+        },
+        "durableRows": {
+          "licensing_cases": 1,
+          "request_submissions": 1,
+          "clarification_submissions": 1,
+          "clarification_reviews": 1,
+          "terms_versions": 1,
+          "quotes": 1,
+          "creator_decisions": 1,
+          "buyer_acceptances": 1,
+          "invoice_bindings": 1,
+          "payment_operations": 2,
+          "payment_evidence": 1,
+          "permissions": 1,
+          "receipt_revisions": 1
+        },
+        "permissionState": "scheduled",
+        "receiptIntegrity": "verified",
+        "receiptRevision": 1,
+        "foreignKeys": "ok",
+        "integrity": "ok"
+      }
+    },
+    {
+      "id": "repeat",
+      "label": "Repeated ordinary journey",
+      "status": "passed",
+      "steps": [
+        {
+          "id": "baseline",
+          "title": "Start from the seeded asset and policy",
+          "actor": "Local harness",
+          "operation": "SQLite seed verification",
+          "httpStatus": null,
+          "outcome": "seed_only",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "creator_asset_review",
+          "title": "Review the asset as the creator",
+          "actor": "Scripted creator",
+          "operation": "GET /api/intake/creator/assets/:assetId/review",
+          "httpStatus": 200,
+          "outcome": "reviewed",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "private_link",
+          "title": "Issue a private request link",
+          "actor": "Scripted creator",
+          "operation": "POST /api/intake/creator/assets/:assetId/links",
+          "httpStatus": 200,
+          "outcome": "issued",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "buyer_request",
+          "title": "Submit the original intended use",
+          "actor": "Scripted buyer",
+          "operation": "POST /api/intake/buyer/request",
+          "httpStatus": 200,
+          "outcome": "submitted",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "buyer_answers",
+          "title": "Answer the missing rights questions",
+          "actor": "Scripted buyer",
+          "operation": "POST /api/clarification/buyer/answers",
+          "httpStatus": 200,
+          "outcome": "recorded",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "creator_terms",
+          "title": "Review all twelve rights and calculate the quote",
+          "actor": "Scripted creator",
+          "operation": "POST /api/clarification/creator/cases/:caseId/terms",
+          "httpStatus": 200,
+          "outcome": "complete",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "creator_approval",
+          "title": "Approve the exact rights and price",
+          "actor": "Scripted creator",
+          "operation": "POST /api/consent/creator/cases/:caseId/decision",
+          "httpStatus": 200,
+          "outcome": "recorded",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "buyer_acceptance",
+          "title": "Accept the exact approved offer",
+          "actor": "Scripted buyer",
+          "operation": "POST /api/consent/buyer/accept",
+          "httpStatus": 200,
+          "outcome": "recorded",
+          "evidence": {
+            "providerCreates": 0,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "draft_created",
+          "title": "Create one accepted invoice draft",
+          "actor": "Scripted creator",
+          "operation": "POST /api/invoices/creator/cases/:caseId/create",
+          "httpStatus": 200,
+          "outcome": "draft_bound",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 0,
+            "providerReads": 0,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "invoice_sent",
+          "title": "Send the accepted invoice",
+          "actor": "Scripted creator",
+          "operation": "POST /api/invoices/creator/cases/:caseId/send",
+          "httpStatus": 200,
+          "outcome": "delivery_observed",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 2,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "provider_paid",
+          "title": "Simulate payment without granting authority",
+          "actor": "Provider fixture",
+          "operation": "Injected provider state",
+          "httpStatus": null,
+          "outcome": "paid_label_only",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 2,
+            "paymentEvidenceRows": 0,
+            "permissionRows": 0,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "financial_reconciliation",
+          "title": "Verify financial evidence through reconciliation",
+          "actor": "Application service",
+          "operation": "Canonical reconciliation consumer",
+          "httpStatus": null,
+          "outcome": "applied",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 0
+          }
+        },
+        {
+          "id": "receipt_issued",
+          "title": "Issue the canonical rights receipt",
+          "actor": "Application service",
+          "operation": "Canonical receipt issuer",
+          "httpStatus": null,
+          "outcome": "issued",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 1
+          }
+        },
+        {
+          "id": "receipt_export",
+          "title": "Verify the protected canonical receipt export",
+          "actor": "Scripted buyer",
+          "operation": "GET /api/receipts/buyer?format=json",
+          "httpStatus": 200,
+          "outcome": "verified",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 1
+          }
+        },
+        {
+          "id": "public_verification",
+          "title": "Verify the minimized public receipt",
+          "actor": "Public reader",
+          "operation": "GET /api/receipt-verification/:publicId",
+          "httpStatus": 200,
+          "outcome": "verified",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 1
+          }
+        },
+        {
+          "id": "original_link_continuation",
+          "title": "Resume the receipt from the original private link",
+          "actor": "Scripted buyer",
+          "operation": "GET /api/intake/buyer/review",
+          "httpStatus": 200,
+          "outcome": "receipt_available",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 1
+          }
+        },
+        {
+          "id": "completed_recovery",
+          "title": "Confirm no unfinished recovery remains",
+          "actor": "Scripted creator",
+          "operation": "GET /api/invoices/creator/cases/:caseId/recovery",
+          "httpStatus": 200,
+          "outcome": "complete",
+          "evidence": {
+            "providerCreates": 1,
+            "providerSends": 1,
+            "providerReads": 3,
+            "paymentEvidenceRows": 1,
+            "permissionRows": 1,
+            "receiptRows": 1
+          }
+        }
+      ],
+      "summary": {
+        "quoteCents": 42500,
+        "currency": "USD",
+        "providerCalls": {
+          "oauth": 3,
+          "create": 1,
+          "send": 1,
+          "get": 3
+        },
+        "durableRows": {
+          "licensing_cases": 1,
+          "request_submissions": 1,
+          "clarification_submissions": 1,
+          "clarification_reviews": 1,
+          "terms_versions": 1,
+          "quotes": 1,
+          "creator_decisions": 1,
+          "buyer_acceptances": 1,
+          "invoice_bindings": 1,
+          "payment_operations": 2,
+          "payment_evidence": 1,
+          "permissions": 1,
+          "receipt_revisions": 1
+        },
+        "permissionState": "scheduled",
+        "receiptIntegrity": "verified",
+        "receiptRevision": 1,
+        "foreignKeys": "ok",
+        "integrity": "ok"
+      }
+    }
+  ],
+  "resets": [
+    {
+      "afterScenario": "ordinary",
+      "baselineMatches": true,
+      "transactionsCleared": true,
+      "oldCapabilityDenied": true,
+      "oldReceiptDenied": true,
+      "oldCreatorCaseDenied": true,
+      "rowsBefore": {
+        "assets": 1,
+        "audit_events": 15,
+        "buyer_acceptances": 1,
+        "buyer_capabilities": 1,
+        "clarification_answers": 12,
+        "clarification_questions": 12,
+        "clarification_rounds": 1,
+        "clarification_submissions": 1,
+        "clarification_reviews": 1,
+        "creator_decisions": 1,
+        "creator_workspaces": 1,
+        "demo_reset_epochs": 1,
+        "extraction_attempts": 1,
+        "field_observations": 12,
+        "invoice_bindings": 1,
+        "licensing_cases": 1,
+        "payment_evidence": 1,
+        "payment_operations": 2,
+        "paypal_delivery_journal": 1,
+        "paypal_webhook_projections": 0,
+        "paypal_webhook_processing_receipts": 0,
+        "paypal_reconciliation_outbox": 1,
+        "paypal_reconciliation_receipts": 1,
+        "paypal_lifecycle_observations": 1,
+        "permissions": 1,
+        "pricing_policy_versions": 1,
+        "quote_lines": 5,
+        "quotes": 1,
+        "receipt_revisions": 1,
+        "request_submissions": 1,
+        "terms_versions": 1,
+        "verification_records": 1,
+        "webhook_inbox_events": 0
+      },
+      "rowsAfter": {
+        "assets": 1,
+        "audit_events": 0,
+        "buyer_acceptances": 0,
+        "buyer_capabilities": 0,
+        "clarification_answers": 0,
+        "clarification_questions": 0,
+        "clarification_rounds": 0,
+        "clarification_submissions": 0,
+        "clarification_reviews": 0,
+        "creator_decisions": 0,
+        "creator_workspaces": 1,
+        "demo_reset_epochs": 1,
+        "extraction_attempts": 0,
+        "field_observations": 0,
+        "invoice_bindings": 0,
+        "licensing_cases": 0,
+        "payment_evidence": 0,
+        "payment_operations": 0,
+        "paypal_delivery_journal": 0,
+        "paypal_webhook_projections": 0,
+        "paypal_webhook_processing_receipts": 0,
+        "paypal_reconciliation_outbox": 0,
+        "paypal_reconciliation_receipts": 0,
+        "paypal_lifecycle_observations": 0,
+        "permissions": 0,
+        "pricing_policy_versions": 1,
+        "quote_lines": 0,
+        "quotes": 0,
+        "receipt_revisions": 0,
+        "request_submissions": 0,
+        "terms_versions": 0,
+        "verification_records": 0,
+        "webhook_inbox_events": 0
+      }
+    },
+    {
+      "afterScenario": "recovery",
+      "baselineMatches": true,
+      "transactionsCleared": true,
+      "oldCapabilityDenied": true,
+      "oldReceiptDenied": true,
+      "oldCreatorCaseDenied": true,
+      "rowsBefore": {
+        "assets": 1,
+        "audit_events": 15,
+        "buyer_acceptances": 1,
+        "buyer_capabilities": 1,
+        "clarification_answers": 12,
+        "clarification_questions": 12,
+        "clarification_rounds": 1,
+        "clarification_submissions": 1,
+        "clarification_reviews": 1,
+        "creator_decisions": 1,
+        "creator_workspaces": 1,
+        "demo_reset_epochs": 1,
+        "extraction_attempts": 1,
+        "field_observations": 12,
+        "invoice_bindings": 1,
+        "licensing_cases": 1,
+        "payment_evidence": 1,
+        "payment_operations": 2,
+        "paypal_delivery_journal": 1,
+        "paypal_webhook_projections": 0,
+        "paypal_webhook_processing_receipts": 0,
+        "paypal_reconciliation_outbox": 1,
+        "paypal_reconciliation_receipts": 1,
+        "paypal_lifecycle_observations": 1,
+        "permissions": 1,
+        "pricing_policy_versions": 1,
+        "quote_lines": 5,
+        "quotes": 1,
+        "receipt_revisions": 1,
+        "request_submissions": 1,
+        "terms_versions": 1,
+        "verification_records": 1,
+        "webhook_inbox_events": 0
+      },
+      "rowsAfter": {
+        "assets": 1,
+        "audit_events": 0,
+        "buyer_acceptances": 0,
+        "buyer_capabilities": 0,
+        "clarification_answers": 0,
+        "clarification_questions": 0,
+        "clarification_rounds": 0,
+        "clarification_submissions": 0,
+        "clarification_reviews": 0,
+        "creator_decisions": 0,
+        "creator_workspaces": 1,
+        "demo_reset_epochs": 1,
+        "extraction_attempts": 0,
+        "field_observations": 0,
+        "invoice_bindings": 0,
+        "licensing_cases": 0,
+        "payment_evidence": 0,
+        "payment_operations": 0,
+        "paypal_delivery_journal": 0,
+        "paypal_webhook_projections": 0,
+        "paypal_webhook_processing_receipts": 0,
+        "paypal_reconciliation_outbox": 0,
+        "paypal_reconciliation_receipts": 0,
+        "paypal_lifecycle_observations": 0,
+        "permissions": 0,
+        "pricing_policy_versions": 1,
+        "quote_lines": 0,
+        "quotes": 0,
+        "receipt_revisions": 0,
+        "request_submissions": 0,
+        "terms_versions": 0,
+        "verification_records": 0,
+        "webhook_inbox_events": 0
+      }
+    },
+    {
+      "afterScenario": "repeat",
+      "baselineMatches": true,
+      "transactionsCleared": true,
+      "oldCapabilityDenied": true,
+      "oldReceiptDenied": true,
+      "oldCreatorCaseDenied": true,
+      "rowsBefore": {
+        "assets": 1,
+        "audit_events": 15,
+        "buyer_acceptances": 1,
+        "buyer_capabilities": 1,
+        "clarification_answers": 12,
+        "clarification_questions": 12,
+        "clarification_rounds": 1,
+        "clarification_submissions": 1,
+        "clarification_reviews": 1,
+        "creator_decisions": 1,
+        "creator_workspaces": 1,
+        "demo_reset_epochs": 1,
+        "extraction_attempts": 1,
+        "field_observations": 12,
+        "invoice_bindings": 1,
+        "licensing_cases": 1,
+        "payment_evidence": 1,
+        "payment_operations": 2,
+        "paypal_delivery_journal": 1,
+        "paypal_webhook_projections": 0,
+        "paypal_webhook_processing_receipts": 0,
+        "paypal_reconciliation_outbox": 1,
+        "paypal_reconciliation_receipts": 1,
+        "paypal_lifecycle_observations": 1,
+        "permissions": 1,
+        "pricing_policy_versions": 1,
+        "quote_lines": 5,
+        "quotes": 1,
+        "receipt_revisions": 1,
+        "request_submissions": 1,
+        "terms_versions": 1,
+        "verification_records": 1,
+        "webhook_inbox_events": 0
+      },
+      "rowsAfter": {
+        "assets": 1,
+        "audit_events": 0,
+        "buyer_acceptances": 0,
+        "buyer_capabilities": 0,
+        "clarification_answers": 0,
+        "clarification_questions": 0,
+        "clarification_rounds": 0,
+        "clarification_submissions": 0,
+        "clarification_reviews": 0,
+        "creator_decisions": 0,
+        "creator_workspaces": 1,
+        "demo_reset_epochs": 1,
+        "extraction_attempts": 0,
+        "field_observations": 0,
+        "invoice_bindings": 0,
+        "licensing_cases": 0,
+        "payment_evidence": 0,
+        "payment_operations": 0,
+        "paypal_delivery_journal": 0,
+        "paypal_webhook_projections": 0,
+        "paypal_webhook_processing_receipts": 0,
+        "paypal_reconciliation_outbox": 0,
+        "paypal_reconciliation_receipts": 0,
+        "paypal_lifecycle_observations": 0,
+        "permissions": 0,
+        "pricing_policy_versions": 1,
+        "quote_lines": 0,
+        "quotes": 0,
+        "receipt_revisions": 0,
+        "request_submissions": 0,
+        "terms_versions": 0,
+        "verification_records": 0,
+        "webhook_inbox_events": 0
+      }
+    }
+  ],
+  "repeatability": {
+    "ordinaryMatchesRepeat": true,
+    "normalizedOutcomeSha256": "b245b924bea9a6b7921eab7cf5d8f4d22ba35627273ae048f398f027d00a8fed"
+  },
+  "isolation": {
+    "database": "memory",
+    "externalRequests": 0,
+    "credentialsUsed": false
+  }
+}

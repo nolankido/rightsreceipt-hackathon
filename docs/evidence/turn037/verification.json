@@ -1,0 +1,126 @@
+{
+  "schema": "rightsreceipt-turn-verification-v1",
+  "turn": "037",
+  "date": "2026-10-27",
+  "timezone": "Pacific/Honolulu",
+  "base_commit": "49113d46a6c3c8d75e851a19dda8f85900aa4b8b",
+  "native": {
+    "runtime": "v22.18.0",
+    "files": 42,
+    "tests": 1716,
+    "passed": 1716,
+    "failed": 0,
+    "skipped": 0
+  },
+  "native_execution_notes": [
+    "The complete 41-file collection passed 1713 tests under Node 22.18.0.",
+    "A new three-case financial integration regression exposed the new human-review input-hash mismatch before publication. It failed all three cases before the fix.",
+    "After preserving the existing original-request SHA-256 provenance contract, the 80-test backend collection was rerun and passed. Its final results replace the earlier run above.",
+    "All three new payment, receipt and refund integration cases then passed and are included in the final 42-file aggregate."
+  ],
+  "new_native": {
+    "clarification_backend": 80,
+    "clarification_ui_validation": 75,
+    "clarification_payment_receipt_refund": 3,
+    "composition_total": 22,
+    "included_in_native_total": true
+  },
+  "browser": {
+    "runtime": "v22.18.0",
+    "engine": "140.0.7339.16",
+    "clarification_checks": 57,
+    "clarification_scenarios": 8,
+    "transaction_receipt_checks": 127,
+    "transaction_receipt_scenarios": 19,
+    "adversarial_buyer_checks": 51,
+    "clarification_rerun_after_provenance_correction": true,
+    "limitations": [
+      "No listening server, deployed Worker or Cloudflare D1",
+      "Generated Access signing keys and injected gateway assertions",
+      "Starts with a synthetic submitted buyer request and no prepared terms or quote; initial request intake is not browser-tested",
+      "No PayPal call or financial state transition is performed",
+      "Browser expiry advances test time; hidden/history lifecycle events are injected",
+      "Chromium interception does not expose Fetch Metadata in this runtime; the native route tests cover that check"
+    ]
+  },
+  "receipt_integration_regression": {
+    "before_correction_failed": 3,
+    "after_correction_passed": 3,
+    "receipt_verification_unchanged": true,
+    "manual_review_input_hash": "SHA-256 of immutable original request",
+    "answer_binding": "Immutable clarification submission, human review and audit records"
+  },
+  "database": {
+    "schema_version": 9,
+    "domain_tables": 33,
+    "new_migrations": [
+      "0009_clarification_evidence.sql"
+    ],
+    "original_eight_migrations_unchanged": true,
+    "new_tables": [
+      "clarification_submissions",
+      "clarification_reviews"
+    ],
+    "reset_updated": true
+  },
+  "typecheck": {
+    "compiler": "5.8.3",
+    "strict_configs": [
+      "tsconfig.transaction-ui.json",
+      "tsconfig.invoice-sending.json"
+    ],
+    "uses_dependency_stubs": false,
+    "full_pinned_toolchain_verified": false
+  },
+  "syntax": {
+    "files": 160,
+    "errors": []
+  },
+  "format": {
+    "checked_files": 290,
+    "errors": []
+  },
+  "workspace": {
+    "packages": 13,
+    "internal_edges": 24,
+    "cycles": 0
+  },
+  "new_dependencies": [],
+  "live_provider_calls": false,
+  "deployment_performed": false,
+  "all_runtime_flags_remain_off": true,
+  "release_ready": false,
+  "source_sha256": {
+    ".dev.vars.example": "cc2cd0a873fa360c540ea5eaa7087b48780bfbf7a723e732dc04f56def5dd00d",
+    "apps/api/src/buyer-review.ts": "c7d5edb0d77f9f762018a31aa2e38e0f07eff0d7ce5ed0362aa45643b01cd247",
+    "apps/api/src/clarification-pages.ts": "a9780423d6ba96883bed90bbd7295b3760af82a3d63398954308f8b1ca670270",
+    "apps/api/src/clarification-routes.ts": "b3e504aa68c136045c7e106555cae44dbd57934c61b349ee79b43325efa493d7",
+    "apps/api/src/creator-review.ts": "18a3b9de86d128cf59bd18d4ee158e97c1cdb8ab3ee8a0ae0d9510be91bda760",
+    "apps/api/src/transaction-routes.ts": "f983d49eefef2150e86b538f3bdeb08161f661088f6df8474939a3f659f6e627",
+    "apps/web/src/buyer-clarification-client.ts": "3a615e73501573e1d29b0b608f8243cf783de4eb72306d8bd5a431f2ba86e40b",
+    "apps/web/src/buyer-review-client.ts": "4d4b7a7ae23090f6a9eb666ff5c0bfefb7e66d4708745a83db76096f6660589b",
+    "apps/web/src/clarification-client-common.ts": "6419e29a3eecbcebc719abc513bfb189897e8bd981e4bc584f9fd357c2ebf272",
+    "apps/web/src/creator-clarification-client.ts": "b9a7b1dcd9f7fb7b3cae2bd77b85eb1b4f7c45418ea9751f414f2140da9b41df",
+    "migrations/0009_clarification_evidence.sql": "b5b6a4b9561ee0030cdbae073c3f2ac56c4f0106fa852e7769828f295fae2c10",
+    "package.json": "01cb57e0331dc40578fee2f18dc7137032302535db5316cdfa12442ffd18c84d",
+    "packages/application/src/clarification-contract.ts": "cb1a758527ebd997cba2406c7efb42cee5b664b89679ca37011aa57cc1bf84b8",
+    "packages/application/src/clarification-workflow.ts": "f0359d73c683980f2c7c3029a985221c0696d13d7ff5741eb35134258562c4d7",
+    "packages/persistence/src/clarification-workflow.ts": "757210bf1ae8bc51c3416127c10c3bc2ed2efa088e24994e55f12c5ee8fc2794",
+    "packages/persistence/src/index.test.ts": "3b1502d4802b45e41fb4251916311f4f19e5d5829da20bc7a71fd24246401022",
+    "packages/persistence/src/manifest.ts": "6056ea6f965bae52226c7a75a63c88583f2a407ba51c7bc70802a5acc30f4a84",
+    "scripts/clarification-browser-check.mjs": "c82b31f390a652a8dcdd0dec5767b2d1132414d936a139fa00de8a330b900bcb",
+    "scripts/clarification-transaction-local.test.mjs": "7003014b8089c5ce1e899214c54a9bf2a9c070eaa75befd871d152d40729e029",
+    "scripts/clarification-ui-local.test.mjs": "10cc04c14782492b4b4de3be9d9739dbb3dc414610d535ce6889639a5e71b0ba",
+    "scripts/clarification-workflow-local.test.mjs": "f90260a1ee1e348ba385b7097f77f6ee5c135bd4df32db29eb18ab318221a4b9",
+    "scripts/db-local.mjs": "412da87e7b43be890406798a9f478251957f899168c5e89ce64da928473bc759",
+    "scripts/gate-c-integration-local.test.mjs": "e521c6f85339851c8f848d534efed343988c23c4eac16861a9049184f31c1fd1",
+    "scripts/human-consent-local.test.mjs": "b3c9ed960d50fa632cee1b6a526ad1eef9d72f69e43ca79262a9e968a9c95f0e",
+    "scripts/receipt-issuance-local.test.mjs": "2db7b18f3aa7ad37ab6218bad2cb5c49889491b6a2e4d5ea5a0e0f1f0f4d22c4",
+    "scripts/support/human-consent-fixture.mjs": "2134cfaa4eb9fd5dd5123631c25e28152bc08e74f5d7dcfdbbe64e61fd709738",
+    "scripts/support/transaction-browser-fixture.mjs": "c5653bbfe0e270af07ecb5e02a09834346ca3e54b87b535b62eded30ffe6bad3",
+    "scripts/transaction-browser-check.mjs": "bf45fa5ff2defe8d88c5c787fac785b1c07c8c45cb0a54a5aaba70982d0fb13c",
+    "scripts/transaction-routes-local.test.mjs": "eeada9830b291c1d96abdc2a8b30a26fa21c7b1b929054c9738c146da63ef5fe",
+    "seed/demo-reset.sql": "17f82bb7e7f69dcbaec793ba6b6d000ce57d139810610ff966e9a3979a5c7541",
+    "wrangler.jsonc": "67559ba96aac4f6d49727d06d0089f8ca750ee0d002d7943a0c9896ccc820aab"
+  }
+}

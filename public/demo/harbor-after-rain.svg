@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Harbor After Rain demonstration preview</title>
+  <desc id="desc">A stylized, project-owned harbor scene with rain clouds, water, and distant lights.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#344d59"/>
+      <stop offset="1" stop-color="#8aa6a3"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#557b7a"/>
+      <stop offset="1" stop-color="#183a43"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="440" fill="url(#sky)"/>
+  <rect y="440" width="1200" height="280" fill="url(#water)"/>
+  <path d="M0 420 L180 350 L330 405 L510 320 L700 400 L875 335 L1040 392 L1200 330 L1200 465 L0 465 Z" fill="#253f46"/>
+  <g fill="#f4d98a">
+    <circle cx="215" cy="400" r="7"/>
+    <circle cx="545" cy="370" r="8"/>
+    <circle cx="895" cy="385" r="7"/>
+    <circle cx="1075" cy="377" r="6"/>
+  </g>
+  <g stroke="#d8e5e3" stroke-width="4" opacity="0.32">
+    <path d="M100 80 l-55 120"/>
+    <path d="M265 30 l-65 145"/>
+    <path d="M440 95 l-50 110"/>
+    <path d="M650 35 l-60 140"/>
+    <path d="M825 85 l-50 115"/>
+    <path d="M1030 45 l-65 145"/>
+    <path d="M1150 120 l-40 90"/>
+  </g>
+  <g stroke="#d8e5e3" stroke-width="3" opacity="0.22">
+    <path d="M200 475 q80 30 160 0"/>
+    <path d="M500 520 q110 35 220 0"/>
+    <path d="M820 475 q95 28 190 0"/>
+    <path d="M120 620 q125 35 250 0"/>
+    <path d="M665 630 q150 38 300 0"/>
+  </g>
+</svg>

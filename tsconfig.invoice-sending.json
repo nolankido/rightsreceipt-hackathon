@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": [
+      "ES2023",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "skipLibCheck": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "baseUrl": ".",
+    "paths": {
+      "@rightsreceipt/domain": [
+        "packages/domain/src/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "packages/application/src/invoice-sending.ts",
+    "packages/persistence/src/invoice-sending.ts",
+    "packages/paypal/src/delivery-adoption.ts",
+    "apps/api/src/invoice-sending.ts"
+  ]
+}

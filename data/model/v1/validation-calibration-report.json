@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "rightsreceipt-validation-calibration-v1",
+  "scope": "validation_only_before_heldout",
+  "artifactSha256": "6ea099b72fe00ce4643426a2729a84b207ae8eb3460c75488fab3502037e73e2",
+  "dataSha256": "cf8a710db4210f3e9c11dd92a9c875ea487488f521d08c46477b4ed8a4bddb95",
+  "policyVersion": "validation-margin-gates-v1",
+  "records": 240,
+  "fieldLabels": 2880,
+  "rawExact": 2851,
+  "rawWrongResolved": 26,
+  "acceptedReviewCandidates": 2302,
+  "incorrectAcceptedReviewCandidates": 0,
+  "correctAcceptedReviewCandidates": 2302,
+  "selectionRule": "midpoint_between_worst_wrong_resolved_margin_and_lowest_correct_resolved_margin_or_half_lowest_correct_if_no_wrong",
+  "marginMetric": "top_minus_runner_up_raw_linear_score",
+  "confidenceIsCalibratedProbability": false,
+  "automaticResolutionApproved": false,
+  "fields": {
+    "use_purpose": {
+      "rawExact": 237,
+      "rawWrongResolved": 3,
+      "highestIncorrectResolvedMargin": 1.1886941942396305,
+      "lowestCorrectResolvedMargin": 12.5590715310898,
+      "threshold": 6.873883,
+      "acceptedReviewCandidates": 194,
+      "incorrectAcceptedReviewCandidates": 0
+    },
+    "channels": {
+      "rawExact": 238,
+      "rawWrongResolved": 2,
+      "highestIncorrectResolvedMargin": 4.182279656888095,
+      "lowestCorrectResolvedMargin": 7.994295987096633,
+      "threshold": 6.088288,
+      "acceptedReviewCandidates": 169,
+      "incorrectAcceptedReviewCandidates": 0
+    },
+    "paid_advertising": {
+      "rawExact": 239,
+      "rawWrongResolved": 1,
+      "highestIncorrectResolvedMargin": 0.2481216511244817,
+      "lowestCorrectResolvedMargin": 9.753044325236505,
+      "threshold": 5.000583,
+      "acceptedReviewCandidates": 193,
+      "incorrectAcceptedReviewCandidates": 0
+    },
+    "territories": {
+      "rawExact": 236,
+      "rawWrongResolved": 4,
+      "highestIncorrectResolvedMargin": 1.3576488988471647,
+      "lowestCorrectResolvedMargin": 7.296929029778896,
+      "threshold": 4.327289,
+      "acceptedReviewCandidates": 197,
+      "incorrectAcceptedReviewCandidates": 0
+    },
+    "start_date": {
+      "rawExact": 238,
+      "rawWrongResolved": 2,
+      "highestIncorrectResolvedMargin": 3.6216679404173755,
+      "lowestCorrectResolvedMargin": 7.330039195991166,
+      "threshold": 5.475854,
+      "acceptedReviewCandidates": 200,
+      "incorrectAcceptedReviewCandidates": 0
+    },
+    "duration_days": {
+      "rawExact": 237,
+      "rawWrongResolved": 3,
+      "highestIncorrectResolvedMargin": 3.523870185993466,
+      "lowestCorrectResolvedMargin": 4.237528097327606,
+      "threshold": 3.880699,
+      "acceptedReviewCandidates": 193,
+      "incorrectAcceptedReviewCandidates": 0
+    },
+    "max_impressions": {
+      "rawExact": 234,
+      "rawWrongResolved": 5,
+      "highestIncorrectResolvedMargin": 2.4901719078806837,
+      "lowestCorrectResolvedMargin": 3.32543868105305,
+      "threshold": 2.907805,
+      "acceptedReviewCandidates": 199,
+      "incorrectAcceptedReviewCandidates": 0
+    },
+    "exclusivity": {
+      "rawExact": 237,
+      "rawWrongResolved": 1,
+      "highestIncorrectResolvedMargin": 0.4097164631886001,
+      "lowestCorrectResolvedMargin": 6.955750956156958,
+      "threshold": 3.682734,
+      "acceptedReviewCandidates": 193,
+      "incorrectAcceptedReviewCandidates": 0
+    },
+    "modification_scope": {
+      "rawExact": 238,
+      "rawWrongResolved": 2,
+      "highestIncorrectResolvedMargin": 0.5072624585902124,
+      "lowestCorrectResolvedMargin": 5.081587036500379,
+      "threshold": 2.794425,
+      "acceptedReviewCandidates": 195,
+      "incorrectAcceptedReviewCandidates": 0
+    },
+    "attribution": {
+      "rawExact": 240,
+      "rawWrongResolved": 0,
+      "highestIncorrectResolvedMargin": null,
+      "lowestCorrectResolvedMargin": 3.0959561009453362,
+      "threshold": 1.547978,
+      "acceptedReviewCandidates": 190,
+      "incorrectAcceptedReviewCandidates": 0
+    },
+    "sublicensing": {
+      "rawExact": 238,
+      "rawWrongResolved": 2,
+      "highestIncorrectResolvedMargin": 2.948531435480561,
+      "lowestCorrectResolvedMargin": 8.271492246679754,
+      "threshold": 5.610012,
+      "acceptedReviewCandidates": 187,
+      "incorrectAcceptedReviewCandidates": 0
+    },
+    "ai_use": {
+      "rawExact": 239,
+      "rawWrongResolved": 1,
+      "highestIncorrectResolvedMargin": 1.1455501119567906,
+      "lowestCorrectResolvedMargin": 10.223747518127816,
+      "threshold": 5.684649,
+      "acceptedReviewCandidates": 192,
+      "incorrectAcceptedReviewCandidates": 0
+    }
+  },
+  "limitations": [
+    "Validation uses generated template families sharing authored vocabulary with training.",
+    "Threshold selection on validation cannot guarantee unseen-request accuracy.",
+    "Raw score margin is not a calibrated probability."
+  ]
+}

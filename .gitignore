@@ -1,0 +1,64 @@
+# Dependencies and package-manager state
+node_modules/
+.pnpm-store/
+.yarn/
+
+# Build, test, and tooling output
+dist/
+build/
+coverage/
+.vite/
+.turbo/
+.wrangler/
+playwright-report/
+test-results/
+*.tsbuildinfo
+
+# Environment files and credentials
+# Judge deployment target IDs and origins stay in an ignored local config.
+wrangler.judge.local.jsonc
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Generated, private, and local data
+.data/
+data/generated/
+data/private/
+model/.cache/
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+.cache/
+tmp/
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json

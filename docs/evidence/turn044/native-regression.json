@@ -1,0 +1,537 @@
+{
+  "runtime": "v22.18.0",
+  "files": 52,
+  "tests": 2211,
+  "passed": 2211,
+  "failed": 0,
+  "skipped": 0,
+  "failed_files": [],
+  "results": [
+    {
+      "file": "scripts/ai-contract-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 2.191,
+      "tests": 28,
+      "pass": 28,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/asset-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 3.538,
+      "tests": 7,
+      "pass": 7,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/buyer-payment-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 115.761,
+      "tests": 114,
+      "pass": 114,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/canonical-receipt-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.318,
+      "tests": 22,
+      "pass": 22,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/clarification-adversarial-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.039,
+      "tests": 12,
+      "pass": 12,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/clarification-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 2.125,
+      "tests": 30,
+      "pass": 30,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/clarification-transaction-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 8.898,
+      "tests": 3,
+      "pass": 3,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/clarification-ui-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.135,
+      "tests": 75,
+      "pass": 75,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/clarification-workflow-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 18.368,
+      "tests": 80,
+      "pass": 80,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/creator-session-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 4.763,
+      "tests": 101,
+      "pass": 101,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/db-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 4.169,
+      "tests": 7,
+      "pass": 7,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/deterministic-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.945,
+      "tests": 21,
+      "pass": 21,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/extraction-sqlite-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.667,
+      "tests": 9,
+      "pass": 9,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/gate-a-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.043,
+      "tests": 7,
+      "pass": 7,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/gate-b-readiness.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.94,
+      "tests": 13,
+      "pass": 13,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/gate-c-integration-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 16.179,
+      "tests": 48,
+      "pass": 48,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/generate-synthetic.test.mjs",
+      "exit_code": 0,
+      "duration_s": 18.278,
+      "tests": 10,
+      "pass": 10,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/human-consent-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 21.707,
+      "tests": 100,
+      "pass": 100,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/invoice-controls-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 34.126,
+      "tests": 60,
+      "pass": 60,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/invoice-creation-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 37.02,
+      "tests": 94,
+      "pass": 94,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/invoice-recovery-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 24.389,
+      "tests": 68,
+      "pass": 68,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/invoice-recovery-ui-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.881,
+      "tests": 81,
+      "pass": 81,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/invoice-sending-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 46.51,
+      "tests": 96,
+      "pass": 96,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/judge-rehearsal-isolation-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 33.99,
+      "tests": 15,
+      "pass": 15,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0,
+      "attempt": 2,
+      "execution_note": "Initial sandboxed run could not spawn the local Node launcher (EPERM). Same unchanged collection rerun with child-process permission."
+    },
+    {
+      "file": "scripts/judge-rehearsal-journey-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 10.379,
+      "tests": 4,
+      "pass": 4,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/judge-rehearsal-report-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.354,
+      "tests": 56,
+      "pass": 56,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/mock-transaction-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.231,
+      "tests": 25,
+      "pass": 25,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/model-calibration-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.547,
+      "tests": 12,
+      "pass": 12,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/observation-bridge-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.967,
+      "tests": 12,
+      "pass": 12,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/paypal-adapter-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.311,
+      "tests": 22,
+      "pass": 22,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/paypal-invoice-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 3.348,
+      "tests": 53,
+      "pass": 53,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/paypal-reconciliation-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 6.274,
+      "tests": 81,
+      "pass": 81,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/paypal-sandbox-draft-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 2.354,
+      "tests": 27,
+      "pass": 27,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/paypal-settlement-transport-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 2.718,
+      "tests": 5,
+      "pass": 5,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/paypal-webhook-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 3.625,
+      "tests": 92,
+      "pass": 92,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/paypal-webhook-processing-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 2.355,
+      "tests": 47,
+      "pass": 47,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/permission-clock-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 10.759,
+      "tests": 73,
+      "pass": 73,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/permission-lifecycle-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 2.112,
+      "tests": 91,
+      "pass": 91,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/portable-model-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.597,
+      "tests": 8,
+      "pass": 8,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/pricing-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.596,
+      "tests": 12,
+      "pass": 12,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/quote-service-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.573,
+      "tests": 8,
+      "pass": 8,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/receipt-client-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.898,
+      "tests": 40,
+      "pass": 40,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/receipt-experience-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 3.223,
+      "tests": 111,
+      "pass": 111,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/receipt-issuance-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 12.549,
+      "tests": 64,
+      "pass": 64,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/request-deadline-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.473,
+      "tests": 22,
+      "pass": 22,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/request-intake-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 10.954,
+      "tests": 90,
+      "pass": 90,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/request-intake-transaction-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 10.718,
+      "tests": 8,
+      "pass": 8,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/request-intake-ui-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.345,
+      "tests": 94,
+      "pass": 94,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/request-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.569,
+      "tests": 9,
+      "pass": 9,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/review-draft-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.718,
+      "tests": 6,
+      "pass": 6,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/terms-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.348,
+      "tests": 10,
+      "pass": 10,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/transaction-routes-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 3.144,
+      "tests": 28,
+      "pass": 28,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    }
+  ],
+  "cancelled": 0,
+  "method": "All 52 native files executed on unchanged final source. The one launcher-isolation file blocked by sandbox subprocess EPERM was rerun unchanged with local child-process permission; its final 15 passing tests replace its initial result, rather than being added twice.",
+  "initial_attempt_record": "native-initial-attempt.json",
+  "subprocess_retry_record": "native-subprocess-retry.json"
+}

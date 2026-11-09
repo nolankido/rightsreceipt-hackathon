@@ -1,0 +1,127 @@
+{
+  "schema": "rightsreceipt-turn-verification-v1",
+  "turn": "038",
+  "date": "2026-10-27",
+  "timezone": "Pacific/Honolulu",
+  "base_commit": "08c405209ecdbbbe421a58212e741acc043eca5f",
+  "native": {
+    "runtime": "v22.18.0",
+    "files": 45,
+    "tests": 1916,
+    "passed": 1916,
+    "failed": 0,
+    "skipped": 0
+  },
+  "native_execution_notes": [
+    "The final complete 45-file collection passed 1916 tests after the encoded-route, archived-continuation and verified session-expiry corrections.",
+    "All native test files used Node 22.18.0 with actual source imports and the existing consent TypeScript loader.",
+    "Two full asset-only journeys cover normal delivery and lost database acknowledgements through payment, scheduled receipt, full refund revision and archived original-link access.",
+    "Six additional integration cases use actual signed gateway assertions for final-SQL expiry or mapping revocation during creator review, issuance and replay; no new rows or private output occur."
+  ],
+  "new_native": {
+    "request_intake_backend": 90,
+    "request_intake_ui_validation": 94,
+    "request_intake_transaction_and_real_session_fence": 8,
+    "creator_session_total": 96,
+    "composition_total": 25,
+    "included_in_native_total": true
+  },
+  "browser": {
+    "runtime": "v22.18.0",
+    "engine": "140.0.7339.16",
+    "intake_checks": 119,
+    "intake_scenarios": 8,
+    "transaction_receipt_checks": 127,
+    "transaction_receipt_scenarios": 19,
+    "clarification_checks": 57,
+    "clarification_scenarios": 8,
+    "adversarial_buyer_checks": 51,
+    "total_passed": 354,
+    "intake_rerun_after_final_authorization_correction": true,
+    "screenshots": {
+      "intake_states": 8,
+      "desktop_and_mobile_files": 16,
+      "mobile_overflow_checks_passed": true,
+      "inspected": true
+    },
+    "limitations": [
+      "No listening server, deployed Worker or Cloudflare D1",
+      "Generated Access signing keys and injected gateway assertions/JWKS",
+      "Only workspace, asset and pricing policy are seeded in the new intake journey; every transactional record comes from actual handlers",
+      "PayPal HTTP replies are local deterministic fixtures; no provider network or actual payment occurs",
+      "Production financial reconciliation and receipt issuance execute; no payment evidence or permission row is inserted directly",
+      "Time, hidden-page and history lifecycle transitions are injected",
+      "Browser interception does not expose Fetch Metadata in this runtime; native route tests cover it"
+    ]
+  },
+  "final_review_corrections": [
+    "Original private link resumes current offer/status after financial progression and archival",
+    "Archived pre-offer original request remains readable with nextPath:null and disabled continuation",
+    "Encoded legacy URL prefixes cannot bypass local-memory-only runtime boundaries",
+    "Verified operation-local JWT expiry is checked synchronously after final source SQL and before return/write; mapping/config/abort are checked at the same boundary",
+    "Immutable event time is separate from fresh capability-fence time during asynchronous hashing",
+    "Unsupported controls in names fail before any persistence"
+  ],
+  "database": {
+    "schema_version": 9,
+    "domain_tables": 33,
+    "new_migrations": [],
+    "all_nine_migrations_unchanged": true,
+    "new_tables": [],
+    "reset_changed": false
+  },
+  "typecheck": {
+    "compiler": "5.8.3",
+    "strict_configs": [
+      "tsconfig.transaction-ui.json",
+      "tsconfig.invoice-sending.json"
+    ],
+    "uses_dependency_stubs": false,
+    "full_pinned_toolchain_verified": false
+  },
+  "syntax": {
+    "files": 169,
+    "errors": []
+  },
+  "format": {
+    "checked_files": 303,
+    "errors": []
+  },
+  "workspace": {
+    "packages": 13,
+    "internal_edges": 24,
+    "cycles": 0
+  },
+  "new_dependencies": [],
+  "live_provider_calls": false,
+  "deployment_performed": false,
+  "account_owner_task_required": false,
+  "all_runtime_flags_remain_off": true,
+  "release_ready": false,
+  "source_sha256": {
+    ".dev.vars.example": "21bf3c40b1d7b018fdb0ef40d35fe42cb920f31449e9e7316e4b31690cfbd64f",
+    "apps/api/src/creator-review.ts": "7f95394a8b360d815e461a4715ed35228ff03ae094d3c57b33bc925a9b297a21",
+    "apps/api/src/creator-session.ts": "e774bc0e9d5c94d446c2c8b6c74eb9215262da4eb6199365758a801977b2f557",
+    "apps/api/src/index.ts": "8e0f496182928712da51dafdf0d59ca010fc5e98ec83bc0c3c46a324a68ef596",
+    "apps/api/src/legacy-buyer-boundary.ts": "73626031164d688a12e610490977f8afeeb54f2a8250ec8869829651693cf071",
+    "apps/api/src/request-intake-pages.ts": "70cc22a8f63b6fa4e34115ac167286a4363c9b3a117f43bd2839974b053f20aa",
+    "apps/api/src/request-intake-routes.ts": "5320a1cf8926d85878f4d1d422668fc88d3e6f3c16add4e45eb7b07e1d7efe4b",
+    "apps/api/src/transaction-routes.ts": "331d3fdfb065a357d8134810e8aed0693c2ed2fae9548442549c353f65d2f3a5",
+    "apps/web/src/buyer-request-intake-client.ts": "41a2d3fb896d12a672abcb8efce8d562bfd2149d38e8003a8614a615c4fb8de6",
+    "apps/web/src/creator-request-intake-client.ts": "34983c85ccae538dc0c7757a411c71b8d5870d032d7fae8b4ef62c5d3d617eb3",
+    "apps/web/src/request-intake-client-common.ts": "9772fb8c29349394e65714ecad6dbd1bb8f7c100c91fb3ad4ba746317eda1a65",
+    "package.json": "c4ccdd416438fd8e171fec22be94df8fe6a47d050b503d24ed9f012774ecfce0",
+    "packages/application/src/request-intake-contract.ts": "5f71ea8d03ca4378d46f24d5e167799f954f28ce591ba8f10d3f31f2b62eb607",
+    "packages/application/src/request-intake.ts": "0a04497590d97005939d1d929e905b85ab423ce432520f2a9adc8a8ca208651a",
+    "packages/persistence/src/request-intake.ts": "5654841debb8ed4e74ccd515a346a883bee01aea424e4f66e53d85f43d9ea671",
+    "scripts/creator-session-local.test.mjs": "43afc89763077d72f61d64482cc37119fecfc4363be0dc233fd9aab97feaa301",
+    "scripts/intake-browser-check.mjs": "bb81bc8463a720eb909db8eb6af9e1166434fa72c5a551266cc8e9eca16408a5",
+    "scripts/request-intake-local.test.mjs": "9942477bef0152a0b8c571cc52f7e8b651d17c4b5b52749df7d245307905aff8",
+    "scripts/request-intake-transaction-local.test.mjs": "12987fa77cbedfb88a9fee69c7fa0f76f0b64415673652887e763e2f26bf6fcc",
+    "scripts/request-intake-ui-local.test.mjs": "8965336968a9d7cae36f49c2009bd85941c0cb19a1bcbad1fe2d79447ff706ec",
+    "scripts/support/human-consent-fixture.mjs": "4fd14df5286ba17b324b55eba63e465b7be67bfe4200702c245447ca30aeb51a",
+    "scripts/support/transaction-browser-fixture.mjs": "c84ebc88bc02e1b10d2e960ad87d0dc64258f77859fed9367db9920c3b4abed4",
+    "scripts/transaction-routes-local.test.mjs": "0550f40c5091af0c76c87dc7fbd6d41d13e684ae611955a8c1f54a1cc8bbf1eb",
+    "wrangler.jsonc": "59d1eaddc8c935bb58cb4f5e00d45476ad4effb3bf3c7d49f2cae36856c74306"
+  }
+}

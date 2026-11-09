@@ -1,0 +1,214 @@
+{
+  "extractor": "rights-rule-baseline-v1",
+  "extractorSourceSha256": "fd9bad462e9e7a852f91e6f1d86bf673e665184f0268c0a41e3ef4b9948ecc95",
+  "manifestMatched": true,
+  "splits": [
+    "test"
+  ],
+  "records": 240,
+  "invalidProposals": 0,
+  "resolvedPrecision": 1,
+  "resolvedRecall": 1,
+  "falseResolved": 0,
+  "predictedResolved": 2304,
+  "goldResolved": 2304,
+  "stateAgreement": 1,
+  "correctAbstentionRate": 1,
+  "fieldMetrics": {
+    "use_purpose": {
+      "goldResolved": 198,
+      "predResolved": 198,
+      "correctResolved": 198,
+      "falseResolved": 0,
+      "abstainedOnNonResolved": 42,
+      "stateAgreement": 240,
+      "total": 240,
+      "precision": 1,
+      "recall": 1
+    },
+    "channels": {
+      "goldResolved": 176,
+      "predResolved": 176,
+      "correctResolved": 176,
+      "falseResolved": 0,
+      "abstainedOnNonResolved": 64,
+      "stateAgreement": 240,
+      "total": 240,
+      "precision": 1,
+      "recall": 1
+    },
+    "paid_advertising": {
+      "goldResolved": 191,
+      "predResolved": 191,
+      "correctResolved": 191,
+      "falseResolved": 0,
+      "abstainedOnNonResolved": 49,
+      "stateAgreement": 240,
+      "total": 240,
+      "precision": 1,
+      "recall": 1
+    },
+    "territories": {
+      "goldResolved": 195,
+      "predResolved": 195,
+      "correctResolved": 195,
+      "falseResolved": 0,
+      "abstainedOnNonResolved": 45,
+      "stateAgreement": 240,
+      "total": 240,
+      "precision": 1,
+      "recall": 1
+    },
+    "start_date": {
+      "goldResolved": 189,
+      "predResolved": 189,
+      "correctResolved": 189,
+      "falseResolved": 0,
+      "abstainedOnNonResolved": 51,
+      "stateAgreement": 240,
+      "total": 240,
+      "precision": 1,
+      "recall": 1
+    },
+    "duration_days": {
+      "goldResolved": 189,
+      "predResolved": 189,
+      "correctResolved": 189,
+      "falseResolved": 0,
+      "abstainedOnNonResolved": 51,
+      "stateAgreement": 240,
+      "total": 240,
+      "precision": 1,
+      "recall": 1
+    },
+    "max_impressions": {
+      "goldResolved": 189,
+      "predResolved": 189,
+      "correctResolved": 189,
+      "falseResolved": 0,
+      "abstainedOnNonResolved": 51,
+      "stateAgreement": 240,
+      "total": 240,
+      "precision": 1,
+      "recall": 1
+    },
+    "exclusivity": {
+      "goldResolved": 189,
+      "predResolved": 189,
+      "correctResolved": 189,
+      "falseResolved": 0,
+      "abstainedOnNonResolved": 51,
+      "stateAgreement": 240,
+      "total": 240,
+      "precision": 1,
+      "recall": 1
+    },
+    "modification_scope": {
+      "goldResolved": 194,
+      "predResolved": 194,
+      "correctResolved": 194,
+      "falseResolved": 0,
+      "abstainedOnNonResolved": 46,
+      "stateAgreement": 240,
+      "total": 240,
+      "precision": 1,
+      "recall": 1
+    },
+    "attribution": {
+      "goldResolved": 193,
+      "predResolved": 193,
+      "correctResolved": 193,
+      "falseResolved": 0,
+      "abstainedOnNonResolved": 47,
+      "stateAgreement": 240,
+      "total": 240,
+      "precision": 1,
+      "recall": 1
+    },
+    "sublicensing": {
+      "goldResolved": 200,
+      "predResolved": 200,
+      "correctResolved": 200,
+      "falseResolved": 0,
+      "abstainedOnNonResolved": 40,
+      "stateAgreement": 240,
+      "total": 240,
+      "precision": 1,
+      "recall": 1
+    },
+    "ai_use": {
+      "goldResolved": 201,
+      "predResolved": 201,
+      "correctResolved": 201,
+      "falseResolved": 0,
+      "abstainedOnNonResolved": 39,
+      "stateAgreement": 240,
+      "total": 240,
+      "precision": 1,
+      "recall": 1
+    }
+  },
+  "categoryMetrics": {
+    "complete_supported": {
+      "correctResolved": 288,
+      "falseResolved": 0,
+      "goldResolved": 288,
+      "total": 24
+    },
+    "omission": {
+      "correctResolved": 120,
+      "falseResolved": 0,
+      "goldResolved": 120,
+      "total": 24
+    },
+    "contradiction": {
+      "correctResolved": 192,
+      "falseResolved": 0,
+      "goldResolved": 192,
+      "total": 24
+    },
+    "unsupported": {
+      "correctResolved": 192,
+      "falseResolved": 0,
+      "goldResolved": 192,
+      "total": 24
+    },
+    "ambiguous": {
+      "correctResolved": 192,
+      "falseResolved": 0,
+      "goldResolved": 192,
+      "total": 24
+    },
+    "negation": {
+      "correctResolved": 288,
+      "falseResolved": 0,
+      "goldResolved": 288,
+      "total": 24
+    },
+    "injection": {
+      "correctResolved": 288,
+      "falseResolved": 0,
+      "goldResolved": 288,
+      "total": 24
+    },
+    "unicode": {
+      "correctResolved": 288,
+      "falseResolved": 0,
+      "goldResolved": 288,
+      "total": 24
+    },
+    "numeric_boundary": {
+      "correctResolved": 288,
+      "falseResolved": 0,
+      "goldResolved": 288,
+      "total": 24
+    },
+    "mixed_channel": {
+      "correctResolved": 168,
+      "falseResolved": 0,
+      "goldResolved": 168,
+      "total": 24
+    }
+  },
+  "firstFailures": []
+}

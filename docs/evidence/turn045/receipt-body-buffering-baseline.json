@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "rightsreceipt-body-buffering-baseline-v1",
+  "status": "gap_reproduced",
+  "runtime": "v22.18.0",
+  "source": {
+    "path": "packages/receipts/src/client.ts",
+    "sha256": "212118c57bcb66f3f0671e54cadf72ff0b3bf581fea003b1d286497527fc4674"
+  },
+  "scriptSha256": "0fd0cef7f98901e5a8cdfe60a969da1ae0a5677d69ad92d236899594cd70dfd4",
+  "scenario": "oversized_json_stream_fully_buffered_before_existing_size_rejection",
+  "syntheticInputs": {
+    "code": "One synthetic valid 43-character token made from repeated a; no real capability.",
+    "initialView": "Minimal synthetic current HTML with correct media/timing/digest metadata for the injected export bytes.",
+    "exportResponse": {
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "bodyDescription": "Synthetic receipt-shaped JSON with an intentionally oversized padding string.",
+      "suppliedBodyBytes": 394831,
+      "advertisedDigestMatchesBytesAndView": true
+    },
+    "stream": "Actual Node Web-standard Response and ReadableStream, producing at most 65536 bytes per chunk to completion without a socket or server.",
+    "clock": "Fixed wall and monotonic clocks during completed reads; scheduled callbacks are not advanced. This is a byte-budget witness, not a latency test."
+  },
+  "observed": {
+    "requestCount": 2,
+    "bodyLimitBytes": 262144,
+    "suppliedBodyBytes": 394831,
+    "producedChunks": 7,
+    "producedBytes": 394831,
+    "streamReachedEnd": true,
+    "streamCancellationCalls": 0,
+    "blobConsumptionCalls": 1,
+    "bytesBufferedBeforeRejection": 394831,
+    "clientArrayBufferConversionCalls": 0,
+    "clientDigestCalls": 0,
+    "downloadCount": 0,
+    "privateDocumentCleared": true,
+    "requestSignalAbortedAfterRejection": true,
+    "statusMessage": "Receipt format could not be verified. Enter your access token to try again."
+  },
+  "limitations": [
+    "Actual receipt client runs in a Node VM with a minimal synthetic DOM, initial HTML and injected transport.",
+    "The oversized body is ultimately rejected, no download occurs and the private view is cleared. The gap is complete-body buffering before the size check.",
+    "The production handler emits bounded canonical JSON. This witness injects an unexpected oversized response, not an ordinary handler output or authorization bypass.",
+    "Response.blob consumes the complete actual injected stream; the witness records bytes, not heap allocation or measured browser memory exhaustion.",
+    "No browser, HTTP server, live network, database, credentials, payment or provider is used.",
+    "This is a before-change resource-boundary witness, not a passing test for bounded streaming consumption."
+  ]
+}

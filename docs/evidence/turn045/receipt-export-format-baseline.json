@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "rightsreceipt-export-format-baseline-v1",
+  "baseCommit": "09ff88fca9c43db1fbdaf6d0e673d419e1cf06e7",
+  "status": "gap_reproduced",
+  "runtime": "v22.18.0",
+  "source": {
+    "path": "packages/receipts/src/client.ts",
+    "sha256": "dbd669c3acc0d847748fb4fd82261df49ced20f358594d3d68a6db43ff4cdf7c"
+  },
+  "scriptSha256": "e39ec4e02ccd33fba1f6bec9c07b9060e655af1ce40e07d383a1331035a11bc6",
+  "scenario": "unexpected_successful_html_export_response_accepted",
+  "syntheticInputs": {
+    "code": "One synthetic valid 43-character token made only from repeated a; no real capability.",
+    "initialView": "Minimal synthetic receipt HTML with a current checked timestamp and a future licensing boundary.",
+    "exportResponse": {
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "body": "<!doctype html><h1>Temporary gateway response</h1>\n",
+      "receiptDigestHeaderPresent": false
+    },
+    "clock": "Fixed wall and monotonic clocks during the two completed requests; scheduled callbacks are not advanced."
+  },
+  "observed": {
+    "requestCount": 2,
+    "exportRequestPath": "/api/receipts/buyer?format=json",
+    "downloadCount": 1,
+    "downloadFilename": "rightsreceipt-sandbox.json",
+    "downloadMime": "text/html",
+    "downloadMatchesUnexpectedHtml": true,
+    "statusMessage": "Canonical JSON exported. Verify current status before relying on any saved copy."
+  },
+  "limitations": [
+    "Actual receipt client evaluated in a Node VM with a minimal synthetic DOM and injected transport.",
+    "The actual native receipt handler emits canonical JSON. This witness injects an unexpected successful-response format and does not establish a handler authorization bypass.",
+    "Initial receipt markup is a synthetic current view, not a handler response or canonical integrity proof.",
+    "No browser, live network, database, credentials, payment or provider is used.",
+    "This is a before-change response-contract defect witness, not a passing acceptance test for a repaired export."
+  ]
+}

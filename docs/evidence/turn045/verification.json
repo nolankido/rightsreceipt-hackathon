@@ -1,0 +1,261 @@
+{
+  "turn": "045",
+  "date": "2026-10-28",
+  "status": "completed_locally_verified",
+  "base_commit": "09ff88fca9c43db1fbdaf6d0e673d419e1cf06e7",
+  "runtime": "v22.18.0",
+  "browser": "Chromium 140.0.7339.16",
+  "scope": {
+    "production_file": "packages/receipts/src/client.ts",
+    "successful_status_required": 200,
+    "expected_media_types": [
+      "text/html",
+      "application/json"
+    ],
+    "charset": "Optional single UTF-8 parameter, quoted or unquoted; media matching is case-insensitive.",
+    "digest_header_required_on_html_and_json": true,
+    "digest_shape": "64 lowercase hexadecimal characters",
+    "html_single_main_document_required": true,
+    "html_complete_timing_attributes_required": true,
+    "timestamps": "Canonical UTC millisecond shape plus Date round-trip; explicit empty next boundary allowed.",
+    "json_export_max_bytes_after_blob": 262144,
+    "json_fatal_utf8_and_envelope_validation": true,
+    "export_digest_matches_current_view_and_exact_bytes": true,
+    "exact_download_bytes_preserved": true,
+    "parse_conversion_and_hash_share_request_deadline_ms": 15000,
+    "session_cancellation_and_view_freshness_preserved": true,
+    "full_server_domain_or_chain_validation_duplicated": false,
+    "html_markup_digest_computed": false,
+    "streaming_body_byte_limit_added": false,
+    "backend_or_shared_client_changed": false
+  },
+  "native": {
+    "files": 52,
+    "passed": 2273,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "receipt_client_collection_passed": 102,
+    "previous_receipt_recovery_cases_preserved": 40,
+    "new_response_validation_cases": 62,
+    "record": "native-regression.json",
+    "targeted_record": "receipt-client-native.json",
+    "targeted_script": "scripts/receipt-client-local.test.mjs",
+    "targeted_script_sha256": "e90817b11eb96811aeb0b0b0cf7b5528c013c3b76ab70745dda35d2196144cbc",
+    "method": "Complete 52-file regression on final production/native source; native client collection uses actual exported script and real WebCrypto with synthetic DOM, clocks, transport and output hooks.",
+    "pinned_toolchain_verified": false
+  },
+  "targeted_browser": {
+    "passed": 193,
+    "scenarios": 13,
+    "completed": true,
+    "record": "receipt-response-browser.json",
+    "script": "scripts/receipt-response-browser-check.mjs",
+    "script_sha256": "6486c0eaea8d47dc736a3246c7bba9e4b73dfc310bc6d6e5154b597bc35d3d82",
+    "before_change_record": "receipt-export-format-baseline.json",
+    "before_change_revision": "09ff88fca9c43db1fbdaf6d0e673d419e1cf06e7",
+    "before_change_witness_method": "Actual isolated prior-revision client in a Node VM with synthetic current view and unexpected HTTP200 HTML export response.",
+    "seed_only_start": false,
+    "initial_fixture": "Synthetic requests, reviewed terms and quotes. Actual consent/invoice/reconciliation/issuance services prepare canonical SQLite receipts using injected gateway/provider responses.",
+    "actual_handlers": true,
+    "additional_provider_calls_from_receipt_actions": 0,
+    "additional_database_writes_from_receipt_actions": 0,
+    "different_code_fixture_scope": "Two isolated canonical SQLite fixtures, each with actual capability authorization.",
+    "response_faults": "Successful status, headers and bodies are explicitly altered. Paired HTML/JSON digest headers isolate malformed body/envelope validation from earlier current-view mismatch.",
+    "digest_faults": "Actual browser WebCrypto runs first, then its completion is deliberately held or rejected; wrapper ignores cancellation.",
+    "recorded_source_hashes_verified": true,
+    "initial_attempt_record": "response-browser-initial-attempt.json",
+    "initial_attempt_note": "A test-only digest wrapper ran on initial about:blank without WebCrypto. A secure-context guard fixed the harness; the complete final run passed on unchanged production source. Partial 6 checks are not added to final counts."
+  },
+  "existing_browser": {
+    "files": 3,
+    "passed": 375,
+    "named_scenarios": 42,
+    "all_source_hashes_unchanged_during_run": true,
+    "source_file_count": 292,
+    "source_fingerprint": "7a5bccfb8e0cc63ddc11752f28389d3d89ad638f9b0f8a2d03e499b3d2f636fd",
+    "record": "existing-browser.json",
+    "results": [
+      {
+        "suite": "receipt-recovery",
+        "script": "scripts/receipt-recovery-browser-check.mjs",
+        "status": "passed",
+        "exit_code": 0,
+        "scope_reason": "Existing receipt operation ownership, cancellation, complete-body deadlines, exact canonical export and current output regression.",
+        "duration_s": 36.558,
+        "passed": 126,
+        "scenarios": 15,
+        "runtime": "v22.18.0",
+        "browser": "140.0.7339.16",
+        "report_sha256": "116b3f0d9640811616a4cdb9c6ee8ad78ee15ae74eb6cad837340f1258015441",
+        "report": "receipt-recovery-browser.json"
+      },
+      {
+        "suite": "transaction",
+        "script": "scripts/transaction-browser-check.mjs",
+        "status": "passed",
+        "exit_code": 0,
+        "scope_reason": "Actual protected receipt navigation, canonical JSON download, revocation/refund status and integrated transaction controls.",
+        "duration_s": 52.639,
+        "passed": 130,
+        "scenarios": 19,
+        "runtime": "v22.18.0",
+        "browser": "140.0.7339.16",
+        "report_sha256": "c11123ccc1270deda359ab12305e6dc26d5deccf0313bb3662c06ae8f3722fe9",
+        "report": "transaction-browser.json"
+      },
+      {
+        "suite": "intake",
+        "script": "scripts/intake-browser-check.mjs",
+        "status": "passed",
+        "exit_code": 0,
+        "scope_reason": "Asset-only original-link continuation through actual protected receipt rendering and exact canonical JSON export.",
+        "duration_s": 34.959,
+        "passed": 119,
+        "scenarios": 8,
+        "runtime": "v22.18.0",
+        "browser": "140.0.7339.16",
+        "report_sha256": "f60e1dcbbafcfa93521bb51dd4e781b26d8ecc248530499996e036c33b85766e",
+        "report": "intake-browser.json"
+      }
+    ],
+    "not_rerun": [
+      "Creator/buyer/clarification/deadline browser collections outside unchanged source scope.",
+      "Older receipt-browser-smoke.py and receipt-layout-check.py scripts; targeted actual-handler response suite and current receipt/transaction/intake journeys were used."
+    ]
+  },
+  "combined_final_browser_passed": 568,
+  "typecheck": {
+    "compiler": "5.8.3",
+    "configs": [
+      "tsconfig.transaction-ui.json"
+    ],
+    "passed": true,
+    "actual_dependency_sources": true,
+    "stubs_used": false,
+    "pinned_toolchain_verified": false
+  },
+  "syntax": {
+    "files": 176,
+    "errors": []
+  },
+  "format": {
+    "checked_files": 329,
+    "errors": []
+  },
+  "workspace": {
+    "packages": 13,
+    "internal_edges": 24,
+    "cycles": 0
+  },
+  "diff_whitespace_passed": true,
+  "review": {
+    "receipt_client_independently_reviewed": true,
+    "metadata_exact_bytes_deadline_and_output_authority_reviewed": true,
+    "documentation_scope_reviewed": true,
+    "prior_revision_defect_reproduced_this_turn": true,
+    "current_source_fingerprint_rechecked_before_publication": true
+  },
+  "visual_review": {
+    "screenshots_inspected": 2,
+    "review_note": "Desktop hashing leaves Close available and output disabled; mobile invalid-response guidance and empty code entry remain readable without overflow. One synthetic CJK title glyph is unavailable in the headless font; byte/DOM preservation is separately checked.",
+    "screenshot_sha256": {
+      "receipt-digest-pending.png": "6e8cd0bf7631d78e6a76340d83a52adb512926f1b4bc63b70d21ada6cb8d6912",
+      "receipt-invalid-response-recovery-mobile.png": "55616ba75538c4718349f3471021b9b3561d06573d7a843709ceb1ba45b2ec70"
+    }
+  },
+  "schema": {
+    "migrations": 9,
+    "domain_tables": 33,
+    "seed_metadata_version": 9,
+    "new_migrations": 0,
+    "database_changes": false
+  },
+  "new_dependencies": [],
+  "live_provider_calls": false,
+  "deployment_performed": false,
+  "account_owner_task_required": false,
+  "all_runtime_flags_remain_off": true,
+  "merchant_identity_blank": true,
+  "release_ready": false,
+  "remaining_gates": [
+    "Pinned clean dependency install and installed-library typecheck/lint/Vitest/Vite/Wrangler verification",
+    "Genuine managed-session verification",
+    "Genuine Sandbox payment/refund/webhook verification",
+    "Deployed Worker/D1 verification",
+    "Public judge access and submission assets"
+  ],
+  "next_unit": "046 P0 bound protected receipt body consumption before complete buffering",
+  "known_next_boundary": {
+    "record": "receipt-body-buffering-baseline.json",
+    "source": {
+      "path": "packages/receipts/src/client.ts",
+      "sha256": "212118c57bcb66f3f0671e54cadf72ff0b3bf581fea003b1d286497527fc4674"
+    },
+    "witness_script_sha256": "0fd0cef7f98901e5a8cdfe60a969da1ae0a5677d69ad92d236899594cd70dfd4",
+    "status": "gap_reproduced",
+    "observed_body_bytes_buffered": 394831,
+    "post_blob_limit_bytes": 262144,
+    "download_count": 0,
+    "finding": "The oversized response is correctly rejected and private state clears, but the complete body is buffered before the byte limit is checked.",
+    "scope": "Actual client in a Node VM with actual Node Response/ReadableStream, synthetic current view and oversized transport, fixed clocks. Native handler emits bounded canonical JSON. Counts bytes, not heap allocation or browser memory exhaustion; no handler/network/database/provider execution."
+  },
+  "files_changed": [
+    "DEVELOPMENT_PLAN.md",
+    "PROJECT_STATUS.md",
+    "README.md",
+    "docs/engineering/README.md",
+    "docs/engineering/RECEIPT_RESPONSE_VALIDATION.md",
+    "docs/evidence/turn045/existing-browser.json",
+    "docs/evidence/turn045/intake-browser.json",
+    "docs/evidence/turn045/native-regression.json",
+    "docs/evidence/turn045/receipt-body-buffering-baseline.json",
+    "docs/evidence/turn045/receipt-client-native.json",
+    "docs/evidence/turn045/receipt-export-format-baseline.json",
+    "docs/evidence/turn045/receipt-recovery-browser.json",
+    "docs/evidence/turn045/receipt-response-browser.json",
+    "docs/evidence/turn045/response-browser-initial-attempt.json",
+    "docs/evidence/turn045/transaction-browser.json",
+    "docs/evidence/turn045/verification.json",
+    "docs/turns/045-p0-receipt-response-validation.md",
+    "package.json",
+    "packages/receipts/src/client.ts",
+    "scripts/receipt-client-local.test.mjs",
+    "scripts/receipt-response-browser-check.mjs"
+  ],
+  "source_sha256": {
+    ".dev.vars.example": "72b565848fd5ac8ab419e965561657fe3ebdd9132cba3f64f83ac8206ea6fb9e",
+    "package.json": "2fd1adfc11d370e02435e7f3a990d2096fde5a4a29c31e39370595c72df3d1eb",
+    "packages/persistence/src/manifest.ts": "6056ea6f965bae52226c7a75a63c88583f2a407ba51c7bc70802a5acc30f4a84",
+    "packages/receipts/src/canonical.ts": "a1bd37187f934ef4697b636d84a0f7fc5bf75d674e5a3fc45a62fffb0db2b22a",
+    "packages/receipts/src/client.ts": "212118c57bcb66f3f0671e54cadf72ff0b3bf581fea003b1d286497527fc4674",
+    "packages/receipts/src/contract.ts": "42eb2d92fbc093ec91be6a978775732c4fc4bd0135b3c1051c9e378c0720fe79",
+    "packages/receipts/src/experience.ts": "7880ea94aae4a7c900fed3e2fd0818e116ab8b8871e7d70f24056a59b122c5b3",
+    "packages/receipts/src/http.ts": "d797dbc47c71e0bfaf39b0a855066e61b178aa56a72987c2b5d352b268150bda",
+    "packages/receipts/src/material.ts": "737b2f30378b6f17cd27f2e5313299cb777b2b69fc0e4c6c2eaf029ce7c94edb",
+    "packages/receipts/src/presentation.ts": "6b0e1f48560f5e6d1d127d1983b1c5383eed5ae34063c2b37b2cf70e8f8e9f03",
+    "packages/receipts/src/temporal.ts": "31b2df97345a33f4265b7141a7bb0728d78c4cc1c97e266b75bc8164db9e6f2f",
+    "scripts/consent-ts-test-loader.mjs": "59825a9c24bd88341054db90ba9edc1a0be1d9e51594038e477ea1d9cd2735df",
+    "scripts/intake-browser-check.mjs": "bb81bc8463a720eb909db8eb6af9e1166434fa72c5a551266cc8e9eca16408a5",
+    "scripts/receipt-client-local.test.mjs": "e90817b11eb96811aeb0b0b0cf7b5528c013c3b76ab70745dda35d2196144cbc",
+    "scripts/receipt-experience-local.test.mjs": "70fb83614ad4413ede99607f1ff3b1bafe63a907f87f5fda7f7c8086d3ab3419",
+    "scripts/receipt-recovery-browser-check.mjs": "d7f3085ebac6af0c85ea5f7656e913b8c4fd33e43d102d75658150fca0a0477c",
+    "scripts/receipt-response-browser-check.mjs": "6486c0eaea8d47dc736a3246c7bba9e4b73dfc310bc6d6e5154b597bc35d3d82",
+    "scripts/support/human-consent-fixture.mjs": "4fd14df5286ba17b324b55eba63e465b7be67bfe4200702c245447ca30aeb51a",
+    "scripts/support/transaction-browser-fixture.mjs": "c84ebc88bc02e1b10d2e960ad87d0dc64258f77859fed9367db9920c3b4abed4",
+    "scripts/transaction-browser-check.mjs": "37dad48fde8eaeabe445ee2162888a7de9b4eda0ddf1cb7ee11fc0548e2cdda2",
+    "wrangler.jsonc": "67cd10f080df4225347978fdc7cbddfc8f8a7313fe70161824d274309f28879d"
+  },
+  "artifact_sha256": {
+    "existing-browser.json": "d4ca8067075b5bba62746d94b867d349a526feb97722def335f38c6ecac144f5",
+    "intake-browser.json": "f60e1dcbbafcfa93521bb51dd4e781b26d8ecc248530499996e036c33b85766e",
+    "native-regression.json": "1b9874e0b23d566b926fc433634c9c051fe1e56fdd98232c6efb39c2916e525b",
+    "receipt-body-buffering-baseline.json": "1c58ff4ea097b86d582d668828e9284ff35312646fa0a7eef60cb9007a6dd89f",
+    "receipt-client-native.json": "a28f4059bfe97c7550366cccea280227450d2df7da0689eadd6ea5f305492cf8",
+    "receipt-export-format-baseline.json": "a7910126bcd7589971bc04491d072e7ea65b1ae297c29ea841686a722c97f48b",
+    "receipt-recovery-browser.json": "116b3f0d9640811616a4cdb9c6ee8ad78ee15ae74eb6cad837340f1258015441",
+    "receipt-response-browser.json": "01642858713f9fe4b6e169d195b22d2ad1037fa33acafd0fe6255c1d777ee412",
+    "response-browser-initial-attempt.json": "2181926d587feada47da4c2764a530d097612fdacbe1d76781baea269971c34a",
+    "transaction-browser.json": "c11123ccc1270deda359ab12305e6dc26d5deccf0313bb3662c06ae8f3722fe9"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "rightsreceipt-turn081-local-validation-v1",
+  "baseCommit": "2d2c3c791f11fc1acafc903183d19a79b6e8116d",
+  "node": "22.16.0",
+  "scope": "Localhost HTTP console and smoke validator with injected offline fixtures; no canonical licensing worker",
+  "reproducedBeforeFix": {
+    "existingConsoleTestsPassed": 17,
+    "newRegressionTestsFailed": 6
+  },
+  "afterFix": {
+    "consoleHttpTestsPassed": 23,
+    "pageRendererTestsPassed": 9,
+    "smokeValidatorTestsPassed": 10,
+    "semanticValidatorTestsPassed": 10,
+    "total": 52,
+    "failed": 0,
+    "additionalCompleteRepeatRuns": 3
+  },
+  "command": [
+    "node",
+    "--test",
+    "scripts/judge-local-console-local.test.mjs",
+    "scripts/support/judge-console-page.test.mjs",
+    "scripts/judge-console-real-smoke.test.mjs",
+    "scripts/support/judge-console-evidence.test.mjs"
+  ],
+  "testedBlobShas": {
+    "scripts/judge-local-console.mjs": "60acd94c66999fbf36ae2a6b4523bc870dda5c2a",
+    "scripts/judge-local-console-local.test.mjs": "3f06023fd59ce86a7a321e39d76425e3d157f736",
+    "scripts/judge-console-real-smoke.mjs": "7e7f25ecfac99ff6848a6c0079b3c758048bc4c2",
+    "scripts/judge-console-real-smoke.test.mjs": "a817121131111d7463fa60c4f9005f4d73676de3",
+    "scripts/support/judge-console-evidence.mjs": "42aedd066f151a5249dcba04545edc4cedc4228f",
+    "scripts/support/judge-console-evidence.test.mjs": "bbf078f2bf58f4840b3c4da122d7c352f177ad6e",
+    "scripts/support/judge-console-evidence-fixture.mjs": "c3beaed0ccb4e959f28cccfd83185a3ad44a6021"
+  },
+  "limitations": [
+    "Not a full private checkout or pnpm release:verify run",
+    "Default canonical licensing worker not executed",
+    "No genuine PayPal Sandbox payment, webhook, external deployment or public submission"
+  ]
+}

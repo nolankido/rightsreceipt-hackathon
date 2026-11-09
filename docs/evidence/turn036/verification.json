@@ -1,0 +1,99 @@
+{
+  "schema": "rightsreceipt-turn-verification-v1",
+  "turn": "036",
+  "date": "2026-10-27",
+  "timezone": "Pacific/Honolulu",
+  "base_commit": "d162674b8c48b2580300d0862b6eb16ed7d27b63",
+  "native": {
+    "runtime": "v22.18.0",
+    "files": 39,
+    "tests": 1556,
+    "passed": 1556,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "runtime": "v22.18.0",
+    "integrated_checks": 127,
+    "integrated_scenarios": 19,
+    "adversarial_buyer_checks": 51,
+    "engine": "140.0.7339.16",
+    "limitations": [
+      "No listening server or deployed Worker",
+      "Generated fixture Access assertion and injected public signing keys",
+      "The fixture starts with a synthetic buyer request, human-prepared terms and a deterministic quote; initial intake, extraction and term editing are not browser-tested",
+      "Injected Sandbox provider HTTP only",
+      "SQLite D1-shaped adapter, not deployed Cloudflare D1",
+      "Financial paths run production reconciliation and receipt issuance against synthetic provider transaction details",
+      "The deliberate Sandbox navigation is intercepted into an inert test document; no PayPal server is contacted",
+      "Expiry tests advance browser time; hidden/history lifecycle events are injected",
+      "Chromium interception does not expose Fetch Metadata headers in this runtime; actual Origin is checked, and metadata denial is covered by native HTTP tests."
+    ],
+    "adversarial_limitations": [
+      "Response corruption is test-only and intentional",
+      "Synthetic Access assertions and provider HTTP",
+      "Real canonical SQLite services, native routes, HTML, and browser client",
+      "No deployed Worker, Cloudflare D1, or genuine PayPal payment"
+    ]
+  },
+  "typecheck": {
+    "compiler": "5.8.3",
+    "strict_configs": [
+      "tsconfig.transaction-ui.json",
+      "tsconfig.invoice-sending.json"
+    ],
+    "includes_receipt_http_routes": true,
+    "uses_dependency_stubs": false,
+    "full_pinned_toolchain_verified": false
+  },
+  "syntax": {
+    "compiler": "5.8.3",
+    "files": 152,
+    "errors": []
+  },
+  "format": {
+    "checked_files": 277,
+    "errors": []
+  },
+  "workspace": {
+    "packages": 13,
+    "internal_edges": 24,
+    "cycles": 0
+  },
+  "qr_reference_vectors_passed": 16,
+  "other_checks": [
+    "git diff --check",
+    "changed-file credential pattern scan",
+    "default-off settings and original migration identities verified by native suites"
+  ],
+  "receipt_authorization_regression_witness": {
+    "isolated_prior_handler_failed_new_tests": 6,
+    "corrected_handler_passed_new_tests": 6
+  },
+  "migration_count": 8,
+  "domain_table_count": 31,
+  "new_dependencies": [],
+  "new_migrations": [],
+  "live_provider_calls": false,
+  "deployment_performed": false,
+  "all_runtime_flags_remain_off": true,
+  "release_ready": false,
+  "source_sha256": {
+    "apps/api/src/buyer-payment-routes.ts": "79891cae2c50ae9ed435b751f10eb94f3e4b396dc0a6d05eb7e543a663086006",
+    "apps/api/src/buyer-review.ts": "f26a9d344f54025f827717e967fa0cb2897e3f87185d469c5675fffdfa892146",
+    "apps/api/src/receipt-routes.ts": "7406ab80b69b6496f9bf95d0580f536861067e34814598ecbe0be47d8b31611a",
+    "apps/api/src/transaction-routes.ts": "15f58816ad5654ef0e31d9994c3a0348a2c0ee70c63b7d3ee232409ff6f61dd1",
+    "apps/web/src/buyer-review-client.ts": "dbfcf2f99d2eb4b768c38a170b98492e73cd5413800093753254fffc27f25427",
+    "packages/application/src/buyer-invoice.ts": "db64c32a4280a0fb1b78b0487ae2983245171dd38bf2e138ef816204312812e0",
+    "packages/persistence/src/buyer-payment.ts": "e4d58bc9569cb0487e8fd7445642f69b8dcd964e7ae5348db575700f1e190d10",
+    "packages/persistence/src/invoice-sending.ts": "206c64672f8e94eb2726bfe5cd04f859c3910c2af90177d5dc4130d14d5dfe05",
+    "packages/receipts/src/http.ts": "d797dbc47c71e0bfaf39b0a855066e61b178aa56a72987c2b5d352b268150bda",
+    "packages/receipts/src/qr.ts": "4a12aff18ec0666d06d92d97ca84d25fef8b22b50bdb1c37557f6f43a41559da",
+    "scripts/buyer-payment-local.test.mjs": "942e8771e3fb0e8c0d657be2b718df6e03ca706d4d9249dda7d64ad61822dba3",
+    "scripts/buyer-review-validation-browser-check.mjs": "0ea0eb9468932d3a351b4435103e041172ac06910f4fc419fbd60ca3424ba8e0",
+    "scripts/receipt-experience-local.test.mjs": "70fb83614ad4413ede99607f1ff3b1bafe63a907f87f5fda7f7c8086d3ab3419",
+    "scripts/support/transaction-browser-fixture.mjs": "7e13ecef375622ebdd2302b095742c2650691b5b597282a92b386285029b7cdc",
+    "scripts/transaction-browser-check.mjs": "957cc81f5433da8a69ea890cfd357cfce1456445d4aef0ee0e12957fd254a2c5",
+    "scripts/transaction-routes-local.test.mjs": "d4fc630cb12d4908ab1164ef4587bbe2cf71210576df2df9bfa3b1bc5bb9e292"
+  }
+}

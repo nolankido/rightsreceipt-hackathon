@@ -1,0 +1,56 @@
+{
+  "mode": "receipt response browser verification through actual native handlers",
+  "runtime": "v22.18.0",
+  "scriptSha256": "4873d94ca71ddd20f4cd6251e1f77e9f040e0ff8bdf51e04f549f986883fe169",
+  "sourceSha256": {
+    "packages/receipts/src/client.ts": "212118c57bcb66f3f0671e54cadf72ff0b3bf581fea003b1d286497527fc4674",
+    "packages/receipts/src/presentation.ts": "6b0e1f48560f5e6d1d127d1983b1c5383eed5ae34063c2b37b2cf70e8f8e9f03",
+    "packages/receipts/src/http.ts": "d797dbc47c71e0bfaf39b0a855066e61b178aa56a72987c2b5d352b268150bda",
+    "scripts/support/transaction-browser-fixture.mjs": "c84ebc88bc02e1b10d2e960ad87d0dc64258f77859fed9367db9920c3b4abed4",
+    "scripts/support/human-consent-fixture.mjs": "4fd14df5286ba17b324b55eba63e465b7be67bfe4200702c245447ca30aeb51a"
+  },
+  "limitations": [
+    "Synthetic initial request, human-reviewed terms and quote; initial intake is outside this collection",
+    "Real consent, invoice, reconciliation and receipt services prepare canonical SQLite receipts using injected provider HTTP",
+    "Receipt browser actions must cause zero additional provider calls or database writes after fixture setup",
+    "Different-code scenarios route to two isolated canonical fixtures; each fixture independently enforces its actual capability authorization",
+    "Successful-response faults alter actual handler status, headers or body; paired HTML digest headers isolate JSON envelope validation",
+    "Delayed digest faults call actual browser WebCrypto first and then hold or reject its completion; cancellation is deliberately ignored by that wrapper",
+    "Browser clocks, hidden/history events and window.print are controlled locally; downloads use actual canonical handler bytes",
+    "No listening server, real gateway, provider network, deployed Worker, Cloudflare D1 or screen-reader audit"
+  ],
+  "completed": false,
+  "passed": 6,
+  "checks": [
+    {
+      "scenario": "valid_native_receipt_print_and_verified_utf8_export",
+      "check": "actual UTF-8 receipt HTML remains usable with valid media parameters"
+    },
+    {
+      "scenario": "valid_native_receipt_print_and_verified_utf8_export",
+      "check": "valid print still requires a second actual HTML read"
+    },
+    {
+      "scenario": "valid_native_receipt_print_and_verified_utf8_export",
+      "check": "real browser SHA-256 covers exact canonical UTF-8 bytes before output"
+    },
+    {
+      "scenario": "valid_native_receipt_print_and_verified_utf8_export",
+      "check": "digest validation keeps Close available and output disabled"
+    },
+    {
+      "scenario": "valid_native_receipt_print_and_verified_utf8_export",
+      "check": "verified export preserves exact canonical bytes, digest and filename"
+    },
+    {
+      "scenario": "valid_native_receipt_print_and_verified_utf8_export",
+      "check": "only the explicitly requested export creates output"
+    }
+  ],
+  "scenarios": [],
+  "browser": "140.0.7339.16",
+  "failure": {
+    "scenario": "valid_native_receipt_print_and_verified_utf8_export",
+    "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   \"Cannot read properties of undefined (reading 'digest')\"\n+ ]\n- []\n"
+  }
+}

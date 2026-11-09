@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Studio Lines demonstration preview</title>
+  <desc id="desc">A project-owned abstract illustration made from layered geometric lines and paper-like fields.</desc>
+  <rect width="1200" height="720" fill="#f3efe4"/>
+  <rect x="90" y="80" width="1020" height="560" rx="36" fill="#fffdf7" stroke="#c8c4b8" stroke-width="6"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M180 540 C320 170 520 150 640 510 S950 600 1030 210" stroke="#155f52" stroke-width="34"/>
+    <path d="M175 250 C330 520 520 560 705 225 S965 170 1035 510" stroke="#b56d22" stroke-width="22"/>
+    <path d="M235 575 C410 315 640 300 960 555" stroke="#365c79" stroke-width="14"/>
+    <path d="M225 160 C430 350 750 390 990 150" stroke="#6f7d6f" stroke-width="10"/>
+  </g>
+  <g fill="#18201e">
+    <circle cx="180" cy="540" r="18"/>
+    <circle cx="1030" cy="210" r="18"/>
+    <circle cx="175" cy="250" r="14"/>
+    <circle cx="1035" cy="510" r="14"/>
+  </g>
+</svg>

@@ -1,0 +1,112 @@
+{
+  "calibrationCompleted": false,
+  "deploymentPrecisionEstablished": false,
+  "evaluationScope": "training_and_validation_only_no_heldout_tuning",
+  "featureCount": 768,
+  "fieldHeadCount": 12,
+  "results": {
+    "ai_use": {
+      "classCount": 4,
+      "trainCount": 960,
+      "trainExactLabelAgreement": 960,
+      "validationCount": 240,
+      "validationExactLabelAgreement": 239
+    },
+    "attribution": {
+      "classCount": 5,
+      "trainCount": 960,
+      "trainExactLabelAgreement": 960,
+      "validationCount": 240,
+      "validationExactLabelAgreement": 240
+    },
+    "channels": {
+      "classCount": 6,
+      "trainCount": 960,
+      "trainExactLabelAgreement": 960,
+      "validationCount": 240,
+      "validationExactLabelAgreement": 238
+    },
+    "duration_days": {
+      "classCount": 11,
+      "trainCount": 960,
+      "trainExactLabelAgreement": 960,
+      "validationCount": 240,
+      "validationExactLabelAgreement": 237
+    },
+    "exclusivity": {
+      "classCount": 4,
+      "trainCount": 960,
+      "trainExactLabelAgreement": 960,
+      "validationCount": 240,
+      "validationExactLabelAgreement": 237
+    },
+    "max_impressions": {
+      "classCount": 11,
+      "trainCount": 960,
+      "trainExactLabelAgreement": 960,
+      "validationCount": 240,
+      "validationExactLabelAgreement": 234
+    },
+    "modification_scope": {
+      "classCount": 5,
+      "trainCount": 960,
+      "trainExactLabelAgreement": 960,
+      "validationCount": 240,
+      "validationExactLabelAgreement": 238
+    },
+    "paid_advertising": {
+      "classCount": 4,
+      "trainCount": 960,
+      "trainExactLabelAgreement": 960,
+      "validationCount": 240,
+      "validationExactLabelAgreement": 239
+    },
+    "start_date": {
+      "classCount": 8,
+      "trainCount": 960,
+      "trainExactLabelAgreement": 960,
+      "validationCount": 240,
+      "validationExactLabelAgreement": 238
+    },
+    "sublicensing": {
+      "classCount": 4,
+      "trainCount": 960,
+      "trainExactLabelAgreement": 960,
+      "validationCount": 240,
+      "validationExactLabelAgreement": 238
+    },
+    "territories": {
+      "classCount": 6,
+      "trainCount": 960,
+      "trainExactLabelAgreement": 960,
+      "validationCount": 240,
+      "validationExactLabelAgreement": 236
+    },
+    "use_purpose": {
+      "classCount": 4,
+      "trainCount": 960,
+      "trainExactLabelAgreement": 960,
+      "validationCount": 240,
+      "validationExactLabelAgreement": 237
+    }
+  },
+  "runtime": {
+    "numpy": "2.3.5",
+    "python": "3.13.5",
+    "scipy": "1.17.0",
+    "sklearn": "1.8.0"
+  },
+  "schemaVersion": "rightsreceipt-training-report-v1",
+  "training": {
+    "alpha": 0.0003,
+    "documentFrequencyMinimum": 2,
+    "featureLimit": 768,
+    "maxIterations": 400,
+    "randomState": 171017
+  },
+  "trainingArtifactSha256": "6ea099b72fe00ce4643426a2729a84b207ae8eb3460c75488fab3502037e73e2",
+  "trainingDatasetSha256": "ad512f84f6012c46f31f3cb8516e9fbc0576fef102801874631897fffbec7879",
+  "trainingScriptSha256": "3984df594959796c31fa3b5f0376615e9acc70b8f95576a80ace7225c6492794",
+  "validationDatasetSha256": "cf8a710db4210f3e9c11dd92a9c875ea487488f521d08c46477b4ed8a4bddb95",
+  "weightCount": 55296
+}

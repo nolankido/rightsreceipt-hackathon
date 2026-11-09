@@ -1,0 +1,13 @@
+{
+  "mode": "isolated prior receipt HTTP handler with current regression tests",
+  "exit_code": 1,
+  "failed_regressions": [
+    "revocation during the final source read blocks private html",
+    "revocation during the final source read blocks private print",
+    "revocation during the final source read blocks private json",
+    "creator revocation during the final source read blocks export",
+    "expiry during the final source read is checked using the current clock",
+    "a UTC boundary crossed during the final authorization suppresses the receipt"
+  ],
+  "expected_regression_count": 6
+}

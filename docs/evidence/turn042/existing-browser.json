@@ -1,0 +1,183 @@
+{
+  "schema_version": "rightsreceipt-browser-regression-turn042-v1",
+  "status": "passed",
+  "scope": "Six existing browser suites using actual local native handlers, SQLite fixtures, and injected provider/gateway responses.",
+  "sandbox_launch_diagnostic": {
+    "status": "environment_blocked_before_assertions",
+    "assertions_run": 0,
+    "reason": "Chromium startup socket was denied by the restricted process sandbox."
+  },
+  "initial_attempt": {
+    "source_fingerprint": "3038f5f4cf199c2d3e8e9ea141fac954c4bc2efb06f7be7036d48e6e6dcedfdf",
+    "source_unchanged_during_run": true,
+    "results": [
+      {
+        "suite": "transaction",
+        "status": "failed",
+        "passed_checks": 121,
+        "completed_scenarios": 17,
+        "exit_code": 1,
+        "report_sha256": "9358a9214ca8dfbe3a8e930d5b336745dd70796b7ee13721ce5e2ae320943f72",
+        "classification": "Outdated expected copy: the new 15-second request timeout precedes the old 30-second link-expiry assertion."
+      },
+      {
+        "suite": "intake",
+        "status": "passed",
+        "passed_checks": 119,
+        "completed_scenarios": 8,
+        "exit_code": 0,
+        "report_sha256": "f60e1dcbbafcfa93521bb51dd4e781b26d8ecc248530499996e036c33b85766e",
+        "classification": "Passed on the initial frozen source."
+      },
+      {
+        "suite": "clarification",
+        "status": "failed",
+        "passed_checks": 33,
+        "completed_scenarios": 2,
+        "exit_code": 1,
+        "report_sha256": "ed8d13b5127c2ecd35e00c11d680d51e5e055ff64c110d5baa139a55fcbefb09",
+        "classification": "Diagnostically stopped after an unbounded Playwright error-body read exposed missing child-request cleanup on HTTP errors."
+      },
+      {
+        "suite": "invoice-recovery",
+        "status": "failed",
+        "passed_checks": 69,
+        "completed_scenarios": 7,
+        "exit_code": 1,
+        "report_sha256": "7be1b2b88bec8030d4ebce1788e86acefd5189d2cde72d0aacda9961de11ed16",
+        "classification": "Diagnostically stopped after an unbounded Playwright error-body read exposed missing child-request cleanup on HTTP errors."
+      },
+      {
+        "suite": "buyer-validation",
+        "status": "passed",
+        "passed_checks": 51,
+        "completed_scenarios": null,
+        "exit_code": 0,
+        "report_sha256": "d539d7e72303e6294f67943dbd46ba953c940e72eaa8952bdb57f1e5eab8a3d7",
+        "classification": "Passed on the initial frozen source."
+      },
+      {
+        "suite": "accessibility",
+        "status": "passed",
+        "passed_checks": 134,
+        "completed_scenarios": 17,
+        "exit_code": 0,
+        "report_sha256": "7acfd099000a3813131e06203e2addda7190b993e88927270eca9d88ca95aef3",
+        "classification": "Passed on the initial frozen source."
+      }
+    ]
+  },
+  "cleanup_diagnostic": {
+    "source_fingerprint": "3038f5f4cf199c2d3e8e9ea141fac954c4bc2efb06f7be7036d48e6e6dcedfdf",
+    "repository_source_unchanged": true,
+    "candidate": "Ordinary request failure checks cancellation/deadline, aborts the child transport, then rethrows the original error.",
+    "unchanged_assertions": true,
+    "results": [
+      {
+        "suite": "clarification",
+        "status": "passed",
+        "passed_checks": 57,
+        "completed_scenarios": 8,
+        "report_sha256": "50b4495c6098344fcd947385f273c57d23e811a46a27d041ab45c10ded1b9636"
+      },
+      {
+        "suite": "invoice-recovery",
+        "status": "passed",
+        "passed_checks": 88,
+        "completed_scenarios": 12,
+        "report_sha256": "837816ae2fa991a3559b11533c6e22a0143f4dbcdc09469953db331bb5fada75"
+      }
+    ],
+    "candidate_method": "An isolated loader substituted only the helper failure-path cleanup at runtime; repository sources and suite assertions were unchanged."
+  },
+  "coordinated_source_transition": {
+    "initial_fingerprint": "3038f5f4cf199c2d3e8e9ea141fac954c4bc2efb06f7be7036d48e6e6dcedfdf",
+    "final_fingerprint": "cbc653557c34c8e81ccdb30ee3e25d39ecd728e47d2f7821dad686897c271428",
+    "changed_files": [
+      "apps/web/src/request-deadline-client.ts",
+      "scripts/request-deadline-local.test.mjs",
+      "scripts/transaction-browser-check.mjs"
+    ],
+    "changes": [
+      "Abort unread child responses on ordinary HTTP/content-type/body failures while preserving their error status.",
+      "Add native cleanup assertions for HTTP 403/409, content type, fetch, and JSON failure.",
+      "Require payment-check timeout copy while retaining late-link suppression, no automatic retry, and the independent 30-second current-link-expiry scenario."
+    ]
+  },
+  "final_results": {
+    "source_fingerprint_before": "cbc653557c34c8e81ccdb30ee3e25d39ecd728e47d2f7821dad686897c271428",
+    "source_fingerprint_after": "cbc653557c34c8e81ccdb30ee3e25d39ecd728e47d2f7821dad686897c271428",
+    "all_source_hashes_unchanged_during_run": true,
+    "source_file_count": 288,
+    "application_source_hashes_unchanged_during_run": true,
+    "application_source_file_count": 187,
+    "application_source_hashes_sha256": "0e7aa784fa96a73f292464262d1dc7cb7bbf44698d1d6121c56fa96607307ddf",
+    "runtime": "v22.18.0",
+    "concurrency": 2,
+    "suites": 6,
+    "passed_checks": 576,
+    "completed_named_scenarios": 64,
+    "results": [
+      {
+        "suite": "transaction",
+        "status": "passed",
+        "passed_checks": 127,
+        "completed_scenarios": 19,
+        "exit_code": 0,
+        "report": "transaction-browser.json",
+        "report_sha256": "55dcae53f53bc908d372697a28738894c74cc03f35814c0bc415c15e955a1799"
+      },
+      {
+        "suite": "intake",
+        "status": "passed",
+        "passed_checks": 119,
+        "completed_scenarios": 8,
+        "exit_code": 0,
+        "report": "intake-browser.json",
+        "report_sha256": "f60e1dcbbafcfa93521bb51dd4e781b26d8ecc248530499996e036c33b85766e"
+      },
+      {
+        "suite": "clarification",
+        "status": "passed",
+        "passed_checks": 57,
+        "completed_scenarios": 8,
+        "exit_code": 0,
+        "report": "clarification-browser.json",
+        "report_sha256": "beccbecdbaf3e2c4ce31468c8901ae72e745800909000bce8a4c258b0e89d190"
+      },
+      {
+        "suite": "invoice-recovery",
+        "status": "passed",
+        "passed_checks": 88,
+        "completed_scenarios": 12,
+        "exit_code": 0,
+        "report": "recovery-browser.json",
+        "report_sha256": "837816ae2fa991a3559b11533c6e22a0143f4dbcdc09469953db331bb5fada75"
+      },
+      {
+        "suite": "buyer-validation",
+        "status": "passed",
+        "passed_checks": 51,
+        "completed_scenarios": null,
+        "exit_code": 0,
+        "report": "buyer-validation-browser.json",
+        "report_sha256": "d539d7e72303e6294f67943dbd46ba953c940e72eaa8952bdb57f1e5eab8a3d7"
+      },
+      {
+        "suite": "accessibility",
+        "status": "passed",
+        "passed_checks": 134,
+        "completed_scenarios": 17,
+        "exit_code": 0,
+        "report": "accessibility-browser.json",
+        "report_sha256": "7acfd099000a3813131e06203e2addda7190b993e88927270eca9d88ca95aef3"
+      }
+    ]
+  },
+  "limitations": [
+    "Headless Chromium with intercepted HTTPS transport; no deployed Worker, listening service, or Cloudflare D1.",
+    "Gateway identities and provider responses are local fixtures; no live PayPal request, account action, or payment.",
+    "The buyer-validation suite reports 51 checks without named scenario totals."
+  ],
+  "record_note": "Initial outcomes and diagnostics are summarized here; final report files are included alongside this record."
+}

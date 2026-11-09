@@ -1,0 +1,1031 @@
+{
+  "mode": "seed-only browser intake to canonical receipt using actual native handlers",
+  "runtime": "v22.18.0",
+  "limitations": [
+    "No listening server, deployed Worker or Cloudflare D1",
+    "Generated Access signing keys and injected gateway assertions",
+    "Only workspace, asset and pricing policy are seeded; every transactional record comes from production handlers",
+    "PayPal HTTP responses are local deterministic fixtures; no provider network or payment occurs",
+    "Browser expiry advances test time; hidden/history lifecycle events are injected",
+    "Chromium interception does not expose Fetch Metadata in this runtime; native route tests cover that check"
+  ],
+  "completed": true,
+  "passed": 119,
+  "checks": [
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "fixture starts with only workspace, asset and policy domain records"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "creator asset review is read-only and verifies the managed gateway assertion"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "link issuance requires its own unchecked confirmation"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "creator-asset-request-link mobile content fits the viewport"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "actual creator action creates exactly one asset-bound case and capability"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "only a SHA-256 digest crosses issuer JSON and reaches durable capability storage"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "server fixes capability scopes and expiry instead of accepting browser authority"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "private link begins concealed and is never a token-bearing anchor"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "creator-issued-request-link mobile content fits the viewport"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "buyer fragment is removed before the first intake read"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "buyer intake uses bearer authority without gateway cookies or assertions"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "buyer fields and consent start blank and unchecked"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "buyer-request-empty mobile content fits the viewport"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "buyer-request-intake mobile content fits the viewport"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "submission preserves Unicode and untrusted request text as exact evidence"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "request submission grants no quote, approval, acceptance, payment or permission"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "buyer-request-submitted mobile content fits the viewport"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "explicit continuation transfers private authority and clears its URL fragment"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "buyer clarification remains evidence for a later creator decision"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "creator receives the original Unicode request without evaluating embedded markup"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "all twelve rights await human review even after buyer answers"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "creator-intake-rights-review mobile content fits the viewport"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "creator review writes one complete terms version and deterministic 42500-cent quote"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "prepared terms still require a separate explicit creator approval"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "creator approval is bound to the reviewed terms and quote"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "original request link resumes the exact offer after creator approval"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "buyer sees the deterministic price and gives fresh exact-version acceptance"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "acceptance records the actual creator decision without performing provider work"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "accepted offer requires a separate invoice-draft confirmation"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "production handler derives one unsent draft from the exact accepted quote"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "invoice delivery requires another unchecked confirmation"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "production send records one delivery and queues reconciliation without payment authority"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "original shared link resumes the submitted request after invoice delivery"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "original-link continuation reaches payment review without a token-bearing anchor"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "buyer receives a verified Sandbox payment handoff without canonical writes"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "real financial reconciliation creates payment evidence and scheduled permission"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "real issuance produces a canonical receipt for the newly submitted request"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "receipt status is read-only and reports scheduled permission before its start date"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "public verification is opaque and excludes the private token and case identifier"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "private receipt shows the actual exact-price canonical revision"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "buyer-intake-canonical-receipt mobile content fits the viewport"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "receipt export preserves exact canonical bytes and SHA-256"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "repeat issuance keeps the same canonical receipt revision"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "public verification confirms the receipt hash without disclosing buyer request or identity"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "original shared link retains read-only continuation for an archived completed deal"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "archived original-link continuation exposes the current receipt without new consent or payment"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "archived deal opens the unchanged canonical receipt from the original shared link"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "all browser commands used the exact application Origin"
+    },
+    {
+      "scenario": "seed_only_intake_to_canonical_receipt",
+      "check": "native browser routing completes without unhandled errors or unexpected network origins"
+    },
+    {
+      "scenario": "lost_issuance_ack_retries_the_same_private_link",
+      "check": "fixture starts with only workspace, asset and policy domain records"
+    },
+    {
+      "scenario": "lost_issuance_ack_retries_the_same_private_link",
+      "check": "lost issuance response commits one case and capability without automatic retry"
+    },
+    {
+      "scenario": "lost_issuance_ack_retries_the_same_private_link",
+      "check": "uncertain issuance conceals the link and exposes an explicit exact retry"
+    },
+    {
+      "scenario": "lost_issuance_ack_retries_the_same_private_link",
+      "check": "deliberate retry retains the same command, digest and generated capability"
+    },
+    {
+      "scenario": "lost_issuance_ack_retries_the_same_private_link",
+      "check": "reusing an issuance identifier with another digest cannot rotate or duplicate authority"
+    },
+    {
+      "scenario": "lost_issuance_ack_retries_the_same_private_link",
+      "check": "retry leaves the original capability lifetime and case version intact"
+    },
+    {
+      "scenario": "lost_issuance_ack_retries_the_same_private_link",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "lost_issuance_ack_retries_the_same_private_link",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "lost_issuance_ack_retries_the_same_private_link",
+      "check": "native browser routing completes without unhandled errors or unexpected network origins"
+    },
+    {
+      "scenario": "lost_buyer_ack_retries_exact_original_request",
+      "check": "fixture starts with only workspace, asset and policy domain records"
+    },
+    {
+      "scenario": "lost_buyer_ack_retries_exact_original_request",
+      "check": "lost buyer response leaves one committed original request and no automatic retry"
+    },
+    {
+      "scenario": "lost_buyer_ack_retries_exact_original_request",
+      "check": "uncertain original request is frozen under its pending command"
+    },
+    {
+      "scenario": "lost_buyer_ack_retries_exact_original_request",
+      "check": "explicit retry sends identical bytes and reuses the committed submission"
+    },
+    {
+      "scenario": "lost_buyer_ack_retries_exact_original_request",
+      "check": "changed payload cannot reuse the committed request identifier"
+    },
+    {
+      "scenario": "lost_buyer_ack_retries_exact_original_request",
+      "check": "server reload preserves exact submitted evidence and does not reopen original intake"
+    },
+    {
+      "scenario": "lost_buyer_ack_retries_exact_original_request",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "lost_buyer_ack_retries_exact_original_request",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "lost_buyer_ack_retries_exact_original_request",
+      "check": "native browser routing completes without unhandled errors or unexpected network origins"
+    },
+    {
+      "scenario": "archived_before_offer_preserves_request_without_dead_end_navigation",
+      "check": "fixture starts with only workspace, asset and policy domain records"
+    },
+    {
+      "scenario": "archived_before_offer_preserves_request_without_dead_end_navigation",
+      "check": "archived pre-offer request remains readable with no continuation path or authority"
+    },
+    {
+      "scenario": "archived_before_offer_preserves_request_without_dead_end_navigation",
+      "check": "archived original evidence remains visible while a second intake is unavailable"
+    },
+    {
+      "scenario": "archived_before_offer_preserves_request_without_dead_end_navigation",
+      "check": "unavailable review has a disabled action and an explicit explanation"
+    },
+    {
+      "scenario": "archived_before_offer_preserves_request_without_dead_end_navigation",
+      "check": "synthetic activation cannot navigate to unavailable clarification or send a command"
+    },
+    {
+      "scenario": "archived_before_offer_preserves_request_without_dead_end_navigation",
+      "check": "buyer-archived-before-offer mobile content fits the viewport"
+    },
+    {
+      "scenario": "archived_before_offer_preserves_request_without_dead_end_navigation",
+      "check": "manual reload preserves immutable original evidence and performs no domain or provider work"
+    },
+    {
+      "scenario": "archived_before_offer_preserves_request_without_dead_end_navigation",
+      "check": "read-only archived intake creates no quote, consent or financial authority"
+    },
+    {
+      "scenario": "archived_before_offer_preserves_request_without_dead_end_navigation",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "archived_before_offer_preserves_request_without_dead_end_navigation",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "archived_before_offer_preserves_request_without_dead_end_navigation",
+      "check": "native browser routing completes without unhandled errors or unexpected network origins"
+    },
+    {
+      "scenario": "creator_scope_stale_asset_and_cross_origin_are_denied",
+      "check": "fixture starts with only workspace, asset and policy domain records"
+    },
+    {
+      "scenario": "creator_scope_stale_asset_and_cross_origin_are_denied",
+      "check": "managed assertion for another workspace cannot review the seed asset"
+    },
+    {
+      "scenario": "creator_scope_stale_asset_and_cross_origin_are_denied",
+      "check": "creator review does not accept an absent gateway assertion"
+    },
+    {
+      "scenario": "creator_scope_stale_asset_and_cross_origin_are_denied",
+      "check": "asset change after review prevents issuance from stale browser evidence"
+    },
+    {
+      "scenario": "creator_scope_stale_asset_and_cross_origin_are_denied",
+      "check": "cross-origin issuer command is rejected before durable work"
+    },
+    {
+      "scenario": "creator_scope_stale_asset_and_cross_origin_are_denied",
+      "check": "issuer payload cannot add scopes or workspace authority"
+    },
+    {
+      "scenario": "creator_scope_stale_asset_and_cross_origin_are_denied",
+      "check": "exact asset review does not cross a later workspace switch"
+    },
+    {
+      "scenario": "creator_scope_stale_asset_and_cross_origin_are_denied",
+      "check": "archived asset blocks intake through an otherwise valid capability"
+    },
+    {
+      "scenario": "creator_scope_stale_asset_and_cross_origin_are_denied",
+      "check": "native browser routing completes without unhandled errors or unexpected network origins"
+    },
+    {
+      "scenario": "buyer_capability_scope_expiry_and_input_boundaries",
+      "check": "fixture starts with only workspace, asset and policy domain records"
+    },
+    {
+      "scenario": "buyer_capability_scope_expiry_and_input_boundaries",
+      "check": "review-only authority cannot open original request intake"
+    },
+    {
+      "scenario": "buyer_capability_scope_expiry_and_input_boundaries",
+      "check": "native intake independently enforces submit-request scope"
+    },
+    {
+      "scenario": "buyer_capability_scope_expiry_and_input_boundaries",
+      "check": "unconfirmed requests and client-authored price or permission are rejected"
+    },
+    {
+      "scenario": "buyer_capability_scope_expiry_and_input_boundaries",
+      "check": "invalid contact and oversized original request do not persist partial intake"
+    },
+    {
+      "scenario": "buyer_capability_scope_expiry_and_input_boundaries",
+      "check": "executable markup is rejected by the original-request domain guard"
+    },
+    {
+      "scenario": "buyer_capability_scope_expiry_and_input_boundaries",
+      "check": "expired private authority cannot read or submit an original request"
+    },
+    {
+      "scenario": "buyer_capability_scope_expiry_and_input_boundaries",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "buyer_capability_scope_expiry_and_input_boundaries",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "buyer_capability_scope_expiry_and_input_boundaries",
+      "check": "native browser routing completes without unhandled errors or unexpected network origins"
+    },
+    {
+      "scenario": "private_state_clears_when_creator_or_buyer_page_is_hidden",
+      "check": "fixture starts with only workspace, asset and policy domain records"
+    },
+    {
+      "scenario": "private_state_clears_when_creator_or_buyer_page_is_hidden",
+      "check": "manual link reveal is explicit and contains the issued private authority"
+    },
+    {
+      "scenario": "private_state_clears_when_creator_or_buyer_page_is_hidden",
+      "check": "hidden creator page clears private link material without reissuing or revoking authority"
+    },
+    {
+      "scenario": "private_state_clears_when_creator_or_buyer_page_is_hidden",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "private_state_clears_when_creator_or_buyer_page_is_hidden",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "private_state_clears_when_creator_or_buyer_page_is_hidden",
+      "check": "hidden buyer page clears unsaved personal data and private continuation"
+    },
+    {
+      "scenario": "private_state_clears_when_creator_or_buyer_page_is_hidden",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "private_state_clears_when_creator_or_buyer_page_is_hidden",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "private_state_clears_when_creator_or_buyer_page_is_hidden",
+      "check": "native browser routing completes without unhandled errors or unexpected network origins"
+    },
+    {
+      "scenario": "late_issuance_response_cannot_restore_expired_private_state",
+      "check": "fixture starts with only workspace, asset and policy domain records"
+    },
+    {
+      "scenario": "late_issuance_response_cannot_restore_expired_private_state",
+      "check": "held response follows exactly one durable issuance"
+    },
+    {
+      "scenario": "late_issuance_response_cannot_restore_expired_private_state",
+      "check": "late successful issuance cannot repopulate cleared link material"
+    },
+    {
+      "scenario": "late_issuance_response_cannot_restore_expired_private_state",
+      "check": "expired response triggers no automatic replacement case or private-code recovery"
+    },
+    {
+      "scenario": "late_issuance_response_cannot_restore_expired_private_state",
+      "check": "native browser routing completes without unhandled errors or unexpected network origins"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "seed_only_intake_to_canonical_receipt",
+      "browserRequests": 78,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "providerCalls": {
+        "oauth": 4,
+        "create": 1,
+        "send": 1,
+        "get": 4
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 1,
+        "clarification_rounds": 1,
+        "clarification_answers": 12,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 2,
+        "payment_evidence": 1,
+        "permissions": 1,
+        "receipt_revisions": 1
+      }
+    },
+    {
+      "name": "lost_issuance_ack_retries_the_same_private_link",
+      "browserRequests": 6,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 0,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "lost_buyer_ack_retries_exact_original_request",
+      "browserRequests": 6,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "archived_before_offer_preserves_request_without_dead_end_navigation",
+      "browserRequests": 9,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_scope_stale_asset_and_cross_origin_are_denied",
+      "browserRequests": 5,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 0,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "buyer_capability_scope_expiry_and_input_boundaries",
+      "browserRequests": 3,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 0,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "private_state_clears_when_creator_or_buyer_page_is_hidden",
+      "browserRequests": 8,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 0,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "late_issuance_response_cannot_restore_expired_private_state",
+      "browserRequests": 5,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 0,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    }
+  ],
+  "browser": "140.0.7339.16"
+}

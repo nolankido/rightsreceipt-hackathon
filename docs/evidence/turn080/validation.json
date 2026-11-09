@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "rightsreceipt-turn080-local-validation-v1",
+  "testedBaseCommit": "95f554e2135475129b6912e1a73e16439251777c",
+  "runtime": "v22.16.0",
+  "scope": "Exact repository module subset; actual localhost HTTP server and renderer with injected rehearsal artifacts.",
+  "beforeFix": {
+    "existingConsoleTestsPassed": 6,
+    "newRegressionFailuresReproduced": 6
+  },
+  "afterFix": {
+    "consoleHttpTestsPassed": 17,
+    "pageRendererTestsPassed": 9,
+    "smokeValidatorTestsPassed": 8,
+    "totalPassed": 34,
+    "failed": 0,
+    "additionalCompleteRepeatRuns": 3
+  },
+  "command": [
+    "node",
+    "--test",
+    "scripts/judge-local-console-local.test.mjs",
+    "scripts/support/judge-console-page.test.mjs",
+    "scripts/judge-console-real-smoke.test.mjs"
+  ],
+  "testedBlobShas": {
+    "scripts/judge-local-console.mjs": "822781e741f17993c4ae55233efc3687ffcb86b3",
+    "scripts/judge-local-console-local.test.mjs": "133edb5b1ce19d275cfb5d66e445cb5e879e610a",
+    "scripts/support/judge-rehearsal-runtime.mjs": "16b6e17f1f4202a023e04ffa70128e963c4c4a95",
+    "scripts/support/judge-console-page.mjs": "1bf4760d81943142554e1873ec8e16db096d1b4b",
+    "scripts/support/judge-console-page.test.mjs": "b7c3b6529f74fbb463451650c2f5b7cd758e1f7e",
+    "scripts/judge-console-real-smoke.mjs": "807707c7beb22a684440665e8372daf1406bae36",
+    "scripts/judge-console-real-smoke.test.mjs": "35949cd1699a3eddb9d408ba669e4704338a06fb"
+  },
+  "limitations": [
+    "Not a complete private repository clone or full pnpm release:verify execution.",
+    "No actual canonical licensing worker execution; tests inject controlled rehearsal artifacts.",
+    "No genuine PayPal Sandbox API, payment, webhook, deployment, or paid API operation."
+  ]
+}

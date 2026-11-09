@@ -1,0 +1,139 @@
+{
+  "dataVersion": "rights-synthetic-v1",
+  "taskContractVersion": "rights-extraction-v1",
+  "generatorSha256": "052141ff69866ad82a0198df9fa25091096d35c07477161f37a97666246cbedb",
+  "seed": "rrs-v1-fixed-seed-and-fnv32",
+  "sourceProvenance": {
+    "kind": "project_authored_templates",
+    "licenseSpdx": "MIT",
+    "externalCorporaUsed": false,
+    "externalModelInferenceUsed": false,
+    "containsRealBuyerData": false
+  },
+  "generation": {
+    "families": 12,
+    "examplesPerFamily": 120,
+    "splitMethod": "disjoint_template_family_plus_group",
+    "contractLabelFields": [
+      "use_purpose",
+      "channels",
+      "paid_advertising",
+      "territories",
+      "start_date",
+      "duration_days",
+      "max_impressions",
+      "exclusivity",
+      "modification_scope",
+      "attribution",
+      "sublicensing",
+      "ai_use"
+    ]
+  },
+  "validation": {
+    "splitCounts": {
+      "train": 960,
+      "validation": 240,
+      "test": 240
+    },
+    "categoryCounts": {
+      "train": {
+        "complete_supported": 96,
+        "omission": 96,
+        "contradiction": 96,
+        "unsupported": 96,
+        "ambiguous": 96,
+        "negation": 96,
+        "injection": 96,
+        "unicode": 96,
+        "numeric_boundary": 96,
+        "mixed_channel": 96
+      },
+      "validation": {
+        "complete_supported": 24,
+        "omission": 24,
+        "contradiction": 24,
+        "unsupported": 24,
+        "ambiguous": 24,
+        "negation": 24,
+        "injection": 24,
+        "unicode": 24,
+        "numeric_boundary": 24,
+        "mixed_channel": 24
+      },
+      "test": {
+        "complete_supported": 24,
+        "omission": 24,
+        "contradiction": 24,
+        "unsupported": 24,
+        "ambiguous": 24,
+        "negation": 24,
+        "injection": 24,
+        "unicode": 24,
+        "numeric_boundary": 24,
+        "mixed_channel": 24
+      }
+    },
+    "statusCounts": {
+      "train": {
+        "resolved": 9216,
+        "unresolved": 2016,
+        "contradictory": 96,
+        "unsupported": 192
+      },
+      "validation": {
+        "resolved": 2304,
+        "unresolved": 504,
+        "contradictory": 24,
+        "unsupported": 48
+      },
+      "test": {
+        "resolved": 2304,
+        "unresolved": 504,
+        "contradictory": 24,
+        "unsupported": 48
+      }
+    },
+    "templateFamilies": {
+      "train": [
+        "agency_brief",
+        "buyer_followup",
+        "campaign_brief",
+        "email_inquiry",
+        "marketing_ops",
+        "procurement",
+        "producer_memo",
+        "short_note"
+      ],
+      "validation": [
+        "meeting_summary",
+        "phone_recap"
+      ],
+      "test": [
+        "launch_planning",
+        "vendor_instructions"
+      ]
+    }
+  },
+  "files": {
+    "train.jsonl": {
+      "sha256": "ad512f84f6012c46f31f3cb8516e9fbc0576fef102801874631897fffbec7879",
+      "bytes": 3592589,
+      "rows": 960
+    },
+    "validation.jsonl": {
+      "sha256": "cf8a710db4210f3e9c11dd92a9c875ea487488f521d08c46477b4ed8a4bddb95",
+      "bytes": 897173,
+      "rows": 240
+    },
+    "test.jsonl": {
+      "sha256": "8407ae5b7414098495e6294a0db428819b4ee53d15eaa1fc766e3ec182aa2f87",
+      "bytes": 897490,
+      "rows": 240
+    },
+    "rejected-intake.jsonl": {
+      "sha256": "4136673587b7e80d60dad73c58fe7aafe2d133b10e89cc3925b655b619313712",
+      "bytes": 10502,
+      "rows": 24
+    }
+  }
+}

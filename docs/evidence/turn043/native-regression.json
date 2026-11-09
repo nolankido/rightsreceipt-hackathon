@@ -1,0 +1,521 @@
+{
+  "runtime": "v22.18.0",
+  "files": 51,
+  "tests": 2171,
+  "passed": 2171,
+  "failed": 0,
+  "skipped": 0,
+  "failed_files": [],
+  "results": [
+    {
+      "file": "scripts/ai-contract-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.612,
+      "tests": 28,
+      "pass": 28,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/asset-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 2.253,
+      "tests": 7,
+      "pass": 7,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/buyer-payment-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 106.627,
+      "tests": 114,
+      "pass": 114,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/canonical-receipt-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.131,
+      "tests": 22,
+      "pass": 22,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/clarification-adversarial-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.633,
+      "tests": 12,
+      "pass": 12,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/clarification-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.618,
+      "tests": 30,
+      "pass": 30,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/clarification-transaction-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 5.538,
+      "tests": 3,
+      "pass": 3,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/clarification-ui-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.507,
+      "tests": 75,
+      "pass": 75,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/clarification-workflow-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 14.233,
+      "tests": 80,
+      "pass": 80,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/creator-session-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 2.201,
+      "tests": 101,
+      "pass": 101,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/db-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 2.69,
+      "tests": 7,
+      "pass": 7,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/deterministic-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.353,
+      "tests": 21,
+      "pass": 21,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/extraction-sqlite-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.6,
+      "tests": 9,
+      "pass": 9,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/gate-a-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.009,
+      "tests": 7,
+      "pass": 7,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/gate-b-readiness.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.701,
+      "tests": 13,
+      "pass": 13,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/gate-c-integration-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 6.313,
+      "tests": 48,
+      "pass": 48,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/generate-synthetic.test.mjs",
+      "exit_code": 0,
+      "duration_s": 10.358,
+      "tests": 10,
+      "pass": 10,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/human-consent-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 13.443,
+      "tests": 100,
+      "pass": 100,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/invoice-controls-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 9.218,
+      "tests": 60,
+      "pass": 60,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/invoice-creation-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 41.668,
+      "tests": 94,
+      "pass": 94,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/invoice-recovery-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 17.545,
+      "tests": 68,
+      "pass": 68,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/invoice-recovery-ui-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.405,
+      "tests": 81,
+      "pass": 81,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/invoice-sending-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 39.273,
+      "tests": 96,
+      "pass": 96,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/judge-rehearsal-isolation-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 38.272,
+      "tests": 15,
+      "pass": 15,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/judge-rehearsal-journey-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 10.11,
+      "tests": 4,
+      "pass": 4,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/judge-rehearsal-report-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.683,
+      "tests": 56,
+      "pass": 56,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/mock-transaction-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.711,
+      "tests": 25,
+      "pass": 25,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/model-calibration-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.628,
+      "tests": 12,
+      "pass": 12,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/observation-bridge-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.868,
+      "tests": 12,
+      "pass": 12,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/paypal-adapter-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.678,
+      "tests": 22,
+      "pass": 22,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/paypal-invoice-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 3.34,
+      "tests": 53,
+      "pass": 53,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/paypal-reconciliation-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 2.412,
+      "tests": 81,
+      "pass": 81,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/paypal-sandbox-draft-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.614,
+      "tests": 27,
+      "pass": 27,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/paypal-settlement-transport-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.836,
+      "tests": 5,
+      "pass": 5,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/paypal-webhook-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 2.103,
+      "tests": 92,
+      "pass": 92,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/paypal-webhook-processing-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 3.216,
+      "tests": 47,
+      "pass": 47,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/permission-clock-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 11.327,
+      "tests": 73,
+      "pass": 73,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/permission-lifecycle-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 2.239,
+      "tests": 91,
+      "pass": 91,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/portable-model-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.528,
+      "tests": 8,
+      "pass": 8,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/pricing-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.663,
+      "tests": 12,
+      "pass": 12,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/quote-service-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.671,
+      "tests": 8,
+      "pass": 8,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/receipt-experience-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 10.091,
+      "tests": 111,
+      "pass": 111,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/receipt-issuance-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 9.596,
+      "tests": 64,
+      "pass": 64,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/request-deadline-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.443,
+      "tests": 22,
+      "pass": 22,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/request-intake-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 9.846,
+      "tests": 90,
+      "pass": 90,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/request-intake-transaction-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 7.786,
+      "tests": 8,
+      "pass": 8,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/request-intake-ui-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 1.912,
+      "tests": 94,
+      "pass": 94,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/request-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.508,
+      "tests": 9,
+      "pass": 9,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/review-draft-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.735,
+      "tests": 6,
+      "pass": 6,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/terms-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.383,
+      "tests": 10,
+      "pass": 10,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    {
+      "file": "scripts/transaction-routes-local.test.mjs",
+      "exit_code": 0,
+      "duration_s": 2.439,
+      "tests": 28,
+      "pass": 28,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    }
+  ]
+}

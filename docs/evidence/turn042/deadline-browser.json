@@ -1,0 +1,1233 @@
+{
+  "mode": "request deadline browser audit using actual native handlers",
+  "runtime": "v22.18.0",
+  "sourceSha256": "04d5062a061502e24bdfd7785dc03343109d12d757c7fca36ce3adb521f18047",
+  "clientSourceSha256": {
+    "request-deadline-client": "83422f667d7fc8ac694b773e23d4c8822c5a599af613205c59a03bd61ea68ced",
+    "buyer-request-intake-client": "6eb59f56066d79bb05fd2a3793cc45a35a16c149af052869556c69427ae866f0",
+    "buyer-clarification-client": "73418f0975ce8c619bb96cedf4016112f4e77c802aa9546db5712bc55bcb7f68",
+    "buyer-review-client": "3d60a2892691b56de5ca31260bab041eef342659aa9d89c7210311a9ebc3dfda",
+    "creator-request-intake-client": "e0a585f6d5a27a952ef830b928004e1249219b846401798df32c5d00d0fdadd3",
+    "creator-clarification-client": "595fa6c76b21117eca1a885345ba3fe71b4313c982a2981e7828b40972df648c",
+    "creator-review-client": "129e227ea17fd1a44dee5c428ee7f69f93cf8c556d9154dda9e925519c8bbdb5"
+  },
+  "requestDeadlineMs": 15000,
+  "limitations": [
+    "No listening server, deployed Worker or Cloudflare D1",
+    "Generated Access signing keys and injected gateway assertions",
+    "Only workspace, asset and pricing policy are seeded; every transactional record comes from production handlers",
+    "PayPal HTTP responses are local deterministic fixtures; no provider network or payment occurs",
+    "Browser clock advances request and private-view deadlines deterministically; hidden events are injected",
+    "Request interception deliberately holds transport before dispatch or after the actual handler commits",
+    "One actual response body is replayed as unchanged bytes through an injected ReadableStream that deliberately ignores abort",
+    "Chromium interception does not expose Fetch Metadata in this runtime; native route tests cover that check",
+    "Targeted deadline and focus checks; no live-service latency, screen-reader or full WCAG conformance claim"
+  ],
+  "completed": true,
+  "passed": 132,
+  "checks": [
+    {
+      "scenario": "initial_creator_session_deadline",
+      "check": "the stalled read releases its busy state at the request deadline"
+    },
+    {
+      "scenario": "initial_creator_session_deadline",
+      "check": "one held request causes no automatic second read or domain mutation"
+    },
+    {
+      "scenario": "initial_creator_session_deadline",
+      "check": "a timed-out prerequisite does not fall through to the next optional read"
+    },
+    {
+      "scenario": "initial_creator_session_deadline",
+      "check": "a passive read timeout does not steal keyboard focus"
+    },
+    {
+      "scenario": "initial_creator_session_deadline",
+      "check": "deliberate recovery performs exactly one fresh read"
+    },
+    {
+      "scenario": "initial_creator_session_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_asset_review_deadline",
+      "check": "the stalled read releases its busy state at the request deadline"
+    },
+    {
+      "scenario": "creator_asset_review_deadline",
+      "check": "one held request causes no automatic second read or domain mutation"
+    },
+    {
+      "scenario": "creator_asset_review_deadline",
+      "check": "a passive read timeout does not steal keyboard focus"
+    },
+    {
+      "scenario": "creator_asset_review_deadline",
+      "check": "deliberate recovery performs exactly one fresh read"
+    },
+    {
+      "scenario": "creator_asset_review_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_rights_review_deadline",
+      "check": "the stalled read releases its busy state at the request deadline"
+    },
+    {
+      "scenario": "creator_rights_review_deadline",
+      "check": "one held request causes no automatic second read or domain mutation"
+    },
+    {
+      "scenario": "creator_rights_review_deadline",
+      "check": "a passive read timeout does not steal keyboard focus"
+    },
+    {
+      "scenario": "creator_rights_review_deadline",
+      "check": "deliberate recovery performs exactly one fresh read"
+    },
+    {
+      "scenario": "creator_rights_review_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_invoice_read_deadline",
+      "check": "the stalled read releases its busy state at the request deadline"
+    },
+    {
+      "scenario": "creator_invoice_read_deadline",
+      "check": "one held request causes no automatic second read or domain mutation"
+    },
+    {
+      "scenario": "creator_invoice_read_deadline",
+      "check": "a timed-out prerequisite does not fall through to the next optional read"
+    },
+    {
+      "scenario": "creator_invoice_read_deadline",
+      "check": "a passive read timeout does not steal keyboard focus"
+    },
+    {
+      "scenario": "creator_invoice_read_deadline",
+      "check": "deliberate recovery performs exactly one fresh read"
+    },
+    {
+      "scenario": "creator_invoice_read_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_recovery_read_deadline",
+      "check": "the stalled read releases its busy state at the request deadline"
+    },
+    {
+      "scenario": "creator_recovery_read_deadline",
+      "check": "one held request causes no automatic second read or domain mutation"
+    },
+    {
+      "scenario": "creator_recovery_read_deadline",
+      "check": "a passive read timeout does not steal keyboard focus"
+    },
+    {
+      "scenario": "creator_recovery_read_deadline",
+      "check": "deliberate recovery performs exactly one fresh read"
+    },
+    {
+      "scenario": "creator_recovery_read_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "buyer_initial_code_read_deadline",
+      "check": "the stalled read releases its busy state at the request deadline"
+    },
+    {
+      "scenario": "buyer_initial_code_read_deadline",
+      "check": "one held request causes no automatic second read or domain mutation"
+    },
+    {
+      "scenario": "buyer_initial_code_read_deadline",
+      "check": "a passive read timeout does not steal keyboard focus"
+    },
+    {
+      "scenario": "buyer_initial_code_read_deadline",
+      "check": "deliberate recovery performs exactly one fresh read"
+    },
+    {
+      "scenario": "buyer_initial_code_read_deadline",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "buyer_initial_code_read_deadline",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "buyer_initial_code_read_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "buyer_questions_read_deadline",
+      "check": "the stalled read releases its busy state at the request deadline"
+    },
+    {
+      "scenario": "buyer_questions_read_deadline",
+      "check": "one held request causes no automatic second read or domain mutation"
+    },
+    {
+      "scenario": "buyer_questions_read_deadline",
+      "check": "a passive read timeout does not steal keyboard focus"
+    },
+    {
+      "scenario": "buyer_questions_read_deadline",
+      "check": "deliberate recovery performs exactly one fresh read"
+    },
+    {
+      "scenario": "buyer_questions_read_deadline",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "buyer_questions_read_deadline",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "buyer_questions_read_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "buyer_offer_read_deadline",
+      "check": "the stalled read releases its busy state at the request deadline"
+    },
+    {
+      "scenario": "buyer_offer_read_deadline",
+      "check": "one held request causes no automatic second read or domain mutation"
+    },
+    {
+      "scenario": "buyer_offer_read_deadline",
+      "check": "a timed-out prerequisite does not fall through to the next optional read"
+    },
+    {
+      "scenario": "buyer_offer_read_deadline",
+      "check": "a passive read timeout does not steal keyboard focus"
+    },
+    {
+      "scenario": "buyer_offer_read_deadline",
+      "check": "deliberate recovery performs exactly one fresh read"
+    },
+    {
+      "scenario": "buyer_offer_read_deadline",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "buyer_offer_read_deadline",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "buyer_offer_read_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "buyer_status_read_deadline",
+      "check": "the stalled read releases its busy state at the request deadline"
+    },
+    {
+      "scenario": "buyer_status_read_deadline",
+      "check": "one held request causes no automatic second read or domain mutation"
+    },
+    {
+      "scenario": "buyer_status_read_deadline",
+      "check": "timed-out payment status asserts no current permission"
+    },
+    {
+      "scenario": "buyer_status_read_deadline",
+      "check": "a passive read timeout does not steal keyboard focus"
+    },
+    {
+      "scenario": "buyer_status_read_deadline",
+      "check": "deliberate recovery performs exactly one fresh read"
+    },
+    {
+      "scenario": "buyer_status_read_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_link_before_dispatch_deadline",
+      "check": "the transport hold exposes whether the actual command committed"
+    },
+    {
+      "scenario": "creator_link_before_dispatch_deadline",
+      "check": "issuance timeout keeps the original confirmation frozen and does not issue automatically"
+    },
+    {
+      "scenario": "creator_link_before_dispatch_deadline",
+      "check": "issuance recovery identifies the same generated link"
+    },
+    {
+      "scenario": "creator_link_before_dispatch_deadline",
+      "check": "late transport completion cannot reveal an unconfirmed link"
+    },
+    {
+      "scenario": "creator_link_before_dispatch_deadline",
+      "check": "explicit issuance retry preserves every request byte and creates one case and capability"
+    },
+    {
+      "scenario": "creator_link_before_dispatch_deadline",
+      "check": "native handler dispatch counts match the declared hold phase"
+    },
+    {
+      "scenario": "creator_link_before_dispatch_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_link_after_dispatch_deadline",
+      "check": "the transport hold exposes whether the actual command committed"
+    },
+    {
+      "scenario": "creator_link_after_dispatch_deadline",
+      "check": "issuance timeout keeps the original confirmation frozen and does not issue automatically"
+    },
+    {
+      "scenario": "creator_link_after_dispatch_deadline",
+      "check": "issuance recovery identifies the same generated link"
+    },
+    {
+      "scenario": "creator_link_after_dispatch_deadline",
+      "check": "late transport completion cannot reveal an unconfirmed link"
+    },
+    {
+      "scenario": "creator_link_after_dispatch_deadline",
+      "check": "explicit issuance retry preserves every request byte and creates one case and capability"
+    },
+    {
+      "scenario": "creator_link_after_dispatch_deadline",
+      "check": "native handler dispatch counts match the declared hold phase"
+    },
+    {
+      "scenario": "creator_link_after_dispatch_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "buyer_request_committed_reply_deadline_and_moved_focus",
+      "check": "skip navigation is keyboard available and preserves the private-link URL"
+    },
+    {
+      "scenario": "buyer_request_committed_reply_deadline_and_moved_focus",
+      "check": "a committed request remains uncertain until an explicit retry"
+    },
+    {
+      "scenario": "buyer_request_committed_reply_deadline_and_moved_focus",
+      "check": "deadline recovery respects deliberate keyboard navigation"
+    },
+    {
+      "scenario": "buyer_request_committed_reply_deadline_and_moved_focus",
+      "check": "late committed reply cannot replace uncertainty or move focus"
+    },
+    {
+      "scenario": "buyer_request_committed_reply_deadline_and_moved_focus",
+      "check": "retry records no duplicate original request and preserves the entire command"
+    },
+    {
+      "scenario": "buyer_request_committed_reply_deadline_and_moved_focus",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "buyer_request_committed_reply_deadline_and_moved_focus",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "buyer_request_committed_reply_deadline_and_moved_focus",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "buyer_answers_committed_reply_deadline",
+      "check": "answer timeout preserves one committed round and frozen input"
+    },
+    {
+      "scenario": "buyer_answers_committed_reply_deadline",
+      "check": "explicit answer retry replays the exact command with no duplicate round"
+    },
+    {
+      "scenario": "buyer_answers_committed_reply_deadline",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "buyer_answers_committed_reply_deadline",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "buyer_answers_committed_reply_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_terms_committed_reply_deadline",
+      "check": "human terms timeout keeps the exact review frozen after one actual save"
+    },
+    {
+      "scenario": "creator_terms_committed_reply_deadline",
+      "check": "retry reuses identical human terms without duplicate terms or quote rows"
+    },
+    {
+      "scenario": "creator_terms_committed_reply_deadline",
+      "check": "the recorded human review remains recoverable"
+    },
+    {
+      "scenario": "creator_terms_committed_reply_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_decision_committed_reply_deadline",
+      "check": "approval timeout leaves one actual decision without another command"
+    },
+    {
+      "scenario": "creator_decision_committed_reply_deadline",
+      "check": "exact decision retry does not duplicate creator authority"
+    },
+    {
+      "scenario": "creator_decision_committed_reply_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "buyer_acceptance_committed_reply_deadline",
+      "check": "acceptance timeout leaves one recorded acceptance and a frozen checkbox"
+    },
+    {
+      "scenario": "buyer_acceptance_committed_reply_deadline",
+      "check": "exact acceptance retry cannot duplicate acceptance or grant permission"
+    },
+    {
+      "scenario": "buyer_acceptance_committed_reply_deadline",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "buyer_acceptance_committed_reply_deadline",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "buyer_acceptance_committed_reply_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_invoice_create_and_send_committed_deadlines",
+      "check": "create timeout does not initiate another provider write"
+    },
+    {
+      "scenario": "creator_invoice_create_and_send_committed_deadlines",
+      "check": "create retry sends the identical command without another provider write"
+    },
+    {
+      "scenario": "creator_invoice_create_and_send_committed_deadlines",
+      "check": "send timeout does not initiate another provider write"
+    },
+    {
+      "scenario": "creator_invoice_create_and_send_committed_deadlines",
+      "check": "send retry sends the identical command without another provider write"
+    },
+    {
+      "scenario": "creator_invoice_create_and_send_committed_deadlines",
+      "check": "recovered invoice commands preserve one binding and one create and send operation"
+    },
+    {
+      "scenario": "creator_invoice_create_and_send_committed_deadlines",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "creator_recovery_committed_reply_deadline",
+      "check": "recovery timeout keeps its confirmed command frozen without another send"
+    },
+    {
+      "scenario": "creator_recovery_committed_reply_deadline",
+      "check": "stale recovery retry preserves bytes and causes no provider work"
+    },
+    {
+      "scenario": "creator_recovery_committed_reply_deadline",
+      "check": "manual reload recovers the saved delivery state without another provider request"
+    },
+    {
+      "scenario": "creator_recovery_committed_reply_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "payment_handoff_reply_deadline",
+      "check": "payment timeout offers deliberate recovery without revealing a URL"
+    },
+    {
+      "scenario": "payment_handoff_reply_deadline",
+      "check": "a late payment reply cannot reveal a handoff link"
+    },
+    {
+      "scenario": "payment_handoff_reply_deadline",
+      "check": "explicit handoff retry repeats identical input and only performs a fresh provider read"
+    },
+    {
+      "scenario": "payment_handoff_reply_deadline",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "payment_handoff_reply_deadline",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "payment_handoff_reply_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "acknowledged_request_save_then_reload_deadline",
+      "check": "follow-up read timeout preserves the acknowledged successful save"
+    },
+    {
+      "scenario": "acknowledged_request_save_then_reload_deadline",
+      "check": "manual read recovery never resubmits the saved request"
+    },
+    {
+      "scenario": "acknowledged_request_save_then_reload_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "acknowledged_creator_review_then_reload_deadline",
+      "check": "creator reload timeout preserves the recorded human terms and quote acknowledgment"
+    },
+    {
+      "scenario": "acknowledged_creator_review_then_reload_deadline",
+      "check": "read recovery adds no human review or quote"
+    },
+    {
+      "scenario": "acknowledged_creator_review_then_reload_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "actual_json_body_deadline_and_newer_view",
+      "check": "the request deadline includes JSON consumption after actual headers arrive"
+    },
+    {
+      "scenario": "actual_json_body_deadline_and_newer_view",
+      "check": "the late old JSON body cannot overwrite a newer submitted view"
+    },
+    {
+      "scenario": "actual_json_body_deadline_and_newer_view",
+      "check": "a body timeout never retries a request automatically"
+    },
+    {
+      "scenario": "actual_json_body_deadline_and_newer_view",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "actual_json_body_deadline_and_newer_view",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "actual_json_body_deadline_and_newer_view",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "hidden_view_cancels_pending_body_before_deadline",
+      "check": "private cancellation wins over both a later request timer and late body"
+    },
+    {
+      "scenario": "hidden_view_cancels_pending_body_before_deadline",
+      "check": "hidden cancellation does not retry or retain private browser storage"
+    },
+    {
+      "scenario": "hidden_view_cancels_pending_body_before_deadline",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "hidden_view_cancels_pending_body_before_deadline",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "hidden_view_cancels_pending_body_before_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    },
+    {
+      "scenario": "private_expiry_cancels_pending_write_before_request_deadline",
+      "check": "private expiry clears pending request data before its 15-second deadline"
+    },
+    {
+      "scenario": "private_expiry_cancels_pending_write_before_request_deadline",
+      "check": "expired private state is not replaced by timeout recovery or a late committed reply"
+    },
+    {
+      "scenario": "private_expiry_cancels_pending_write_before_request_deadline",
+      "check": "private capability is absent from network URLs, request bodies and browser storage"
+    },
+    {
+      "scenario": "private_expiry_cancels_pending_write_before_request_deadline",
+      "check": "private capability is absent from DOM and cookies"
+    },
+    {
+      "scenario": "private_expiry_cancels_pending_write_before_request_deadline",
+      "check": "actual routing completed without browser errors, unexpected origins or manufactured financial authority"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "initial_creator_session_deadline",
+      "browserAttempts": 5,
+      "browserRequests": 4,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 0,
+        "buyer_capabilities": 0,
+        "request_submissions": 0,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_asset_review_deadline",
+      "browserAttempts": 6,
+      "browserRequests": 5,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 0,
+        "buyer_capabilities": 0,
+        "request_submissions": 0,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_rights_review_deadline",
+      "browserAttempts": 6,
+      "browserRequests": 5,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_invoice_read_deadline",
+      "browserAttempts": 9,
+      "browserRequests": 8,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_recovery_read_deadline",
+      "browserAttempts": 10,
+      "browserRequests": 9,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "buyer_initial_code_read_deadline",
+      "browserAttempts": 4,
+      "browserRequests": 3,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 0,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "buyer_questions_read_deadline",
+      "browserAttempts": 4,
+      "browserRequests": 3,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "buyer_offer_read_deadline",
+      "browserAttempts": 5,
+      "browserRequests": 4,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 1,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "buyer_status_read_deadline",
+      "browserAttempts": 6,
+      "browserRequests": 5,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 1,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_link_before_dispatch_deadline",
+      "browserAttempts": 6,
+      "browserRequests": 5,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 0,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_link_after_dispatch_deadline",
+      "browserAttempts": 6,
+      "browserRequests": 6,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 0,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "buyer_request_committed_reply_deadline_and_moved_focus",
+      "browserAttempts": 6,
+      "browserRequests": 6,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "buyer_answers_committed_reply_deadline",
+      "browserAttempts": 6,
+      "browserRequests": 6,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 1,
+        "clarification_answers": 12,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_terms_committed_reply_deadline",
+      "browserAttempts": 8,
+      "browserRequests": 8,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_decision_committed_reply_deadline",
+      "browserAttempts": 12,
+      "browserRequests": 12,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 1,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "buyer_acceptance_committed_reply_deadline",
+      "browserAttempts": 8,
+      "browserRequests": 8,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_invoice_create_and_send_committed_deadlines",
+      "browserAttempts": 18,
+      "browserRequests": 18,
+      "providerCalls": {
+        "oauth": 2,
+        "create": 1,
+        "send": 1,
+        "get": 2
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 1,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 2,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "creator_recovery_committed_reply_deadline",
+      "browserAttempts": 12,
+      "browserRequests": 12,
+      "providerCalls": {
+        "oauth": 3,
+        "create": 1,
+        "send": 1,
+        "get": 2
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 1,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 2,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "payment_handoff_reply_deadline",
+      "browserAttempts": 6,
+      "browserRequests": 6,
+      "providerCalls": {
+        "oauth": 4,
+        "create": 1,
+        "send": 1,
+        "get": 4
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 1,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 2,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "acknowledged_request_save_then_reload_deadline",
+      "browserAttempts": 6,
+      "browserRequests": 5,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "acknowledged_creator_review_then_reload_deadline",
+      "browserAttempts": 9,
+      "browserRequests": 8,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 1,
+        "quotes": 1,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "actual_json_body_deadline_and_newer_view",
+      "browserAttempts": 4,
+      "browserRequests": 4,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "hidden_view_cancels_pending_body_before_deadline",
+      "browserAttempts": 3,
+      "browserRequests": 3,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 0,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "private_expiry_cancels_pending_write_before_request_deadline",
+      "browserAttempts": 4,
+      "browserRequests": 4,
+      "providerCalls": {
+        "oauth": 0,
+        "create": 0,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "licensing_cases": 1,
+        "buyer_capabilities": 1,
+        "request_submissions": 1,
+        "verification_records": 0,
+        "clarification_rounds": 0,
+        "clarification_answers": 0,
+        "terms_versions": 0,
+        "quotes": 0,
+        "creator_decisions": 0,
+        "buyer_acceptances": 0,
+        "invoice_bindings": 0,
+        "payment_operations": 0,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    }
+  ],
+  "browser": "140.0.7339.16"
+}

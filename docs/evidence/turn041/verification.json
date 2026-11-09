@@ -1,0 +1,230 @@
+{
+  "turn": "041",
+  "date": "2026-10-28",
+  "status": "completed_locally_verified",
+  "base_commit": "2a50b54d5a72c1c427d18248dffebeb0d25c4618",
+  "runtime": "v22.18.0",
+  "browser": "Chromium 140.0.7339.16",
+  "scope": {
+    "page_roles": 6,
+    "pages": [
+      "/creator/requests/:assetId",
+      "/buyer/request",
+      "/buyer/clarification",
+      "/creator/clarification/:caseId",
+      "/creator/review/:caseId",
+      "/buyer/review"
+    ],
+    "keyboard_and_form_recovery": true,
+    "screen_reader_audit": false,
+    "full_application_or_wcag_conformance_claim": false,
+    "receipt_page_accessibility_audit": false
+  },
+  "native": {
+    "files": 50,
+    "passed": 2149,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "record": "native-regression.json",
+    "method": "Complete collection then complete creator-session 101-test rerun after correcting the attribute-free main-tag matcher. No production implementation changed after the full collection."
+  },
+  "targeted_browser": {
+    "passed": 134,
+    "scenarios": 17,
+    "completed": true,
+    "record": "accessibility-browser.json",
+    "script": "scripts/form-accessibility-browser-check.mjs",
+    "script_sha256": "b509934fd72001a56f500a22d9b656e823b8b2ec378484b149ab01865c1f46da",
+    "before_change_record": "accessibility-baseline.json",
+    "before_change_revision": "2a50b54d5a72c1c427d18248dffebeb0d25c4618",
+    "seed_only_start": true,
+    "actual_handlers": true,
+    "gateway_and_provider_http": "injected local fixtures",
+    "held_reply_expiry_and_moved_focus_verified": true,
+    "private_late_response_clearing_verified": true,
+    "group_error_containment_verified": true,
+    "unsaved_creator_reason_clearing_verified": {
+      "paths": [
+        "explicit reload",
+        "private deadline expiry with validation error",
+        "hidden page",
+        "loss of access"
+      ],
+      "checks_added": 11,
+      "domain_or_provider_mutations": 0
+    },
+    "final_extension_note": "Production unchanged; the final full targeted browser run includes the added populated-reason privacy scenario."
+  },
+  "existing_browser": {
+    "files": 5,
+    "passed": 442,
+    "named_scenarios": 47,
+    "buyer_validation_scenario_count_reported": false,
+    "source_unchanged_during_run": true,
+    "record": "existing-browser.json",
+    "results": [
+      {
+        "suite": "transaction",
+        "passed": 127,
+        "scenarios": 19,
+        "report": "transaction-browser.json",
+        "report_sha256": "55dcae53f53bc908d372697a28738894c74cc03f35814c0bc415c15e955a1799"
+      },
+      {
+        "suite": "intake",
+        "passed": 119,
+        "scenarios": 8,
+        "report": "intake-browser.json",
+        "report_sha256": "abca59e5de6e850a81a2dc34ca0651dbc832bf6cc38e8d1e9a0680e860b7ff3f"
+      },
+      {
+        "suite": "clarification",
+        "passed": 57,
+        "scenarios": 8,
+        "report": "clarification-browser.json",
+        "report_sha256": "beccbecdbaf3e2c4ce31468c8901ae72e745800909000bce8a4c258b0e89d190"
+      },
+      {
+        "suite": "recovery",
+        "passed": 88,
+        "scenarios": 12,
+        "report": "recovery-browser.json",
+        "report_sha256": "837816ae2fa991a3559b11533c6e22a0143f4dbcdc09469953db331bb5fada75"
+      },
+      {
+        "suite": "buyer-validation",
+        "passed": 51,
+        "scenarios": null,
+        "report": "buyer-validation-browser.json",
+        "report_sha256": "d539d7e72303e6294f67943dbd46ba953c940e72eaa8952bdb57f1e5eab8a3d7"
+      }
+    ]
+  },
+  "combined_browser_passed": 576,
+  "typecheck": {
+    "compiler": "5.8.3",
+    "configs": [
+      "tsconfig.transaction-ui.json"
+    ],
+    "passed": true,
+    "actual_dependency_sources": true,
+    "stubs_used": false,
+    "pinned_toolchain_verified": false
+  },
+  "syntax": {
+    "files": 175,
+    "errors": []
+  },
+  "format": {
+    "checked_files": 322,
+    "errors": []
+  },
+  "workspace": {
+    "packages": 13,
+    "internal_edges": 24,
+    "cycles": 0
+  },
+  "diff_whitespace_passed": true,
+  "visual_review": {
+    "desktop_and_mobile_inspected": true,
+    "screenshots_generated": 8,
+    "review_note": "Agent inspected intake, clarification and recovery layouts and the corrected creator rights grid. Root also inspected creator rights desktop, buyer intake mobile and invoice recovery mobile.",
+    "screenshot_sha256": {
+      "creator-rights-validation-desktop.png": "4a634b74d1be81aee44f40e261a75951c79b18cd538fce13e56d3e538667d23f",
+      "creator-rights-validation-mobile.png": "3e53912305fba10d72dd93c3a88b047832143a564167989775ca378f6a5f34e4",
+      "buyer-request-validation-desktop.png": "32d9c51b34ca4f39ced5c65e0edd5d3a835d6c611de5bf6c80aa3a1624fd2678",
+      "buyer-request-validation-mobile.png": "fe04e2cbcbe940af4ec6ec895c9706bfa5d212ea3ce29500476dfd7340121db0",
+      "buyer-clarification-validation-desktop.png": "48c2fed6219840dab6726c749222b887f64d06cb3a32c7cac3dcc6ca2080775e",
+      "buyer-clarification-validation-mobile.png": "17dafd9aa2d7d59a39d414eaf3a3e9f513fe1d7f4c7111c82addd82fff48713c",
+      "creator-invoice-recovery-keyboard-desktop.png": "0e9d53f46dffd7726a2d90d7785653096f62df77292bdcaa86c7e0429ddb94b9",
+      "creator-invoice-recovery-keyboard-mobile.png": "dd4cd013f6f7b00560fcab9b72c2fe5df212b11504e73f0aa84e1e077be33286"
+    }
+  },
+  "schema": {
+    "migrations": 9,
+    "domain_tables": 33,
+    "seed_metadata_version": 9,
+    "new_migrations": 0,
+    "database_changes": false
+  },
+  "new_dependencies": [],
+  "live_provider_calls": false,
+  "deployment_performed": false,
+  "account_owner_task_required": false,
+  "all_runtime_flags_remain_off": true,
+  "release_ready": false,
+  "remaining_gates": [
+    "Pinned clean dependency install and installed-library typecheck/lint/Vitest/Vite/Wrangler verification",
+    "Genuine managed-session verification",
+    "Genuine Sandbox payment/refund/webhook verification",
+    "Deployed Worker/D1 verification",
+    "Public judge access and submission assets"
+  ],
+  "next_unit": "042 P0 bound stalled browser requests and preserve deliberate recovery",
+  "files_changed": [
+    "DEVELOPMENT_PLAN.md",
+    "PROJECT_STATUS.md",
+    "README.md",
+    "apps/api/src/buyer-review.ts",
+    "apps/api/src/clarification-pages.ts",
+    "apps/api/src/creator-review.ts",
+    "apps/api/src/request-intake-pages.ts",
+    "apps/web/src/buyer-clarification-client.ts",
+    "apps/web/src/buyer-request-intake-client.ts",
+    "apps/web/src/buyer-review-client.ts",
+    "apps/web/src/creator-clarification-client.ts",
+    "apps/web/src/creator-request-intake-client.ts",
+    "apps/web/src/creator-review-client.ts",
+    "apps/web/src/form-accessibility-client.ts",
+    "docs/engineering/KEYBOARD_FORM_RECOVERY.md",
+    "docs/engineering/README.md",
+    "docs/evidence/turn041/accessibility-baseline.json",
+    "docs/evidence/turn041/accessibility-browser.json",
+    "docs/evidence/turn041/buyer-validation-browser.json",
+    "docs/evidence/turn041/clarification-browser.json",
+    "docs/evidence/turn041/existing-browser.json",
+    "docs/evidence/turn041/intake-browser.json",
+    "docs/evidence/turn041/native-regression.json",
+    "docs/evidence/turn041/recovery-browser.json",
+    "docs/evidence/turn041/transaction-browser.json",
+    "docs/evidence/turn041/verification.json",
+    "docs/turns/041-p0-keyboard-form-recovery.md",
+    "package.json",
+    "scripts/creator-session-local.test.mjs",
+    "scripts/form-accessibility-browser-check.mjs"
+  ],
+  "source_sha256": {
+    ".dev.vars.example": "72b565848fd5ac8ab419e965561657fe3ebdd9132cba3f64f83ac8206ea6fb9e",
+    "apps/api/src/buyer-review.ts": "367c76dd7ac1437510d12177b8b90929474d3cc8f18be594a6a358c43f808879",
+    "apps/api/src/clarification-pages.ts": "76abab6e492ddd70e00f833ee19f7286050f7b31d20c0264bd295bfc0865c237",
+    "apps/api/src/creator-review.ts": "275d9d2b087a7ce03e5edbe71f1c269c8caf00ec5dc362f000ed86582dc1bea0",
+    "apps/api/src/request-intake-pages.ts": "27db50cfb5ea81210d7ecc32c4e369f4aa1b4d692f5a3962c138d424213b5c1b",
+    "apps/web/src/buyer-clarification-client.ts": "7eab20c83a566a3a96f6327456c9199312f60086e462fa5dfe46e78c57c45d80",
+    "apps/web/src/buyer-request-intake-client.ts": "f0e581d051b044389859ed97aef08319d02ca14ff99bd9c45e7835c9ffa970b4",
+    "apps/web/src/buyer-review-client.ts": "1229746bee53934259209a77f79b553dd1495be378d0c6cfcb6a7a0a0ee39ca9",
+    "apps/web/src/creator-clarification-client.ts": "c6bebc5f2ef3bd0e2692fda5838949d77f29501c1818a7e08a412f7743fe94fb",
+    "apps/web/src/creator-request-intake-client.ts": "f471750a5efa805c343a07d48e4814e218603d017ee278d59d3ec1fc6a104649",
+    "apps/web/src/creator-review-client.ts": "8d9c2df5b796b7c8600ab7e046638d8d3ea955e22dc43756d3e59607658e8e37",
+    "apps/web/src/form-accessibility-client.ts": "0d912659b8dddecaebbaccb2eb363c5166b30fed4dfa5dffdd472c85ceed8978",
+    "package.json": "7576a09a1c96c57048ab7e7b81e0ae979f21ffa34acec1d398118ef13bc4297c",
+    "packages/persistence/src/manifest.ts": "6056ea6f965bae52226c7a75a63c88583f2a407ba51c7bc70802a5acc30f4a84",
+    "scripts/consent-ts-test-loader.mjs": "59825a9c24bd88341054db90ba9edc1a0be1d9e51594038e477ea1d9cd2735df",
+    "scripts/creator-session-local.test.mjs": "3dfa78245582d7f43a772fba5e5dfe06f784059a747a67dfc31c64ee7957bda5",
+    "scripts/form-accessibility-browser-check.mjs": "b509934fd72001a56f500a22d9b656e823b8b2ec378484b149ab01865c1f46da",
+    "scripts/support/human-consent-fixture.mjs": "4fd14df5286ba17b324b55eba63e465b7be67bfe4200702c245447ca30aeb51a",
+    "scripts/support/transaction-browser-fixture.mjs": "c84ebc88bc02e1b10d2e960ad87d0dc64258f77859fed9367db9920c3b4abed4",
+    "wrangler.jsonc": "67cd10f080df4225347978fdc7cbddfc8f8a7313fe70161824d274309f28879d"
+  },
+  "artifact_sha256": {
+    "accessibility-baseline.json": "928e78dfa9fa7ec3cf148ce27c8655603c97c79b30407e2af3696bcf144fc9b6",
+    "accessibility-browser.json": "7acfd099000a3813131e06203e2addda7190b993e88927270eca9d88ca95aef3",
+    "buyer-validation-browser.json": "d539d7e72303e6294f67943dbd46ba953c940e72eaa8952bdb57f1e5eab8a3d7",
+    "clarification-browser.json": "beccbecdbaf3e2c4ce31468c8901ae72e745800909000bce8a4c258b0e89d190",
+    "existing-browser.json": "5432eccb10e018f9862228ebf4af2b93de8483a3476a30cc2ee8d465b6e6a843",
+    "intake-browser.json": "abca59e5de6e850a81a2dc34ca0651dbc832bf6cc38e8d1e9a0680e860b7ff3f",
+    "native-regression.json": "25677f48713d20ba90d337d4245986c3502c37942a3f67fb20d087e7c4d5118a",
+    "recovery-browser.json": "837816ae2fa991a3559b11533c6e22a0143f4dbcdc09469953db331bb5fada75",
+    "transaction-browser.json": "55dcae53f53bc908d372697a28738894c74cc03f35814c0bc415c15e955a1799"
+  }
+}

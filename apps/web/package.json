@@ -1,0 +1,14 @@
+{
+  "name": "@rightsreceipt/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@rightsreceipt/contracts": "workspace:*",
+    "@rightsreceipt/ui": "workspace:*",
+    "react": "19.2.1",
+    "react-dom": "19.2.1",
+    "react-router": "7.9.6",
+    "react-router-dom": "7.9.6"
+  }
+}

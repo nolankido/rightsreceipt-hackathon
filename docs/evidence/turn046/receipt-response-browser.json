@@ -1,0 +1,2515 @@
+{
+  "mode": "receipt response browser verification through actual native handlers",
+  "runtime": "v22.18.0",
+  "scriptSha256": "940bc35a5b5993bd767d63c3cfbab753e742966da2c1f3dd37aae182d3bf2177",
+  "sourceSha256": {
+    "packages/receipts/src/client.ts": "65aa5a602ff6bc50bbfea0fb8b2c17073e68b87a6e9a318d300c0ff69ed39aca",
+    "packages/receipts/src/presentation.ts": "6b0e1f48560f5e6d1d127d1983b1c5383eed5ae34063c2b37b2cf70e8f8e9f03",
+    "packages/receipts/src/http.ts": "d797dbc47c71e0bfaf39b0a855066e61b178aa56a72987c2b5d352b268150bda",
+    "scripts/support/transaction-browser-fixture.mjs": "c84ebc88bc02e1b10d2e960ad87d0dc64258f77859fed9367db9920c3b4abed4",
+    "scripts/support/human-consent-fixture.mjs": "4fd14df5286ba17b324b55eba63e465b7be67bfe4200702c245447ca30aeb51a"
+  },
+  "limitations": [
+    "Synthetic initial request, human-reviewed terms and quote; initial intake is outside this collection",
+    "Real consent, invoice, reconciliation and receipt services prepare canonical SQLite receipts using injected provider HTTP",
+    "Receipt browser actions must cause zero additional provider calls or database writes after fixture setup",
+    "Different-code scenarios route to two isolated canonical fixtures; each fixture independently enforces its actual capability authorization",
+    "Successful-response faults alter actual handler status, headers or body; paired HTML digest headers isolate JSON envelope validation",
+    "Delayed digest faults call actual browser WebCrypto first and then hold or reject its completion; cancellation is deliberately ignored by that wrapper",
+    "Browser clocks, hidden/history events and window.print are controlled locally; downloads use actual canonical handler bytes",
+    "No listening server, real gateway, provider network, deployed Worker, Cloudflare D1 or screen-reader audit"
+  ],
+  "completed": true,
+  "passed": 193,
+  "checks": [
+    {
+      "scenario": "valid_native_receipt_print_and_verified_utf8_export",
+      "check": "actual UTF-8 receipt HTML remains usable with valid media parameters"
+    },
+    {
+      "scenario": "valid_native_receipt_print_and_verified_utf8_export",
+      "check": "valid print still requires a second actual HTML read"
+    },
+    {
+      "scenario": "valid_native_receipt_print_and_verified_utf8_export",
+      "check": "real browser SHA-256 covers exact canonical UTF-8 bytes before output"
+    },
+    {
+      "scenario": "valid_native_receipt_print_and_verified_utf8_export",
+      "check": "digest validation keeps Close available and output disabled"
+    },
+    {
+      "scenario": "valid_native_receipt_print_and_verified_utf8_export",
+      "check": "verified export preserves exact canonical bytes, digest and filename"
+    },
+    {
+      "scenario": "valid_native_receipt_print_and_verified_utf8_export",
+      "check": "only the explicitly requested export creates output"
+    },
+    {
+      "scenario": "valid_native_receipt_print_and_verified_utf8_export",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "valid_native_receipt_print_and_verified_utf8_export",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "valid_native_receipt_print_and_verified_utf8_export",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "partial successful status: the successful-response fault leaves no receipt or output authority"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "partial successful status: one actual read and no automatic fallback"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "partial successful status: no print or download escapes"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "partial successful status: deliberate reentry restores the real valid receipt"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "missing media type: the successful-response fault leaves no receipt or output authority"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "missing media type: one actual read and no automatic fallback"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "missing media type: no print or download escapes"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "missing media type: deliberate reentry restores the real valid receipt"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "wrong media type: the successful-response fault leaves no receipt or output authority"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "wrong media type: one actual read and no automatic fallback"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "wrong media type: no print or download escapes"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "wrong media type: deliberate reentry restores the real valid receipt"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "non-UTF-8 charset: the successful-response fault leaves no receipt or output authority"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "non-UTF-8 charset: one actual read and no automatic fallback"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "non-UTF-8 charset: no print or download escapes"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "non-UTF-8 charset: deliberate reentry restores the real valid receipt"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "duplicate charset: the successful-response fault leaves no receipt or output authority"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "duplicate charset: one actual read and no automatic fallback"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "duplicate charset: no print or download escapes"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "duplicate charset: deliberate reentry restores the real valid receipt"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "missing receipt digest: the successful-response fault leaves no receipt or output authority"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "missing receipt digest: one actual read and no automatic fallback"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "missing receipt digest: no print or download escapes"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "missing receipt digest: deliberate reentry restores the real valid receipt"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "malformed receipt digest: the successful-response fault leaves no receipt or output authority"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "malformed receipt digest: one actual read and no automatic fallback"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "malformed receipt digest: no print or download escapes"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "malformed receipt digest: deliberate reentry restores the real valid receipt"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "missing check timestamp: the successful-response fault leaves no receipt or output authority"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "missing check timestamp: one actual read and no automatic fallback"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "missing check timestamp: no print or download escapes"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "missing check timestamp: deliberate reentry restores the real valid receipt"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "missing boundary attribute: the successful-response fault leaves no receipt or output authority"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "missing boundary attribute: one actual read and no automatic fallback"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "missing boundary attribute: no print or download escapes"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "missing boundary attribute: deliberate reentry restores the real valid receipt"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "noncanonical check timestamp: the successful-response fault leaves no receipt or output authority"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "noncanonical check timestamp: one actual read and no automatic fallback"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "noncanonical check timestamp: no print or download escapes"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "noncanonical check timestamp: deliberate reentry restores the real valid receipt"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "impossible check date: the successful-response fault leaves no receipt or output authority"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "impossible check date: one actual read and no automatic fallback"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "impossible check date: no print or download escapes"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "impossible check date: deliberate reentry restores the real valid receipt"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "noncanonical boundary offset: the successful-response fault leaves no receipt or output authority"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "noncanonical boundary offset: one actual read and no automatic fallback"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "noncanonical boundary offset: no print or download escapes"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "noncanonical boundary offset: deliberate reentry restores the real valid receipt"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "duplicate protected document: the successful-response fault leaves no receipt or output authority"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "duplicate protected document: one actual read and no automatic fallback"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "duplicate protected document: no print or download escapes"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "duplicate protected document: deliberate reentry restores the real valid receipt"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "wrong protected document element: the successful-response fault leaves no receipt or output authority"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "wrong protected document element: one actual read and no automatic fallback"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "wrong protected document element: no print or download escapes"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "wrong protected document element: deliberate reentry restores the real valid receipt"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "unexpected successful status: export failure clears the prior receipt and code"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "unexpected successful status: fixed recovery does not claim export or reflect the injected body"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "unexpected successful status: no object URL or download is released"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "missing JSON media type: export failure clears the prior receipt and code"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "missing JSON media type: fixed recovery does not claim export or reflect the injected body"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "missing JSON media type: no object URL or download is released"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "HTML body from JSON endpoint: export failure clears the prior receipt and code"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "HTML body from JSON endpoint: fixed recovery does not claim export or reflect the injected body"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "HTML body from JSON endpoint: no object URL or download is released"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "unsupported JSON charset: export failure clears the prior receipt and code"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "unsupported JSON charset: fixed recovery does not claim export or reflect the injected body"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "unsupported JSON charset: no object URL or download is released"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "combined JSON media: export failure clears the prior receipt and code"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "combined JSON media: fixed recovery does not claim export or reflect the injected body"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "combined JSON media: no object URL or download is released"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "missing export digest: export failure clears the prior receipt and code"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "missing export digest: fixed recovery does not claim export or reflect the injected body"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "missing export digest: no object URL or download is released"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "malformed export digest: export failure clears the prior receipt and code"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "malformed export digest: fixed recovery does not claim export or reflect the injected body"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "malformed export digest: no object URL or download is released"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "uppercase export digest: export failure clears the prior receipt and code"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "uppercase export digest: fixed recovery does not claim export or reflect the injected body"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "uppercase export digest: no object URL or download is released"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "different current receipt digest: export failure clears the prior receipt and code"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "different current receipt digest: fixed recovery does not claim export or reflect the injected body"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "different current receipt digest: no object URL or download is released"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "wire bytes differ only by trailing newline: export failure clears the prior receipt and code"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "wire bytes differ only by trailing newline: fixed recovery does not claim export or reflect the injected body"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "wire bytes differ only by trailing newline: no object URL or download is released"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "digest mismatch uses actual incoming bytes rather than parsed/reserialized JSON"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "mobile response rejection remains readable without horizontal overflow"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "invalid JSON syntax: matching supplied digests do not authorize malformed export content"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "invalid JSON syntax: recovery never reflects response content or export success"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "invalid JSON syntax: no malformed download is released"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "wrong receipt schema: matching supplied digests do not authorize malformed export content"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "wrong receipt schema: recovery never reflects response content or export success"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "wrong receipt schema: no malformed download is released"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "missing receipt material section: matching supplied digests do not authorize malformed export content"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "missing receipt material section: recovery never reflects response content or export success"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "missing receipt material section: no malformed download is released"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "non-object JSON envelope: matching supplied digests do not authorize malformed export content"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "non-object JSON envelope: recovery never reflects response content or export success"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "non-object JSON envelope: no malformed download is released"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "invalid UTF-8 bytes: matching supplied digests do not authorize malformed export content"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "invalid UTF-8 bytes: recovery never reflects response content or export success"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "invalid UTF-8 bytes: no malformed download is released"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "empty canonical body: matching supplied digests do not authorize malformed export content"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "empty canonical body: recovery never reflects response content or export success"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "empty canonical body: no malformed download is released"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "body above canonical byte limit: matching supplied digests do not authorize malformed export content"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "body above canonical byte limit: recovery never reflects response content or export success"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "body above canonical byte limit: no malformed download is released"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "valid native receipt access remains recoverable after all envelope faults"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "a_different_valid_receipt_export_requires_its_own_current_view",
+      "check": "another valid receipt's bytes cannot use this view's output authority"
+    },
+    {
+      "scenario": "a_different_valid_receipt_export_requires_its_own_current_view",
+      "check": "deliberate other-code reentry authorizes that actual handler's exact receipt"
+    },
+    {
+      "scenario": "a_different_valid_receipt_export_requires_its_own_current_view",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "a_different_valid_receipt_export_requires_its_own_current_view",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "a_different_valid_receipt_export_requires_its_own_current_view",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "malformed_print_refresh_cannot_print_prior_receipt",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "malformed_print_refresh_cannot_print_prior_receipt",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "malformed_print_refresh_cannot_print_prior_receipt",
+      "check": "Print's actual recheck fails closed on malformed receipt metadata"
+    },
+    {
+      "scenario": "malformed_print_refresh_cannot_print_prior_receipt",
+      "check": "the earlier valid document is never printed after an invalid refresh"
+    },
+    {
+      "scenario": "malformed_print_refresh_cannot_print_prior_receipt",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "malformed_print_refresh_cannot_print_prior_receipt",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "malformed_print_refresh_cannot_print_prior_receipt",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "pending_digest_close_prevents_late_download",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "pending_digest_close_prevents_late_download",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "pending_digest_close_prevents_late_download",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "pending_digest_close_prevents_late_download",
+      "check": "late real digest completion cannot restore canceled output"
+    },
+    {
+      "scenario": "pending_digest_close_prevents_late_download",
+      "check": "digest cancellation does not strand later deliberate access"
+    },
+    {
+      "scenario": "pending_digest_close_prevents_late_download",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "pending_digest_close_prevents_late_download",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "pending_digest_close_prevents_late_download",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "pending_digest_hidden_prevents_late_download",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "pending_digest_hidden_prevents_late_download",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "pending_digest_hidden_prevents_late_download",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "pending_digest_hidden_prevents_late_download",
+      "check": "late real digest completion cannot restore canceled output"
+    },
+    {
+      "scenario": "pending_digest_hidden_prevents_late_download",
+      "check": "digest cancellation does not strand later deliberate access"
+    },
+    {
+      "scenario": "pending_digest_hidden_prevents_late_download",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "pending_digest_hidden_prevents_late_download",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "pending_digest_hidden_prevents_late_download",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "superseded_digest_cannot_download_or_clear_new_receipt",
+      "check": "late old digest produces no output under the replacement capability"
+    },
+    {
+      "scenario": "superseded_digest_cannot_download_or_clear_new_receipt",
+      "check": "late validation cannot clear or replace the new receipt"
+    },
+    {
+      "scenario": "superseded_digest_cannot_download_or_clear_new_receipt",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "superseded_digest_cannot_download_or_clear_new_receipt",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "superseded_digest_cannot_download_or_clear_new_receipt",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "digest_completion_shares_the_original_request_deadline",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "digest_completion_shares_the_original_request_deadline",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "digest_completion_shares_the_original_request_deadline",
+      "check": "hash validation cannot extend the request beyond fifteen seconds"
+    },
+    {
+      "scenario": "digest_completion_shares_the_original_request_deadline",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "digest_completion_shares_the_original_request_deadline",
+      "check": "a late digest after request timeout cannot download"
+    },
+    {
+      "scenario": "digest_completion_shares_the_original_request_deadline",
+      "check": "timeout recovery requires a deliberate fresh receipt read"
+    },
+    {
+      "scenario": "digest_completion_shares_the_original_request_deadline",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "digest_completion_shares_the_original_request_deadline",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "digest_completion_shares_the_original_request_deadline",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "digest_completion_keeps_original_view_freshness",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "digest_completion_keeps_original_view_freshness",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "digest_completion_keeps_original_view_freshness",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "digest_completion_keeps_original_view_freshness",
+      "check": "a fresh export request cannot extend its original view's sixty-second budget"
+    },
+    {
+      "scenario": "digest_completion_keeps_original_view_freshness",
+      "check": "view expiry happens before this digest request's own deadline"
+    },
+    {
+      "scenario": "digest_completion_keeps_original_view_freshness",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "digest_completion_keeps_original_view_freshness",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "digest_completion_keeps_original_view_freshness",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "digest_completion_keeps_the_licensing_boundary",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "digest_completion_keeps_the_licensing_boundary",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "digest_completion_keeps_the_licensing_boundary",
+      "check": "programmatic unavailable actions dispatch no read, print or download"
+    },
+    {
+      "scenario": "digest_completion_keeps_the_licensing_boundary",
+      "check": "hash completion after the licensing boundary releases no download"
+    },
+    {
+      "scenario": "digest_completion_keeps_the_licensing_boundary",
+      "check": "the earlier licensing boundary remains authoritative during hashing"
+    },
+    {
+      "scenario": "digest_completion_keeps_the_licensing_boundary",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "digest_completion_keeps_the_licensing_boundary",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "digest_completion_keeps_the_licensing_boundary",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    },
+    {
+      "scenario": "digest_failure_uses_fixed_recovery_without_raw_exception",
+      "check": "recovery exposes empty code entry and removes the protected document"
+    },
+    {
+      "scenario": "digest_failure_uses_fixed_recovery_without_raw_exception",
+      "check": "locked recovery has no available refresh, print or export authority"
+    },
+    {
+      "scenario": "digest_failure_uses_fixed_recovery_without_raw_exception",
+      "check": "digest failure does not reflect internal validation details"
+    },
+    {
+      "scenario": "digest_failure_uses_fixed_recovery_without_raw_exception",
+      "check": "failed real digest completion creates no output"
+    },
+    {
+      "scenario": "digest_failure_uses_fixed_recovery_without_raw_exception",
+      "check": "receipt browser actions add no provider calls or database writes"
+    },
+    {
+      "scenario": "digest_failure_uses_fixed_recovery_without_raw_exception",
+      "check": "all browser receipt requests are read-only and keep private codes out of URLs"
+    },
+    {
+      "scenario": "digest_failure_uses_fixed_recovery_without_raw_exception",
+      "check": "private codes stay out of the page, persistent storage and cookies"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "valid_native_receipt_print_and_verified_utf8_export",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "faults": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "kind": "response",
+              "format": "html",
+              "label": "valid quoted UTF-8 HTML media",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "Text/HTML; Charset=\"UTF-8\"",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21347,
+              "injectedBytes": 21347,
+              "bodyChanged": false
+            },
+            {
+              "id": 2,
+              "kind": "response",
+              "format": "json",
+              "label": "valid mixed-case UTF-8 JSON media",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "Application/JSON; charset=UTF-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4632,
+              "injectedBytes": 4632,
+              "bodyChanged": false
+            },
+            {
+              "id": 3,
+              "kind": "digest",
+              "mode": "hold",
+              "arrived": true,
+              "released": true
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 1,
+          "objectUrlCount": 1,
+          "digests": [
+            {
+              "algorithm": "SHA-256",
+              "bytes": 4632,
+              "sha256": "aa5e8be4ef19b110f8385da4ffd7852fee61f4f9256481810d443f71604892a1"
+            }
+          ]
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "html_success_response_contract_rejects_invalid_headers_and_metadata",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 30,
+      "faults": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "kind": "response",
+              "format": "html",
+              "label": "partial successful status",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 206,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21524,
+              "injectedBytes": 21524,
+              "bodyChanged": false
+            },
+            {
+              "id": 2,
+              "kind": "response",
+              "format": "html",
+              "label": "missing media type",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": null,
+              "digestHeaderPresent": true,
+              "nativeBytes": 21524,
+              "injectedBytes": 21524,
+              "bodyChanged": false
+            },
+            {
+              "id": 3,
+              "kind": "response",
+              "format": "html",
+              "label": "wrong media type",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "application/json",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21524,
+              "injectedBytes": 21524,
+              "bodyChanged": false
+            },
+            {
+              "id": 4,
+              "kind": "response",
+              "format": "html",
+              "label": "non-UTF-8 charset",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=iso-8859-1",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21524,
+              "injectedBytes": 21524,
+              "bodyChanged": false
+            },
+            {
+              "id": 5,
+              "kind": "response",
+              "format": "html",
+              "label": "duplicate charset",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21524,
+              "injectedBytes": 21524,
+              "bodyChanged": false
+            },
+            {
+              "id": 6,
+              "kind": "response",
+              "format": "html",
+              "label": "missing receipt digest",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": false,
+              "nativeBytes": 21524,
+              "injectedBytes": 21524,
+              "bodyChanged": false
+            },
+            {
+              "id": 7,
+              "kind": "response",
+              "format": "html",
+              "label": "malformed receipt digest",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21524,
+              "injectedBytes": 21524,
+              "bodyChanged": false
+            },
+            {
+              "id": 8,
+              "kind": "response",
+              "format": "html",
+              "label": "missing check timestamp",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21524,
+              "injectedBytes": 21481,
+              "bodyChanged": true
+            },
+            {
+              "id": 9,
+              "kind": "response",
+              "format": "html",
+              "label": "missing boundary attribute",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21524,
+              "injectedBytes": 21478,
+              "bodyChanged": true
+            },
+            {
+              "id": 10,
+              "kind": "response",
+              "format": "html",
+              "label": "noncanonical check timestamp",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21524,
+              "injectedBytes": 21521,
+              "bodyChanged": true
+            },
+            {
+              "id": 11,
+              "kind": "response",
+              "format": "html",
+              "label": "impossible check date",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21524,
+              "injectedBytes": 21525,
+              "bodyChanged": true
+            },
+            {
+              "id": 12,
+              "kind": "response",
+              "format": "html",
+              "label": "noncanonical boundary offset",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21524,
+              "injectedBytes": 21530,
+              "bodyChanged": true
+            },
+            {
+              "id": 13,
+              "kind": "response",
+              "format": "html",
+              "label": "duplicate protected document",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21524,
+              "injectedBytes": 21619,
+              "bodyChanged": true
+            },
+            {
+              "id": 14,
+              "kind": "response",
+              "format": "html",
+              "label": "wrong protected document element",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21524,
+              "injectedBytes": 21530,
+              "bodyChanged": true
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": []
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "json_success_response_contract_rejects_invalid_headers_and_changed_bytes",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 23,
+      "faults": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "kind": "response",
+              "format": "json",
+              "label": "unexpected successful status",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 206,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "application/json; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 4618,
+              "bodyChanged": false
+            },
+            {
+              "id": 2,
+              "kind": "response",
+              "format": "json",
+              "label": "missing JSON media type",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": null,
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 4618,
+              "bodyChanged": false
+            },
+            {
+              "id": 3,
+              "kind": "response",
+              "format": "json",
+              "label": "HTML body from JSON endpoint",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 49,
+              "bodyChanged": true
+            },
+            {
+              "id": 4,
+              "kind": "response",
+              "format": "json",
+              "label": "unsupported JSON charset",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "application/json; charset=windows-1252",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 4618,
+              "bodyChanged": false
+            },
+            {
+              "id": 5,
+              "kind": "response",
+              "format": "json",
+              "label": "combined JSON media",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "application/json, text/html",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 4618,
+              "bodyChanged": false
+            },
+            {
+              "id": 6,
+              "kind": "response",
+              "format": "json",
+              "label": "missing export digest",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "application/json; charset=utf-8",
+              "digestHeaderPresent": false,
+              "nativeBytes": 4618,
+              "injectedBytes": 4618,
+              "bodyChanged": false
+            },
+            {
+              "id": 7,
+              "kind": "response",
+              "format": "json",
+              "label": "malformed export digest",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "application/json; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 4618,
+              "bodyChanged": false
+            },
+            {
+              "id": 8,
+              "kind": "response",
+              "format": "json",
+              "label": "uppercase export digest",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "application/json; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 4618,
+              "bodyChanged": false
+            },
+            {
+              "id": 9,
+              "kind": "response",
+              "format": "json",
+              "label": "different current receipt digest",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "application/json; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 4618,
+              "bodyChanged": false
+            },
+            {
+              "id": 10,
+              "kind": "response",
+              "format": "json",
+              "label": "wire bytes differ only by trailing newline",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "application/json; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 4619,
+              "bodyChanged": true
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": [
+            {
+              "algorithm": "SHA-256",
+              "bytes": 4619,
+              "sha256": "8328f325b7630aa2c17eb3fe5fc4f222c43ca1a760f9b28326bea7fb679ee489"
+            }
+          ]
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "json_envelope_and_size_faults_fail_with_matching_synthetic_digest_headers",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 17,
+      "faults": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "kind": "response",
+              "format": "html",
+              "label": "invalid JSON syntax paired HTML digest",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21554,
+              "injectedBytes": 21554,
+              "bodyChanged": false
+            },
+            {
+              "id": 2,
+              "kind": "response",
+              "format": "json",
+              "label": "invalid JSON syntax",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "application/json; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 29,
+              "bodyChanged": true
+            },
+            {
+              "id": 3,
+              "kind": "response",
+              "format": "html",
+              "label": "wrong receipt schema paired HTML digest",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21554,
+              "injectedBytes": 21554,
+              "bodyChanged": false
+            },
+            {
+              "id": 4,
+              "kind": "response",
+              "format": "json",
+              "label": "wrong receipt schema",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "application/json; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 4615,
+              "bodyChanged": true
+            },
+            {
+              "id": 5,
+              "kind": "response",
+              "format": "html",
+              "label": "missing receipt material section paired HTML digest",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21554,
+              "injectedBytes": 21554,
+              "bodyChanged": false
+            },
+            {
+              "id": 6,
+              "kind": "response",
+              "format": "json",
+              "label": "missing receipt material section",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "application/json; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 3787,
+              "bodyChanged": true
+            },
+            {
+              "id": 7,
+              "kind": "response",
+              "format": "html",
+              "label": "non-object JSON envelope paired HTML digest",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21554,
+              "injectedBytes": 21554,
+              "bodyChanged": false
+            },
+            {
+              "id": 8,
+              "kind": "response",
+              "format": "json",
+              "label": "non-object JSON envelope",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "application/json; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 4,
+              "bodyChanged": true
+            },
+            {
+              "id": 9,
+              "kind": "response",
+              "format": "html",
+              "label": "invalid UTF-8 bytes paired HTML digest",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21554,
+              "injectedBytes": 21554,
+              "bodyChanged": false
+            },
+            {
+              "id": 10,
+              "kind": "response",
+              "format": "json",
+              "label": "invalid UTF-8 bytes",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "application/json; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 4,
+              "bodyChanged": true
+            },
+            {
+              "id": 11,
+              "kind": "response",
+              "format": "html",
+              "label": "empty canonical body paired HTML digest",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21554,
+              "injectedBytes": 21554,
+              "bodyChanged": false
+            },
+            {
+              "id": 12,
+              "kind": "response",
+              "format": "json",
+              "label": "empty canonical body",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "application/json; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 0,
+              "bodyChanged": true
+            },
+            {
+              "id": 13,
+              "kind": "response",
+              "format": "html",
+              "label": "body above canonical byte limit paired HTML digest",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21554,
+              "injectedBytes": 21554,
+              "bodyChanged": false
+            },
+            {
+              "id": 14,
+              "kind": "response",
+              "format": "json",
+              "label": "body above canonical byte limit",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "application/json; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 262145,
+              "bodyChanged": true
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": []
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "a_different_valid_receipt_export_requires_its_own_current_view",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 1,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 1,
+          "status": 200
+        }
+      ],
+      "browserRequests": 6,
+      "faults": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "kind": "response",
+              "format": "json",
+              "label": "separately valid other receipt",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "application/json; charset=utf-8",
+              "injectedContentType": "application/json; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 4618,
+              "injectedBytes": 4629,
+              "bodyChanged": true
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 1,
+          "digests": [
+            {
+              "algorithm": "SHA-256",
+              "bytes": 4629,
+              "sha256": "24b42e31648f6c3ff8583d1ef177823e1e32c63eb713278ca19a88a74f53abd2"
+            }
+          ]
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        },
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "malformed_print_refresh_cannot_print_prior_receipt",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 4,
+      "faults": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "kind": "response",
+              "format": "html",
+              "label": "print read missing boundary metadata",
+              "arrived": true,
+              "nativeStatus": 200,
+              "injectedStatus": 200,
+              "nativeContentType": "text/html; charset=utf-8",
+              "injectedContentType": "text/html; charset=utf-8",
+              "digestHeaderPresent": true,
+              "nativeBytes": 21625,
+              "injectedBytes": 21579,
+              "bodyChanged": true
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": []
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "pending_digest_close_prevents_late_download",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "faults": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "kind": "digest",
+              "mode": "hold",
+              "arrived": true,
+              "released": true
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": [
+            {
+              "algorithm": "SHA-256",
+              "bytes": 4618,
+              "sha256": "c734ed7591a6a1c248e782a74fc0b6bc417189d617c7c3a5f30aaa26251014e9"
+            }
+          ]
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "pending_digest_hidden_prevents_late_download",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "faults": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "kind": "digest",
+              "mode": "hold",
+              "arrived": true,
+              "released": true
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": [
+            {
+              "algorithm": "SHA-256",
+              "bytes": 4618,
+              "sha256": "32b1aecb9ad755fdffbdf1dc4bea36d53036f4c169132c2f1eeddd48818844d1"
+            }
+          ]
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "superseded_digest_cannot_download_or_clear_new_receipt",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 1,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "faults": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "kind": "digest",
+              "mode": "hold",
+              "arrived": true,
+              "released": true
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": [
+            {
+              "algorithm": "SHA-256",
+              "bytes": 4618,
+              "sha256": "07391a38760d5bc8939dbea0dbc7c02c938086e1133cb2a8f62cbe8535d9bbeb"
+            }
+          ]
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        },
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "digest_completion_shares_the_original_request_deadline",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "faults": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "kind": "digest",
+              "mode": "hold",
+              "arrived": true,
+              "released": true
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": [
+            {
+              "algorithm": "SHA-256",
+              "bytes": 4618,
+              "sha256": "930a944e4a36ae8b6a3addf7c15afeff61a88e2118d228e020387b43b36feffa"
+            }
+          ]
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "digest_completion_keeps_original_view_freshness",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 4,
+      "faults": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "kind": "digest",
+              "mode": "hold",
+              "arrived": true,
+              "released": true
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": [
+            {
+              "algorithm": "SHA-256",
+              "bytes": 4618,
+              "sha256": "128db8973aa45bc38884fe8a399fca642404466eb274b270aa5a3800f5b118d5"
+            }
+          ]
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "digest_completion_keeps_the_licensing_boundary",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 4,
+      "faults": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "kind": "digest",
+              "mode": "hold",
+              "arrived": true,
+              "released": true
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": [
+            {
+              "algorithm": "SHA-256",
+              "bytes": 4618,
+              "sha256": "5dfa9fa298f3c3c47656f6138138b7140a23c57bf7af0a3f24cdafdb0a29f2c6"
+            }
+          ]
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    },
+    {
+      "name": "digest_failure_uses_fixed_recovery_without_raw_exception",
+      "receiptReads": [
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "json",
+          "fixture": 0,
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/receipts/buyer",
+          "format": "html",
+          "fixture": 0,
+          "status": 200
+        }
+      ],
+      "browserRequests": 5,
+      "faults": [
+        {
+          "observations": [
+            {
+              "id": 1,
+              "kind": "digest",
+              "mode": "reject",
+              "arrived": true,
+              "released": false
+            }
+          ],
+          "pendingCount": 0,
+          "printCount": 0,
+          "objectUrlCount": 0,
+          "digests": [
+            {
+              "algorithm": "SHA-256",
+              "bytes": 4618,
+              "sha256": "9d973022faf2f8501fcdde2c3291bde74d7420d452f2a784bfdc12c949d67306"
+            }
+          ]
+        }
+      ],
+      "fixtures": [
+        {
+          "canonicalRevisions": 1,
+          "setupProviderCalls": 8,
+          "additionalProviderCalls": 0,
+          "additionalDatabaseWrites": 0
+        }
+      ]
+    }
+  ],
+  "browser": "140.0.7339.16"
+}

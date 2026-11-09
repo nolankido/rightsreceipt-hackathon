@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "rightsreceipt-selective-margin-gates-v1",
+  "policyVersion": "validation-margin-gates-v1",
+  "modelId": "rightsreceipt-synthetic-lexical",
+  "modelVersion": "2026-10-26-v1",
+  "artifactSha256": "6ea099b72fe00ce4643426a2729a84b207ae8eb3460c75488fab3502037e73e2",
+  "validationDataSha256": "cf8a710db4210f3e9c11dd92a9c875ea487488f521d08c46477b4ed8a4bddb95",
+  "metric": "top_minus_runner_up_raw_linear_score",
+  "fieldThresholds": {
+    "use_purpose": 6.873883,
+    "channels": 6.088288,
+    "paid_advertising": 5.000583,
+    "territories": 4.327289,
+    "start_date": 5.475854,
+    "duration_days": 3.880699,
+    "max_impressions": 2.907805,
+    "exclusivity": 3.682734,
+    "modification_scope": 2.794425,
+    "attribution": 1.547978,
+    "sublicensing": 5.610012,
+    "ai_use": 5.684649
+  },
+  "selectionSource": "validation_only",
+  "confidenceIsCalibratedProbability": false,
+  "automaticResolutionApproved": false,
+  "evidenceStillRequired": true,
+  "reviewRequired": true,
+  "quoteEligible": false,
+  "permittedActions": []
+}

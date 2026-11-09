@@ -1,0 +1,50 @@
+{
+  "schema_version": "rightsreceipt-browser-regression-turn044-v1",
+  "status": "passed",
+  "base_commit": "4c6b61797478678f0313eeac75250b2a3b0fea7a",
+  "scope": "Current transaction and asset-only intake browser journeys that execute the changed protected receipt client, using actual local handlers and injected provider transport.",
+  "not_rerun": [
+    "Creator/buyer/clarification/deadline browser collections outside the unchanged source scope.",
+    "Older receipt-browser-smoke.py and receipt-layout-check.py scripts; targeted actual-handler receipt suite and current transaction/intake journeys were used."
+  ],
+  "runtime": "v22.18.0",
+  "concurrency": 2,
+  "suites": 2,
+  "passed": 249,
+  "named_scenarios": 27,
+  "source_unchanged_during_run": true,
+  "source_file_count": 291,
+  "source_fingerprint_before": "dd0236273b5c10d741478868bf93772298236f4be1f994d462a47ef8c5c25821",
+  "source_fingerprint_after": "dd0236273b5c10d741478868bf93772298236f4be1f994d462a47ef8c5c25821",
+  "results": [
+    {
+      "suite": "transaction",
+      "script": "scripts/transaction-browser-check.mjs",
+      "status": "passed",
+      "exit_code": 0,
+      "scope_reason": "Actual protected receipt navigation, canonical JSON download, revocation/refund status and integrated transaction controls.",
+      "duration_s": 106.208,
+      "passed": 130,
+      "scenarios": 19,
+      "runtime": "v22.18.0",
+      "browser": "140.0.7339.16",
+      "report_sha256": "c11123ccc1270deda359ab12305e6dc26d5deccf0313bb3662c06ae8f3722fe9",
+      "report": "transaction-browser.json"
+    },
+    {
+      "suite": "intake",
+      "script": "scripts/intake-browser-check.mjs",
+      "status": "passed",
+      "exit_code": 0,
+      "scope_reason": "Asset-only original-link continuation through actual protected receipt rendering and exact canonical JSON export.",
+      "duration_s": 96.671,
+      "passed": 119,
+      "scenarios": 8,
+      "runtime": "v22.18.0",
+      "browser": "140.0.7339.16",
+      "report_sha256": "af85064ad8469c54a60acd8a66b56c0384e66b1f9a110fc737715b276435a196",
+      "report": "intake-browser.json"
+    }
+  ],
+  "record_note": "Counts exclude the separate 126-check receipt recovery browser collection. Only checks executed this turn count."
+}

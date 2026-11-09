@@ -1,0 +1,108 @@
+# Offline fake mode. No credentials or enabled payment operations.
+APP_MODE=local
+PAYPAL_MODE=fake
+PAYPAL_WEBHOOK_INTAKE_ENABLED=false
+PAYPAL_WEBHOOK_PROCESSING_ENABLED=false
+PAYPAL_RECONCILIATION_ENABLED=false
+PAYPAL_PERMISSION_LIFECYCLE_ENABLED=false
+RIGHTS_RECEIPT_ISSUANCE_ENABLED=false
+RIGHTS_PERMISSION_CLOCK_ENABLED=false
+RIGHTS_RECEIPT_READ_ENABLED=false
+RIGHTS_RECEIPT_PUBLIC_ORIGIN=
+HUMAN_CONSENT_ENABLED=false
+HUMAN_CONSENT_ORIGIN=
+
+# Server-only PayPal Sandbox testing, disabled by default:
+# APP_MODE=sandbox
+# PAYPAL_MODE=paypal_sandbox
+# PAYPAL_BASE_URL=https://api-m.sandbox.paypal.com
+# PAYPAL_SANDBOX_CLIENT_ID=<server-only-sandbox-client-id>
+# PAYPAL_SANDBOX_CLIENT_SECRET=<server-only-sandbox-client-secret>
+# PAYPAL_SANDBOX_WEBHOOK_ID=<registered-sandbox-webhook-id>
+# PAYPAL_SANDBOX_EXPECTED_WEBHOOK_URL=<exact-current-registered-public-HTTPS-callback-url>
+# For a one-shot capture, use the following safer pair INSTEAD of the full URL:
+# PAYPAL_SANDBOX_WEBHOOK_PUBLIC_ORIGIN=https://your-approved-public-host.example
+# PAYPAL_SANDBOX_WEBHOOK_PRIVATE_ROUTE_FILE=.data/sandbox-webhook-capture/run-.../private-route.txt
+# The collector also writes private-local-origin.txt beside the route file.
+# Stage 0 and Stage 1 verify that the local 127.0.0.1 collector is alive using
+# a read-only HEAD request before contacting PayPal. This does not test the public tunnel.
+# The application reads the route from that private file without printing the combined URL.
+# Do not configure both methods. Never commit a populated route or actual callback URL.
+# Intake, processing, reconciliation, lifecycle and receipt issuance are separately opt-in.
+# Lifecycle requires the migrated DB, current human consent and validated invoice reader.
+# Receipts additionally require completed financial work and a valid current source snapshot.
+# Receipt reads require RIGHTS_RECEIPT_READ_ENABLED=true and a fixed canonical origin.
+# RIGHTS_RECEIPT_PUBLIC_ORIGIN=https://your-approved-sandbox-host.example
+# Creator export requires a server-side session authorizer. The default is deny.
+# No public issuance endpoint or Cron Trigger is configured.
+# Never prefix a secret with VITE_.
+
+# Clock refresh requires the clock and issuance flags, Sandbox/judge mode and DB.
+# No Cron Trigger is installed; public reads never execute clock transitions.
+
+# Human consent is separately opt-in. No invoice/payment is created by these commands.
+# HUMAN_CONSENT_ORIGIN=https://your-approved-sandbox-host.example
+# Creator decisions require an injected authenticated workspace/session authorizer.
+# The Worker supplies the opt-in Access verifier; disabled session configuration denies.
+# Buyer acceptance uses a current review-scoped bearer capability, never a public receipt ID.
+
+# Canonical draft creation, separately enabled after runtime verification.
+RIGHTS_INVOICE_CREATION_ENABLED=false
+# Explicit Sandbox adapter, migrated DB and real creator authorizer are required.
+
+# Explicit sending of canonically accepted Sandbox drafts.
+RIGHTS_INVOICE_SENDING_ENABLED=false
+# Requires current creator authorization, migrated DB and an injected transport.
+# Authenticated invoice controls are separately default-off. No schedule is installed.
+
+# Managed human Access sessions. No credentials, email allowlist, or role-header bypass.
+CREATOR_ACCESS_ENABLED=false
+CREATOR_ACCESS_ORIGIN=
+CREATOR_ACCESS_ISSUER=
+CREATOR_ACCESS_AUDIENCE=
+CREATOR_ACCESS_PRINCIPALS=[]
+CREATOR_REVIEW_ENABLED=false
+# Configure Access on creator review, creator consent and creator receipt routes only.
+# Bind a verified human subject to a workspace with validAfter (Unix seconds).
+# Sessions are limited to 1 hour. See CREATOR_ACCESS_SESSIONS.md for deployment gates.
+
+# Canonical buyer acceptance and authenticated creator invoice controls.
+BUYER_REVIEW_ENABLED=false
+BUYER_PAYMENT_ENABLED=false
+RIGHTS_INVOICE_CONTROLS_ENABLED=false
+PAYPAL_SANDBOX_MERCHANT_NAME=
+PAYPAL_SANDBOX_MERCHANT_EMAIL=
+# Merchant identity is server-only Sandbox account configuration.
+# Protect /api/invoices/creator/* with the same Access policy as creator review.
+# Keep /buyer/review and /api/consent/buyer/* outside creator Access.
+# Keep /api/invoices/buyer/* outside creator Access; it requires a private review capability.
+# Buyer status is read-only. Only an explicit handoff request reads the current Sandbox invoice.
+# Receipt navigation additionally requires receipt reads enabled at the same trusted origin.
+# Both configured origins must match. Never put credentials in URLs or browser code.
+
+# Persisted buyer answers and human terms re-review, separately default-off.
+CLARIFICATION_ENABLED=false
+# Requires migration 0009, the fixed HTTPS consent origin and Sandbox/judge mode.
+# Protect /creator/clarification/*, /assets/creator-clarification.js and
+# /api/clarification/creator/* with the existing creator Access policy.
+# Keep /buyer/clarification, /assets/buyer-clarification.js and
+# /api/clarification/buyer/* outside creator Access; APIs require a clarify capability.
+# Answers are evidence only. Human terms review, approval and buyer acceptance stay separate.
+
+# Authenticated asset-bound link creation and immutable private buyer intake.
+REQUEST_INTAKE_ENABLED=false
+# Requires HUMAN_CONSENT_ENABLED and CLARIFICATION_ENABLED, the existing nine migrations,
+# Sandbox/judge mode, and the same trusted HTTPS origin for creator and buyer flows.
+# Protect /creator/requests/*, /assets/creator-request-intake.js and
+# /api/intake/creator/* with the existing creator Access policy.
+# Keep /buyer/request, /assets/buyer-request-intake.js and /api/intake/buyer/*
+# outside creator Access; the buyer APIs require a submit_request capability.
+# The native client generates 32 random bytes with WebCrypto and submits only their digest.
+# A private code stays in browser memory until deliberately copied or shared by its holder.
+
+# Authenticated, exact-source recovery of an existing invoice operation.
+INVOICE_RECOVERY_ENABLED=false
+# Protect /api/invoices/creator/* with the existing creator Access policy.
+# Recovery reads are local only. Provider activity requires a separate explicit action.
+# A reserved operation can continue once; uncertain delivery can be checked without resending.
+# Unknown creation without a retained provider invoice ID remains paused.

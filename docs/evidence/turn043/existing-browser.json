@@ -1,0 +1,118 @@
+{
+  "schema_version": "rightsreceipt-browser-regression-turn043-v1",
+  "status": "passed",
+  "base_commit": "5e4f890433eb53ce87846f2805a9de51983b767c",
+  "scope": "Six existing browser suites that execute the changed buyer review client through actual local native handlers, canonical SQLite services and injected gateway/provider transport.",
+  "not_rerun": {
+    "suite": "invoice-recovery",
+    "reason": "This suite is creator-only. No creator or shared implementation changed in Turn 043; its prior 88-check result is not counted as current verification."
+  },
+  "final_results": {
+    "source_fingerprint_before": "06cb67efdb1f8ee9fb44cd173d9df3f4cd4571c8159f2118ade234a4c3b0379a",
+    "source_fingerprint_after": "06cb67efdb1f8ee9fb44cd173d9df3f4cd4571c8159f2118ade234a4c3b0379a",
+    "all_source_hashes_unchanged_during_run": true,
+    "source_file_count": 289,
+    "application_source_hashes_unchanged_during_run": true,
+    "application_source_file_count": 187,
+    "application_source_hashes_sha256": "68b653224ef9159a7232103168ca61d8788b8bfc6f5a633004ddb4f14d77127d",
+    "runtime": "v22.18.0",
+    "concurrency": 2,
+    "per_suite_timeout_seconds": 180,
+    "suites": 6,
+    "passed_checks": 623,
+    "completed_named_scenarios": 76,
+    "results": [
+      {
+        "suite": "transaction",
+        "script": "scripts/transaction-browser-check.mjs",
+        "scope_reason": "Terminal acceptance conflict, historical receipt fallback, payment handoff and canonical transaction controls.",
+        "status": "passed",
+        "passed_checks": 130,
+        "completed_scenarios": 19,
+        "exit_code": 0,
+        "duration_s": 75.513,
+        "runtime": "v22.18.0",
+        "browser": "140.0.7339.16",
+        "report": "transaction-browser.json",
+        "report_sha256": "c11123ccc1270deda359ab12305e6dc26d5deccf0313bb3662c06ae8f3722fe9"
+      },
+      {
+        "suite": "intake",
+        "script": "scripts/intake-browser-check.mjs",
+        "scope_reason": "Original private-code continuation into buyer review and archived original-link receipt access.",
+        "status": "passed",
+        "passed_checks": 119,
+        "completed_scenarios": 8,
+        "exit_code": 0,
+        "duration_s": 67.39,
+        "runtime": "v22.18.0",
+        "browser": "140.0.7339.16",
+        "report": "intake-browser.json",
+        "report_sha256": "abca59e5de6e850a81a2dc34ca0651dbc832bf6cc38e8d1e9a0680e860b7ff3f"
+      },
+      {
+        "suite": "clarification",
+        "script": "scripts/clarification-browser-check.mjs",
+        "scope_reason": "Superseded offer rejection after new human terms requires fresh consent.",
+        "status": "passed",
+        "passed_checks": 57,
+        "completed_scenarios": 8,
+        "exit_code": 0,
+        "duration_s": 37.649,
+        "runtime": "v22.18.0",
+        "browser": "140.0.7339.16",
+        "report": "clarification-browser.json",
+        "report_sha256": "beccbecdbaf3e2c4ce31468c8901ae72e745800909000bce8a4c258b0e89d190"
+      },
+      {
+        "suite": "buyer-validation",
+        "script": "scripts/buyer-review-validation-browser-check.mjs",
+        "scope_reason": "Malformed status and handoff must remove financial authority without broadening access.",
+        "status": "passed",
+        "passed_checks": 51,
+        "completed_scenarios": null,
+        "exit_code": 0,
+        "duration_s": 29.933,
+        "runtime": "v22.18.0",
+        "browser": "140.0.7339.16",
+        "report": "buyer-validation-browser.json",
+        "report_sha256": "d539d7e72303e6294f67943dbd46ba953c940e72eaa8952bdb57f1e5eab8a3d7"
+      },
+      {
+        "suite": "accessibility",
+        "script": "scripts/form-accessibility-browser-check.mjs",
+        "scope_reason": "Exact acceptance retry, keyboard focus ownership and private lifecycle clearing.",
+        "status": "passed",
+        "passed_checks": 134,
+        "completed_scenarios": 17,
+        "exit_code": 0,
+        "duration_s": 49.29,
+        "runtime": "v22.18.0",
+        "browser": "140.0.7339.16",
+        "report": "accessibility-browser.json",
+        "report_sha256": "7acfd099000a3813131e06203e2addda7190b993e88927270eca9d88ca95aef3"
+      },
+      {
+        "suite": "deadline",
+        "script": "scripts/request-deadline-browser-check.mjs",
+        "scope_reason": "Timeout recovery must preserve exact uncertain writes and reject late or canceled responses.",
+        "status": "passed",
+        "passed_checks": 132,
+        "completed_scenarios": 24,
+        "exit_code": 0,
+        "duration_s": 45.25,
+        "runtime": "v22.18.0",
+        "browser": "140.0.7339.16",
+        "report": "deadline-browser.json",
+        "report_sha256": "7e7cb8c81f8adfa3574c66c2e65aac2d5fbcde1ee340229d8af72bffec7165dd"
+      }
+    ]
+  },
+  "limitations": [
+    "Headless Chromium and intercepted HTTPS transport; no deployed Worker, listening service or Cloudflare D1.",
+    "Gateway identities and provider responses are local fixtures; no live PayPal request, account action or payment.",
+    "The buyer-validation suite reports 51 checks without named scenario totals.",
+    "These results exclude the separate new terminal-boundary suite owned by the browser task."
+  ],
+  "record_note": "Final report files are included alongside this aggregate; counts exclude the separate 42-check boundary suite."
+}

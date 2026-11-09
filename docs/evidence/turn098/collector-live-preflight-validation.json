@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "rightsreceipt-turn098-validation-v1",
+  "date": "2026-11-04",
+  "improvement": "Reject an expired or stopped one-shot local webhook collector before OAuth and invoice creation",
+  "runtime": "Node.js v22.16.0",
+  "environment": "isolated source-matched modules in /mnt/data/rr098-test, not the complete private repository",
+  "executedCommands": [
+    "node --test --test-reporter=tap scripts/support/local-health-live.test.mjs scripts/support/readiness-live.test.mjs"
+  ],
+  "result": {
+    "tests": 15,
+    "passed": 15,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 152.101502
+  },
+  "tapSha256": "eeff9bd8774035289a2d2a847d645469b7e9fab3c0b605b965053c76b57a689e",
+  "sourceGitBlobs": {
+    "scripts/support/sandbox-webhook-local-health.mjs": "1c7ae91f48c2b9bbd95cf1a6e94bae47eba12467",
+    "scripts/support/sandbox-webhook-readiness.mjs": "e7e9a09742e3b7cb2d29381ddb4006461fb0f517",
+    "scripts/support/sandbox-webhook-callback.mjs": "3275d69395a46b3778533b6b30e095409826360f",
+    "scripts/support/sandbox-webhook-target.mjs": "ee6b67f4c9b15d9505f5ba3a384f023d49fa43cf"
+  },
+  "coverage": [
+    "live localhost HEAD matches an active private callback without consuming a webhook",
+    "stale private route refuses readiness",
+    "stopped collector rejects before provider OAuth",
+    "unrecognized local listener rejects before provider OAuth",
+    "malformed local origin and private route are refused before network requests",
+    "missing local origin is refused",
+    "symlinked local origin is refused",
+    "redirected or incorrect HTTP response is refused",
+    "authenticated PayPal registration inventory accepts the same live local route only",
+    "registered but stale callback fails after two injected provider reads",
+    "hosted callback remains supported without localhost probe"
+  ],
+  "boundaries": [
+    "Two local test files were authored for isolated execution; they are not the same files as the new committed regression suites.",
+    "Four exact committed source modules were matched to GitHub blob SHA using git hash-object.",
+    "The real sandbox-webhook-capture.mjs and its new test were parsed but not executed from the full private checkout.",
+    "PayPal OAuth, actual provider registration, HTTPS forwarding, genuine buyer payment, signed webhook, full pnpm verify and release:verify have not been executed.",
+    "The localhost HEAD status does not prove the public forwarding endpoint is accessible or that a future callback will be received."
+  ]
+}

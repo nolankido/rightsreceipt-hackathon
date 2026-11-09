@@ -1,0 +1,163 @@
+{
+  "schema": "rightsreceipt-turn-verification-v1",
+  "turn": "039",
+  "date": "2026-10-27",
+  "timezone": "Pacific/Honolulu",
+  "base_commit": "c59df71ae85a45daa5894bf8be136a5ff00949dc",
+  "native": {
+    "runtime": "v22.18.0",
+    "files": 47,
+    "tests": 2073,
+    "passed": 2073,
+    "failed": 0,
+    "skipped": 0
+  },
+  "native_execution_notes": [
+    "The complete 47-file native collection passed 2,066 tests. Seven additional recovery regression cases were then added.",
+    "The final extended recovery collection passed 68 tests. Its final result replaces the initial 61 count here, for 2,073 current tests across 47 files. Implementation was frozen; subsequent production edits only clarified comments, types and formatting."
+  ],
+  "new_native": {
+    "invoice_recovery_backend": 68,
+    "invoice_recovery_ui_validation": 81,
+    "creator_session_total": 101,
+    "composition_total": 28,
+    "included_in_native_total": true
+  },
+  "browser": {
+    "runtime": "v22.18.0",
+    "engine": "140.0.7339.16",
+    "recovery_checks": 88,
+    "recovery_scenarios": 12,
+    "transaction_receipt_checks": 127,
+    "transaction_receipt_scenarios": 19,
+    "intake_checks": 119,
+    "intake_scenarios": 8,
+    "clarification_checks": 57,
+    "clarification_scenarios": 8,
+    "adversarial_buyer_checks": 51,
+    "total_passed": 442,
+    "final_recovery_run_after_production_guard_freeze": true,
+    "screenshots": {
+      "recovery_states": 2,
+      "desktop_and_mobile_files": 3,
+      "mobile_overflow_checks_passed": true,
+      "inspected": true
+    },
+    "limitations": [
+      "No listening server, deployed Worker or Cloudflare D1",
+      "Generated Access signing keys and injected gateway assertions/JWKS",
+      "Dedicated recovery setup uses a synthetic prepared request, terms and quote; unfinished operations arise from actual canonical commands and injected faults",
+      "Existing intake journey begins with only the workspace, asset and pricing policy",
+      "PayPal HTTP replies are local deterministic fixtures; no provider network or actual payment occurs",
+      "Financial reconciliation and receipt issuance execute through production services; no payment evidence or permission rows are inserted directly",
+      "Time, hidden-page and history lifecycle transitions are injected",
+      "Native route tests cover Fetch Metadata"
+    ]
+  },
+  "final_review_corrections": [
+    "Internal execution fences preserve the reviewed operation/action/source beyond route prechecks",
+    "Every provider call including OAuth and401refresh has request authority and source guards",
+    "Adapter journal claim and confirmation use atomic exact-source fences",
+    "record_draft preserves its confirmed provider reference; resume_creation tracks its own returned reference and exact operation version transitions",
+    "Guard failures remain latched through canonical retries and final result identity is validated",
+    "An already-returned valid draft ID survives authority/source loss as private evidence only, without binding or disclosure",
+    "Strict parser rejects nonstring action values before execution"
+  ],
+  "unresolved_scope": [
+    "Unknown creation without a trusted returned invoice ID remains paused; no account discovery, arbitrary invoice adoption or second create POST"
+  ],
+  "database": {
+    "schema_version": 9,
+    "domain_tables": 33,
+    "new_migrations": [],
+    "all_nine_migrations_unchanged": true,
+    "new_tables": [],
+    "reset_changed": false
+  },
+  "typecheck": {
+    "compiler": "5.8.3",
+    "strict_configs": [
+      "tsconfig.transaction-ui.json",
+      "tsconfig.invoice-sending.json"
+    ],
+    "uses_dependency_stubs": false,
+    "full_pinned_toolchain_verified": false
+  },
+  "syntax": {
+    "files": 174,
+    "errors": []
+  },
+  "format": {
+    "checked_files": 311,
+    "errors": []
+  },
+  "workspace": {
+    "packages": 13,
+    "internal_edges": 24,
+    "cycles": 0
+  },
+  "new_dependencies": [],
+  "live_provider_calls": false,
+  "deployment_performed": false,
+  "account_owner_task_required": false,
+  "all_runtime_flags_remain_off": true,
+  "release_ready": false,
+  "files_changed": [
+    ".dev.vars.example",
+    "DEVELOPMENT_PLAN.md",
+    "PROJECT_STATUS.md",
+    "README.md",
+    "apps/api/src/creator-review.ts",
+    "apps/api/src/creator-session.ts",
+    "apps/api/src/invoice-recovery-routes.ts",
+    "apps/api/src/transaction-routes.ts",
+    "apps/web/src/creator-review-client.ts",
+    "apps/web/src/invoice-recovery-client-common.ts",
+    "docs/engineering/AUTHENTICATED_INVOICE_RECOVERY.md",
+    "docs/engineering/README.md",
+    "docs/evidence/turn039/buyer-validation-browser.json",
+    "docs/evidence/turn039/clarification-browser.json",
+    "docs/evidence/turn039/intake-browser.json",
+    "docs/evidence/turn039/native-regression.json",
+    "docs/evidence/turn039/recovery-browser.json",
+    "docs/evidence/turn039/transaction-browser.json",
+    "docs/evidence/turn039/verification.json",
+    "docs/turns/039-p0-authenticated-invoice-recovery.md",
+    "package.json",
+    "packages/application/src/invoice-creation.ts",
+    "packages/application/src/invoice-recovery-contract.ts",
+    "packages/application/src/invoice-recovery.ts",
+    "packages/application/src/invoice-sending.ts",
+    "packages/persistence/src/invoice-recovery.ts",
+    "scripts/creator-session-local.test.mjs",
+    "scripts/invoice-recovery-browser-check.mjs",
+    "scripts/invoice-recovery-local.test.mjs",
+    "scripts/invoice-recovery-ui-local.test.mjs",
+    "scripts/transaction-routes-local.test.mjs",
+    "wrangler.jsonc"
+  ],
+  "source_sha256": {
+    ".dev.vars.example": "72b565848fd5ac8ab419e965561657fe3ebdd9132cba3f64f83ac8206ea6fb9e",
+    "apps/api/src/creator-review.ts": "6e107433dd0fa179ae2e64b7ff7fa1988b3f959d91bc618ebdf683ca47eeb1c8",
+    "apps/api/src/creator-session.ts": "596dd2903a909c9aee3bc3fa213d5c4ece910c68c9d2415cc38bbd9a7bdca1d8",
+    "apps/api/src/invoice-recovery-routes.ts": "bbdc6d120b5c412686e511d5f54b67ec1f7a32bab40a206e990ee085537193de",
+    "apps/api/src/security/creator-access.ts": "75ecc8bad9908eef7c80b83ad31247ef08c9962aa9c973b6225943639db173e6",
+    "apps/api/src/transaction-routes.ts": "c6f984b33de0e225c9dbc21e53a42f8f8d2a57b130f673b874805daec095520e",
+    "apps/web/src/creator-review-client.ts": "1a2e250baa90b7711c1145a582c524ddf5195f1a9eb3c7d17c479132effe2f1e",
+    "apps/web/src/invoice-recovery-client-common.ts": "3fce45816ae8a0b4eafcf6c9377d0cb389b41891afd6b1802d72b8bd5c67d183",
+    "package.json": "9a19f610a8990969c580ace253ad54add3c41717e7363ca6605af5404146b227",
+    "packages/application/src/invoice-creation.ts": "392092d32f8863e072f02c58075741fdfce2a96dfc17b2fd8207ada14bfb0249",
+    "packages/application/src/invoice-recovery-contract.ts": "4e2055cdb0e357ad8b38f4d03a80b89edece5fc7b4a71d364d41652896d67c26",
+    "packages/application/src/invoice-recovery.ts": "04df961c456400f11a498ab592871d84af23a70f00aa90368e847a41c447dc7c",
+    "packages/application/src/invoice-sending.ts": "9d80a1b1d135344d9ca3494c1df764041b19b19de2f683b8977a59f13986934b",
+    "packages/persistence/src/invoice-recovery.ts": "74d731b3088600f2bbc14fa61315faca0267342d2d1419ebb4aefc26b079e317",
+    "scripts/creator-session-local.test.mjs": "d85eeac16eb7240c09678cc14bccc44a3923308ca5cc116d6a708b4951f12dac",
+    "scripts/invoice-recovery-browser-check.mjs": "7e8a2afdae0af9ecacd4979a3115860498ad2a23b4ce5d0b8aad0d8bca7eef00",
+    "scripts/invoice-recovery-local.test.mjs": "00f1df124c6d641a640ff6b97497531a4e5afbbb7e0d5007377ab8f66090f60c",
+    "scripts/invoice-recovery-ui-local.test.mjs": "cd7f4052cf5ab97eb600e4738802a8c4fcf4cf53e43d88446a7ee5dfeb78a233",
+    "scripts/support/human-consent-fixture.mjs": "4fd14df5286ba17b324b55eba63e465b7be67bfe4200702c245447ca30aeb51a",
+    "scripts/support/transaction-browser-fixture.mjs": "c84ebc88bc02e1b10d2e960ad87d0dc64258f77859fed9367db9920c3b4abed4",
+    "scripts/transaction-routes-local.test.mjs": "4fd61e6bff676f7b5349f4c92fc58a2085aa43a03f0958f443c7cb604a71f6ed",
+    "wrangler.jsonc": "67cd10f080df4225347978fdc7cbddfc8f8a7313fe70161824d274309f28879d"
+  }
+}

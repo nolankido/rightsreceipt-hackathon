@@ -1,0 +1,14 @@
+packages:
+  - apps/*
+  - packages/*
+
+# Delay very new releases so a clean install does not pick up packages published
+# during the final hours before a hackathon demonstration.
+minimumReleaseAge: 1440
+
+# Only the native build tools already pinned in pnpm-lock.yaml may run their
+# installation checks. New package versions still require an explicit review.
+strictDepBuilds: true
+allowBuilds:
+  'esbuild@0.27.7 || 0.28.1': true
+  'workerd@1.20260811.1 || 1.20260921.1': true

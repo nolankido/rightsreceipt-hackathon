@@ -1,0 +1,16 @@
+{
+  "name": "@rightsreceipt/application",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@rightsreceipt/ai-runtime": "workspace:*",
+    "@rightsreceipt/contracts": "workspace:*",
+    "@rightsreceipt/domain": "workspace:*",
+    "@rightsreceipt/pricing": "workspace:*",
+    "@rightsreceipt/receipts": "workspace:*"
+  }
+}

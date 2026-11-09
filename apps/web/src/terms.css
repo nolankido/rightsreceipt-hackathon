@@ -1,0 +1,202 @@
+.rr-workspace-secondary {
+  display: none;
+}
+
+.rr-case-queue {
+  margin-top: var(--rr-space-8);
+}
+
+.rr-case-grid {
+  display: grid;
+  gap: var(--rr-space-4);
+  margin-top: var(--rr-space-6);
+}
+
+.rr-case-card {
+  display: grid;
+  grid-template-columns: minmax(7rem, 10rem) 1fr;
+  gap: var(--rr-space-4);
+  align-items: center;
+  padding: var(--rr-space-4);
+  border: 1px solid var(--rr-color-border);
+  border-radius: var(--rr-radius-md);
+  background: var(--rr-color-surface);
+}
+
+.rr-case-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--rr-radius-sm);
+}
+
+.rr-case-card h3,
+.rr-case-card p {
+  margin-top: var(--rr-space-2);
+  margin-bottom: var(--rr-space-2);
+}
+
+.rr-case-meta {
+  color: var(--rr-color-text-muted);
+  font-size: 0.9rem;
+}
+
+.rr-terms-header {
+  display: grid;
+  gap: var(--rr-space-6);
+  align-items: start;
+  margin-bottom: var(--rr-space-8);
+}
+
+.rr-terms-header h1 {
+  margin: var(--rr-space-2) 0 var(--rr-space-4);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: -0.045em;
+}
+
+.rr-terms-layout {
+  display: grid;
+  gap: var(--rr-space-6);
+  align-items: start;
+}
+
+.rr-request-evidence {
+  padding: var(--rr-space-6);
+  border: 1px solid var(--rr-color-border);
+  border-radius: var(--rr-radius-md);
+  background: var(--rr-color-surface);
+}
+
+.rr-request-evidence blockquote {
+  margin: var(--rr-space-4) 0;
+  padding: var(--rr-space-4);
+  border-left: 0.25rem solid var(--rr-color-info);
+  background: #eef7fa;
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+
+.rr-terms-form {
+  display: grid;
+  gap: var(--rr-space-6);
+}
+
+.rr-term-grid {
+  display: grid;
+  gap: var(--rr-space-4);
+}
+
+.rr-term-field {
+  display: grid;
+  gap: var(--rr-space-4);
+  margin: 0;
+  padding: var(--rr-space-5, 1.25rem);
+  border: 1px solid var(--rr-color-border);
+  border-radius: var(--rr-radius-md);
+  background: var(--rr-color-surface);
+}
+
+.rr-term-field legend {
+  padding: 0 var(--rr-space-2);
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.rr-term-field > label,
+.rr-checkbox-group {
+  display: grid;
+  gap: var(--rr-space-2);
+}
+
+.rr-term-field select,
+.rr-term-field input,
+.rr-term-field textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--rr-color-border);
+  border-radius: var(--rr-radius-sm);
+  background: white;
+  color: var(--rr-color-text);
+  font: inherit;
+}
+
+.rr-term-field textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.rr-checkbox-group > label {
+  display: flex;
+  gap: var(--rr-space-2);
+  align-items: center;
+  min-height: 2.75rem;
+}
+
+.rr-checkbox-group input {
+  width: 1.25rem;
+  min-height: 1.25rem;
+}
+
+.rr-term-evidence {
+  padding: var(--rr-space-3);
+  border-radius: var(--rr-radius-sm);
+  background: var(--rr-color-surface-muted);
+  color: var(--rr-color-text-muted);
+  font-size: 0.88rem;
+}
+
+.rr-term-evidence p {
+  margin: var(--rr-space-1) 0;
+}
+
+.rr-quote-readiness {
+  padding: var(--rr-space-6);
+  border: 1px solid var(--rr-color-border);
+  border-left-width: 0.35rem;
+  border-radius: var(--rr-radius-md);
+  background: var(--rr-color-surface);
+}
+
+.rr-quote-readiness-blocked {
+  border-left-color: #9a5a00;
+}
+
+.rr-quote-readiness-ready_for_pricing {
+  border-left-color: var(--rr-color-action);
+}
+
+.rr-quote-readiness h2 {
+  margin: var(--rr-space-2) 0 var(--rr-space-3);
+}
+
+@media (min-width: 48rem) {
+  .rr-case-grid:not(.rr-case-grid-compact) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rr-terms-header {
+    grid-template-columns: minmax(0, 1.4fr) minmax(17rem, 0.6fr);
+  }
+
+  .rr-term-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 68rem) {
+  .rr-terms-layout {
+    grid-template-columns: minmax(16rem, 0.7fr) minmax(0, 1.7fr);
+  }
+
+  .rr-request-evidence {
+    position: sticky;
+    top: var(--rr-space-6);
+  }
+}
+
+@media (max-width: 34rem) {
+  .rr-case-card {
+    grid-template-columns: 1fr;
+  }
+}

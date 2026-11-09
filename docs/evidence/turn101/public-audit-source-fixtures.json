@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "rightsreceipt-turn101-fixture-public-audit-readiness-v1",
+  "date": "2026-11-04",
+  "sourceCommitAtInspection": "5b0459e148fe9c3f8699a3d390ee007acb7f3af6",
+  "scope": "Source-level execution of the current public-audit scanText and fixture classifier against ten changed, exact GitHub source files. Not the CLI Git snapshot audit.",
+  "currentAuditSource": {
+    "scannerBlob": "8bf90d57fea9a099d0d236583b76a02ff4992077",
+    "classifierBlob": "263635a9ad1e3276680e8ab243829dcf2cdf09f6"
+  },
+  "changedSourceBlobs": {
+    "scripts/support/transaction-browser-fixture.mjs": "d0a1d5f567f280b45a202037b772c2738df48e99",
+    "scripts/buyer-payment-local.test.mjs": "43745fd3d72f3ee5328770b626977fb0251110db",
+    "scripts/judge-rehearsal-isolation-local.test.mjs": "a3dd05869c6d0c79cbba3cd3b1924470240e29e2",
+    "scripts/paypal-adapter-local.test.mjs": "91a0be00cb3d6e097a2b221f8932c6a4ce787cc4",
+    "scripts/invoice-controls-local.test.mjs": "e14a3bb393749d9297b9a03b28a6c8ca05bd3216",
+    "scripts/invoice-sending-local.test.mjs": "fce09524c696156b29d7ce461d1914f76c482934",
+    "scripts/invoice-recovery-local.test.mjs": "66635067b0f03c18c07ace09ec133c34f671350e",
+    "scripts/paypal-invoice-local.test.mjs": "f4247420af2f2d04deaf7694b0fcdb2df49bf9bc",
+    "scripts/paypal-sandbox-draft-local.test.mjs": "de2931592c62d4b019a788ebe6eb8f8f03652ec7",
+    "scripts/public-release-audit-local.test.mjs": "dcf20cec86ec986939355006059231a9b6efd877"
+  },
+  "executedChecks": {
+    "scanTextExactSourceFiles": 10,
+    "scanTextFindingsAfterFix": 0,
+    "staticJavaScriptSourceFilesParsed": 10,
+    "syntaxErrors": 0,
+    "fixtureSecretsAllowedByActualAdapterShapeCheck": 6,
+    "adapterBlob": "87a3b04e0dba7fe18fb01439be99b9b06f97dfe1",
+    "nodeRuntimeAvailable": "v22.16.0",
+    "fullNodeTestSuitesExecuted": false,
+    "fullGitSnapshotAuditExecuted": false
+  },
+  "intentPreserved": [
+    "Synthetic PayPal secret labels now start with an explicit fixture prefix and all known redaction assertion values were updated.",
+    "Invalid blank-secret test still passes three space characters to runtime.",
+    "Malformed-email test still produces the invalid newline-containing address at runtime.",
+    "Unsafe PayPal userinfo URL and hostile Git remote tests still construct the same invalid URLs at runtime, without forming false static email matches in the test source.",
+    "New regression test copies nine real financial test fixture sources into a synthetic Git repository and checks that the real snapshot auditor finds no issues."
+  ],
+  "limitations": [
+    "Source-level scanner execution is not a complete git snapshot or history audit and cannot establish public-source publication safety.",
+    "The added Git-repository snapshot regression test has not been executed on the current full private checkout.",
+    "No pnpm release:verify, PayPal Sandbox payment, public export, YouTube upload or Devpost submission was performed."
+  ]
+}

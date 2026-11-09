@@ -1,0 +1,142 @@
+{
+  "kind": "offline_smoke_not_sla",
+  "node": "v22.16.0",
+  "platform": "linux",
+  "modelArtifactSha256": "6ea099b72fe00ce4643426a2729a84b207ae8eb3460c75488fab3502037e73e2",
+  "iterationsPerFixture": 100,
+  "measurements": {
+    "complete": {
+      "codepoints": 384,
+      "requiredQuestions": 0,
+      "deterministic": {
+        "runs": 100,
+        "p50Ms": 0.0966,
+        "p95Ms": 0.2134,
+        "p99Ms": 0.2488
+      },
+      "clarification": {
+        "runs": 100,
+        "p50Ms": 0.0287,
+        "p95Ms": 0.0635,
+        "p99Ms": 0.086
+      },
+      "model": {
+        "runs": 100,
+        "p50Ms": 0.081,
+        "p95Ms": 0.1541,
+        "p99Ms": 0.2964
+      }
+    },
+    "missing_and_ambiguous": {
+      "codepoints": 402,
+      "requiredQuestions": 1,
+      "deterministic": {
+        "runs": 100,
+        "p50Ms": 0.0719,
+        "p95Ms": 0.1055,
+        "p99Ms": 0.2297
+      },
+      "clarification": {
+        "runs": 100,
+        "p50Ms": 0.0235,
+        "p95Ms": 0.053,
+        "p99Ms": 0.0753
+      },
+      "model": {
+        "runs": 100,
+        "p50Ms": 0.0547,
+        "p95Ms": 0.0953,
+        "p99Ms": 0.195
+      }
+    },
+    "contradictory": {
+      "codepoints": 413,
+      "requiredQuestions": 1,
+      "deterministic": {
+        "runs": 100,
+        "p50Ms": 0.1351,
+        "p95Ms": 0.2491,
+        "p99Ms": 0.3794
+      },
+      "clarification": {
+        "runs": 100,
+        "p50Ms": 0.0273,
+        "p95Ms": 0.0612,
+        "p99Ms": 0.0763
+      },
+      "model": {
+        "runs": 100,
+        "p50Ms": 0.0704,
+        "p95Ms": 0.1453,
+        "p99Ms": 0.2366
+      }
+    },
+    "unsupported": {
+      "codepoints": 400,
+      "requiredQuestions": 0,
+      "deterministic": {
+        "runs": 100,
+        "p50Ms": 0.0693,
+        "p95Ms": 0.1231,
+        "p99Ms": 0.2089
+      },
+      "clarification": {
+        "runs": 100,
+        "p50Ms": 0.0175,
+        "p95Ms": 0.0367,
+        "p99Ms": 0.1177
+      },
+      "model": {
+        "runs": 100,
+        "p50Ms": 0.0509,
+        "p95Ms": 0.0999,
+        "p99Ms": 0.2152
+      }
+    },
+    "injection": {
+      "codepoints": 477,
+      "requiredQuestions": 0,
+      "deterministic": {
+        "runs": 100,
+        "p50Ms": 0.0874,
+        "p95Ms": 0.1831,
+        "p99Ms": 0.2559
+      },
+      "clarification": {
+        "runs": 100,
+        "p50Ms": 0.0147,
+        "p95Ms": 0.0346,
+        "p99Ms": 0.1655
+      },
+      "model": {
+        "runs": 100,
+        "p50Ms": 0.06,
+        "p95Ms": 0.1232,
+        "p99Ms": 0.2037
+      }
+    },
+    "maximum_length": {
+      "codepoints": 4000,
+      "requiredQuestions": 0,
+      "deterministic": {
+        "runs": 100,
+        "p50Ms": 0.2259,
+        "p95Ms": 0.4228,
+        "p99Ms": 0.466
+      },
+      "clarification": {
+        "runs": 100,
+        "p50Ms": 0.0463,
+        "p95Ms": 0.1075,
+        "p99Ms": 0.1795
+      },
+      "model": {
+        "runs": 100,
+        "p50Ms": 0.2533,
+        "p95Ms": 0.4926,
+        "p99Ms": 0.6699
+      }
+    }
+  },
+  "warning": "Local warm-run measurements exclude Vite, HTTP, D1, browser render, model download, and real user variability. They are not production guarantees."
+}

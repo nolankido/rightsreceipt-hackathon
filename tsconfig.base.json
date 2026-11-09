@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": false,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@rightsreceipt/contracts": ["packages/contracts/src/index.ts"],
+      "@rightsreceipt/domain": ["packages/domain/src/index.ts"],
+      "@rightsreceipt/application": ["packages/application/src/index.ts"],
+      "@rightsreceipt/persistence": ["packages/persistence/src/index.ts"],
+      "@rightsreceipt/pricing": ["packages/pricing/src/index.ts"],
+      "@rightsreceipt/ai-runtime": ["packages/ai-runtime/src/index.ts"],
+      "@rightsreceipt/paypal": ["packages/paypal/src/index.ts"],
+      "@rightsreceipt/receipts": ["packages/receipts/src/index.ts"],
+      "@rightsreceipt/observability": ["packages/observability/src/index.ts"],
+      "@rightsreceipt/testing": ["packages/testing/src/index.ts"],
+      "@rightsreceipt/ui": ["packages/ui/src/index.tsx"]
+    }
+  }
+}

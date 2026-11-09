@@ -1,0 +1,1091 @@
+{
+  "mode": "intercepted HTTPS browser requests to actual authenticated invoice recovery routes",
+  "limitations": [
+    "No listening server, deployed Worker, actual Access gateway or Cloudflare D1",
+    "Generated RSA Access assertions and injected signing keys",
+    "Injected Sandbox provider HTTP only",
+    "Synthetic initial buyer request, prepared rights and deterministic quote",
+    "Financial continuity runs real reconciliation and receipt issuance against injected transaction details",
+    "Clock and private-view lifecycle changes are injected by the browser harness"
+  ],
+  "runtime": "v22.18.0",
+  "passed": 88,
+  "checks": [
+    {
+      "scenario": "never_dispatched_creation_requires_explicit_resume",
+      "check": "a failed actual claim retains one never-dispatched operation"
+    },
+    {
+      "scenario": "never_dispatched_creation_requires_explicit_resume",
+      "check": "opening the authenticated recovery view performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "never_dispatched_creation_requires_explicit_resume",
+      "check": "saved metadata offers only the never-dispatched creation action"
+    },
+    {
+      "scenario": "never_dispatched_creation_requires_explicit_resume",
+      "check": "recovery starts with a separate unchecked confirmation and disabled button"
+    },
+    {
+      "scenario": "never_dispatched_creation_requires_explicit_resume",
+      "check": "the recovery action explains its effect before confirmation"
+    },
+    {
+      "scenario": "never_dispatched_creation_requires_explicit_resume",
+      "check": "loading and reloading recovery metadata performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "never_dispatched_creation_requires_explicit_resume",
+      "check": "the browser submits only the exact reviewed recovery identity and explicit confirmation"
+    },
+    {
+      "scenario": "never_dispatched_creation_requires_explicit_resume",
+      "check": "recovery requests keep session assertions out of page-authored headers and URLs"
+    },
+    {
+      "scenario": "never_dispatched_creation_requires_explicit_resume",
+      "check": "confirmed resume binds exactly one provider draft without sending it"
+    },
+    {
+      "scenario": "never_dispatched_creation_requires_explicit_resume",
+      "check": "draft recovery reveals the separate unchecked send form"
+    },
+    {
+      "scenario": "never_dispatched_creation_requires_explicit_resume",
+      "check": "real routes and browser scripts finish with no external request, script error or fabricated financial authority"
+    },
+    {
+      "scenario": "retained_provider_draft_binds_locally",
+      "check": "opening the authenticated recovery view performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "retained_provider_draft_binds_locally",
+      "check": "a retained actual provider response is distinguishable from an unknown creation"
+    },
+    {
+      "scenario": "retained_provider_draft_binds_locally",
+      "check": "recovery starts with a separate unchecked confirmation and disabled button"
+    },
+    {
+      "scenario": "retained_provider_draft_binds_locally",
+      "check": "the recovery action explains its effect before confirmation"
+    },
+    {
+      "scenario": "retained_provider_draft_binds_locally",
+      "check": "loading and reloading recovery metadata performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "retained_provider_draft_binds_locally",
+      "check": "mobile recovery content has no horizontal overflow"
+    },
+    {
+      "scenario": "retained_provider_draft_binds_locally",
+      "check": "the browser submits only the exact reviewed recovery identity and explicit confirmation"
+    },
+    {
+      "scenario": "retained_provider_draft_binds_locally",
+      "check": "recovery requests keep session assertions out of page-authored headers and URLs"
+    },
+    {
+      "scenario": "retained_provider_draft_binds_locally",
+      "check": "recording the retained draft makes no provider request and keeps the original invoice"
+    },
+    {
+      "scenario": "retained_provider_draft_binds_locally",
+      "check": "one binding and one creation operation remain after recovery"
+    },
+    {
+      "scenario": "retained_provider_draft_binds_locally",
+      "check": "real routes and browser scripts finish with no external request, script error or fabricated financial authority"
+    },
+    {
+      "scenario": "unknown_creation_without_reference_remains_paused",
+      "check": "opening the authenticated recovery view performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "unknown_creation_without_reference_remains_paused",
+      "check": "provider-committed creation with lost reply remains explicitly unresolved"
+    },
+    {
+      "scenario": "unknown_creation_without_reference_remains_paused",
+      "check": "the unresolved panel explains the pause without an actionable retry"
+    },
+    {
+      "scenario": "unknown_creation_without_reference_remains_paused",
+      "check": "loading and reloading recovery metadata performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "unknown_creation_without_reference_remains_paused",
+      "check": "a fabricated resume action cannot bypass the unknown creation pause"
+    },
+    {
+      "scenario": "unknown_creation_without_reference_remains_paused",
+      "check": "real routes and browser scripts finish with no external request, script error or fabricated financial authority"
+    },
+    {
+      "scenario": "never_dispatched_send_requires_explicit_resume",
+      "check": "opening the authenticated recovery view performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "never_dispatched_send_requires_explicit_resume",
+      "check": "a failed actual send claim preserves a never-dispatched send"
+    },
+    {
+      "scenario": "never_dispatched_send_requires_explicit_resume",
+      "check": "recovery starts with a separate unchecked confirmation and disabled button"
+    },
+    {
+      "scenario": "never_dispatched_send_requires_explicit_resume",
+      "check": "the recovery action explains its effect before confirmation"
+    },
+    {
+      "scenario": "never_dispatched_send_requires_explicit_resume",
+      "check": "loading and reloading recovery metadata performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "never_dispatched_send_requires_explicit_resume",
+      "check": "the browser submits only the exact reviewed recovery identity and explicit confirmation"
+    },
+    {
+      "scenario": "never_dispatched_send_requires_explicit_resume",
+      "check": "recovery requests keep session assertions out of page-authored headers and URLs"
+    },
+    {
+      "scenario": "never_dispatched_send_requires_explicit_resume",
+      "check": "confirmed resume sends the exact invoice once and requests one reconciliation generation"
+    },
+    {
+      "scenario": "never_dispatched_send_requires_explicit_resume",
+      "check": "real routes and browser scripts finish with no external request, script error or fabricated financial authority"
+    },
+    {
+      "scenario": "lost_send_reply_recovers_by_get_before_financial_verification",
+      "check": "opening the authenticated recovery view performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "lost_send_reply_recovers_by_get_before_financial_verification",
+      "check": "the lost provider acknowledgement exposes a GET-only delivery check"
+    },
+    {
+      "scenario": "lost_send_reply_recovers_by_get_before_financial_verification",
+      "check": "recovery starts with a separate unchecked confirmation and disabled button"
+    },
+    {
+      "scenario": "lost_send_reply_recovers_by_get_before_financial_verification",
+      "check": "the recovery action explains its effect before confirmation"
+    },
+    {
+      "scenario": "lost_send_reply_recovers_by_get_before_financial_verification",
+      "check": "loading and reloading recovery metadata performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "lost_send_reply_recovers_by_get_before_financial_verification",
+      "check": "the browser submits only the exact reviewed recovery identity and explicit confirmation"
+    },
+    {
+      "scenario": "lost_send_reply_recovers_by_get_before_financial_verification",
+      "check": "recovery requests keep session assertions out of page-authored headers and URLs"
+    },
+    {
+      "scenario": "lost_send_reply_recovers_by_get_before_financial_verification",
+      "check": "unknown delivery recovery performs one GET and no repeat send"
+    },
+    {
+      "scenario": "lost_send_reply_recovers_by_get_before_financial_verification",
+      "check": "an observed PAID invoice stays separate from payment and permission"
+    },
+    {
+      "scenario": "lost_send_reply_recovers_by_get_before_financial_verification",
+      "check": "the real financial consumer establishes evidence only after recovery"
+    },
+    {
+      "scenario": "lost_send_reply_recovers_by_get_before_financial_verification",
+      "check": "the real receipt issuer publishes the recovered transaction's canonical revision"
+    },
+    {
+      "scenario": "lost_send_reply_recovers_by_get_before_financial_verification",
+      "check": "completed paid receipt metadata remains readable without another recovery action"
+    },
+    {
+      "scenario": "lost_send_reply_recovers_by_get_before_financial_verification",
+      "check": "the creator can still read the completed paid record with recovery controls hidden"
+    },
+    {
+      "scenario": "lost_send_reply_recovers_by_get_before_financial_verification",
+      "check": "financial continuity never recreates or resends the invoice"
+    },
+    {
+      "scenario": "lost_send_reply_recovers_by_get_before_financial_verification",
+      "check": "real routes and browser scripts finish with no external request, script error or fabricated financial authority"
+    },
+    {
+      "scenario": "invalid_provider_observation_does_not_enable_resend",
+      "check": "opening the authenticated recovery view performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "invalid_provider_observation_does_not_enable_resend",
+      "check": "mismatched provider content leaves the delivery unresolved"
+    },
+    {
+      "scenario": "invalid_provider_observation_does_not_enable_resend",
+      "check": "recovery starts with a separate unchecked confirmation and disabled button"
+    },
+    {
+      "scenario": "invalid_provider_observation_does_not_enable_resend",
+      "check": "the recovery action explains its effect before confirmation"
+    },
+    {
+      "scenario": "invalid_provider_observation_does_not_enable_resend",
+      "check": "a DRAFT observation never justifies another send"
+    },
+    {
+      "scenario": "invalid_provider_observation_does_not_enable_resend",
+      "check": "recovery starts with a separate unchecked confirmation and disabled button"
+    },
+    {
+      "scenario": "invalid_provider_observation_does_not_enable_resend",
+      "check": "the recovery action explains its effect before confirmation"
+    },
+    {
+      "scenario": "invalid_provider_observation_does_not_enable_resend",
+      "check": "a later exact sent observation can complete with one total send"
+    },
+    {
+      "scenario": "invalid_provider_observation_does_not_enable_resend",
+      "check": "real routes and browser scripts finish with no external request, script error or fabricated financial authority"
+    },
+    {
+      "scenario": "lost_browser_recovery_reply_keeps_exact_frozen_command",
+      "check": "opening the authenticated recovery view performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "lost_browser_recovery_reply_keeps_exact_frozen_command",
+      "check": "the uncertain browser reply retains one exact confirmed command"
+    },
+    {
+      "scenario": "lost_browser_recovery_reply_keeps_exact_frozen_command",
+      "check": "the browser submits only the exact reviewed recovery identity and explicit confirmation"
+    },
+    {
+      "scenario": "lost_browser_recovery_reply_keeps_exact_frozen_command",
+      "check": "recovery requests keep session assertions out of page-authored headers and URLs"
+    },
+    {
+      "scenario": "lost_browser_recovery_reply_keeps_exact_frozen_command",
+      "check": "identical retry gets a stale response after success without another provider call or write"
+    },
+    {
+      "scenario": "lost_browser_recovery_reply_keeps_exact_frozen_command",
+      "check": "explicit reload reveals the recorded result with recovery action cleared"
+    },
+    {
+      "scenario": "lost_browser_recovery_reply_keeps_exact_frozen_command",
+      "check": "real routes and browser scripts finish with no external request, script error or fabricated financial authority"
+    },
+    {
+      "scenario": "stale_review_and_cross_workspace_commands_clear_private_state",
+      "check": "opening the authenticated recovery view performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "stale_review_and_cross_workspace_commands_clear_private_state",
+      "check": "a stale reviewed revision cannot bind a retained invoice"
+    },
+    {
+      "scenario": "stale_review_and_cross_workspace_commands_clear_private_state",
+      "check": "a different workspace cannot recover or retain private offer content"
+    },
+    {
+      "scenario": "stale_review_and_cross_workspace_commands_clear_private_state",
+      "check": "real routes and browser scripts finish with no external request, script error or fabricated financial authority"
+    },
+    {
+      "scenario": "expired_session_during_oauth_prevents_provider_read",
+      "check": "opening the authenticated recovery view performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "expired_session_during_oauth_prevents_provider_read",
+      "check": "verified session expiry during OAuth prevents the next provider GET and completion"
+    },
+    {
+      "scenario": "expired_session_during_oauth_prevents_provider_read",
+      "check": "an expired recovery clears its checkbox, invoice reference and private view"
+    },
+    {
+      "scenario": "expired_session_during_oauth_prevents_provider_read",
+      "check": "real routes and browser scripts finish with no external request, script error or fabricated financial authority"
+    },
+    {
+      "scenario": "configuration_change_during_oauth_prevents_provider_read",
+      "check": "opening the authenticated recovery view performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "configuration_change_during_oauth_prevents_provider_read",
+      "check": "a changed recovery configuration returns no successful recovery result"
+    },
+    {
+      "scenario": "configuration_change_during_oauth_prevents_provider_read",
+      "check": "configuration revocation during OAuth prevents provider read and durable completion"
+    },
+    {
+      "scenario": "configuration_change_during_oauth_prevents_provider_read",
+      "check": "real routes and browser scripts finish with no external request, script error or fabricated financial authority"
+    },
+    {
+      "scenario": "source_change_during_provider_read_cannot_complete",
+      "check": "opening the authenticated recovery view performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "source_change_during_provider_read_cannot_complete",
+      "check": "a changed canonical source suppresses completion after an observed provider response"
+    },
+    {
+      "scenario": "source_change_during_provider_read_cannot_complete",
+      "check": "the stale provider result cannot restore a private view or payment handoff"
+    },
+    {
+      "scenario": "source_change_during_provider_read_cannot_complete",
+      "check": "real routes and browser scripts finish with no external request, script error or fabricated financial authority"
+    },
+    {
+      "scenario": "late_recovery_reply_cannot_reopen_hidden_private_view",
+      "check": "opening the authenticated recovery view performs no SQL writes, provider HTTP or recovery command"
+    },
+    {
+      "scenario": "late_recovery_reply_cannot_reopen_hidden_private_view",
+      "check": "a late successful bind cannot reopen a hidden private review"
+    },
+    {
+      "scenario": "late_recovery_reply_cannot_reopen_hidden_private_view",
+      "check": "hidden recovery retains no browser storage or retry authority"
+    },
+    {
+      "scenario": "late_recovery_reply_cannot_reopen_hidden_private_view",
+      "check": "real routes and browser scripts finish with no external request, script error or fabricated financial authority"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "never_dispatched_creation_requires_explicit_resume",
+      "financialLifecycleExecuted": false,
+      "browserRequests": 15,
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "providerCalls": {
+        "oauth": 1,
+        "create": 1,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 1,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "retained_provider_draft_binds_locally",
+      "financialLifecycleExecuted": false,
+      "browserRequests": 15,
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "providerCalls": {
+        "oauth": 1,
+        "create": 1,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 1,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "unknown_creation_without_reference_remains_paused",
+      "financialLifecycleExecuted": false,
+      "browserRequests": 10,
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "providerCalls": {
+        "oauth": 1,
+        "create": 1,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 1,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "never_dispatched_send_requires_explicit_resume",
+      "financialLifecycleExecuted": false,
+      "browserRequests": 15,
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "providerCalls": {
+        "oauth": 2,
+        "create": 1,
+        "send": 1,
+        "get": 2
+      },
+      "durableRows": {
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 2,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "lost_send_reply_recovers_by_get_before_financial_verification",
+      "financialLifecycleExecuted": true,
+      "browserRequests": 19,
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "providerCalls": {
+        "oauth": 4,
+        "create": 1,
+        "send": 1,
+        "get": 3
+      },
+      "durableRows": {
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 2,
+        "payment_evidence": 1,
+        "permissions": 1,
+        "receipt_revisions": 1
+      }
+    },
+    {
+      "name": "invalid_provider_observation_does_not_enable_resend",
+      "financialLifecycleExecuted": false,
+      "browserRequests": 21,
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "providerCalls": {
+        "oauth": 5,
+        "create": 1,
+        "send": 1,
+        "get": 4
+      },
+      "durableRows": {
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 2,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "lost_browser_recovery_reply_keeps_exact_frozen_command",
+      "financialLifecycleExecuted": false,
+      "browserRequests": 12,
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "providerCalls": {
+        "oauth": 3,
+        "create": 1,
+        "send": 1,
+        "get": 2
+      },
+      "durableRows": {
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 2,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "stale_review_and_cross_workspace_commands_clear_private_state",
+      "financialLifecycleExecuted": false,
+      "browserRequests": 12,
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "providerCalls": {
+        "oauth": 1,
+        "create": 1,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 1,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "expired_session_during_oauth_prevents_provider_read",
+      "financialLifecycleExecuted": false,
+      "browserRequests": 7,
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "providerCalls": {
+        "oauth": 3,
+        "create": 1,
+        "send": 1,
+        "get": 1
+      },
+      "durableRows": {
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 2,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "configuration_change_during_oauth_prevents_provider_read",
+      "financialLifecycleExecuted": false,
+      "browserRequests": 7,
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "providerCalls": {
+        "oauth": 3,
+        "create": 1,
+        "send": 1,
+        "get": 1
+      },
+      "durableRows": {
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 2,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "source_change_during_provider_read_cannot_complete",
+      "financialLifecycleExecuted": false,
+      "browserRequests": 7,
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "providerCalls": {
+        "oauth": 3,
+        "create": 1,
+        "send": 1,
+        "get": 2
+      },
+      "durableRows": {
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 2,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    },
+    {
+      "name": "late_recovery_reply_cannot_reopen_hidden_private_view",
+      "financialLifecycleExecuted": false,
+      "browserRequests": 7,
+      "generatedSignatureVerifications": "actual WebCrypto verifier",
+      "jwksReads": 1,
+      "migrations": [
+        {
+          "name": "0001_initial_schema.sql",
+          "gitSha": "40f57162a68ea79615f5b786fdbd8f22fcf22fbc"
+        },
+        {
+          "name": "0002_indexes_and_guards.sql",
+          "gitSha": "d2cf4ac5a4e3cedc50f94b256fca236395e75cc8"
+        },
+        {
+          "name": "0003_paypal_delivery_journal.sql",
+          "gitSha": "205eb11bcf03ddef504d6a3761b547870576616c"
+        },
+        {
+          "name": "0004_verified_webhook_intake.sql",
+          "gitSha": "4e52ec9226406bcde7a29b34c9ee574b643edeb3"
+        },
+        {
+          "name": "0005_webhook_processing.sql",
+          "gitSha": "781628ad6e030079eee62107eab40c69506360a8"
+        },
+        {
+          "name": "0006_paypal_reconciliation.sql",
+          "gitSha": "c5c154a4080af76ddae5108f14dc0d94270a4b89"
+        },
+        {
+          "name": "0007_permission_lifecycle.sql",
+          "gitSha": "ccc2b94d6bf4407e5b273335e54f7bb28696d7bb"
+        },
+        {
+          "name": "0008_canonical_receipts.sql",
+          "gitSha": "e2b974e4c91ea17da12b62aee362ae2fff541635"
+        },
+        {
+          "name": "0009_clarification_evidence.sql",
+          "gitSha": "11d260af7f99a84490124bab6b9b40a47ba5e5be"
+        }
+      ],
+      "providerCalls": {
+        "oauth": 1,
+        "create": 1,
+        "send": 0,
+        "get": 0
+      },
+      "durableRows": {
+        "creator_decisions": 1,
+        "buyer_acceptances": 1,
+        "invoice_bindings": 1,
+        "payment_operations": 1,
+        "payment_evidence": 0,
+        "permissions": 0,
+        "receipt_revisions": 0
+      }
+    }
+  ],
+  "browser": "140.0.7339.16",
+  "status": "passed"
+}

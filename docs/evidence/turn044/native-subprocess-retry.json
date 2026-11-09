@@ -1,0 +1,13 @@
+{
+  "file": "scripts/judge-rehearsal-isolation-local.test.mjs",
+  "exit_code": 0,
+  "duration_s": 33.99,
+  "tests": 15,
+  "pass": 15,
+  "fail": 0,
+  "skipped": 0,
+  "cancelled": 0,
+  "reason": "Initial sandboxed run could not spawn the local Node launcher (EPERM). Same unchanged collection rerun with child-process permission.",
+  "source_sha256": "8f48598629577ce3725d3796196ee77ebeefa80ca491ed760a0435a143e36288",
+  "log_sha256": "72a2a1cf6f7ac83a6543fe5d93e3a9c1ecae218c31a25432270dbc74e82dbde1"
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "rightsreceipt-turn082-focused-validation-v1",
+  "sourceCommit": "c95ec9cdeb00d5193b19b5812560a11d3fb3f995",
+  "node": "v22.16.0",
+  "scope": "Dependency-free Sandbox transport module only; no private full checkout, no real provider calls",
+  "commands": [
+    "node --check scripts/support/sandbox-locked-fetch.mjs",
+    "node --check scripts/support/sandbox-locked-fetch.test.mjs",
+    "node --test scripts/support/sandbox-locked-fetch.test.mjs"
+  ],
+  "focusedRuns": [
+    {
+      "label": "initial",
+      "passed": 10,
+      "failed": 0,
+      "tapSha256": "9c6aa685d604b30512090254ec52a59850f42a4fea47f2d1e09e1ddf9074f7cc"
+    },
+    {
+      "label": "repeat-1",
+      "passed": 10,
+      "failed": 0,
+      "tapSha256": "dca7ffd626ee179e9b0b9481ea8b1e0d7f65d434544dbc6f48f034a44bfcf337"
+    },
+    {
+      "label": "repeat-2",
+      "passed": 10,
+      "failed": 0,
+      "tapSha256": "3d555ecaf7e8c333a2e9af6379188aa904283a605bccb647449c4806460ecaf2"
+    },
+    {
+      "label": "repeat-3",
+      "passed": 10,
+      "failed": 0,
+      "tapSha256": "463e4d9a099a1c65f1083316407003de71d33b10eab3e351000464f60f341955"
+    }
+  ],
+  "testedBlobShas": {
+    "scripts/support/sandbox-locked-fetch.mjs": "b6c4d40bca1667e2e37dd2e5399fb392ef68f4d4",
+    "scripts/support/sandbox-locked-fetch.test.mjs": "9daf8b58fad66b5d3d5dc68037216300cca7f1e9"
+  },
+  "otherStagedTests": {
+    "count": 2,
+    "scope": "genuine acceptance fixture integration, not executed on a full private checkout"
+  },
+  "externalCalls": 0,
+  "limitations": [
+    "Full installed-dependency Paypal acceptance fixture suite and pnpm release:verify were not run",
+    "The actual Sandbox OAuth, invoice/payment, paid GET and signature-verified webhook were not executed",
+    "This validation does not prove external provider authenticity, public release or Devpost submission"
+  ]
+}

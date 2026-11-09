@@ -1,0 +1,17 @@
+{
+  "command": "/tmp/nk30-venv/lib/python3.12/site-packages/playwright/driver/node --no-warnings --experimental-strip-types --experimental-loader ./scripts/receipt-ts-test-loader.mjs scripts/receipt-client-local.test.mjs",
+  "working_directory": "/workspace/scratch/a8612faae7d5/rightsReceipt",
+  "counts": {
+    "tests": 141,
+    "pass": 141,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "client_sha256": "65aa5a602ff6bc50bbfea0fb8b2c17073e68b87a6e9a318d300c0ff69ed39aca",
+  "test_sha256": "3867825c90c5ac144fc0e97f3f3a0f73038d35e94d508dbb4d1cf9e1e78e0cf5",
+  "tap_sha256": "38437a713631301916c08f8b21e5d2d98e5a929bc755141d15cb9b330fc8f394",
+  "tap_path": "/workspace/scratch/a8612faae7d5/recovery/turn046/receipt-client-stream-native.tap",
+  "scope": "Deterministic VM with synthetic DOM, parsed markup, clocks and response fixtures; real WebCrypto; real demand-driven ReadableStream overflow and stalled-read scenarios plus controlled readers for late completion and cancellation faults. No handler, database, provider or live network."
+}

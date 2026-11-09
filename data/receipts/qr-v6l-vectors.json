@@ -1,0 +1,69 @@
+{
+  "reference": "Python qrcode, forced version 6, L, byte mode, mask 0, no border",
+  "vectors": [
+    {
+      "text": "https://rightsreceipt.example/verify/receipt/AbCDeFgHiJkLmNoPqRsTuVwXyZ0123_-",
+      "matrixSha256": "e709eecccb1eda105cbd8f117e7cbe8b4d00df21f78aadf8673ced41f59378e4"
+    },
+    {
+      "text": "http://localhost:5173/verify/receipt/ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+      "matrixSha256": "4fc2f18fbfacc88727c6680590b6440aad6c9538a2cee139891c2556f48f8c46"
+    },
+    {
+      "text": "a",
+      "matrixSha256": "40fb29b50888151fac73c653f80b92771ab03d500857c7aa5b9a7e6617782363"
+    },
+    {
+      "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "matrixSha256": "ab6b7ab5e5b3679a811b79de308862614cc2295de204490808dbe54e05177c46"
+    },
+    {
+      "text": "I9",
+      "matrixSha256": "15348840cfbf928b79b259991567cf64f5f020a37ac09aac7738a3e38537bfb7"
+    },
+    {
+      "text": ".AUJCBAz",
+      "matrixSha256": "b72b7c495a4ce7c8072f72fde0c2a0e325331fdd9cc16be631bd8c6d6b4f3f75"
+    },
+    {
+      "text": "uVqQtN2Bi.J_CG~m",
+      "matrixSha256": "43a2400e8cc99d0e753f6ed017364cdacab15133d624ce8fb072cce34cae6d2f"
+    },
+    {
+      "text": "gqNibN~TdeJ-Xz9GnXPtoiC4",
+      "matrixSha256": "1751072389914f6e0ff49a6f33133596b926aa25a6ae8a9757663133a8793f96"
+    },
+    {
+      "text": "IkQ.nCJqxWnvQvWMFK8_1X2ldNu8Sso0",
+      "matrixSha256": "8991da4369789fe343c27b11db45607bcbaca96f55d890594afe00030e4138c1"
+    },
+    {
+      "text": "UXjgV2_aQVCGK:ZEMleib5AVPIDb54apitQON_PG9IVJeQdW",
+      "matrixSha256": "901250b4679ff2ab81df498af991c9d282bf07e39c6b4ff6e3653cc3dda5d0ee"
+    },
+    {
+      "text": "~xLp.SV6441joP7waf9wcE1fNn_Av0SSSwCYz12uf78JlNF/0J9DApvFE3r:f8cd",
+      "matrixSha256": "15ae0b68cfac813a65a1682946f35bcb18a4ec14cc20076d5199ad5637b88816"
+    },
+    {
+      "text": "Beecdh_IvDXCth86smcN~S~:n8d2SaFOtH7661yAgok3044xQ8_KG7xYosx5pI8MS2NIUZ7:g1CD3Sv0",
+      "matrixSha256": "e6c24b0f52aa90e7b0cd55bd0e265ee626214ced425596093f48c9c2375bc954"
+    },
+    {
+      "text": "SIrfeZbvRCvkBBYrteopTMpp_Bp0TlZSgmCj~5/mqK5nz-h2Og8c9DjusqtOEvMoOYK4Geg5gcK0ymkQBvFy6G2cv/eP6Qaa",
+      "matrixSha256": "03f7c4bf4383affc58afe3a942818dc776b3cdb78f9499a4cbb95c8eda452f54"
+    },
+    {
+      "text": "dzmWKksIZC9j~UambOOhfGE6LCteEHOfQDHg1IcOb:zxd_SySX1GXzcwY0EVBxgOlBndCSwJqMUjsH:sCujCeIkYZHyWYLH-0EYssSpDIp0jgGTI",
+      "matrixSha256": "4cc6f0a1cd226e4db1800da505d197b13b4b0015e5df2b241016a07560240e23"
+    },
+    {
+      "text": "dLrLNq6aGL41LefZNdVqcpcc.eB-lfhL2ao2r1J9fOEO-qkKIeYUQH:r07QCoa:2mT80pIJxwtF4z:L1BEqGtL7PMh.t1zHzJG0_gLIf-EaT.DWQ~rQDTZumWZ29OycL",
+      "matrixSha256": "49f5497a7de648809616b1e949dd80a77344c0b70f62751dac8961ca6747c4e8"
+    },
+    {
+      "text": "jK-lBZYQ4.qjuQF9:~Oea_3XDI3_yxtYhhorojZ:hJ/kfQ5ta5fi3kVzyTp8MnlNUpbf91wKqtKBqkqJfx:8b:DyNjrzzy1r:s0P4Sex.K_~/WXkace.0pabfA~fB1q-QG:5b",
+      "matrixSha256": "3ecd506f697019f902db70b8ca336ac3bd1e23a287d1f44c7a7663e41518114f"
+    }
+  ]
+}

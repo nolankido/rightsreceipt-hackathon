@@ -1,0 +1,136 @@
+{
+  "mode": "HTML body limit derivation and domain-valid escaped-text stress fixture",
+  "runtime": "v22.18.0",
+  "scriptSha256": "690d21ee124094fb8711361248fd286b3e5bc0b8592c3dfb3a6eedb83c587b61",
+  "sourceSha256": {
+    "packages/receipts/src/material.ts": "737b2f30378b6f17cd27f2e5313299cb777b2b69fc0e4c6c2eaf029ce7c94edb",
+    "packages/receipts/src/presentation.ts": "6b0e1f48560f5e6d1d127d1983b1c5383eed5ae34063c2b37b2cf70e8f8e9f03",
+    "packages/receipts/src/qr.ts": "4a12aff18ec0666d06d92d97ca84d25fef8b22b50bdb1c37557f6f43a41559da",
+    "packages/receipts/src/http.ts": "d797dbc47c71e0bfaf39b0a855066e61b178aa56a72987c2b5d352b268150bda",
+    "packages/receipts/src/canonical.ts": "a1bd37187f934ef4697b636d84a0f7fc5bf75d674e5a3fc45a62fffb0db2b22a",
+    "packages/receipts/src/service.ts": "269ae866aa2103e355671552dcbaab50c348ec586474d27e0ac2db80c4459871",
+    "scripts/support/receipt-experience-fixture.mjs": "386fadbcaf2b11e7265e234b3200c07d8514865c73150acbc368e9202a52c489"
+  },
+  "proposedHtmlDecodedByteLimit": 131072,
+  "canonicalJsonDecodedByteLimit": 262144,
+  "analyticBound": {
+    "freeText": {
+      "units": 10480,
+      "maxUtf8BytesPerEscapedUtf16Unit": 6,
+      "bytes": 62880,
+      "terms": [
+        "32 line descriptions x 300",
+        "1 asset title x 200",
+        "2 creator and buyer display names x 120",
+        "1 acceptance copy version x 80",
+        "3 extractor/model identifier/version fields x 120"
+      ]
+    },
+    "otherDynamicOutputBudget": {
+      "bytes": 8192,
+      "includes": [
+        "12 constrained terms",
+        "33 formatted nonnegative amounts each <= 1000000000 cents",
+        "safe invoice reference <= 105 ASCII bytes",
+        "16-digit pricing policy version",
+        "UUIDs/hashes/dates/instants",
+        "two escaped public URL occurrences each <= 134 ASCII bytes",
+        "two revision values <= 256",
+        "audit count <= 1024"
+      ]
+    },
+    "fixedTemplateBudget": {
+      "bytes": 16384,
+      "includes": [
+        "CSS",
+        "HTML shell and labels",
+        "32 table row wrappers",
+        "all static status/timing copy"
+      ]
+    },
+    "qrBudget": {
+      "bytes": 28672,
+      "matrixCells": 1681,
+      "conservativePathBytesPerCell": 16,
+      "explanation": "41 x 41 fixed QR matrix, each dark module emits <= 16 ASCII path bytes, fixed SVG wrapper under 1024 bytes."
+    },
+    "sumBytes": 116128,
+    "marginToLimitBytes": 14944,
+    "qualification": "Source-reviewed conservative budgets. The field-valid fixtures separately exercise maximal escaping and count bounds; they are not claimed to enumerate every valid payload or every QR pattern."
+  },
+  "fixtures": [
+    {
+      "state": "active",
+      "status": 200,
+      "canonicalJsonBytes": 164071,
+      "htmlBytes": 85141,
+      "qrBytes": 11749,
+      "nonQrNonFreeTextBytes": 10512,
+      "quoteLines": 32,
+      "linkedAuditEvents": 1024,
+      "additionalReadWrites": 0,
+      "htmlSha256": "ffc91ed8cf147a2a9b84032221dfcdbc7a3951d094b4b95287d2821164666ada",
+      "canonicalSha256": "cc979b3691e7bc292ee5a4c48c0f9fae0b206a4cde12714021d9f8018b5741b4"
+    },
+    {
+      "state": "scheduled",
+      "status": 200,
+      "canonicalJsonBytes": 164074,
+      "htmlBytes": 84996,
+      "qrBytes": 11749,
+      "nonQrNonFreeTextBytes": 10367,
+      "quoteLines": 32,
+      "linkedAuditEvents": 1024,
+      "additionalReadWrites": 0,
+      "htmlSha256": "01501068821a78bb2f055c220c69dd056ca5cbd25ea3fce26374441434552553",
+      "canonicalSha256": "056f93bc34d9ef336284fb1e54f6284dfd53360df804d63059617989fb543aff"
+    },
+    {
+      "state": "expired",
+      "status": 200,
+      "canonicalJsonBytes": 164072,
+      "htmlBytes": 85020,
+      "qrBytes": 11749,
+      "nonQrNonFreeTextBytes": 10391,
+      "quoteLines": 32,
+      "linkedAuditEvents": 1024,
+      "additionalReadWrites": 0,
+      "htmlSha256": "37aa87a800a96b3a951d33b90fa39b59599b66ed3bd8be9157835108738f1ae9",
+      "canonicalSha256": "6b3854d3251cc791469947f7285c3281d1ff80156b4b9d7978a4def4decd765a"
+    },
+    {
+      "state": "refunded",
+      "status": 200,
+      "canonicalJsonBytes": 164257,
+      "htmlBytes": 84984,
+      "qrBytes": 11749,
+      "nonQrNonFreeTextBytes": 10355,
+      "quoteLines": 32,
+      "linkedAuditEvents": 1024,
+      "additionalReadWrites": 0,
+      "htmlSha256": "4d74c5eb5708efef70d9851b3fb466099f6ab6ae6a113e98179811a5305806bf",
+      "canonicalSha256": "5e90fe0ab1baf483dfd8ad2eddf6385510cfefc5f1b262863b7a42bcdde26e58"
+    },
+    {
+      "state": "revoked",
+      "status": 200,
+      "canonicalJsonBytes": 164072,
+      "htmlBytes": 84995,
+      "qrBytes": 11749,
+      "nonQrNonFreeTextBytes": 10366,
+      "quoteLines": 32,
+      "linkedAuditEvents": 1024,
+      "additionalReadWrites": 0,
+      "htmlSha256": "ea8387c20146574f5fe1460c08b7b30d3e5fa4c542e5774048ca4a7b6b8528d5",
+      "canonicalSha256": "8e34e1623ab944640b44bf0b891caec25f8c19cbe86b48a236b3691ee3254787"
+    }
+  ],
+  "limitations": [
+    "Synthetic in-memory receipt source snapshots; actual production material validation, issuance, chain verification and HTTP rendering.",
+    "No database, provider, network or deployed runtime; no heap or memory exhaustion claim.",
+    "Maximum title, names, descriptions, acceptance and provenance field lengths use ASCII double quotes, maximizing htmlEscape expansion.",
+    "32 item rows, 1024 audit anchors, 80-byte configured origin and 105-byte invoice reference exercise current domain caps.",
+    "The canonical payload is below its independent 262144-byte ceiling. Large non-rendered extraction/payment history is not needed to maximize HTML."
+  ],
+  "passed": true
+}
